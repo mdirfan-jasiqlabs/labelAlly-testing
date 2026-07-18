@@ -49,7 +49,7 @@ function ServicesSection() {
   return (
     <section
       aria-labelledby="services-section-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-900/30"
+      className="py-20 md:py-28 lg:py-36 bg-neutral-50/60"
     >
       <Container className="animate-fade-in">
 
@@ -86,22 +86,22 @@ function ServicesSection() {
                     className={[
                       'flex items-center justify-center',
                       'w-12 h-12 rounded-xl',
-                      'bg-primary-950 border border-primary-800/60',
+                      'bg-primary-50 border border-primary-100/60',
                       'transition-colors duration-400',
                       'group-hover:bg-primary-900 group-hover:border-primary-700',
                     ].join(' ')}
                   >
-                    <IconComponent size={22} className="text-primary-400" />
+                    <IconComponent size={22} className="text-primary-600" />
                   </div>
                 )}
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold font-heading text-neutral-100 leading-snug">
+                <h3 className="text-lg font-semibold font-heading text-neutral-900 leading-snug">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="flex-1 text-sm text-neutral-500 leading-relaxed">
+                <p className="flex-1 text-sm text-neutral-9000 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -113,7 +113,7 @@ function ServicesSection() {
                     className={[
                       'inline-flex items-center gap-1.5',
                       'text-sm font-medium',
-                      'text-primary-400 hover:text-primary-300',
+                      'text-primary-600 hover:text-primary-750',
                       'transition-colors duration-250',
                       'focus-ring rounded',
                       'mt-auto',

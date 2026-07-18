@@ -8,17 +8,7 @@ import navData from '../../data/navigation.json';
 /**
  * Header — Sticky site header with full navigation.
  *
- * Features:
- * - Sticky top positioning with correct z-index
- * - Scroll-aware background (glassmorphism on scroll)
- * - Logo with two-tone text from navigation.json
- * - Desktop navigation with active route styling
- * - Header CTA button
- * - Mobile menu trigger (hamburger)
- * - MobileMenu component managed here
- * - Auto-close mobile menu on route change
- * - Accessible: <header>, <nav>, aria-label, aria-expanded, aria-controls
- *
+ * Converted to premium light theme.
  * Content source: src/data/navigation.json
  */
 function Header() {
@@ -57,7 +47,7 @@ function Header() {
           'w-full',
           'transition-all duration-400',
           scrolled
-            ? 'glass-strong border-b border-neutral-800 shadow-lg'
+            ? 'glass-strong border-b border-neutral-200/80 shadow-md'
             : 'bg-transparent border-b border-transparent',
         ].join(' ')}
       >
@@ -70,10 +60,10 @@ function Header() {
               aria-label={navData.logo.ariaLabel}
               className="flex items-center gap-1 focus-ring rounded-md shrink-0"
             >
-              <span className="font-heading text-lg md:text-xl font-bold text-neutral-50 tracking-tight">
+              <span className="font-heading text-lg md:text-xl font-bold text-neutral-900 tracking-tight">
                 {navData.logo.text}
               </span>
-              <span className="font-heading text-lg md:text-xl font-bold text-accent-400 tracking-tight">
+              <span className="font-heading text-lg md:text-xl font-bold text-primary-600 tracking-tight">
                 {navData.logo.textHighlight}
               </span>
             </Link>
@@ -97,8 +87,8 @@ function Header() {
                           'transition-all duration-250',
                           'focus-ring',
                           isActive
-                            ? 'text-accent-400'
-                            : 'text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800/60',
+                            ? 'text-primary-600'
+                            : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100/80',
                         ].join(' ')
                       }
                     >
@@ -109,7 +99,7 @@ function Header() {
                           {isActive && (
                             <span
                               aria-hidden="true"
-                              className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent-400"
+                              className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary-600"
                             />
                           )}
                         </>
@@ -145,8 +135,8 @@ function Header() {
                   'md:hidden',
                   'flex items-center justify-center',
                   'w-10 h-10 rounded-lg',
-                  'text-neutral-400 hover:text-neutral-50',
-                  'hover:bg-neutral-800',
+                  'text-neutral-9000 hover:text-neutral-800',
+                  'hover:bg-neutral-100',
                   'transition-colors duration-250',
                   'focus-ring',
                 ].join(' ')}

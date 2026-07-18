@@ -21,7 +21,7 @@ import PageLoader from '../common/PageLoader';
  */
 function PageLayout() {
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-950">
+    <div className="flex flex-col min-h-screen bg-white">
       {/* ── Header ── */}
       <Header />
 

@@ -24,7 +24,7 @@ function ArtistsSection() {
   return (
     <section
       aria-labelledby="artists-section-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-950 border-t border-neutral-900"
+      className="py-20 md:py-28 lg:py-36 bg-white border-t border-neutral-100"
     >
       <Container className="animate-fade-in">
         {/* Section Header */}
@@ -48,17 +48,17 @@ function ArtistsSection() {
                 radius="xl"
                 bordered
                 hover
-                className="flex flex-col gap-5 text-center items-center bg-neutral-900/50"
+                className="flex flex-col gap-5 text-center items-center bg-neutral-50"
               >
                 {Icon && (
-                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary-950 border border-primary-800 text-primary-400">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary-50 border border-primary-100 text-primary-600">
                     <Icon size={24} aria-hidden="true" />
                   </div>
                 )}
-                <h3 className="text-xl font-semibold font-heading text-neutral-100 leading-snug">
+                <h3 className="text-xl font-semibold font-heading text-neutral-900 leading-snug">
                   {category.title}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">
+                <p className="text-sm text-neutral-9000 leading-relaxed max-w-xs">
                   {category.description}
                 </p>
               </Card>

@@ -17,15 +17,15 @@ import Container from '../common/Container';
  */
 function LegalPageLayout({ title, lastUpdated, introduction, children }) {
   return (
-    <article className="py-16 md:py-24 bg-neutral-950 text-neutral-300">
+    <article className="py-16 md:py-24 bg-white text-neutral-600">
       <Container className="max-w-3xl">
         {/* Header */}
-        <header className="border-b border-neutral-800 pb-8 mb-10">
-          <h1 className="font-heading font-black text-4xl sm:text-5xl text-neutral-50 mb-3 tracking-tight">
+        <header className="border-b border-neutral-200/80 pb-8 mb-10">
+          <h1 className="font-heading font-black text-4xl sm:text-5xl text-neutral-900 mb-3 tracking-tight">
             {title}
           </h1>
           {lastUpdated && (
-            <p className="text-xs text-neutral-500 font-medium">
+            <p className="text-xs text-neutral-400 font-medium">
               Last Updated: {lastUpdated}
             </p>
           )}
@@ -34,7 +34,7 @@ function LegalPageLayout({ title, lastUpdated, introduction, children }) {
         {/* Content */}
         <div className="flex flex-col gap-8">
           {introduction && (
-            <p className="text-base sm:text-lg text-neutral-400 leading-relaxed font-medium">
+            <p className="text-base sm:text-lg text-neutral-500 leading-relaxed font-medium">
               {introduction}
             </p>
           )}

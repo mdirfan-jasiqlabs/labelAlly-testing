@@ -29,7 +29,7 @@ function Card({
   className = '',
   ...props
 }) {
-  // Padding map
+  // Padding map (responsive)
   const paddingMap = {
     none: '',
     sm:   'p-3 sm:p-4',
@@ -53,18 +53,18 @@ function Card({
     <Tag
       className={[
         // Base
-        'relative bg-neutral-900 animate-fade-in',
+        'relative bg-white animate-fade-in shadow-sm',
         radiusClass,
         paddingClass,
 
         // Border
-        bordered ? 'border border-neutral-800' : '',
+        bordered ? 'border border-neutral-200/80' : '',
 
         // Hover
         hover ? [
           'transition-all duration-300 ease-out',
           'hover:-translate-y-1 hover:scale-[1.01]',
-          'hover:border-neutral-700',
+          'hover:border-neutral-300',
           'hover:shadow-card-hover',
         ].join(' ') : '',
 

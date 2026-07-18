@@ -38,7 +38,7 @@ function AboutSection() {
   return (
     <section
       aria-labelledby="about-section-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-950"
+      className="py-20 md:py-28 lg:py-36 bg-white"
     >
       <Container className="animate-fade-in">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -55,7 +55,7 @@ function AboutSection() {
 
             {/* Supporting paragraph */}
             {about.supporting && (
-              <p className="text-base text-neutral-500 leading-relaxed">
+              <p className="text-base text-neutral-9000 leading-relaxed">
                 {about.supporting}
               </p>
             )}
@@ -97,22 +97,22 @@ function AboutSection() {
                     {IconComponent && (
                       <div
                         aria-hidden="true"
-                        className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-950 border border-primary-800"
+                        className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-50 border border-primary-100"
                       >
                         <IconComponent
                           size={20}
-                          className="text-primary-400"
+                          className="text-primary-600"
                         />
                       </div>
                     )}
 
                     {/* Title */}
-                    <h3 className="text-base font-semibold font-heading text-neutral-100 leading-snug">
+                    <h3 className="text-base font-semibold font-heading text-neutral-900 leading-snug">
                       {value.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-neutral-500 leading-relaxed">
+                    <p className="text-sm text-neutral-9000 leading-relaxed">
                       {value.description}
                     </p>
                   </Card>

@@ -36,13 +36,13 @@ function HeroSection() {
       {/* ── Decorative top-right glow ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] -translate-y-1/3 translate-x-1/3 rounded-full bg-primary-900/30 blur-3xl animate-pulse-slow"
+        className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] -translate-y-1/3 translate-x-1/3 rounded-full bg-primary-200/40 blur-3xl animate-pulse-slow"
       />
 
       {/* ── Decorative bottom-left glow ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-950/40 blur-3xl animate-pulse-slow"
+        className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-100/50 blur-3xl animate-pulse-slow"
       />
 
       <Container className="relative z-10 py-24 md:py-32 lg:py-40 animate-fade-up">
@@ -63,7 +63,7 @@ function HeroSection() {
                 'font-heading font-black tracking-tight',
                 'text-4xl sm:text-6xl md:text-7xl lg:text-8xl',
                 'leading-none',
-                'text-neutral-50',
+                'text-neutral-900',
               ].join(' ')}
             >
               {/* Plain part */}
@@ -82,7 +82,7 @@ function HeroSection() {
               'mt-8',
               'max-w-2xl mx-auto',
               'text-base sm:text-lg md:text-xl',
-              'text-neutral-400',
+              'text-neutral-600',
               'leading-relaxed',
             ].join(' ')}
           >
@@ -129,7 +129,7 @@ function HeroSection() {
       {/* ── Bottom fade into page ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"
       />
     </GradientBackground>
   );

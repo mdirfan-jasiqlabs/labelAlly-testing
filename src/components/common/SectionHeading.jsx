@@ -56,7 +56,7 @@ function SectionHeading({
         className={[
           'font-heading font-bold tracking-tight',
           'text-3xl sm:text-4xl lg:text-5xl',
-          'text-neutral-50',
+          'text-neutral-900',
           'leading-tight',
         ].join(' ')}
       >
@@ -67,7 +67,7 @@ function SectionHeading({
       {description && (
         <p
           className={[
-            'text-neutral-400',
+            'text-neutral-600',
             'text-base sm:text-lg',
             'leading-relaxed',
             descMaxWidth,

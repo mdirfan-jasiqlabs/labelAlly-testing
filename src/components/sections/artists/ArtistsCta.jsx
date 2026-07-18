@@ -19,7 +19,7 @@ function ArtistsCta() {
     <GradientBackground
       as="section"
       variant="subtle"
-      className="py-16 md:py-24 border-t border-neutral-900 overflow-hidden relative"
+      className="py-16 md:py-24 border-t border-neutral-100 overflow-hidden relative"
     >
       <Container>
         <GlowEffect color="primary" intensity="md" className="max-w-4xl mx-auto">
@@ -28,12 +28,12 @@ function ArtistsCta() {
             radius="2xl"
             bordered
             hover={false}
-            className="flex flex-col items-center text-center gap-6 bg-neutral-900/60 border border-neutral-800 py-12 px-6 sm:px-12 md:py-16 relative z-10"
+            className="flex flex-col items-center text-center gap-6 bg-neutral-50/50 border border-neutral-200/80 py-12 px-6 sm:px-12 md:py-16 relative z-10"
           >
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-neutral-50 leading-tight max-w-xl">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight max-w-xl">
               {cta.heading}
             </h2>
-            <p className="text-sm sm:text-base text-neutral-400 max-w-md leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-600 max-w-md leading-relaxed">
               {cta.description}
             </p>
             <div className="mt-2 w-full sm:w-auto">

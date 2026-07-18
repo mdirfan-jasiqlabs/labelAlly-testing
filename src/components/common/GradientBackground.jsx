@@ -23,11 +23,11 @@ function GradientBackground({
     // Deep midnight hero gradient (primary brand)
     hero: 'bg-gradient-hero',
 
-    // Pure dark — near-black, no gradient
-    dark: 'bg-neutral-950',
+    // Pure dark — now pure light/white
+    dark: 'bg-white',
 
-    // Subtle surface gradient — slightly lighter dark
-    subtle: 'bg-gradient-to-b from-neutral-900 to-neutral-950',
+    // Subtle surface gradient — slightly lighter light/off-white
+    subtle: 'bg-gradient-to-b from-neutral-50 to-white',
 
     // Accent gradient — gold/amber (use sparingly)
     accent: 'bg-gradient-accent',

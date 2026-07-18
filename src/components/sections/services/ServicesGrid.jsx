@@ -24,7 +24,7 @@ function ServicesGrid() {
   return (
     <section
       aria-labelledby="services-list-heading"
-      className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900"
+      className="py-16 md:py-24 bg-white border-t border-neutral-100"
     >
       <Container>
         <SectionHeading
@@ -45,17 +45,17 @@ function ServicesGrid() {
                 radius="xl"
                 bordered
                 hover
-                className="flex flex-col gap-5 bg-neutral-900/30"
+                className="flex flex-col gap-5 bg-neutral-50/50"
               >
                 {Icon && (
-                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-950 border border-primary-800 text-primary-400">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-50 border border-primary-100 text-primary-600">
                     <Icon size={22} aria-hidden="true" />
                   </div>
                 )}
-                <h3 className="text-xl font-bold font-heading text-neutral-100">
+                <h3 className="text-xl font-bold font-heading text-neutral-900">
                   {service.title}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">
+                <p className="text-sm text-neutral-600 leading-relaxed">
                   {service.description}
                 </p>
               </Card>

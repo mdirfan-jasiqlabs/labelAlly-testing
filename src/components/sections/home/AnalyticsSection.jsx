@@ -23,7 +23,7 @@ function AnalyticsSection() {
   return (
     <section
       aria-labelledby="analytics-section-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-950 border-t border-neutral-900"
+      className="py-20 md:py-28 lg:py-36 bg-white border-t border-neutral-100"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -38,7 +38,7 @@ function AnalyticsSection() {
               align="left"
             />
             {analytics.supportingNote && (
-              <p className="text-sm text-neutral-500 italic">
+              <p className="text-sm text-neutral-9000 italic">
                 {analytics.supportingNote}
               </p>
             )}
@@ -69,18 +69,18 @@ function AnalyticsSection() {
                   radius="lg"
                   bordered
                   hover
-                  className="flex items-start gap-4 bg-neutral-900/40"
+                  className="flex items-start gap-4 bg-white"
                 >
                   {Icon && (
-                    <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-primary-950 border border-primary-800 text-primary-400">
+                    <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-primary-50 border border-primary-100 text-primary-600">
                       <Icon size={20} aria-hidden="true" />
                     </div>
                   )}
                   <div>
-                    <h3 className="text-base font-semibold font-heading text-neutral-100 mb-1">
+                    <h3 className="text-base font-semibold font-heading text-neutral-900 mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed">
+                    <p className="text-sm text-neutral-9000 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

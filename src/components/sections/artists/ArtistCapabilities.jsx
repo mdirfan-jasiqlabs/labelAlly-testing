@@ -21,7 +21,7 @@ function ArtistCapabilities() {
   return (
     <section
       aria-labelledby="capabilities-heading"
-      className="py-16 md:py-24 bg-neutral-900/10 border-t border-neutral-900"
+      className="py-16 md:py-24 bg-neutral-50/60 border-t border-neutral-100"
     >
       <Container>
         <SectionHeading
@@ -42,17 +42,17 @@ function ArtistCapabilities() {
                 radius="xl"
                 bordered
                 hover
-                className="flex flex-col gap-4 bg-neutral-950/40"
+                className="flex flex-col gap-4 bg-white/40"
               >
                 {Icon && (
-                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-950 border border-primary-800 text-primary-400">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-50 border border-primary-100 text-primary-600">
                     <Icon size={20} aria-hidden="true" />
                   </div>
                 )}
-                <h3 className="text-lg font-semibold font-heading text-neutral-100">
+                <h3 className="text-lg font-semibold font-heading text-neutral-900">
                   {item.title}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">
+                <p className="text-sm text-neutral-9000 leading-relaxed">
                   {item.description}
                 </p>
               </Card>

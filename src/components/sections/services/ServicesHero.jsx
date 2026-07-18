@@ -32,14 +32,14 @@ function ServicesHero() {
           <GlowEffect color="primary" intensity="md" className="w-full">
             <h1
               id="services-hero-title"
-              className="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-neutral-50 tracking-tight leading-none mb-6"
+              className="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-neutral-900 tracking-tight leading-none mb-6"
             >
               {hero.title}
             </h1>
           </GlowEffect>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-600 max-w-2xl leading-relaxed">
             {hero.description}
           </p>
         </div>

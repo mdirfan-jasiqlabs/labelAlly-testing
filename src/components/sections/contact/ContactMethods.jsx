@@ -48,7 +48,7 @@ function ContactMethods() {
   return (
     <section
       aria-labelledby="methods-heading"
-      className="py-16 md:py-24 bg-neutral-950 border-t border-neutral-900"
+      className="py-16 md:py-24 bg-white border-t border-neutral-100"
     >
       <Container>
         <SectionHeading
@@ -72,23 +72,23 @@ function ContactMethods() {
                   radius="xl"
                   bordered
                   hover={isLink}
-                  className="flex flex-col gap-4 bg-neutral-900/30 text-center items-center"
+                  className="flex flex-col gap-4 bg-neutral-50/60 text-center items-center"
                 >
-                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-950 border border-primary-800 text-primary-400">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-50 border border-primary-100 text-primary-600">
                     <Icon size={20} aria-hidden="true" />
                   </div>
-                  <h3 className="text-base font-semibold font-heading text-neutral-400">
+                  <h3 className="text-base font-semibold font-heading text-neutral-600">
                     {item.title}
                   </h3>
                   {isLink ? (
                     <a
                       href={item.href}
-                      className="text-sm font-semibold text-neutral-100 hover:text-accent-400 transition-colors duration-250 break-all focus-ring rounded px-1 py-0.5"
+                      className="text-sm font-semibold text-neutral-900 hover:text-accent-600 transition-colors duration-250 break-all focus-ring rounded px-1 py-0.5"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-sm font-semibold text-neutral-100 break-words max-w-xs">
+                    <p className="text-sm font-semibold text-neutral-900 break-words max-w-xs">
                       {item.value}
                     </p>
                   )}
@@ -99,7 +99,7 @@ function ContactMethods() {
         ) : (
           <div className="max-w-md mx-auto text-center">
             <Card padding="md" radius="lg" bordered hover={false}>
-              <p className="text-sm text-neutral-500 italic">
+              <p className="text-sm text-neutral-9000 italic">
                 Direct contact methods will be available soon. Please use the messaging form below.
               </p>
             </Card>

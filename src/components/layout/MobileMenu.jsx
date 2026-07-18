@@ -13,10 +13,7 @@ import navData from '../../data/navigation.json';
  * - Closes on Escape key press
  * - Locks body scroll while open
  * - Fully accessible (aria-modal, aria-label, focus management)
- *
- * Props:
- * @param {boolean}  isOpen   — Controls visibility
- * @param {Function} onClose  — Called when menu should close
+ * - Converted to premium light theme
  */
 function MobileMenu({ isOpen, onClose }) {
   // ── Keyboard: close on Escape ─────────────────────────────────
@@ -52,7 +49,7 @@ function MobileMenu({ isOpen, onClose }) {
         aria-hidden="true"
         onClick={onClose}
         className={[
-          'fixed inset-0 bg-black/70 backdrop-blur-sm z-[190]',
+          'fixed inset-0 bg-white/40 backdrop-blur-sm z-[190]',
           'transition-opacity duration-300',
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
         ].join(' ')}
@@ -66,22 +63,22 @@ function MobileMenu({ isOpen, onClose }) {
         aria-label="Navigation menu"
         className={[
           'fixed top-0 right-0 bottom-0 w-full max-w-sm',
-          'bg-neutral-950 border-l border-neutral-800',
+          'bg-white border-l border-neutral-200/80',
           'flex flex-col z-[200]',
           'transition-transform duration-300 ease-out',
           isOpen ? 'translate-x-0' : 'translate-x-full',
         ].join(' ')}
       >
         {/* ── Panel Header ── */}
-        <div className="flex items-center justify-between px-6 h-[var(--header-height)] border-b border-neutral-800 shrink-0">
+        <div className="flex items-center justify-between px-6 h-[var(--header-height)] border-b border-neutral-200/80 shrink-0">
           {/* Logo text */}
           <Link
             to="/"
             onClick={onClose}
-            className="font-heading text-lg font-bold text-neutral-50 focus-ring rounded-md"
+            className="font-heading text-lg font-bold text-neutral-900 focus-ring rounded-md"
           >
             {navData.logo.text}{' '}
-            <span className="text-accent-400">{navData.logo.textHighlight}</span>
+            <span className="text-primary-600">{navData.logo.textHighlight}</span>
           </Link>
 
           {/* Close button */}
@@ -91,8 +88,8 @@ function MobileMenu({ isOpen, onClose }) {
             className={[
               'flex items-center justify-center',
               'w-10 h-10 rounded-lg',
-              'text-neutral-400 hover:text-neutral-50',
-              'hover:bg-neutral-800',
+              'text-neutral-9000 hover:text-neutral-800',
+              'hover:bg-neutral-100',
               'transition-colors duration-250',
               'focus-ring',
             ].join(' ')}
@@ -122,8 +119,8 @@ function MobileMenu({ isOpen, onClose }) {
                       'transition-all duration-250',
                       'focus-ring',
                       isActive
-                        ? 'bg-primary-950 text-accent-400 border border-primary-800'
-                        : 'text-neutral-300 hover:text-neutral-50 hover:bg-neutral-800',
+                        ? 'bg-primary-50 text-primary-600 border border-primary-100'
+                        : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100',
                     ].join(' ')
                   }
                 >
@@ -135,7 +132,7 @@ function MobileMenu({ isOpen, onClose }) {
         </nav>
 
         {/* ── CTA at bottom ── */}
-        <div className="px-6 py-6 border-t border-neutral-800 shrink-0">
+        <div className="px-6 py-6 border-t border-neutral-200/80 shrink-0">
           <Button
             as={Link}
             to={navData.mobile.cta.href}

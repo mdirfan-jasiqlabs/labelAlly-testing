@@ -20,6 +20,7 @@ function SEO({
   const defaultDescription =
     'LabelAlly Entertainment provides music distribution, YouTube channel management, content rights management, YouTube CMS, Content ID, OTT distribution, and revenue optimization services.';
   const defaultUrl = 'https://label-ally-testing.vercel.app';
+const defaultImage = `${defaultUrl}/default-og.png`;
   
   const pageTitle = title ? `${title} | LabelAlly Entertainment` : defaultTitle;
   const pageDescription = description || defaultDescription;
@@ -42,13 +43,13 @@ function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:site_name" content="LabelAlly Entertainment" />
-      {image && <meta property="og:image" content={image} />}
+      <meta property="og:image" content={image || defaultImage} />
 
       {/* Twitter Cards Metadata */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title ? pageTitle : defaultTitle} />
       <meta name="twitter:description" content={pageDescription} />
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image" content={image || defaultImage} />
     </Helmet>
   );
 }

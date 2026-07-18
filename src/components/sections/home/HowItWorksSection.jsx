@@ -29,14 +29,14 @@ function HowItWorksSection() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-950 relative overflow-hidden"
+      className="py-20 md:py-28 lg:py-36 bg-white relative overflow-hidden"
     >
       {/* ── Decorative background glow ── */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
-        <div className="w-[800px] h-[400px] rounded-full bg-primary-950/40 blur-3xl" />
+        <div className="w-[800px] h-[400px] rounded-full bg-primary-50/40 blur-3xl" />
       </div>
 
       <Container className="relative z-10">
@@ -80,26 +80,26 @@ function HowItWorksSection() {
                       'w-10 h-10 shrink-0',
                       'rounded-full',
                       'border-2 border-primary-700',
-                      'bg-primary-950',
-                      'text-primary-400 font-heading font-bold text-sm',
+                      'bg-primary-50',
+                      'text-primary-600 font-heading font-bold text-sm',
                     ].join(' ')}
                   >
                     {step.number}
                   </div>
 
                   {/* ── Title ── */}
-                  <h3 className="text-base font-semibold font-heading text-neutral-100 leading-snug lg:hidden">
+                  <h3 className="text-base font-semibold font-heading text-neutral-900 leading-snug lg:hidden">
                     {step.title}
                   </h3>
                 </div>
 
                 {/* ── Title (desktop) ── */}
-                <h3 className="hidden lg:block text-base font-semibold font-heading text-neutral-100 leading-snug">
+                <h3 className="hidden lg:block text-base font-semibold font-heading text-neutral-900 leading-snug">
                   {step.title}
                 </h3>
 
                 {/* ── Description ── */}
-                <p className="text-sm text-neutral-500 leading-relaxed">
+                <p className="text-sm text-neutral-9000 leading-relaxed">
                   {step.description}
                 </p>
               </li>

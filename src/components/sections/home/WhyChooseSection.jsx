@@ -25,7 +25,7 @@ function WhyChooseSection() {
   return (
     <section
       aria-labelledby="why-choose-heading"
-      className="py-20 md:py-28 lg:py-36 bg-neutral-900/10 border-t border-neutral-900"
+      className="py-20 md:py-28 lg:py-36 bg-neutral-50/60 border-t border-neutral-100"
     >
       <Container>
         {/* Section Header */}
@@ -49,17 +49,17 @@ function WhyChooseSection() {
                 radius="xl"
                 bordered
                 hover
-                className="flex flex-col gap-4 bg-neutral-950/40"
+                className="flex flex-col gap-4 bg-white/40"
               >
                 {Icon && (
-                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-accent-950 border border-accent-900/30 text-accent-400">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-accent-50 border border-accent-200/30 text-accent-600">
                     <Icon size={20} aria-hidden="true" />
                   </div>
                 )}
-                <h3 className="text-lg font-semibold font-heading text-neutral-100 leading-snug">
+                <h3 className="text-lg font-semibold font-heading text-neutral-900 leading-snug">
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">
+                <p className="text-sm text-neutral-9000 leading-relaxed">
                   {benefit.description}
                 </p>
               </Card>

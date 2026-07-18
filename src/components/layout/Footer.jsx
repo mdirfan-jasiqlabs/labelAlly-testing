@@ -13,7 +13,6 @@ import footerData from '../../data/footer.json';
 
 /**
  * Maps the icon string from footer.json to the Lucide component.
- * Only icons used in footer.json are mapped — no over-engineering.
  */
 const SOCIAL_ICON_MAP = {
   AtSign,
@@ -24,23 +23,8 @@ const SOCIAL_ICON_MAP = {
 };
 
 /**
- * Footer — Complete production footer.
- *
- * Features:
- * - Company branding + description
- * - Multi-column navigation from footer.json
- * - Contact details (email, phone, address) from footer.json
- * - Social links with icons from footer.json
- * - Bottom bar: copyright + legal links
- *
+ * Footer — Converted to premium light theme.
  * Content source: src/data/footer.json
- *
- * Semantics:
- * - <footer> landmark
- * - <nav> for navigation groups
- * - <address> for contact information
- * - React Router <Link> for internal routes
- * - <a> with target="_blank" rel="noopener noreferrer" for external links
  */
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -49,11 +33,9 @@ function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site footer"
-      className="w-full bg-neutral-950 border-t border-neutral-800"
+      className="w-full bg-neutral-50 border-t border-neutral-200/80 text-neutral-600"
     >
-      {/* ═══════════════════════════════════════════════════════
-          MAIN FOOTER BODY
-      ═══════════════════════════════════════════════════════ */}
+      {/* ── Main Footer Body ── */}
       <div className="section-container py-16 lg:py-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
 
@@ -65,16 +47,16 @@ function Footer() {
               aria-label="LabelAlly Entertainment — Go to homepage"
               className="inline-flex items-center gap-1 focus-ring rounded-md w-fit"
             >
-              <span className="font-heading text-xl font-bold text-neutral-50">
+              <span className="font-heading text-xl font-bold text-neutral-900">
                 {footerData.company.name}
               </span>
-              <span className="font-heading text-xl font-bold text-accent-400">
+              <span className="font-heading text-xl font-bold text-primary-600">
                 {footerData.company.nameHighlight}
               </span>
             </Link>
 
             {/* Description */}
-            <p className="text-sm text-neutral-400 leading-relaxed max-w-xs">
+            <p className="text-sm text-neutral-9000 leading-relaxed max-w-xs">
               {footerData.company.description}
             </p>
 
@@ -82,7 +64,6 @@ function Footer() {
             <div className="flex items-center gap-3 flex-wrap">
               {footerData.social.map((item) => {
                 const IconComponent = SOCIAL_ICON_MAP[item.icon];
-                // Only render if href is set and icon exists
                 if (!item.href || !IconComponent) return null;
 
                 return (
@@ -95,9 +76,9 @@ function Footer() {
                     className={[
                       'flex items-center justify-center',
                       'w-9 h-9 rounded-lg',
-                      'bg-neutral-800 hover:bg-neutral-700',
-                      'text-neutral-400 hover:text-neutral-50',
-                      'border border-neutral-700 hover:border-neutral-600',
+                      'bg-white hover:bg-neutral-100',
+                      'text-neutral-9000 hover:text-neutral-900',
+                      'border border-neutral-200 hover:border-neutral-300',
                       'transition-all duration-250',
                       'focus-ring',
                     ].join(' ')}
@@ -121,7 +102,7 @@ function Footer() {
               aria-label={`${group.heading} navigation`}
               className="flex flex-col gap-4"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+              <p className="text-xs font-bold uppercase tracking-widest text-neutral-600">
                 {group.heading}
               </p>
               <ul role="list" className="flex flex-col gap-2.5">
@@ -129,7 +110,7 @@ function Footer() {
                   <li key={link.id}>
                     <Link
                       to={link.href}
-                      className="text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded"
+                      className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-250 focus-ring rounded"
                     >
                       {link.label}
                     </Link>
@@ -141,7 +122,7 @@ function Footer() {
 
           {/* ── Contact Column ── */}
           <div className="flex flex-col gap-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
+            <p className="text-xs font-bold uppercase tracking-widest text-neutral-600">
               {footerData.contact.heading}
             </p>
             <address className="not-italic flex flex-col gap-3">
@@ -149,12 +130,12 @@ function Footer() {
               {footerData.contact.email && (
                 <a
                   href={`mailto:${footerData.contact.email}`}
-                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group break-all"
+                  className="flex items-start gap-2.5 text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-250 focus-ring rounded group break-all"
                 >
                   <Mail
                     size={15}
                     aria-hidden="true"
-                    className="shrink-0 mt-0.5 text-neutral-600 group-hover:text-accent-400 transition-colors duration-250"
+                    className="shrink-0 mt-0.5 text-neutral-600 group-hover:text-primary-600 transition-colors duration-250"
                   />
                   <span>{footerData.contact.email}</span>
                 </a>
@@ -164,12 +145,12 @@ function Footer() {
               {footerData.contact.phone && (
                 <a
                   href={`tel:${footerData.contact.phone}`}
-                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group break-words"
+                  className="flex items-start gap-2.5 text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-250 focus-ring rounded group break-words"
                 >
                   <Phone
                     size={15}
                     aria-hidden="true"
-                    className="shrink-0 mt-0.5 text-neutral-600 group-hover:text-accent-400 transition-colors duration-250"
+                    className="shrink-0 mt-0.5 text-neutral-600 group-hover:text-primary-600 transition-colors duration-250"
                   />
                   <span>{footerData.contact.phone}</span>
                 </a>
@@ -177,7 +158,7 @@ function Footer() {
 
               {/* Address */}
               {footerData.contact.address && (
-                <p className="flex items-start gap-2.5 text-sm text-neutral-400 break-words">
+                <p className="flex items-start gap-2.5 text-sm text-neutral-600 break-words">
                   <MapPin
                     size={15}
                     aria-hidden="true"
@@ -201,10 +182,8 @@ function Footer() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════
-          BOTTOM BAR
-      ═══════════════════════════════════════════════════════ */}
-      <div className="border-t border-neutral-800">
+      {/* ── Bottom Bar ── */}
+      <div className="border-t border-neutral-200/80">
         <div className="section-container py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             {/* Copyright */}
@@ -216,14 +195,14 @@ function Footer() {
             <nav aria-label="Legal navigation" className="flex items-center gap-4 flex-wrap justify-center">
               <Link
                 to={footerData.bottom.privacyLink.href}
-                className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-250 focus-ring rounded"
+                className="text-xs text-neutral-600 hover:text-neutral-600 transition-colors duration-250 focus-ring rounded"
               >
                 {footerData.bottom.privacyLink.label}
               </Link>
-              <span className="text-neutral-800" aria-hidden="true">·</span>
+              <span className="text-neutral-200" aria-hidden="true">·</span>
               <Link
                 to={footerData.bottom.termsLink.href}
-                className="text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-250 focus-ring rounded"
+                className="text-xs text-neutral-600 hover:text-neutral-600 transition-colors duration-250 focus-ring rounded"
               >
                 {footerData.bottom.termsLink.label}
               </Link>
