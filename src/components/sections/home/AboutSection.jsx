@@ -55,7 +55,7 @@ function AboutSection() {
 
             {/* Supporting paragraph */}
             {about.supporting && (
-              <p className="text-base text-neutral-9000 leading-relaxed">
+              <p className="text-base text-neutral-900 leading-relaxed">
                 {about.supporting}
               </p>
             )}
@@ -112,7 +112,7 @@ function AboutSection() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-neutral-9000 leading-relaxed">
+                    <p className="text-sm text-neutral-900 leading-relaxed">
                       {value.description}
                     </p>
                   </Card>

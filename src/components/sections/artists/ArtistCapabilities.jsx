@@ -52,7 +52,7 @@ function ArtistCapabilities() {
                 <h3 className="text-lg font-semibold font-heading text-neutral-900">
                   {item.title}
                 </h3>
-                <p className="text-sm text-neutral-9000 leading-relaxed">
+                <p className="text-sm text-neutral-900 leading-relaxed">
                   {item.description}
                 </p>
               </Card>

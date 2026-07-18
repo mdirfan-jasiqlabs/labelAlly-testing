@@ -82,7 +82,7 @@ function FinalCtaSection() {
 
             {/* Contact Note */}
             {finalCta.contactNote && (
-              <p className="text-xs text-neutral-9000 mt-2">
+              <p className="text-xs text-neutral-900 mt-2">
                 {finalCta.contactNote}
               </p>
             )}

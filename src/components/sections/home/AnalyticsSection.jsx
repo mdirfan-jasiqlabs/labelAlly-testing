@@ -38,7 +38,7 @@ function AnalyticsSection() {
               align="left"
             />
             {analytics.supportingNote && (
-              <p className="text-sm text-neutral-9000 italic">
+              <p className="text-sm text-neutral-900 italic">
                 {analytics.supportingNote}
               </p>
             )}
@@ -80,7 +80,7 @@ function AnalyticsSection() {
                     <h3 className="text-base font-semibold font-heading text-neutral-900 mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-neutral-9000 leading-relaxed">
+                    <p className="text-sm text-neutral-900 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

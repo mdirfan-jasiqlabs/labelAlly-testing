@@ -27,7 +27,7 @@ function PlatformStrip() {
 
         {/* ── Heading ── */}
         <div className="text-center mb-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-9000 mb-2">
+          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-900 mb-2">
             {platformStrip.heading}
           </p>
           {platformStrip.subheading && (
@@ -50,8 +50,8 @@ function PlatformStrip() {
                   'inline-flex items-center',
                   'px-5 py-2.5',
                   'rounded-full',
-                  'bg-neutral-800/70 border border-neutral-300/60',
-                  'text-sm font-medium text-neutral-600',
+                  'bg-white border border-neutral-200 hover:border-primary-200 hover:bg-primary-50',
+                  'text-sm font-medium text-neutral-600 hover:text-primary-600',
                   'whitespace-nowrap',
                   'select-none',
                 ].join(' ')}

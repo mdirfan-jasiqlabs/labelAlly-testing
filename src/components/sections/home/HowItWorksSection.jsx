@@ -99,7 +99,7 @@ function HowItWorksSection() {
                 </h3>
 
                 {/* ── Description ── */}
-                <p className="text-sm text-neutral-9000 leading-relaxed">
+                <p className="text-sm text-neutral-900 leading-relaxed">
                   {step.description}
                 </p>
               </li>

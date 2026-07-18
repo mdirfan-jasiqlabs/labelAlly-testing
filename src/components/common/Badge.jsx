@@ -15,10 +15,10 @@ function Badge({ children, variant = 'primary', className = '', ...props }) {
       'border border-primary-100',
     ].join(' '),
 
-    // Filled secondary — neutral dark
+    // Filled secondary — neutral light
     secondary: [
-      'bg-neutral-800 text-neutral-600',
-      'border border-neutral-300',
+      'bg-neutral-100 text-neutral-600',
+      'border border-neutral-200',
     ].join(' '),
 
     // Outline — transparent with accent border

@@ -59,7 +59,7 @@ function WhyChooseSection() {
                 <h3 className="text-lg font-semibold font-heading text-neutral-900 leading-snug">
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-neutral-9000 leading-relaxed">
+                <p className="text-sm text-neutral-900 leading-relaxed">
                   {benefit.description}
                 </p>
               </Card>

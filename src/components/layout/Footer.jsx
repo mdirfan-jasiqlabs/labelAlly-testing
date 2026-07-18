@@ -56,7 +56,7 @@ function Footer() {
             </Link>
 
             {/* Description */}
-            <p className="text-sm text-neutral-9000 leading-relaxed max-w-xs">
+            <p className="text-sm text-neutral-900 leading-relaxed max-w-xs">
               {footerData.company.description}
             </p>
 
@@ -77,7 +77,7 @@ function Footer() {
                       'flex items-center justify-center',
                       'w-9 h-9 rounded-lg',
                       'bg-white hover:bg-neutral-100',
-                      'text-neutral-9000 hover:text-neutral-900',
+                      'text-neutral-900 hover:text-neutral-900',
                       'border border-neutral-200 hover:border-neutral-300',
                       'transition-all duration-250',
                       'focus-ring',

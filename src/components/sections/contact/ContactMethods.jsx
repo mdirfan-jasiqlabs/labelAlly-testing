@@ -99,7 +99,7 @@ function ContactMethods() {
         ) : (
           <div className="max-w-md mx-auto text-center">
             <Card padding="md" radius="lg" bordered hover={false}>
-              <p className="text-sm text-neutral-9000 italic">
+              <p className="text-sm text-neutral-900 italic">
                 Direct contact methods will be available soon. Please use the messaging form below.
               </p>
             </Card>

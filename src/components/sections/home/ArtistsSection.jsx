@@ -58,7 +58,7 @@ function ArtistsSection() {
                 <h3 className="text-xl font-semibold font-heading text-neutral-900 leading-snug">
                   {category.title}
                 </h3>
-                <p className="text-sm text-neutral-9000 leading-relaxed max-w-xs">
+                <p className="text-sm text-neutral-900 leading-relaxed max-w-xs">
                   {category.description}
                 </p>
               </Card>

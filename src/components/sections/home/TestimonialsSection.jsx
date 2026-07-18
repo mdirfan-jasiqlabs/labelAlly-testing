@@ -61,7 +61,7 @@ function TestimonialsSection() {
                     <cite className="not-italic block text-sm font-semibold text-neutral-900">
                       {item.name}
                     </cite>
-                    <span className="text-xs text-neutral-9000">
+                    <span className="text-xs text-neutral-900">
                       {item.role} {item.company ? `at ${item.company}` : ''}
                     </span>
                   </div>
@@ -88,7 +88,7 @@ function TestimonialsSection() {
                 <h3 className="text-lg font-semibold font-heading text-neutral-900">
                   Build Your Success Story With Us
                 </h3>
-                <p className="text-sm text-neutral-9000 leading-relaxed max-w-md mx-auto">
+                <p className="text-sm text-neutral-900 leading-relaxed max-w-md mx-auto">
                   We work closely with independent labels, artists, and brands to maximize catalog value. Get in touch to discuss how we can grow together.
                 </p>
               </div>

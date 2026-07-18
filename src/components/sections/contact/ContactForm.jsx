@@ -101,7 +101,7 @@ function ContactForm() {
                 <h3 className="text-xl font-bold font-heading text-neutral-900">
                   {form.status.success.heading}
                 </h3>
-                <p className="text-sm text-neutral-9000 max-w-sm leading-relaxed">
+                <p className="text-sm text-neutral-900 max-w-sm leading-relaxed">
                   {form.status.success.message}
                 </p>
               </div>
@@ -316,7 +316,7 @@ function ContactForm() {
                     ].join(' ')}
                     {...register('consent')}
                   />
-                  <label htmlFor="form-consent" className="text-xs text-neutral-9000 leading-normal select-none cursor-pointer">
+                  <label htmlFor="form-consent" className="text-xs text-neutral-900 leading-normal select-none cursor-pointer">
                     I agree that LabelAlly Entertainment may use my submitted information to contact me regarding this enquiry. Read our{' '}
                     <Link
                       to="/privacy-policy"

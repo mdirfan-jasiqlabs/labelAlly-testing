@@ -1,7 +1,8 @@
 {
   "logo": {
-    "text": "LabelAlly",
-    "textHighlight": "Entertainment",
+    "text": "Label",
+    "textHighlight": "Ally",
+    "subtext": "Entertainment",
     "ariaLabel": "LabelAlly Entertainment — Go to homepage"
   },
   "links": [
@@ -12,7 +13,7 @@
     },
     {
       "id": "about",
-      "label": "About",
+      "label": "About Us",
       "href": "/about"
     },
     {
@@ -22,27 +23,32 @@
     },
     {
       "id": "artists-labels-partners",
-      "label": "Artists & Partners",
+      "label": "Artists & Labels",
       "href": "/artists-labels-partners"
     },
     {
       "id": "contact",
-      "label": "Contact",
+      "label": "Contact Us",
       "href": "/contact"
     }
   ],
+  "phone": {
+    "label": "+91 99999 99999",
+    "href": "tel:+919999999999",
+    "ariaLabel": "Call LabelAlly Entertainment"
+  },
   "cta": {
-    "label": "Get Started",
+    "label": "Get in Touch",
     "href": "/contact",
-    "ariaLabel": "Get started — contact LabelAlly Entertainment"
+    "ariaLabel": "Get in touch — contact LabelAlly Entertainment"
   },
   "mobile": {
     "openLabel": "Open navigation menu",
     "closeLabel": "Close navigation menu",
     "cta": {
-      "label": "Get Started",
+      "label": "Get in Touch",
       "href": "/contact",
-      "ariaLabel": "Get started — contact LabelAlly Entertainment"
+      "ariaLabel": "Get in touch — contact LabelAlly Entertainment"
     }
   }
 }

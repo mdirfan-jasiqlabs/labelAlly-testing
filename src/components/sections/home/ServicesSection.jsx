@@ -101,7 +101,7 @@ function ServicesSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="flex-1 text-sm text-neutral-9000 leading-relaxed">
+                <p className="flex-1 text-sm text-neutral-900 leading-relaxed">
                   {service.description}
                 </p>
 
