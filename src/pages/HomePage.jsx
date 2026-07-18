@@ -1,27 +1,29 @@
 import HeroSection         from '../components/sections/home/HeroSection';
 import PlatformStrip       from '../components/sections/home/PlatformStrip';
 import AboutSection        from '../components/sections/home/AboutSection';
+import ServicesSection     from '../components/sections/home/ServicesSection';
+import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 
 /**
  * HomePage — Route: /
  *
- * Phase 4 Part 2: Renders Hero + Platform Strip + About.
- * Services and How It Works will be added in Part 3.
+ * Phase 4 Complete: All five homepage sections in final order.
+ *
+ * Section order:
+ * 1. HeroSection        — above-the-fold hero
+ * 2. PlatformStrip      — distribution platform names
+ * 3. AboutSection       — company intro + 4 service value cards
+ * 4. ServicesSection    — 6 services card grid
+ * 5. HowItWorksSection  — 4-step process + CTA
  */
 function HomePage() {
   return (
     <main aria-label="LabelAlly Entertainment homepage">
-      {/* ── Hero ── Phase 4 Part 1 */}
       <HeroSection />
-
-      {/* ── Platform Strip ── Phase 4 Part 2 */}
       <PlatformStrip />
-
-      {/* ── About ── Phase 4 Part 2 */}
       <AboutSection />
-
-      {/* ── Services     — Phase 4 Part 3 */}
-      {/* ── How It Works — Phase 4 Part 3 */}
+      <ServicesSection />
+      <HowItWorksSection />
     </main>
   );
 }
