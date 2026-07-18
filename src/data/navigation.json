@@ -1,0 +1,48 @@
+{
+  "logo": {
+    "text": "LabelAlly",
+    "textHighlight": "Entertainment",
+    "ariaLabel": "LabelAlly Entertainment — Go to homepage"
+  },
+  "links": [
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "id": "artists-labels-partners",
+      "label": "Artists & Partners",
+      "href": "/artists-labels-partners"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "cta": {
+    "label": "Get Started",
+    "href": "/contact",
+    "ariaLabel": "Get started — contact LabelAlly Entertainment"
+  },
+  "mobile": {
+    "openLabel": "Open navigation menu",
+    "closeLabel": "Close navigation menu",
+    "cta": {
+      "label": "Get Started",
+      "href": "/contact",
+      "ariaLabel": "Get started — contact LabelAlly Entertainment"
+    }
+  }
+}

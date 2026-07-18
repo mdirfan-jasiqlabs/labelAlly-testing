@@ -1,0 +1,94 @@
+{
+  "company": {
+    "name": "LabelAlly",
+    "nameHighlight": "Entertainment",
+    "description": "A full-service music industry partner providing distribution, marketing, sync licensing, and artist development services.",
+    "tagline": "Your Vision, Amplified."
+  },
+  "groups": [
+    {
+      "id": "company",
+      "heading": "Company",
+      "links": [
+        { "id": "home",    "label": "Home",  "href": "/" },
+        { "id": "about",   "label": "About", "href": "/about" }
+      ]
+    },
+    {
+      "id": "services",
+      "heading": "Services",
+      "links": [
+        { "id": "services", "label": "Our Services", "href": "/services" }
+      ]
+    },
+    {
+      "id": "partners",
+      "heading": "Partners",
+      "links": [
+        {
+          "id": "artists-labels-partners",
+          "label": "Artists & Partners",
+          "href": "/artists-labels-partners"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "heading": "Legal",
+      "links": [
+        { "id": "privacy-policy",      "label": "Privacy Policy",      "href": "/privacy-policy" },
+        { "id": "terms-and-conditions","label": "Terms & Conditions",  "href": "/terms-and-conditions" }
+      ]
+    }
+  ],
+  "contact": {
+    "heading": "Contact",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "businessHours": ""
+  },
+  "social": [
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "href": "",
+      "icon": "AtSign"
+    },
+    {
+      "id": "twitter",
+      "label": "Twitter / X",
+      "href": "",
+      "icon": "Send"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "href": "",
+      "icon": "Globe"
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "href": "",
+      "icon": "Share2"
+    },
+    {
+      "id": "spotify",
+      "label": "Spotify",
+      "href": "",
+      "icon": "Music"
+    }
+  ],
+  "bottom": {
+    "copyright": "LabelAlly Entertainment. All rights reserved.",
+    "privacyLink": {
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
+    },
+    "termsLink": {
+      "label": "Terms & Conditions",
+      "href": "/terms-and-conditions"
+    }
+  }
+}
