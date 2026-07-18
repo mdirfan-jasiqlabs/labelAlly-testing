@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "badge": "About Our Company",
+    "title": "Empowering Music Creators Worldwide",
+    "description": "LabelAlly Entertainment is a dedicated, full-service music industry partner. We support independent creators, record labels, and creative brands in optimizing their digital distribution, content rights, and marketing strategies."
+  },
+  "overview": {
+    "heading": "Our Story & Approach",
+    "paragraphs": [
+      "LabelAlly Entertainment was established to address a critical need in the modern music ecosystem: accessible, high-quality, and transparent business infrastructure for independent music professionals.",
+      "We believe that creators should maintain control over their work while having access to the same distribution networks, channel optimization strategies, and rights protection technologies as major corporate entities.",
+      "Our team brings together years of collective experience in digital licensing, platform management, and marketing to serve as an extension of your own operations."
+    ]
+  },
+  "missionVision": {
+    "mission": {
+      "title": "Our Mission",
+      "description": "To amplify the reach and value of independent music, providing artists and labels with transparent tools, distribution networks, and rights management solutions to sustain and grow their careers.",
+      "icon": "Target"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To foster a fair, transparent, and thriving global music ecosystem where creators of all scales can seamlessly monetize and protect their intellectual property without barriers.",
+      "icon": "Eye"
+    }
+  },
+  "coreValues": {
+    "heading": "Our Core Values",
+    "description": "The principles that guide our work, our partnerships, and our commitment to the independent music community.",
+    "items": [
+      {
+        "id": "transparency",
+        "title": "Transparency First",
+        "description": "We ensure clear reporting, direct communication, and zero hidden complexities in rights management and payments.",
+        "icon": "Compass"
+      },
+      {
+        "id": "independence",
+        "title": "Respecting Independence",
+        "description": "We believe creators should own their masters, maintain artistic control, and define their own career trajectories.",
+        "icon": "Heart"
+      },
+      {
+        "id": "integrity",
+        "title": "Rights Protection",
+        "description": "We utilize robust Content ID auditing and license enforcement to protect intellectual property from unauthorized monetization.",
+        "icon": "Shield"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Work With LabelAlly?",
+    "description": "Get in touch with us to discuss your catalog, distribution needs, or rights optimization requirements.",
+    "primaryCta": {
+      "label": "Get in Touch",
+      "href": "/contact",
+      "ariaLabel": "Get in touch — contact our team to collaborate"
+    }
+  }
+}

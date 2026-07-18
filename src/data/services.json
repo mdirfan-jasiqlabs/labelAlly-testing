@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "badge": "Our Services",
+    "title": "Comprehensive Music Industry Solutions",
+    "description": "We provide creators, labels, and brands with the technical infrastructure, distribution networks, and management expertise required to grow in today's digital landscape."
+  },
+  "list": {
+    "heading": "Professional Capabilities",
+    "description": "Explore our specialized services designed to protect your intellectual property, expand your reach, and optimize your catalog's revenue potential.",
+    "items": [
+      {
+        "id": "music-distribution",
+        "title": "Music Distribution",
+        "description": "Deliver your tracks, albums, and music videos directly to all major streaming platforms worldwide. We handle digital supply chain management, store onboarding, and automated metadata delivery.",
+        "icon": "Globe"
+      },
+      {
+        "id": "youtube-channel-management",
+        "title": "YouTube Channel Management",
+        "description": "Comprehensive channel administration including content upload schedules, metadata optimization, custom playlist creation, card/end-screen annotation, and direct fan engagement strategies.",
+        "icon": "PlayCircle"
+      },
+      {
+        "id": "content-rights-management",
+        "title": "Content Rights Management",
+        "description": "Protect your content on global platforms. We monitor, enforce, and manage digital licensing agreements to ensure your copyrights are protected from unauthorized use and monetization.",
+        "icon": "Shield"
+      },
+      {
+        "id": "youtube-cms-content-id",
+        "title": "YouTube CMS & Content ID",
+        "description": "Audit and claim royalties across user-generated content (UGC) on YouTube. We configure matching policies, manage standard assets, resolve ownership conflicts, and maximize Content ID revenue.",
+        "icon": "Fingerprint"
+      },
+      {
+        "id": "ott-distribution",
+        "title": "OTT Distribution",
+        "description": "Expand your reach onto over-the-top media platforms. We format and deliver video content to smart TV applications, streaming sticks, and digital television networks.",
+        "icon": "Tv"
+      },
+      {
+        "id": "revenue-optimization",
+        "title": "Revenue Optimization",
+        "description": "Audit and streamline multi-channel payouts. We resolve payout discrepancies, optimize digital streams reporting, and consolidate mechanicals, performance, and sync licensing collection.",
+        "icon": "TrendingUp"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Optimize Your Music?",
+    "description": "Partner with us today. Reach out to get started with distribution, channel management, or rights auditing.",
+    "primaryCta": {
+      "label": "Get in Touch",
+      "href": "/contact",
+      "ariaLabel": "Get in touch — contact our services onboarding team"
+    }
+  }
+}

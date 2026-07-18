@@ -1,17 +1,24 @@
+import AboutHero        from '../components/sections/about/AboutHero';
+import CompanyOverview from '../components/sections/about/CompanyOverview';
+import MissionVision   from '../components/sections/about/MissionVision';
+import CoreValues      from '../components/sections/about/CoreValues';
+import AboutCta        from '../components/sections/about/AboutCta';
+
 /**
  * AboutPage — Route: /about
  *
- * Phase 1: Placeholder only.
- * Full about page UI will be built in a future phase.
+ * Renders the full About page layout.
+ * Content is sourced from src/data/about.json.
  */
 function AboutPage() {
   return (
-    <section className="section-spacing section-container" aria-labelledby="about-heading">
-      <h1 id="about-heading" className="heading-display text-neutral-50">
-        About
-      </h1>
-      <p className="mt-4 text-neutral-400">Phase 1 placeholder — full UI coming in a future phase.</p>
-    </section>
+    <main aria-label="About LabelAlly Entertainment">
+      <AboutHero />
+      <CompanyOverview />
+      <MissionVision />
+      <CoreValues />
+      <AboutCta />
+    </main>
   );
 }
 

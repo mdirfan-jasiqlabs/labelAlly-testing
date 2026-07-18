@@ -1,17 +1,20 @@
+import ServicesHero from '../components/sections/services/ServicesHero';
+import ServicesGrid from '../components/sections/services/ServicesGrid';
+import ServicesCta  from '../components/sections/services/ServicesCta';
+
 /**
  * ServicesPage — Route: /services
  *
- * Phase 1: Placeholder only.
- * Full services page UI will be built in a future phase.
+ * Renders the full Services page layout.
+ * Content is sourced from src/data/services.json.
  */
 function ServicesPage() {
   return (
-    <section className="section-spacing section-container" aria-labelledby="services-heading">
-      <h1 id="services-heading" className="heading-display text-neutral-50">
-        Services
-      </h1>
-      <p className="mt-4 text-neutral-400">Phase 1 placeholder — full UI coming in a future phase.</p>
-    </section>
+    <main aria-label="LabelAlly Entertainment Services">
+      <ServicesHero />
+      <ServicesGrid />
+      <ServicesCta />
+    </main>
   );
 }
 
