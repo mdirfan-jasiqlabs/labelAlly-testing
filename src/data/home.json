@@ -18,19 +18,56 @@
   },
 
   "platformStrip": {
-    "heading": "Trusted Across the Industry",
-    "items": []
+    "heading": "Distributed Across All Major Platforms",
+    "subheading": "Your music, everywhere your audience is listening.",
+    "items": [
+      { "id": "spotify",      "label": "Spotify" },
+      { "id": "apple-music",  "label": "Apple Music" },
+      { "id": "youtube-music","label": "YouTube Music" },
+      { "id": "amazon-music", "label": "Amazon Music" },
+      { "id": "tidal",        "label": "Tidal" },
+      { "id": "deezer",       "label": "Deezer" },
+      { "id": "soundcloud",   "label": "SoundCloud" },
+      { "id": "pandora",      "label": "Pandora" }
+    ]
   },
 
   "about": {
     "badge": "Who We Are",
     "heading": "A Partner Built for the Music Industry",
     "description": "LabelAlly Entertainment was founded to bridge the gap between creative talent and industry infrastructure — giving artists and labels the professional backing they need to grow.",
+    "supporting": "We work alongside independent artists, established labels, and forward-thinking brands to ensure their music reaches the right audience, in the right way, at the right time.",
     "cta": {
       "label": "Learn About Us",
-      "href": "/about"
+      "href": "/about",
+      "ariaLabel": "Learn more about LabelAlly Entertainment"
     },
-    "values": []
+    "values": [
+      {
+        "id": "distribution",
+        "title": "Music Distribution",
+        "description": "Get your music onto every major streaming platform and digital store worldwide.",
+        "icon": "Globe"
+      },
+      {
+        "id": "marketing",
+        "title": "Music Marketing",
+        "description": "Strategic campaigns that connect your music with the audiences who will love it most.",
+        "icon": "TrendingUp"
+      },
+      {
+        "id": "sync-licensing",
+        "title": "Sync Licensing",
+        "description": "Place your music in film, TV, advertising, and digital media for new revenue streams.",
+        "icon": "Film"
+      },
+      {
+        "id": "artist-development",
+        "title": "Artist Development",
+        "description": "Build a sustainable career with professional guidance, brand development, and long-term strategy.",
+        "icon": "Star"
+      }
+    ]
   },
 
   "services": {
