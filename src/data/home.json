@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "badge": "Full-Service Music Industry Partner",
+    "heading": "Your Vision,",
+    "headingHighlight": "Amplified.",
+    "description": "LabelAlly Entertainment is your dedicated partner in the music industry — empowering independent artists, labels, and brands with professional distribution, marketing, sync licensing, and artist development.",
+    "primaryCta": {
+      "label": "Get Started",
+      "href": "/contact",
+      "ariaLabel": "Get started — contact LabelAlly Entertainment"
+    },
+    "secondaryCta": {
+      "label": "Explore Services",
+      "href": "/services",
+      "ariaLabel": "Explore LabelAlly Entertainment services"
+    },
+    "trustNote": "Serving artists, labels, and brands across the music industry."
+  },
+
+  "platformStrip": {
+    "heading": "Trusted Across the Industry",
+    "items": []
+  },
+
+  "about": {
+    "badge": "Who We Are",
+    "heading": "A Partner Built for the Music Industry",
+    "description": "LabelAlly Entertainment was founded to bridge the gap between creative talent and industry infrastructure — giving artists and labels the professional backing they need to grow.",
+    "cta": {
+      "label": "Learn About Us",
+      "href": "/about"
+    },
+    "values": []
+  },
+
+  "services": {
+    "badge": "What We Offer",
+    "heading": "Everything You Need to Grow",
+    "description": "From distribution to marketing, sync licensing to artist development — we provide the full spectrum of services that modern music professionals require.",
+    "cta": {
+      "label": "View All Services",
+      "href": "/services"
+    },
+    "items": []
+  },
+
+  "howItWorks": {
+    "badge": "The Process",
+    "heading": "Simple Steps to Get Started",
+    "description": "We keep things straightforward — so you can focus on making music while we handle the rest.",
+    "steps": []
+  }
+}

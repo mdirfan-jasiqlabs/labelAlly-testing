@@ -1,17 +1,22 @@
+import HeroSection from '../components/sections/home/HeroSection';
+
 /**
  * HomePage — Route: /
  *
- * Phase 1: Placeholder only.
- * Full homepage UI will be built in Phase 2.
+ * Phase 4 Part 1: Renders HeroSection only.
+ * Additional sections will be added in Parts 2 and 3.
  */
 function HomePage() {
   return (
-    <section className="section-spacing section-container" aria-labelledby="home-heading">
-      <h1 id="home-heading" className="heading-display text-neutral-50">
-        Home
-      </h1>
-      <p className="mt-4 text-neutral-400">Phase 1 placeholder — full UI coming in Phase 2.</p>
-    </section>
+    <main aria-label="LabelAlly Entertainment homepage">
+      {/* ── Hero ── Phase 4 Part 1 */}
+      <HeroSection />
+
+      {/* ── Platform Strip     — Phase 4 Part 2 */}
+      {/* ── About              — Phase 4 Part 2 */}
+      {/* ── Services           — Phase 4 Part 2 */}
+      {/* ── How It Works       — Phase 4 Part 3 */}
+    </main>
   );
 }
 
