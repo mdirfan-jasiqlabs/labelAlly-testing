@@ -1,24 +1,87 @@
+import { useState, useRef, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import Container from '../../common/Container';
 import SectionHeading from '../../common/SectionHeading';
 import Card from '../../common/Card';
 import Button from '../../common/Button';
+import { contactSchema } from '../../../schemas/contactSchema';
+import { sendContactForm } from '../../../services/contactApi';
 import contactData from '../../../data/contact.json';
 
 /**
- * ContactForm — Renders the frontend message input form.
+ * ContactForm — Renders a validated RHF + Zod form.
  *
- * Frontend only: prevents default submission behavior.
- * Accessible form markup with explicit labels, correct input types,
- * focus visible outlines, autocomplete attributes, and select menus.
+ * State Model:
+ * - 'idle'
+ * - 'submitting'
+ * - 'success'
+ * - 'serverError'
+ * - 'rateLimited'
+ * - 'networkError'
+ *
+ * Accessibility:
+ * - Visible text labels linked to inputs
+ * - Detailed error warnings connected via aria-describedby
+ * - Auto aria-invalid states
+ * - Auto-focus redirect to status banners on transition
  */
 function ContactForm() {
   const { form } = contactData;
+  const [formStatus, setFormStatus] = useState('idle'); // idle | submitting | success | serverError | rateLimited | networkError
+  const statusRef = useRef(null);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      company: '',
+      service: '',
+      message: '',
+      consent: false,
+      website: '', // Honeypot field
+    },
+  });
+
+  // Watch message value for reactive character count
+  const messageVal = watch('message', '');
+  const messageCharCount = messageVal.length;
+
+  // Set keyboard focus focus on global state alerts
+  useEffect(() => {
+    if (formStatus !== 'idle' && statusRef.current) {
+      statusRef.current.focus();
+    }
+  }, [formStatus]);
 
   if (!form) return null;
 
-  const handleSubmit = (e) => {
-    // Prevent default submission behavior (frontend-only in this phase)
-    e.preventDefault();
+  const onSubmit = async (data) => {
+    setFormStatus('submitting');
+    try {
+      await sendContactForm(data);
+      setFormStatus('success');
+      reset();
+    } catch (err) {
+      console.error('Submission request failed:', err);
+      if (err.status === 429) {
+        setFormStatus('rateLimited');
+      } else if (err.status === 'network') {
+        setFormStatus('networkError');
+      } else {
+        setFormStatus('serverError');
+      }
+    }
   };
 
   return (
@@ -35,119 +98,311 @@ function ContactForm() {
           className="mb-14"
         />
 
-        <Card padding="lg" radius="2xl" bordered hover={false} className="bg-neutral-900/40">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
-            
-            {/* Name Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-name" className="text-sm font-semibold text-neutral-300">
-                {form.labels.name} <span className="text-accent-400" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="form-name"
-                name="name"
-                type="text"
-                required
-                placeholder={form.placeholders.name}
-                autoComplete="name"
-                className="h-11 px-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring"
-              />
-            </div>
-
-            {/* Email Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-email" className="text-sm font-semibold text-neutral-300">
-                {form.labels.email} <span className="text-accent-400" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="form-email"
-                name="email"
-                type="email"
-                required
-                placeholder={form.placeholders.email}
-                autoComplete="email"
-                className="h-11 px-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring"
-              />
-            </div>
-
-            {/* Phone Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-phone" className="text-sm font-semibold text-neutral-300">
-                {form.labels.phone}
-              </label>
-              <input
-                id="form-phone"
-                name="phone"
-                type="tel"
-                placeholder={form.placeholders.phone}
-                autoComplete="tel"
-                className="h-11 px-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring"
-              />
-            </div>
-
-            {/* Company / Label Name Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-company" className="text-sm font-semibold text-neutral-300">
-                {form.labels.company}
-              </label>
-              <input
-                id="form-company"
-                name="company"
-                type="text"
-                placeholder={form.placeholders.company}
-                autoComplete="organization"
-                className="h-11 px-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring"
-              />
-            </div>
-
-            {/* Service Interest Dropdown */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-interest" className="text-sm font-semibold text-neutral-300">
-                {form.labels.interest} <span className="text-accent-400" aria-hidden="true">*</span>
-              </label>
-              <select
-                id="form-interest"
-                name="interest"
-                required
-                defaultValue=""
-                className="h-11 px-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring"
-              >
-                {form.interests.map((option, index) => (
-                  <option key={index} value={index === 0 ? "" : option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Message Area */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="form-message" className="text-sm font-semibold text-neutral-300">
-                {form.labels.message} <span className="text-accent-400" aria-hidden="true">*</span>
-              </label>
-              <textarea
-                id="form-message"
-                name="message"
-                rows={5}
-                required
-                placeholder={form.placeholders.message}
-                className="p-4 rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 text-sm focus-ring resize-y min-h-[120px]"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="mt-4">
+        <Card padding="lg" radius="2xl" bordered hover={false} className="bg-neutral-900/40 relative overflow-hidden">
+          
+          {/* ── SUCCESS STATE UI ── */}
+          {formStatus === 'success' && (
+            <div
+              ref={statusRef}
+              tabIndex={-1}
+              role="status"
+              aria-live="polite"
+              className="flex flex-col items-center justify-center text-center py-10 px-4 gap-6 outline-none"
+            >
+              <div aria-hidden="true" className="w-14 h-14 rounded-full bg-emerald-950/80 border border-emerald-800 flex items-center justify-center text-emerald-400">
+                <CheckCircle2 size={32} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xl font-bold font-heading text-neutral-100">
+                  {form.status.success.heading}
+                </h3>
+                <p className="text-sm text-neutral-400 max-w-sm leading-relaxed">
+                  {form.status.success.message}
+                </p>
+              </div>
               <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                fullWidth
+                type="button"
+                variant="outline"
+                size="md"
+                onClick={() => setFormStatus('idle')}
+                rightIcon={<ArrowRight size={16} />}
               >
-                {form.labels.submit}
+                Send Another Message
               </Button>
             </div>
+          )}
 
-          </form>
+          {/* ── STANDARD FORM UI ── */}
+          {formStatus !== 'success' && (
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6" noValidate>
+              
+              {/* ── Honeypot field (Website) ── */}
+              <div className="absolute -z-50 opacity-0 h-0 w-0 pointer-events-none" aria-hidden="true">
+                <label htmlFor="form-website">Website</label>
+                <input
+                  id="form-website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  {...register('website')}
+                />
+              </div>
+
+              {/* Full Name Input */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="form-name" className="text-sm font-semibold text-neutral-300">
+                  {form.labels.name} <span className="text-accent-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="form-name"
+                  type="text"
+                  placeholder={form.placeholders.name}
+                  autoComplete="name"
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
+                  className={[
+                    'h-11 px-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring transition-colors duration-250',
+                    errors.name ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('name')}
+                />
+                {errors.name && (
+                  <span id="name-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.name.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Email Address Input */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="form-email" className="text-sm font-semibold text-neutral-300">
+                  {form.labels.email} <span className="text-accent-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="form-email"
+                  type="email"
+                  placeholder={form.placeholders.email}
+                  autoComplete="email"
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  className={[
+                    'h-11 px-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring transition-colors duration-250',
+                    errors.email ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('email')}
+                />
+                {errors.email && (
+                  <span id="email-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.email.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Phone Number Input */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="form-phone" className="text-sm font-semibold text-neutral-300">
+                  {form.labels.phone} <span className="text-accent-400" aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="form-phone"
+                  type="tel"
+                  placeholder={form.placeholders.phone}
+                  autoComplete="tel"
+                  aria-invalid={errors.phone ? 'true' : 'false'}
+                  aria-describedby={errors.phone ? 'phone-error' : undefined}
+                  className={[
+                    'h-11 px-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring transition-colors duration-250',
+                    errors.phone ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('phone')}
+                />
+                {errors.phone && (
+                  <span id="phone-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.phone.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Company / Label Input */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="form-company" className="text-sm font-semibold text-neutral-300">
+                  {form.labels.company}
+                </label>
+                <input
+                  id="form-company"
+                  type="text"
+                  placeholder={form.placeholders.company}
+                  autoComplete="organization"
+                  aria-invalid={errors.company ? 'true' : 'false'}
+                  aria-describedby={errors.company ? 'company-error' : undefined}
+                  className={[
+                    'h-11 px-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring transition-colors duration-250',
+                    errors.company ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('company')}
+                />
+                {errors.company && (
+                  <span id="company-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.company.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Service Selection Dropdown */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="form-interest" className="text-sm font-semibold text-neutral-300">
+                  {form.labels.interest} <span className="text-accent-400" aria-hidden="true">*</span>
+                </label>
+                <select
+                  id="form-interest"
+                  aria-invalid={errors.service ? 'true' : 'false'}
+                  aria-describedby={errors.service ? 'interest-error' : undefined}
+                  className={[
+                    'h-11 px-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring transition-colors duration-250',
+                    errors.service ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('service')}
+                >
+                  {form.interests.map((option, index) => (
+                    <option key={index} value={index === 0 ? '' : option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                {errors.service && (
+                  <span id="interest-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.service.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Message Textarea */}
+              <div className="flex flex-col gap-2">
+                <div className="flex justify-between items-center">
+                  <label htmlFor="form-message" className="text-sm font-semibold text-neutral-300">
+                    {form.labels.message} <span className="text-accent-400" aria-hidden="true">*</span>
+                  </label>
+                  <span
+                    className={[
+                      'text-xs',
+                      messageCharCount > 1500 ? 'text-red-400' : 'text-neutral-500',
+                    ].join(' ')}
+                    aria-live="polite"
+                  >
+                    {messageCharCount} / 1500
+                  </span>
+                </div>
+                <textarea
+                  id="form-message"
+                  rows={5}
+                  placeholder={form.placeholders.message}
+                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                  className={[
+                    'p-4 rounded-lg bg-neutral-950 border text-neutral-100 text-sm focus-ring resize-y min-h-[120px] transition-colors duration-250',
+                    errors.message ? 'border-red-500/80 focus-visible:ring-red-500' : 'border-neutral-800',
+                  ].join(' ')}
+                  {...register('message')}
+                />
+                {errors.message && (
+                  <span id="message-error" className="text-xs text-red-400 mt-1 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.message.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Privacy Consent Checkbox */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-start gap-3">
+                  <input
+                    id="form-consent"
+                    type="checkbox"
+                    aria-invalid={errors.consent ? 'true' : 'false'}
+                    aria-describedby={errors.consent ? 'consent-error' : undefined}
+                    className={[
+                      'mt-1 w-4 h-4 rounded border text-primary-600 focus-ring cursor-pointer bg-neutral-950 border-neutral-800',
+                      errors.consent ? 'border-red-500/80' : 'border-neutral-800',
+                    ].join(' ')}
+                    {...register('consent')}
+                  />
+                  <label htmlFor="form-consent" className="text-xs text-neutral-400 leading-normal select-none cursor-pointer">
+                    I agree that LabelAlly Entertainment may use my submitted information to contact me regarding this enquiry. Read our{' '}
+                    <Link
+                      to="/privacy-policy"
+                      className="text-primary-400 hover:text-primary-300 transition-colors focus-ring rounded"
+                    >
+                      Privacy Policy
+                    </Link>
+                    .
+                  </label>
+                </div>
+                {errors.consent && (
+                  <span id="consent-error" className="text-xs text-red-400 flex items-center gap-1.5" role="alert">
+                    <AlertCircle size={14} />
+                    {errors.consent.message}
+                  </span>
+                )}
+              </div>
+
+              {/* ── Global Submission Errors ── */}
+              {formStatus === 'serverError' && (
+                <div
+                  ref={statusRef}
+                  tabIndex={-1}
+                  role="alert"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-red-950/40 border border-red-900/60 text-red-200 text-sm outline-none"
+                >
+                  <AlertCircle size={18} className="shrink-0 text-red-400" />
+                  <p>{form.status.errors.serverError}</p>
+                </div>
+              )}
+
+              {formStatus === 'rateLimited' && (
+                <div
+                  ref={statusRef}
+                  tabIndex={-1}
+                  role="alert"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-red-950/40 border border-red-900/60 text-red-200 text-sm outline-none"
+                >
+                  <AlertCircle size={18} className="shrink-0 text-red-400" />
+                  <p>{form.status.errors.rateLimited}</p>
+                </div>
+              )}
+
+              {formStatus === 'networkError' && (
+                <div
+                  ref={statusRef}
+                  tabIndex={-1}
+                  role="alert"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-red-950/40 border border-red-900/60 text-red-200 text-sm outline-none"
+                >
+                  <AlertCircle size={18} className="shrink-0 text-red-400" />
+                  <p>{form.status.errors.networkError}</p>
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <div className="mt-4">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  loading={formStatus === 'submitting'}
+                >
+                  {form.labels.submit}
+                </Button>
+              </div>
+
+            </form>
+          )}
+
         </Card>
       </Container>
     </section>

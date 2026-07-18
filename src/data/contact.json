@@ -24,6 +24,7 @@
       "company": "Company / Label Name (Optional)",
       "interest": "Service Interest",
       "message": "Tell us about your project",
+      "consent": "I agree that LabelAlly Entertainment may use my submitted information to contact me regarding this enquiry.",
       "submit": "Send Message"
     },
     "placeholders": {
@@ -37,11 +38,24 @@
     "interests": [
       "Select a service...",
       "Music Distribution",
-      "YouTube Channel Management",
-      "Content Rights Management / Content ID",
+      "YouTube Management",
+      "Content Rights Management",
+      "Content ID",
       "OTT Distribution",
-      "Revenue Optimization",
-      "Other / Multiple Services"
-    ]
+      "Social Media Management",
+      "Analytics and Reporting",
+      "Other"
+    ],
+    "status": {
+      "success": {
+        "heading": "Message Sent Successfully",
+        "message": "Thank you for reaching out. One of our catalog coordinators will evaluate your details and respond within 24–48 hours."
+      },
+      "errors": {
+        "serverError": "We encountered an error processing your request. Please try again later.",
+        "rateLimited": "Too many requests. Please wait a few minutes before submitting again.",
+        "networkError": "A network or connectivity error occurred. Please check your internet connection and try again."
+      }
+    }
   }
 }
