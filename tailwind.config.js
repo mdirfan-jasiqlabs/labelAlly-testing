@@ -80,6 +80,15 @@ export default {
           secondary: '#555B70',
           muted:     '#7B8092',
         },
+
+        // ── Brand Custom Colors ───────────────────────────────
+        brand: {
+          pink: '#FF2E74',
+          orange: '#FF7E40',
+          green: '#96E012',
+          blue: '#2B83FC',
+          indigo: '#4F46E5',
+        },
       },
 
       // ── Background Colors ──────────────────────────────────────────────────
@@ -92,6 +101,9 @@ export default {
 
       // ── Gradients ──────────────────────────────────────────────────────────
       backgroundImage: {
+        artistGlow:
+          'radial-gradient(circle at center, rgba(99, 102, 241, 0.08), transparent 70%)',
+
         'gradient-hero':
           'linear-gradient(135deg, #eef2ff 0%, #ffffff 50%, #fffbeb 100%)',
 
@@ -119,6 +131,8 @@ export default {
 
       // ── Box Shadows ────────────────────────────────────────────────────────
       boxShadow: {
+        artist: '0 18px 45px rgba(40, 40, 90, 0.08)',
+        artistHover: '0 30px 60px rgba(40, 40, 90, 0.14)',
         glow: '0 0 30px rgba(99, 102, 241, 0.16)',
         'glow-gold': '0 0 30px rgba(245, 158, 11, 0.18)',
         'glow-sm': '0 0 15px rgba(99, 102, 241, 0.12)',
@@ -138,6 +152,7 @@ export default {
 
       // ── Border Radius ──────────────────────────────────────────────────────
       borderRadius: {
+        artist: '30px',
         '3xl': '2rem',
         '4xl': '2.5rem',
       },

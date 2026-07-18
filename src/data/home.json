@@ -263,33 +263,78 @@
       }
     ]
   },
-  "artists": {
-    "badge": "Who We Work With",
-    "heading": "Built for Every Music Professional",
-    "description": "Whether you are an independent artist, an established label, or a brand looking to leverage music — LabelAlly Entertainment has the services and expertise to support your goals.",
-    "cta": {
-      "label": "Artists, Labels & Partners",
-      "href": "/artists-labels-partners",
-      "ariaLabel": "Learn about LabelAlly Entertainment's work with artists, labels, and partners"
+  "featuredArtists": {
+    "badge": "Our Featured Artists",
+    "title": {
+      "lineOne": "Shining Lights",
+      "lineTwo": "Of Our Label"
     },
-    "categories": [
+    "description": "Meet the standout artists driving our label forward — the voices, faces, and talents shaping the future of music.",
+    "artists": [
       {
-        "id": "independent-artists",
-        "title": "Independent Artists",
-        "description": "We empower independent artists with the same professional tools and distribution network previously available only to major labels.",
-        "icon": "Mic2"
+        "id": 1,
+        "name": "Pooja Garimal",
+        "role": "Content Creator",
+        "image": "/artists/artist-1.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
       },
       {
-        "id": "record-labels",
-        "title": "Record Labels",
-        "description": "Partner with us for comprehensive distribution, rights management, and revenue optimization across your entire catalog.",
-        "icon": "Building2"
+        "id": 2,
+        "name": "Tuntun Yadav",
+        "role": "Singer / Actor",
+        "image": "/artists/artist-2.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
       },
       {
-        "id": "brands-agencies",
-        "title": "Brands & Agencies",
-        "description": "Leverage sync licensing and content rights management to place music across campaigns, productions, and digital platforms.",
-        "icon": "Music"
+        "id": 3,
+        "name": "Khushi Kakkar",
+        "role": "Singer / Actress",
+        "image": "/artists/artist-3.webp",
+        "featured": true,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Shweta Sargam",
+        "role": "Singer / Actress",
+        "image": "/artists/artist-4.webp",
+        "featured": false,
+        "imageClass": "scale-x-[-1] hue-rotate-[90deg]",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Ankus Raja",
+        "role": "Singer",
+        "image": "/artists/artist-5.webp",
+        "featured": false,
+        "imageClass": "scale-x-[-1] hue-rotate-[180deg]",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
       }
     ]
   },

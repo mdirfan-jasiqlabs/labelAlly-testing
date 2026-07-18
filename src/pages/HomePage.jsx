@@ -2,7 +2,6 @@ import HeroSection         from '../components/sections/home/HeroSection';
 import PlatformStrip       from '../components/sections/home/PlatformStrip';
 import AboutSection        from '../components/sections/home/AboutSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
-import WhyChooseSection    from '../components/sections/home/WhyChooseSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import AnalyticsSection    from '../components/sections/home/AnalyticsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
@@ -37,7 +36,6 @@ function HomePage() {
       <PlatformStrip />
       <AboutSection />
       <HowItWorksSection />
-      <WhyChooseSection />
       <ArtistsSection />
       <AnalyticsSection />
       <TestimonialsSection />
