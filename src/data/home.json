@@ -1,37 +1,88 @@
 {
   "hero": {
-    "badge": "Full-Service Music Industry Partner",
-    "heading": "Your Vision,",
-    "headingHighlight": "Amplified.",
-    "description": "LabelAlly Entertainment is your dedicated partner in the music industry — empowering independent artists, labels, and brands with professional distribution, marketing, sync licensing, and artist development.",
+    "badge": "Empowering Artists. Elevating Music.",
+    "heading": {
+      "lineOne": "Your Music.",
+      "lineTwoPrimary": "Global",
+      "lineTwoAccent": "Impact."
+    },
+    "description": "LabelAlly Entertainment helps artists, labels, and creators distribute their music, manage YouTube channels, protect content rights, and grow across leading global platforms.",
     "primaryCta": {
-      "label": "Get Started",
+      "label": "Distribute Your Music",
       "href": "/contact",
-      "ariaLabel": "Get started — contact LabelAlly Entertainment"
+      "ariaLabel": "Distribute your music — contact LabelAlly Entertainment"
     },
     "secondaryCta": {
-      "label": "Explore Services",
-      "href": "/services",
-      "ariaLabel": "Explore LabelAlly Entertainment services"
+      "label": "Talk to Us",
+      "href": "https://wa.me/919999999999",
+      "ariaLabel": "Chat with LabelAlly Entertainment on WhatsApp"
     },
-    "trustNote": "Serving artists, labels, and brands across the music industry."
-  },
-
-  "platformStrip": {
-    "heading": "Distributed Across All Major Platforms",
-    "subheading": "Your music, everywhere your audience is listening.",
-    "items": [
-      { "id": "spotify",      "label": "Spotify" },
-      { "id": "apple-music",  "label": "Apple Music" },
-      { "id": "youtube-music","label": "YouTube Music" },
-      { "id": "amazon-music", "label": "Amazon Music" },
-      { "id": "tidal",        "label": "Tidal" },
-      { "id": "deezer",       "label": "Deezer" },
-      { "id": "soundcloud",   "label": "SoundCloud" },
-      { "id": "pandora",      "label": "Pandora" }
+    "image": {
+      "src": "/hero-artist.png",
+      "alt": "Independent music artist performing with a guitar"
+    },
+    "highlights": [
+      {
+        "id": "global-platforms",
+        "icon": "Globe",
+        "title": "Global Platforms",
+        "description": "Reach fans worldwide"
+      },
+      {
+        "id": "rights-protection",
+        "icon": "ShieldCheck",
+        "title": "Rights Protection",
+        "description": "Keep your content safe"
+      },
+      {
+        "id": "revenue-growth",
+        "icon": "BarChart3",
+        "title": "Revenue Growth",
+        "description": "Maximize your earnings"
+      },
+      {
+        "id": "artist-support",
+        "icon": "Headphones",
+        "title": "Artist Support",
+        "description": "We're here for you"
+      }
     ]
   },
-
+  "platformStrip": {
+    "headingPrimary": "We Distribute On",
+    "headingAccent": "All Major Platforms",
+    "items": [
+      {
+        "id": "spotify",
+        "label": "Spotify"
+      },
+      {
+        "id": "apple-music",
+        "label": "Apple Music"
+      },
+      {
+        "id": "youtube",
+        "label": "YouTube"
+      },
+      {
+        "id": "amazon-music",
+        "label": "Amazon Music"
+      },
+      {
+        "id": "resso",
+        "label": "Resso"
+      },
+      {
+        "id": "jiosaavn",
+        "label": "JioSaavn"
+      },
+      {
+        "id": "hungama",
+        "label": "Hungama"
+      }
+    ],
+    "overflow": "+ more platforms"
+  },
   "about": {
     "badge": "Who We Are",
     "heading": "A Partner Built for the Music Industry",
@@ -69,7 +120,6 @@
       }
     ]
   },
-
   "services": {
     "badge": "What We Offer",
     "heading": "Everything You Need to Grow",
@@ -124,7 +174,6 @@
       }
     ]
   },
-
   "howItWorks": {
     "badge": "The Process",
     "heading": "Simple Steps to Get Started",
@@ -195,7 +244,6 @@
       }
     ]
   },
-
   "artists": {
     "badge": "Who We Work With",
     "heading": "Built for Every Music Professional",
@@ -226,7 +274,6 @@
       }
     ]
   },
-
   "analytics": {
     "badge": "Advanced Analytics",
     "heading": "Complete Control Over Your Revenue & Rights",
@@ -264,7 +311,6 @@
     "description": "We are proud to support independent creators, record labels, and creative brands in achieving their goals.",
     "items": []
   },
-
   "finalCta": {
     "badge": "Get Started",
     "heading": "Ready to Amplify Your Music Business?",
@@ -282,4 +328,3 @@
     "contactNote": "Have questions? Our support team is ready to help."
   }
 }
-

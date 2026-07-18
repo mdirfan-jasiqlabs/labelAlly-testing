@@ -66,6 +66,20 @@ export default {
           900: '#18181b',
           950: '#09090b',
         },
+
+        // ── Semantic surface tokens ───────────────────────────
+        surface: {
+          page:  '#FCFCFF',
+          card:  '#FFFFFF',
+          muted: '#F7F7FC',
+        },
+
+        // ── Ink (text) tokens ─────────────────────────────────
+        ink: {
+          primary:   '#11143E',
+          secondary: '#555B70',
+          muted:     '#7B8092',
+        },
       },
 
       // ── Background Colors ──────────────────────────────────────────────────
@@ -95,6 +109,12 @@ export default {
 
         'gradient-divider':
           'linear-gradient(90deg, transparent, rgba(79,70,229,0.55), transparent)',
+
+        'hero-glow':
+          'radial-gradient(circle at center, rgba(99, 102, 241, 0.16), transparent 68%)',
+
+        'artist-fade':
+          'linear-gradient(to top, rgba(252,252,255,0.95) 0%, transparent 35%)',
       },
 
       // ── Box Shadows ────────────────────────────────────────────────────────
@@ -108,6 +128,12 @@ export default {
 
         'card-hover':
           '0 20px 45px -15px rgba(15, 23, 42, 0.18), 0 10px 20px -10px rgba(15, 23, 42, 0.10)',
+
+        'hero-soft':
+          '0 24px 70px rgba(38, 30, 120, 0.08)',
+
+        'platform-strip':
+          '0 -1px 0 rgba(0,0,0,0.06), 0 8px 32px rgba(15, 23, 42, 0.06)',
       },
 
       // ── Border Radius ──────────────────────────────────────────────────────
