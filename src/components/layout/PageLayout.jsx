@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import PageLoader from '../common/PageLoader';
+import ScrollToTopButton from '../common/ScrollToTopButton';
 
 /**
  * PageLayout — Shared layout wrapper for all pages.
@@ -39,6 +40,9 @@ function PageLayout() {
 
       {/* ── Footer ── */}
       <Footer />
+
+      {/* ── Scroll To Top Button ── */}
+      <ScrollToTopButton />
     </div>
   );
 }

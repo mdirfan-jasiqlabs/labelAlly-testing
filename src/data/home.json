@@ -84,39 +84,57 @@
     "overflow": "+ more platforms"
   },
   "about": {
-    "badge": "Who We Are",
-    "heading": "A Partner Built for the Music Industry",
-    "description": "LabelAlly Entertainment was founded to bridge the gap between creative talent and industry infrastructure — giving artists and labels the professional backing they need to grow.",
-    "supporting": "We work alongside independent artists, established labels, and forward-thinking brands to ensure their music reaches the right audience, in the right way, at the right time.",
-    "cta": {
-      "label": "Learn About Us",
-      "href": "/about",
-      "ariaLabel": "Learn more about LabelAlly Entertainment"
-    },
-    "values": [
+    "badge": "About Us",
+    "heading": "Your Trusted Digital Partner Dedicated To",
+    "checklist": [
+      "empowering creators",
+      "elevating music",
+      "and managing talent worldwide"
+    ],
+    "features": [
       {
-        "id": "distribution",
-        "title": "Music Distribution",
-        "description": "Get your music onto every major streaming platform and digital store worldwide.",
-        "icon": "Globe"
+        "id": "creator-centric",
+        "icon": "CreatorCentric",
+        "title": "Creator-Centric Approach",
+        "description": "Every strategy we develop is tailored to amplify your unique voice and connect with your target audience authentically."
       },
       {
-        "id": "marketing",
-        "title": "Music Marketing",
-        "description": "Strategic campaigns that connect your music with the audiences who will love it most.",
-        "icon": "TrendingUp"
+        "id": "transparent-growth",
+        "icon": "TransparentGrowth",
+        "title": "Transparent Growth",
+        "description": "We believe in complete transparency with detailed analytics, regular reporting, and clear communication at every step."
       },
       {
-        "id": "sync-licensing",
-        "title": "Sync Licensing",
-        "description": "Place your music in film, TV, advertising, and digital media for new revenue streams.",
-        "icon": "Film"
+        "id": "global-reach",
+        "icon": "GlobalReach",
+        "title": "Global Reach",
+        "description": "We leverage our extensive network of 150+ platforms across 80+ countries to maximize your global presence and revenue."
+      }
+    ],
+    "stats": [
+      {
+        "id": "projects",
+        "icon": "ProjectDone",
+        "value": "2304",
+        "label": "Project Done"
       },
       {
-        "id": "artist-development",
-        "title": "Artist Development",
-        "description": "Build a sustainable career with professional guidance, brand development, and long-term strategy.",
-        "icon": "Star"
+        "id": "clients",
+        "icon": "SatisfyClient",
+        "value": "3585",
+        "label": "Satisfy Client"
+      },
+      {
+        "id": "awards",
+        "icon": "Awards",
+        "value": "1365",
+        "label": "Awards"
+      },
+      {
+        "id": "happy-clients",
+        "icon": "HappyClient",
+        "value": "4328",
+        "label": "Happy Client"
       }
     ]
   },
