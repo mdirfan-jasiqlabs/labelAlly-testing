@@ -1,0 +1,15 @@
+{
+  "errorCode": "404",
+  "heading": "Page Not Found",
+  "description": "The page you are looking for does not exist, has been removed, or is temporarily unavailable.",
+  "primaryCta": {
+    "label": "Back to Home",
+    "href": "/",
+    "ariaLabel": "Navigate back to the homepage"
+  },
+  "secondaryCta": {
+    "label": "Contact Support",
+    "href": "/contact",
+    "ariaLabel": "Navigate to the contact page to request support"
+  }
+}

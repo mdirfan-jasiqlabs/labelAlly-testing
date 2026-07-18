@@ -1,0 +1,27 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "July 18, 2026",
+  "introduction": "LabelAlly Entertainment is committed to protecting your privacy. This Privacy Policy details how we handle information collected through our website.",
+  "sections": [
+    {
+      "id": "information-collected",
+      "heading": "Information We Collect",
+      "content": "When you contact us through our website forms, we collect the personal details you provide. This includes your name, email address, phone number, organization or label name, and any catalog information or messages you choose to share."
+    },
+    {
+      "id": "purpose-of-collection",
+      "heading": "How We Use Your Information",
+      "content": "We use the information collected through our contact form solely to respond to your inquiries, schedule consultation calls, evaluate your catalog for potential distribution partnership, and administer our services. We do not sell or rent your personal details to third parties."
+    },
+    {
+      "id": "security-practices",
+      "heading": "Data Security",
+      "content": "We implement appropriate administrative and technical measures to protect the confidentiality and security of the personal information you submit to us."
+    },
+    {
+      "id": "rights-inquiries",
+      "heading": "Contact & Inquiries",
+      "content": "If you have questions about this Privacy Policy or wish to request the deletion or correction of any personal details you have submitted, please reach out to us using our contact page."
+    }
+  ]
+}

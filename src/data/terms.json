@@ -1,0 +1,27 @@
+{
+  "title": "Terms & Conditions",
+  "lastUpdated": "July 18, 2026",
+  "introduction": "Welcome to the LabelAlly Entertainment website. By accessing or using this website, you agree to comply with and be bound by the following Terms & Conditions.",
+  "sections": [
+    {
+      "id": "use-of-site",
+      "heading": "Website Usage",
+      "content": "This website is provided for informational purposes only, allowing visitors to review our services, learn about our support capabilities, and submit inquiries via our contact form. You agree to use the site only for lawful purposes."
+    },
+    {
+      "id": "intellectual-property",
+      "heading": "Intellectual Property",
+      "content": "All content on this website, including text, graphics, logos, layouts, and Design System components, is the property of LabelAlly Entertainment and is protected by copyright and intellectual property laws. Unauthorized reproduction is prohibited."
+    },
+    {
+      "id": "disclaimer",
+      "heading": "Disclaimer of Warranties",
+      "content": "This website and its content are provided on an 'as is' basis without warranties of any kind, express or implied. LabelAlly Entertainment does not warrant that the site will be error-free or that access will be uninterrupted."
+    },
+    {
+      "id": "contact-terms",
+      "heading": "Contact Information",
+      "content": "If you have any questions regarding these Terms & Conditions, please contact us using the communication channels listed on our contact page."
+    }
+  ]
+}
