@@ -32,7 +32,7 @@ export async function sendContactForm(data) {
     let responseData = {};
     try {
       responseData = await response.json();
-    } catch (e) {
+    } catch {
       // Handle response without JSON body
     }
 

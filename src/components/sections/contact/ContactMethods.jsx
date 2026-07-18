@@ -64,7 +64,6 @@ function ContactMethods() {
             {items.map((item) => {
               const Icon = item.icon;
               const isLink = !!item.href;
-              const Wrapper = isLink ? 'a' : 'div';
 
               return (
                 <Card
