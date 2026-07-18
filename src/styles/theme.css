@@ -1,0 +1,10 @@
+/* ============================================================
+   LabelAlly Entertainment — Theme CSS
+   
+   All @layer base / components / utilities blocks are defined
+   in globals.css which holds the Tailwind directives.
+   
+   This file is reserved for any non-Tailwind CSS overrides
+   that may be needed in future phases (e.g. third-party
+   library style resets, print styles, etc.)
+   ============================================================ */
