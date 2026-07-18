@@ -3,6 +3,7 @@ import PlatformStrip       from '../components/sections/home/PlatformStrip';
 import AboutSection        from '../components/sections/home/AboutSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
+import WhatWeDoSection     from '../components/sections/home/WhatWeDoSection';
 import AnalyticsSection    from '../components/sections/home/AnalyticsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import FinalCtaSection     from '../components/sections/home/FinalCtaSection';
@@ -17,8 +18,8 @@ import SEO                 from '../components/common/SEO';
  * 2. PlatformStrip
  * 3. AboutSection
  * 4. HowItWorksSection
- * 5. WhyChooseSection
- * 6. ArtistsSection
+ * 5. ArtistsSection
+ * 6. WhatWeDoSection
  * 7. AnalyticsSection
  * 8. TestimonialsSection
  * 9. FinalCtaSection
@@ -37,6 +38,7 @@ function HomePage() {
       <AboutSection />
       <HowItWorksSection />
       <ArtistsSection />
+      <WhatWeDoSection />
       <AnalyticsSection />
       <TestimonialsSection />
       <FinalCtaSection />

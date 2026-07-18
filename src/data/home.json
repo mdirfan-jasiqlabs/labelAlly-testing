@@ -375,6 +375,51 @@
     "description": "We are proud to support independent creators, record labels, and creative brands in achieving their goals.",
     "items": []
   },
+  "whatWeDo": {
+    "badge": "What We Do",
+    "title": {
+      "line1": "End-To-End Solutions For",
+      "line2": "Creators, Music Labels & Artists"
+    },
+    "description": "At LabelAlly Entertainment, we provide a full suite of digital services to amplify your content, grow your audience, and maximize your earnings. Whether you're an independent artist, a content creator, or a record label, we manage every aspect of your digital presence with professionalism and precision.",
+    "primaryButton": {
+      "label": "Let's Work Together",
+      "href": "/contact",
+      "ariaLabel": "Let's work together — contact us"
+    },
+    "features": [
+      {
+        "id": "yt-management",
+        "title": "YouTube Channel Management"
+      },
+      {
+        "id": "social-promotion",
+        "title": "Social Media & Digital Promotion"
+      },
+      {
+        "id": "music-distribution",
+        "title": "Music & Audio Distribution"
+      },
+      {
+        "id": "ott-distribution",
+        "title": "OTT & Video Platform Distribution"
+      },
+      {
+        "id": "artist-branding",
+        "title": "Artist Management & Branding"
+      },
+      {
+        "id": "analytics-monetization",
+        "title": "Analytics, Reporting & Monetization"
+      }
+    ],
+    "images": {
+      "topLeft": "/artists/artist-1.webp",
+      "topRight": "/process-team.jpg",
+      "bottomLeft": "/hero-artist.png",
+      "bottomRight": "/artists/artist-2.webp"
+    }
+  },
   "finalCta": {
     "badge": "Get Started",
     "heading": "Ready to Amplify Your Music Business?",
