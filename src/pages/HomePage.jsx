@@ -7,12 +7,23 @@ import WhyChooseSection    from '../components/sections/home/WhyChooseSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import AnalyticsSection    from '../components/sections/home/AnalyticsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
+import FinalCtaSection     from '../components/sections/home/FinalCtaSection';
 
 /**
  * HomePage — Route: /
  *
- * Phase 5 Part 2: Renders Hero + Platform Strip + About + Services + How It Works + Why Choose + Artists + Analytics + Testimonials.
- * Part 3 will append the final CTA section.
+ * Phase 5 Complete: Renders all ten homepage sections in sequence.
+ * Section order:
+ * 1. HeroSection
+ * 2. PlatformStrip
+ * 3. AboutSection
+ * 4. ServicesSection
+ * 5. HowItWorksSection
+ * 6. WhyChooseSection
+ * 7. ArtistsSection
+ * 8. AnalyticsSection
+ * 9. TestimonialsSection
+ * 10. FinalCtaSection
  */
 function HomePage() {
   return (
@@ -26,6 +37,7 @@ function HomePage() {
       <ArtistsSection />
       <AnalyticsSection />
       <TestimonialsSection />
+      <FinalCtaSection />
     </main>
   );
 }

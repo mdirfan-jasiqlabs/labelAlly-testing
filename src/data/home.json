@@ -258,12 +258,28 @@
       "ariaLabel": "Contact us to learn more about our reporting and payment schedules"
     }
   },
-
   "testimonials": {
     "badge": "Our Partners",
     "heading": "Trusted by Music Professionals",
     "description": "We are proud to support independent creators, record labels, and creative brands in achieving their goals.",
     "items": []
+  },
+
+  "finalCta": {
+    "badge": "Get Started",
+    "heading": "Ready to Amplify Your Music Business?",
+    "description": "Partner with LabelAlly Entertainment today. Let us manage your distribution, channel growth, and content rights while you focus on creating music.",
+    "primaryCta": {
+      "label": "Get in Touch",
+      "href": "/contact",
+      "ariaLabel": "Get in touch — contact LabelAlly Entertainment to partner"
+    },
+    "secondaryCta": {
+      "label": "Explore Services",
+      "href": "/services",
+      "ariaLabel": "Explore our distribution and rights management services"
+    },
+    "contactNote": "Have questions? Our support team is ready to help."
   }
 }
 

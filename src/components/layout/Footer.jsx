@@ -54,11 +54,11 @@ function Footer() {
       {/* ═══════════════════════════════════════════════════════
           MAIN FOOTER BODY
       ═══════════════════════════════════════════════════════ */}
-      <div className="section-container py-14 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
+      <div className="section-container py-16 lg:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
 
           {/* ── Brand Column (wider) ── */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
+          <div className="sm:col-span-2 lg:col-span-2 flex flex-col gap-5">
             {/* Logo */}
             <Link
               to="/"
@@ -149,7 +149,7 @@ function Footer() {
               {footerData.contact.email && (
                 <a
                   href={`mailto:${footerData.contact.email}`}
-                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group"
+                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group break-all"
                 >
                   <Mail
                     size={15}
@@ -164,7 +164,7 @@ function Footer() {
               {footerData.contact.phone && (
                 <a
                   href={`tel:${footerData.contact.phone}`}
-                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group"
+                  className="flex items-start gap-2.5 text-sm text-neutral-400 hover:text-neutral-50 transition-colors duration-250 focus-ring rounded group break-words"
                 >
                   <Phone
                     size={15}
@@ -177,7 +177,7 @@ function Footer() {
 
               {/* Address */}
               {footerData.contact.address && (
-                <p className="flex items-start gap-2.5 text-sm text-neutral-400">
+                <p className="flex items-start gap-2.5 text-sm text-neutral-400 break-words">
                   <MapPin
                     size={15}
                     aria-hidden="true"
