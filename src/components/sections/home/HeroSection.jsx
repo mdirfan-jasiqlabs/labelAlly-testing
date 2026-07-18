@@ -45,18 +45,18 @@ function HeroSection() {
     <section
       aria-labelledby="hero-heading"
       className="relative w-full overflow-hidden bg-surface-page"
-      style={{ background: 'linear-gradient(135deg, #f4f3ff 0%, #fcfcff 55%, #fffbeb 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #fbfbfe 0%, #fcfcff 100%)' }}
     >
       {/* ── Background decorative blobs ──────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-[-80px] right-[-80px] w-[520px] h-[520px] rounded-full opacity-60"
-        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.13) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute top-[-80px] right-[-80px] w-[520px] h-[520px] rounded-full opacity-50"
+        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)' }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-[80px] left-[-60px] w-[360px] h-[360px] rounded-full opacity-40"
-        style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute bottom-[80px] left-[-60px] w-[360px] h-[360px] rounded-full opacity-30"
+        style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)' }}
       />
 
       <Container size="2xl" className="relative z-10">
@@ -64,10 +64,10 @@ function HeroSection() {
         {/* ═══════════════════════════════════════════════════════
             MAIN HERO — Two column layout
         ═══════════════════════════════════════════════════════ */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-4 pt-12 pb-0 md:pt-16 lg:pt-20 min-h-[580px] lg:min-h-[700px] xl:min-h-[740px]">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 pt-14 md:pt-16 lg:pt-20 pb-0 lg:min-h-[640px] xl:min-h-[700px]">
 
           {/* ── LEFT COLUMN — Content ─────────────────────────── */}
-          <div className="flex-1 max-w-[560px] w-full text-left flex flex-col justify-center animate-fade-up py-8 lg:py-12">
+          <div className="w-full lg:w-[49%] flex flex-col justify-center text-left animate-fade-up py-2 lg:py-4 z-10">
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-6">
@@ -159,84 +159,38 @@ function HeroSection() {
           </div>
 
           {/* ── RIGHT COLUMN — Artist Image ───────────────────── */}
-          <div className="relative flex-shrink-0 w-full lg:w-[48%] xl:w-[46%] flex items-end justify-center lg:justify-end self-end h-full">
+          <div className="relative w-full lg:w-[51%] flex items-end justify-center lg:justify-end self-end h-[340px] sm:h-[450px] lg:h-auto z-10">
 
-            {/* Lavender radial glow behind artist */}
+            {/* Subtle radial indigo glow behind the image */}
             <div
               aria-hidden="true"
-              className="absolute bottom-0 right-0 left-0 lg:left-auto w-[90%] h-[90%] lg:w-[120%] lg:h-[120%] rounded-full opacity-60 pointer-events-none z-0"
-              style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)' }}
+              className="absolute top-1/4 right-0 left-0 lg:left-auto w-[85%] h-[85%] lg:w-[110%] lg:h-[110%] rounded-full opacity-40 pointer-events-none z-0"
+              style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%)' }}
             />
 
-            {/* Background 3D isometric illustration */}
+            {/* Soft gold glow near the lower-right edge */}
             <div
               aria-hidden="true"
-              className="absolute w-[85%] h-[85%] lg:w-[100%] lg:h-[100%] opacity-[0.65] pointer-events-none select-none z-0"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
-            >
+              className="absolute bottom-0 right-0 w-[250px] h-[250px] rounded-full opacity-35 pointer-events-none z-0"
+              style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%)' }}
+            />
+
+            {/* Artist Image Wrapper & Element (with smooth entrance animation) */}
+            <div className="relative w-full h-full flex items-end justify-center lg:justify-end overflow-visible z-10 animate-fade-in">
               <img
-                src="/hero-illustration.png"
-                alt=""
-                className="w-full h-full object-contain mix-blend-multiply"
-                style={{ mixBlendMode: 'multiply' }}
-              />
-            </div>
-
-            {/* Concentric rings behind artist (to match approved visual direction) */}
-            <div
-              aria-hidden="true"
-              className="absolute w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] lg:w-[540px] lg:h-[540px] xl:w-[620px] xl:h-[620px] border border-primary-200/20 rounded-full pointer-events-none z-0"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
-            />
-            <div
-              aria-hidden="true"
-              className="absolute w-[460px] h-[460px] sm:w-[580px] sm:h-[580px] lg:w-[660px] lg:h-[660px] xl:w-[760px] xl:h-[760px] border border-primary-100/10 rounded-full pointer-events-none z-0"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
-            />
-
-            {/* Decorative waveform bars behind artist */}
-            <div aria-hidden="true" className="absolute right-4 lg:right-0 bottom-[12%] flex items-end gap-[3.5px] opacity-15 pointer-events-none z-0">
-              {[40, 65, 90, 55, 110, 75, 45, 95, 60, 80, 50, 70].map((h, i) => (
-                <div
-                  key={i}
-                  className="w-[3px] rounded-full bg-primary-400"
-                  style={{ height: `${h}px` }}
-                />
-              ))}
-            </div>
-
-            {/* Decorative music note icon — top right */}
-            <div
-              aria-hidden="true"
-              className="absolute top-4 right-8 lg:top-[15%] lg:right-[5%] w-11 h-11 rounded-full bg-white shadow-card flex items-center justify-center pointer-events-none z-20"
-            >
-              <Music2 size={20} className="text-primary-500" strokeWidth={1.8} />
-            </div>
-
-            {/* Artist Image Wrapper & Element (with float animation) */}
-            <div className="relative w-[85%] sm:w-[80%] lg:w-full h-[320px] sm:h-[420px] lg:h-[90%] xl:h-[95%] flex items-end justify-center lg:justify-end self-end mt-6 lg:mt-0 overflow-visible z-10 animate-float">
-              <img
-                src={hero.image.src}
-                alt={hero.image.alt}
+                src="/Hero-artist.png"
+                alt="Independent music artist performing with an electric guitar"
                 decoding="async"
-                className="w-auto h-full object-contain object-bottom select-none pointer-events-none"
+                className="block w-auto h-full max-h-[500px] xl:max-h-[540px] object-contain object-bottom select-none pointer-events-none transform lg:-translate-x-12 lg:-translate-y-10 md:-translate-y-6"
+                style={{
+                  maskImage: 'radial-gradient(ellipse at 50% 50%, black 75%, rgba(0,0,0,0.95) 90%, transparent 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse at 50% 50%, black 75%, rgba(0,0,0,0.95) 90%, transparent 100%)'
+                }}
               />
-              {/* Bottom fade — blend into platform strip */}
+              {/* Bottom fade — blend naturally with the page background */}
               <div
                 aria-hidden="true"
-                className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none bg-gradient-to-t from-surface-page to-transparent z-20"
+                className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none bg-gradient-to-t from-surface-page to-transparent z-20"
               />
             </div>
           </div>
