@@ -1,15 +1,16 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
 import PageLayout from '../components/layout/PageLayout';
 
-import HomePage                  from '../pages/HomePage';
-import AboutPage                 from '../pages/AboutPage';
-import ServicesPage              from '../pages/ServicesPage';
-import ArtistsLabelsPartnersPage from '../pages/ArtistsLabelsPartnersPage';
-import ContactPage               from '../pages/ContactPage';
-import PrivacyPolicyPage         from '../pages/PrivacyPolicyPage';
-import TermsPage                 from '../pages/TermsPage';
-import NotFoundPage              from '../pages/NotFoundPage';
+const HomePage                  = lazy(() => import('../pages/HomePage'));
+const AboutPage                 = lazy(() => import('../pages/AboutPage'));
+const ServicesPage              = lazy(() => import('../pages/ServicesPage'));
+const ArtistsLabelsPartnersPage = lazy(() => import('../pages/ArtistsLabelsPartnersPage'));
+const ContactPage               = lazy(() => import('../pages/ContactPage'));
+const PrivacyPolicyPage         = lazy(() => import('../pages/PrivacyPolicyPage'));
+const TermsPage                 = lazy(() => import('../pages/TermsPage'));
+const NotFoundPage              = lazy(() => import('../pages/NotFoundPage'));
 
 /**
  * Application Router

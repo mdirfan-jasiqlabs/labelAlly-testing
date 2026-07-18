@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import PageLoader from '../common/PageLoader';
 
 /**
  * PageLayout — Shared layout wrapper for all pages.
@@ -30,7 +32,9 @@ function PageLayout() {
         role="main"
         tabIndex={-1}
       >
-        <Outlet />
+        <Suspense fallback={<PageLoader />}>
+          <Outlet />
+        </Suspense>
       </main>
 
       {/* ── Footer ── */}
