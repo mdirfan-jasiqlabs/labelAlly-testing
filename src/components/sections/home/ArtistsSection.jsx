@@ -26,7 +26,7 @@ function ArtistsSection() {
       aria-labelledby="artists-section-heading"
       className="py-20 md:py-28 lg:py-36 bg-neutral-950 border-t border-neutral-900"
     >
-      <Container>
+      <Container className="animate-fade-in">
         {/* Section Header */}
         <SectionHeading
           titleAs="h2"

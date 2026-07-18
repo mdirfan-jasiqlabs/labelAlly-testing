@@ -39,7 +39,7 @@ function SectionHeading({
   return (
     <div
       className={[
-        'flex flex-col gap-4',
+        'flex flex-col gap-4 animate-fade-up',
         alignClasses,
         className,
       ].filter(Boolean).join(' ')}

@@ -53,7 +53,7 @@ function Card({
     <Tag
       className={[
         // Base
-        'relative bg-neutral-900',
+        'relative bg-neutral-900 animate-fade-in',
         radiusClass,
         paddingClass,
 
@@ -62,8 +62,8 @@ function Card({
 
         // Hover
         hover ? [
-          'transition-all duration-400',
-          'hover:-translate-y-1',
+          'transition-all duration-300 ease-out',
+          'hover:-translate-y-1 hover:scale-[1.01]',
           'hover:border-neutral-700',
           'hover:shadow-card-hover',
         ].join(' ') : '',

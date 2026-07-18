@@ -40,7 +40,7 @@ function AboutSection() {
       aria-labelledby="about-section-heading"
       className="py-20 md:py-28 lg:py-36 bg-neutral-950"
     >
-      <Container>
+      <Container className="animate-fade-in">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── Left Column: Text + CTA ── */}

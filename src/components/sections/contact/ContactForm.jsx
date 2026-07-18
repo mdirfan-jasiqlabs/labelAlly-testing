@@ -89,7 +89,7 @@ function ContactForm() {
       aria-labelledby="form-heading"
       className="py-16 md:py-24 bg-neutral-900/10 border-t border-neutral-900"
     >
-      <Container className="max-w-2xl">
+      <Container className="max-w-2xl animate-fade-in">
         <SectionHeading
           titleAs="h2"
           title={form.heading}

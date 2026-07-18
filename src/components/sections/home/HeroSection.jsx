@@ -36,16 +36,16 @@ function HeroSection() {
       {/* ── Decorative top-right glow ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] -translate-y-1/3 translate-x-1/3 rounded-full bg-primary-900/30 blur-3xl"
+        className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] -translate-y-1/3 translate-x-1/3 rounded-full bg-primary-900/30 blur-3xl animate-pulse-slow"
       />
 
       {/* ── Decorative bottom-left glow ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-950/40 blur-3xl"
+        className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-950/40 blur-3xl animate-pulse-slow"
       />
 
-      <Container className="relative z-10 py-24 md:py-32 lg:py-40">
+      <Container className="relative z-10 py-24 md:py-32 lg:py-40 animate-fade-up">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
           {/* ── Eyebrow Badge ── */}

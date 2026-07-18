@@ -51,7 +51,7 @@ function ServicesSection() {
       aria-labelledby="services-section-heading"
       className="py-20 md:py-28 lg:py-36 bg-neutral-900/30"
     >
-      <Container>
+      <Container className="animate-fade-in">
 
         {/* ── Section Header ── */}
         <SectionHeading
