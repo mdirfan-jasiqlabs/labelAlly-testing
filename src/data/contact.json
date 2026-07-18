@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "badge": "Get in Touch",
+    "title": "Start Your Onboarding Journey",
+    "description": "Have questions about distribution, rights management, or YouTube channel growth? Reach out and our team will get back to you within 24–48 hours."
+  },
+  "methods": {
+    "heading": "Direct Contact Methods",
+    "description": "Feel free to reach out to us using any of the communication channels listed below.",
+    "labels": {
+      "email": "Email Us",
+      "phone": "Call Us",
+      "address": "Our Office",
+      "hours": "Business Hours"
+    }
+  },
+  "form": {
+    "heading": "Send a Message",
+    "description": "Complete the form below and one of our catalog coordinators will schedule a consultation.",
+    "labels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company / Label Name (Optional)",
+      "interest": "Service Interest",
+      "message": "Tell us about your project",
+      "submit": "Send Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "yourname@example.com",
+      "phone": "+1 (555) 000-0000",
+      "company": "Your label or brand name",
+      "interest": "Select a service...",
+      "message": "Provide details about your music catalog, release plans, or channel optimization goals..."
+    },
+    "interests": [
+      "Select a service...",
+      "Music Distribution",
+      "YouTube Channel Management",
+      "Content Rights Management / Content ID",
+      "OTT Distribution",
+      "Revenue Optimization",
+      "Other / Multiple Services"
+    ]
+  }
+}

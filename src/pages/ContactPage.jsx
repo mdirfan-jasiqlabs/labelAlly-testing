@@ -1,17 +1,20 @@
+import ContactHero    from '../components/sections/contact/ContactHero';
+import ContactMethods from '../components/sections/contact/ContactMethods';
+import ContactForm    from '../components/sections/contact/ContactForm';
+
 /**
  * ContactPage — Route: /contact
  *
- * Phase 1: Placeholder only.
- * Full contact form and UI will be built in a future phase.
+ * Renders the full Contact page layout.
+ * Content is sourced from src/data/contact.json.
  */
 function ContactPage() {
   return (
-    <section className="section-spacing section-container" aria-labelledby="contact-heading">
-      <h1 id="contact-heading" className="heading-display text-neutral-50">
-        Contact
-      </h1>
-      <p className="mt-4 text-neutral-400">Phase 1 placeholder — full UI coming in a future phase.</p>
-    </section>
+    <main aria-label="Contact LabelAlly Entertainment">
+      <ContactHero />
+      <ContactMethods />
+      <ContactForm />
+    </main>
   );
 }
 

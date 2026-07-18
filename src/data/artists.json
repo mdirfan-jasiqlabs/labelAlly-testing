@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "badge": "Creators & Labels",
+    "title": "Empowering Independent Artists & Record Labels",
+    "description": "We provide the tools, support, and distribution network needed for independent music professionals to thrive. Retain 100% ownership of your masters while scaling your global audience."
+  },
+  "support": {
+    "heading": "Tailored Support for Your Music Career",
+    "description": "Whether you are an independent artist starting out or an established record label managing a large catalog, we provide dedicated support to align with your business goals.",
+    "items": [
+      {
+        "id": "independent-creators",
+        "title": "For Independent Artists",
+        "description": "Access direct distribution to over 150+ stores, custom release strategies, playlist pitching options, and transparent royalty reporting directly in your inbox."
+      },
+      {
+        "id": "music-labels",
+        "title": "For Record Labels",
+        "description": "Efficient catalog bulk-onboarding, multi-artist channel optimization, robust Content ID management, and custom royalty division structures."
+      }
+    ]
+  },
+  "capabilities": {
+    "heading": "Strategic Growth Capabilities",
+    "description": "We help you unlock new revenue streams and protect your copyright across all streaming services and social platforms.",
+    "items": [
+      {
+        "id": "global-distribution",
+        "title": "Global Music Distribution",
+        "description": "Seamlessly deliver audio and video content to Spotify, Apple Music, YouTube Music, Amazon, and local streaming stores worldwide.",
+        "icon": "Globe"
+      },
+      {
+        "id": "rights-auditing",
+        "title": "Rights Auditing & Protection",
+        "description": "Leverage YouTube Content ID and platform audit tools to automatically identify and claim revenue from user-generated content.",
+        "icon": "Shield"
+      },
+      {
+        "id": "channel-growth",
+        "title": "Channel Optimization",
+        "description": "Full-service channel management to structure playlist hierarchies, refine metadata keywords, and improve video CTR.",
+        "icon": "TrendingUp"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Scale Your Music Catalog?",
+    "description": "Join our community of artists, labels, and brands. Reach out today to schedule a consultation with our onboarding coordinators.",
+    "primaryCta": {
+      "label": "Get Started Now",
+      "href": "/contact",
+      "ariaLabel": "Get started now — contact LabelAlly Entertainment to partner"
+    }
+  }
+}
