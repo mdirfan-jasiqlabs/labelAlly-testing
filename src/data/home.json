@@ -225,6 +225,45 @@
         "icon": "Music"
       }
     ]
+  },
+
+  "analytics": {
+    "badge": "Advanced Analytics",
+    "heading": "Complete Control Over Your Revenue & Rights",
+    "description": "Gain full visibility into your catalog's performance and earnings. We collect data from every major platform and compile it into transparent, easy-to-understand reports.",
+    "features": [
+      {
+        "id": "transparent-reporting",
+        "title": "Transparent Reporting",
+        "description": "Detailed dashboards that show exactly where your plays, streams, and revenue are coming from.",
+        "icon": "BarChart3"
+      },
+      {
+        "id": "rights-auditing",
+        "title": "Rights & Content ID Auditing",
+        "description": "Continuous monitoring of digital platforms to identify, claim, and monetize UGC featuring your tracks.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "id": "multi-channel-royalties",
+        "title": "Multi-Channel Royalties",
+        "description": "Consolidated payouts covering mechanicals, public performance, digital streams, and sync licensing.",
+        "icon": "FileText"
+      }
+    ],
+    "supportingNote": "Data collected daily and updated regularly. Payouts are made directly to your preferred method.",
+    "cta": {
+      "label": "Contact Us for Details",
+      "href": "/contact",
+      "ariaLabel": "Contact us to learn more about our reporting and payment schedules"
+    }
+  },
+
+  "testimonials": {
+    "badge": "Our Partners",
+    "heading": "Trusted by Music Professionals",
+    "description": "We are proud to support independent creators, record labels, and creative brands in achieving their goals.",
+    "items": []
   }
 }
 
