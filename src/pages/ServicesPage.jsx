@@ -1,6 +1,7 @@
 import ServicesHero from '../components/sections/services/ServicesHero';
 import ServicesGrid from '../components/sections/services/ServicesGrid';
 import ServicesCta  from '../components/sections/services/ServicesCta';
+import SEO          from '../components/common/SEO';
 
 /**
  * ServicesPage — Route: /services
@@ -11,6 +12,11 @@ import ServicesCta  from '../components/sections/services/ServicesCta';
 function ServicesPage() {
   return (
     <main aria-label="LabelAlly Entertainment Services">
+      <SEO
+        title="Music Distribution & Rights Management Services | LabelAlly"
+        description="Explore LabelAlly Entertainment services, including music distribution, YouTube management, Content ID, rights management, OTT distribution, and revenue optimization."
+        canonical="https://label-ally-testing.vercel.app/services"
+      />
       <ServicesHero />
       <ServicesGrid />
       <ServicesCta />

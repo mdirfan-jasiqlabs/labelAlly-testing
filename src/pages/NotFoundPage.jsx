@@ -5,6 +5,7 @@ import Button from '../components/common/Button';
 import GradientBackground from '../components/common/GradientBackground';
 import GlowEffect from '../components/common/GlowEffect';
 import notFoundData from '../data/notFound.json';
+import SEO from '../components/common/SEO';
 
 /**
  * NotFoundPage — Wildcard 404 error page.
@@ -18,6 +19,11 @@ function NotFoundPage() {
       aria-labelledby="not-found-heading"
       className="min-h-[80vh] flex items-center justify-center text-center relative overflow-hidden w-full"
     >
+      <SEO
+        title="Page Not Found | LabelAlly Entertainment"
+        description="The page you are looking for could not be found. Return to the LabelAlly Entertainment website to explore our services."
+        noindex={true}
+      />
       {/* Decorative glows */}
       <div
         aria-hidden="true"

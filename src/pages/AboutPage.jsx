@@ -3,6 +3,7 @@ import CompanyOverview from '../components/sections/about/CompanyOverview';
 import MissionVision   from '../components/sections/about/MissionVision';
 import CoreValues      from '../components/sections/about/CoreValues';
 import AboutCta        from '../components/sections/about/AboutCta';
+import SEO             from '../components/common/SEO';
 
 /**
  * AboutPage — Route: /about
@@ -13,6 +14,11 @@ import AboutCta        from '../components/sections/about/AboutCta';
 function AboutPage() {
   return (
     <main aria-label="About LabelAlly Entertainment">
+      <SEO
+        title="About LabelAlly Entertainment | Music Industry Solutions"
+        description="Learn about LabelAlly Entertainment and our approach to supporting artists, labels, and content owners with digital distribution, rights management, and revenue growth."
+        canonical="https://label-ally-testing.vercel.app/about"
+      />
       <AboutHero />
       <CompanyOverview />
       <MissionVision />

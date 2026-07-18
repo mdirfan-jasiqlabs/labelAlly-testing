@@ -8,6 +8,7 @@ import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import AnalyticsSection    from '../components/sections/home/AnalyticsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import FinalCtaSection     from '../components/sections/home/FinalCtaSection';
+import SEO                 from '../components/common/SEO';
 
 /**
  * HomePage — Route: /
@@ -28,6 +29,12 @@ import FinalCtaSection     from '../components/sections/home/FinalCtaSection';
 function HomePage() {
   return (
     <main aria-label="LabelAlly Entertainment homepage">
+      <SEO
+        title=""
+        description="Grow your music business with professional music distribution, YouTube channel management, content rights management, Content ID, OTT distribution, and revenue optimization services."
+        canonical="https://label-ally-testing.vercel.app/"
+        type="website"
+      />
       <HeroSection />
       <PlatformStrip />
       <AboutSection />

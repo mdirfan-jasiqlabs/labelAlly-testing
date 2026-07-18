@@ -1,0 +1,56 @@
+import { Helmet } from 'react-helmet-async';
+
+/**
+ * SEO Component — Handles all meta tags dynamically via react-helmet-async.
+ *
+ * Defaults:
+ * - Brand: LabelAlly Entertainment
+ * - URL: https://label-ally-testing.vercel.app
+ * - Image: No default OG image is generated, leaving it configurable.
+ */
+function SEO({
+  title,
+  description,
+  canonical,
+  image,
+  type = 'website',
+  noindex = false,
+}) {
+  const defaultTitle = 'LabelAlly Entertainment | Music Distribution & Rights Management';
+  const defaultDescription =
+    'LabelAlly Entertainment provides music distribution, YouTube channel management, content rights management, YouTube CMS, Content ID, OTT distribution, and revenue optimization services.';
+  const defaultUrl = 'https://label-ally-testing.vercel.app';
+  
+  const pageTitle = title ? `${title} | LabelAlly Entertainment` : defaultTitle;
+  const pageDescription = description || defaultDescription;
+  const pageUrl = canonical ? canonical : defaultUrl;
+  
+  // Set robots metadata instructions
+  const robotsMeta = noindex ? 'noindex, nofollow' : 'index, follow';
+
+  return (
+    <Helmet>
+      {/* Basic Metadata */}
+      <title>{title ? pageTitle : defaultTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={pageUrl} />
+      <meta name="robots" content={robotsMeta} />
+
+      {/* Open Graph Metadata */}
+      <meta property="og:title" content={title ? pageTitle : defaultTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:site_name" content="LabelAlly Entertainment" />
+      {image && <meta property="og:image" content={image} />}
+
+      {/* Twitter Cards Metadata */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title ? pageTitle : defaultTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      {image && <meta name="twitter:image" content={image} />}
+    </Helmet>
+  );
+}
+
+export default SEO;

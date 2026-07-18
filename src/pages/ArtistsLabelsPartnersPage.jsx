@@ -2,6 +2,7 @@ import ArtistsHero         from '../components/sections/artists/ArtistsHero';
 import ArtistSupport       from '../components/sections/artists/ArtistSupport';
 import ArtistCapabilities  from '../components/sections/artists/ArtistCapabilities';
 import ArtistsCta          from '../components/sections/artists/ArtistsCta';
+import SEO                 from '../components/common/SEO';
 
 /**
  * ArtistsLabelsPartnersPage — Route: /artists-labels-partners
@@ -12,6 +13,11 @@ import ArtistsCta          from '../components/sections/artists/ArtistsCta';
 function ArtistsLabelsPartnersPage() {
   return (
     <main aria-label="Artists & Record Labels LabelAlly Entertainment">
+      <SEO
+        title="Solutions for Artists & Record Labels | LabelAlly Entertainment"
+        description="Discover how LabelAlly Entertainment helps independent artists, record labels, and content owners distribute music, protect rights, and maximize revenue."
+        canonical="https://label-ally-testing.vercel.app/artists-labels-partners"
+      />
       <ArtistsHero />
       <ArtistSupport />
       <ArtistCapabilities />
