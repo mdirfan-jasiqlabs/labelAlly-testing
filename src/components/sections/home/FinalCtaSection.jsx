@@ -35,7 +35,7 @@ function FinalCtaSection() {
             radius="2xl"
             bordered
             hover={false}
-            className="flex flex-col items-center text-center gap-6 bg-neutral-900/60 border border-neutral-800 py-16 px-6 sm:px-12 md:py-20 relative z-10"
+            className="flex flex-col items-center text-center gap-6 bg-neutral-900/60 border border-neutral-800 py-16 px-4 sm:px-12 md:py-20 relative z-10"
           >
             {/* Badge */}
             {finalCta.badge && (

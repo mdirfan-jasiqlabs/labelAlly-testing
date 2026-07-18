@@ -70,10 +70,10 @@ function Header() {
               aria-label={navData.logo.ariaLabel}
               className="flex items-center gap-1 focus-ring rounded-md shrink-0"
             >
-              <span className="font-heading text-xl font-bold text-neutral-50 tracking-tight">
+              <span className="font-heading text-lg md:text-xl font-bold text-neutral-50 tracking-tight">
                 {navData.logo.text}
               </span>
-              <span className="font-heading text-xl font-bold text-accent-400 tracking-tight">
+              <span className="font-heading text-lg md:text-xl font-bold text-accent-400 tracking-tight">
                 {navData.logo.textHighlight}
               </span>
             </Link>

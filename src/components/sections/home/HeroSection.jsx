@@ -61,7 +61,7 @@ function HeroSection() {
               id="hero-heading"
               className={[
                 'font-heading font-black tracking-tight',
-                'text-5xl sm:text-6xl md:text-7xl lg:text-8xl',
+                'text-4xl sm:text-6xl md:text-7xl lg:text-8xl',
                 'leading-none',
                 'text-neutral-50',
               ].join(' ')}
