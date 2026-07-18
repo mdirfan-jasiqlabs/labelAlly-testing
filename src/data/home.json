@@ -151,5 +151,80 @@
         "description": "Your music goes live across all platforms. We monitor performance and continuously optimize for maximum impact."
       }
     ]
+  },
+  "whyChoose": {
+    "badge": "Why LabelAlly",
+    "heading": "The Partner That Puts You First",
+    "description": "We built LabelAlly Entertainment around one principle — your success is our success. Everything we offer is designed to give artists, labels, and brands a genuine competitive advantage.",
+    "benefits": [
+      {
+        "id": "full-service",
+        "title": "Full-Service Approach",
+        "description": "From distribution to rights management to marketing — we handle every part of your music business under one roof.",
+        "icon": "Layers"
+      },
+      {
+        "id": "global-reach",
+        "title": "Global Reach",
+        "description": "Your music distributed to every major platform worldwide, reaching listeners wherever they are.",
+        "icon": "Globe"
+      },
+      {
+        "id": "artist-first",
+        "title": "Artist-First Philosophy",
+        "description": "Every decision we make is guided by what is best for the artist and their long-term career — not just short-term gains.",
+        "icon": "UserCheck"
+      },
+      {
+        "id": "dedicated-support",
+        "title": "Dedicated Support",
+        "description": "A professional team that understands the music industry and is available to guide you at every stage.",
+        "icon": "Headphones"
+      },
+      {
+        "id": "transparent-process",
+        "title": "Transparent Process",
+        "description": "Clear communication, honest reporting, and no hidden fees — you always know exactly where your music and money stand.",
+        "icon": "CheckCircle"
+      },
+      {
+        "id": "fast-efficient",
+        "title": "Fast & Efficient",
+        "description": "Professional onboarding and rapid distribution so your music gets to market without unnecessary delays.",
+        "icon": "Zap"
+      }
+    ]
+  },
+
+  "artists": {
+    "badge": "Who We Work With",
+    "heading": "Built for Every Music Professional",
+    "description": "Whether you are an independent artist, an established label, or a brand looking to leverage music — LabelAlly Entertainment has the services and expertise to support your goals.",
+    "cta": {
+      "label": "Artists, Labels & Partners",
+      "href": "/artists-labels-partners",
+      "ariaLabel": "Learn about LabelAlly Entertainment's work with artists, labels, and partners"
+    },
+    "categories": [
+      {
+        "id": "independent-artists",
+        "title": "Independent Artists",
+        "description": "We empower independent artists with the same professional tools and distribution network previously available only to major labels.",
+        "icon": "Mic2"
+      },
+      {
+        "id": "record-labels",
+        "title": "Record Labels",
+        "description": "Partner with us for comprehensive distribution, rights management, and revenue optimization across your entire catalog.",
+        "icon": "Building2"
+      },
+      {
+        "id": "brands-agencies",
+        "title": "Brands & Agencies",
+        "description": "Leverage sync licensing and content rights management to place music across campaigns, productions, and digital platforms.",
+        "icon": "Music"
+      }
+    ]
   }
 }
+

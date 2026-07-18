@@ -3,18 +3,14 @@ import PlatformStrip       from '../components/sections/home/PlatformStrip';
 import AboutSection        from '../components/sections/home/AboutSection';
 import ServicesSection     from '../components/sections/home/ServicesSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
+import WhyChooseSection     from '../components/sections/home/WhyChooseSection';
+import ArtistsSection      from '../components/sections/home/ArtistsSection';
 
 /**
  * HomePage — Route: /
  *
- * Phase 4 Complete: All five homepage sections in final order.
- *
- * Section order:
- * 1. HeroSection        — above-the-fold hero
- * 2. PlatformStrip      — distribution platform names
- * 3. AboutSection       — company intro + 4 service value cards
- * 4. ServicesSection    — 6 services card grid
- * 5. HowItWorksSection  — 4-step process + CTA
+ * Phase 5 Part 1: Renders Hero + Platform Strip + About + Services + How It Works + Why Choose + Artists.
+ * The final parts of Phase 5 will add the remaining sections.
  */
 function HomePage() {
   return (
@@ -24,6 +20,8 @@ function HomePage() {
       <AboutSection />
       <ServicesSection />
       <HowItWorksSection />
+      <WhyChooseSection />
+      <ArtistsSection />
     </main>
   );
 }
