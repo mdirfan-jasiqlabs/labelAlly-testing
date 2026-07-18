@@ -1,127 +1,143 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import Container from '../../common/Container';
-import SectionHeading from '../../common/SectionHeading';
-import Button from '../../common/Button';
 import homeData from '../../../data/home.json';
 
 /**
- * HowItWorksSection — Homepage process steps section.
- *
- * Displays the ordered steps to get started with LabelAlly.
- * Clear numbered hierarchy. Responsive step layout.
- * All content from src/data/home.json — no hardcoded strings.
+ * HowItWorksSection — Homepage process steps section matching reference direction.
  *
  * Layout:
- * - Mobile:  stacked vertically (1 column)
- * - Tablet:  2 columns
- * - Desktop: 4 columns (one per step)
- *
- * Semantics:
- * - <section> with aria-labelledby
- * - <ol> for ordered process steps
+ * - Two-column split layout: Left side organic rounded team photo, Right side 3 process steps.
+ * - Spacing and sizing match the approved reference exactly.
+ * - Dynamic data driven via home.json.
  */
 function HowItWorksSection() {
-  const { howItWorks } = homeData;
+  const { process } = homeData;
 
-  if (!howItWorks?.steps?.length) return null;
+  if (!process?.steps?.length) return null;
 
   return (
     <section
-      aria-labelledby="how-it-works-heading"
-      className="py-20 md:py-28 lg:py-36 bg-white relative overflow-hidden"
+      role="region"
+      aria-labelledby="process-heading"
+      className="relative w-full bg-white py-24 md:py-32 lg:py-36 overflow-hidden"
     >
-      {/* ── Decorative background glow ── */}
+      {/* ── Background curved / radial lavender shape (right) ── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
-      >
-        <div className="w-[800px] h-[400px] rounded-full bg-primary-50/40 blur-3xl" />
-      </div>
+        className="pointer-events-none absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full opacity-[0.20] z-0"
+        style={{ background: 'radial-gradient(circle, rgba(139,120,255,0.15) 0%, transparent 70%)' }}
+      />
 
-      <Container className="relative z-10">
+      <Container size="2xl" className="relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-20 items-center justify-between">
 
-        {/* ── Section Header ── */}
-        <SectionHeading
-          titleAs="h2"
-          badge={howItWorks.badge}
-          title={howItWorks.heading}
-          description={howItWorks.description}
-          align="center"
-        />
+          {/* ── Left Column — Asymmetrical Organic Image (46%) ── */}
+          <div className="w-full lg:w-[46%] flex flex-col items-center justify-center relative shrink-0">
+            {/* Dotted grid backdrop decoration */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-6 -top-6 w-40 h-40 opacity-[0.22] z-0"
+              style={{
+                backgroundImage: 'radial-gradient(#ec4899 1.5px, transparent 1.5px)',
+                backgroundSize: '16px 16px',
+              }}
+            />
 
-        {/* ── Steps ── */}
-        <ol
-          aria-label="How to get started"
-          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
-        >
-          {howItWorks.steps.map((step, index) => {
-            const isLast = index === howItWorks.steps.length - 1;
+            {/* Organic blob image wrapper */}
+            <div
+              className="relative w-full aspect-[4/5] max-w-[420px] lg:max-w-none overflow-hidden z-10"
+              style={{
+                clipPath: 'url(#blob-clip)',
+                WebkitClipPath: 'url(#blob-clip)',
+                filter: 'drop-shadow(0 20px 40px rgba(31, 35, 90, 0.08))',
+              }}
+            >
+              <img
+                src={process.image.src}
+                alt={process.image.alt}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover pointer-events-none select-none"
+              />
+            </div>
+          </div>
 
-            return (
-              <li
-                key={step.number}
-                className="relative flex flex-col gap-4"
-              >
-                {/* ── Connector line (desktop only, not on last item) ── */}
-                {!isLast && (
-                  <div
-                    aria-hidden="true"
-                    className="hidden lg:block absolute top-5 left-[calc(50%+2rem)] right-0 h-px bg-gradient-to-r from-neutral-700 to-transparent"
-                  />
-                )}
+          {/* ── Right Column — Steps (54%) ── */}
+          <div className="w-full lg:w-[54%] flex flex-col items-start text-left">
+            {/* Badge */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-pink-600 mb-6">
+              {process.badge}
+            </span>
 
-                {/* ── Step Number Circle ── */}
-                <div className="flex items-center gap-4 lg:flex-col lg:items-start">
-                  <div
-                    aria-hidden="true"
-                    className={[
-                      'flex items-center justify-center',
-                      'w-10 h-10 shrink-0',
-                      'rounded-full',
-                      'border-2 border-primary-700',
-                      'bg-primary-50',
-                      'text-primary-600 font-heading font-bold text-sm',
-                    ].join(' ')}
-                  >
-                    {step.number}
-                  </div>
+            {/* Title / Heading */}
+            <h2
+              id="process-heading"
+              className="font-heading font-black tracking-tight leading-[1.1] text-3xl sm:text-4xl md:text-5xl text-neutral-900"
+            >
+              <span className="block">{process.title.lineOne}</span>
+              <span className="block text-primary-900">{process.title.lineTwo}</span>
+            </h2>
 
-                  {/* ── Title ── */}
-                  <h3 className="text-base font-semibold font-heading text-neutral-900 leading-snug lg:hidden">
-                    {step.title}
-                  </h3>
-                </div>
+            {/* Small Brand Divider */}
+            <div
+              aria-hidden="true"
+              className="h-1 w-20 bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 rounded-full mt-4 mb-10"
+            />
 
-                {/* ── Title (desktop) ── */}
-                <h3 className="hidden lg:block text-base font-semibold font-heading text-neutral-900 leading-snug">
-                  {step.title}
-                </h3>
+            {/* Steps Timeline (Ordered List) */}
+            <ol className="w-full flex flex-col gap-8 md:gap-10">
+              {process.steps.map((step, idx) => {
+                const isLast = idx === process.steps.length - 1;
+                return (
+                  <li key={step.number} className="relative flex items-start gap-5 group">
+                    {/* Vertical Connector Line (behind circles, centering aligned) */}
+                    {!isLast && (
+                      <div
+                        aria-hidden="true"
+                        className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-neutral-200 pointer-events-none"
+                      />
+                    )}
 
-                {/* ── Description ── */}
-                <p className="text-sm text-neutral-900 leading-relaxed">
-                  {step.description}
-                </p>
-              </li>
-            );
-          })}
-        </ol>
+                    {/* Step circle */}
+                    <div
+                      aria-hidden="true"
+                      className={[
+                        'flex items-center justify-center shrink-0',
+                        'w-10 h-10 rounded-full',
+                        'bg-pink-600 text-white font-heading font-extrabold text-sm',
+                        'shadow-[0_8px_20px_rgba(219,39,119,0.22)]',
+                        'transition-all duration-300 group-hover:scale-105',
+                        'z-10',
+                      ].join(' ')}
+                    >
+                      {step.number}
+                    </div>
 
-        {/* ── Section CTA ── */}
-        <div className="mt-16 flex justify-center">
-          <Button
-            as={Link}
-            to="/contact"
-            aria-label="Get started — contact LabelAlly Entertainment"
-            variant="primary"
-            size="lg"
-            rightIcon={<ArrowRight size={18} aria-hidden="true" />}
-          >
-            Get Started
-          </Button>
+                    {/* Step Copy */}
+                    <div className="flex flex-col gap-1.5 pt-1 max-w-xl">
+                      <h3 className="font-heading font-black text-lg text-neutral-900 leading-snug">
+                        {step.title}
+                      </h3>
+                      <p className="text-[0.88rem] sm:text-[0.92rem] leading-relaxed text-neutral-500">
+                        {step.description}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+
         </div>
-
       </Container>
+
+      {/* ── Custom Clip Path for Organic Blob Shape ── */}
+      <svg width="0" height="0" className="absolute pointer-events-none select-none" aria-hidden="true">
+        <defs>
+          <clipPath id="blob-clip" clipPathUnits="objectBoundingBox">
+            <path d="M0.2,0.18 C0.5,-0.05 0.8,0.1 0.8,0.35 C0.8,0.5 0.98,0.55 0.85,0.75 C0.7,0.95 0.3,1 0.18,0.8 C0.05,0.6 -0.05,0.3 0.2,0.18 Z" />
+          </clipPath>
+        </defs>
+      </svg>
     </section>
   );
 }

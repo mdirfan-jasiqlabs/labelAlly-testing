@@ -192,30 +192,31 @@
       }
     ]
   },
-  "howItWorks": {
-    "badge": "The Process",
-    "heading": "Simple Steps to Get Started",
-    "description": "We keep things straightforward — so you can focus on making music while we handle the rest.",
+  "process": {
+    "badge": "How It Works",
+    "title": {
+      "lineOne": "3 Steps To Get Started",
+      "lineTwo": "With Your Digital Success"
+    },
+    "image": {
+      "src": "/process-team.jpg",
+      "alt": "Creative team discussing a digital growth strategy"
+    },
     "steps": [
       {
-        "number": 1,
-        "title": "Get in Touch",
-        "description": "Reach out through our contact page. Tell us about your music, your goals, and what you need from a partner."
+        "number": "01",
+        "title": "Connect & Strategize",
+        "description": "We begin by understanding your brand, goals, content type, and target audience. Whether you're a creator, label, or artist, our team crafts a customized strategy for video marketing, distribution, and monetization across platforms like YouTube, Facebook, Instagram, Spotify, and more."
       },
       {
-        "number": 2,
-        "title": "Strategy & Consultation",
-        "description": "We assess your needs and build a tailored plan — covering distribution, rights management, and growth opportunities."
+        "number": "02",
+        "title": "Launch & Distribute",
+        "description": "We manage everything—from uploading and optimizing your videos to distributing your music globally across all major audio & OTT platforms. We handle metadata, rights management, scheduling, and compliance with platform guidelines."
       },
       {
-        "number": 3,
-        "title": "Onboarding & Setup",
-        "description": "We set up your distribution, channel management, and rights systems — professionally and efficiently."
-      },
-      {
-        "number": 4,
-        "title": "Launch & Grow",
-        "description": "Your music goes live across all platforms. We monitor performance and continuously optimize for maximum impact."
+        "number": "03",
+        "title": "Grow & Monetize",
+        "description": "With performance tracking, analytics, and constant optimization, we help you grow your fanbase, boost views & revenue, and unlock monetization potential. We also offer artist branding, social media promotions, and channel/reporting insights for consistent growth."
       }
     ]
   },

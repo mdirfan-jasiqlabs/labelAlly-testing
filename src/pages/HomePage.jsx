@@ -1,7 +1,6 @@
 import HeroSection         from '../components/sections/home/HeroSection';
 import PlatformStrip       from '../components/sections/home/PlatformStrip';
 import AboutSection        from '../components/sections/home/AboutSection';
-import ServicesSection     from '../components/sections/home/ServicesSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 import WhyChooseSection    from '../components/sections/home/WhyChooseSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
@@ -13,18 +12,17 @@ import SEO                 from '../components/common/SEO';
 /**
  * HomePage — Route: /
  *
- * Phase 5 Complete: Renders all ten homepage sections in sequence.
+ * Phase 5 Complete: Renders all homepage sections in sequence.
  * Section order:
  * 1. HeroSection
  * 2. PlatformStrip
  * 3. AboutSection
- * 4. ServicesSection
- * 5. HowItWorksSection
- * 6. WhyChooseSection
- * 7. ArtistsSection
- * 8. AnalyticsSection
- * 9. TestimonialsSection
- * 10. FinalCtaSection
+ * 4. HowItWorksSection
+ * 5. WhyChooseSection
+ * 6. ArtistsSection
+ * 7. AnalyticsSection
+ * 8. TestimonialsSection
+ * 9. FinalCtaSection
  */
 function HomePage() {
   return (
@@ -38,7 +36,6 @@ function HomePage() {
       <HeroSection />
       <PlatformStrip />
       <AboutSection />
-      <ServicesSection />
       <HowItWorksSection />
       <WhyChooseSection />
       <ArtistsSection />
