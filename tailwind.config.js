@@ -230,6 +230,23 @@ export default {
       },
 
       // ── Animation & Transition ─────────────────────────────────────────────
+      keyframes: {
+        'hero-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'hero-drift': {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+          '50%': { transform: 'translate3d(12px, -16px, 0)' },
+        },
+      },
+      animation: {
+        'hero-float': 'hero-float 5s ease-in-out infinite',
+        'hero-float-delayed': 'hero-float 6.5s ease-in-out 0.8s infinite',
+        'hero-drift': 'hero-drift 12s ease-in-out infinite',
+        'hero-drift-delayed': 'hero-drift 14s ease-in-out 1.2s infinite',
+      },
+
       transitionDuration: {
         250: '250ms',
         400: '400ms',

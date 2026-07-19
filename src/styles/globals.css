@@ -513,7 +513,12 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
   .animate-fade-up,
-  .animate-pulse-slow {
+  .animate-pulse-slow,
+  .animate-float,
+  .animate-hero-float,
+  .animate-hero-float-delayed,
+  .animate-hero-drift,
+  .animate-hero-drift-delayed {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;

@@ -1,0 +1,259 @@
+{
+  "accentLines": [
+    {
+      "id": "accent-orange",
+      "tone": "orange"
+    },
+    {
+      "id": "accent-indigo",
+      "tone": "indigo"
+    },
+    {
+      "id": "accent-green",
+      "tone": "green"
+    },
+    {
+      "id": "accent-blue",
+      "tone": "blue"
+    }
+  ],
+  "ariaLabel": "Artists and Labels hero — LabelAlly Entertainment",
+  "badge": {
+    "ariaLabel": "Audience: for artists and labels",
+    "icon": "Users",
+    "label": "For Artists & Labels"
+  },
+  "buttons": [
+    {
+      "ariaLabel": "Get started — contact LabelAlly Entertainment",
+      "disabled": false,
+      "external": false,
+      "href": "/contact",
+      "icon": "Rocket",
+      "id": "primary-cta",
+      "label": "Get Started",
+      "variant": "primary"
+    },
+    {
+      "ariaLabel": "Talk to our team on WhatsApp",
+      "disabled": false,
+      "external": true,
+      "href": "https://wa.me/918709002433",
+      "icon": "MessageCircle",
+      "id": "secondary-cta",
+      "label": "Talk to Our Team",
+      "variant": "secondary"
+    }
+  ],
+  "decorations": {
+    "orbs": [
+      {
+        "id": "orb-top-right",
+        "position": "top-right",
+        "size": "lg",
+        "tone": "orange"
+      },
+      {
+        "id": "orb-bottom-left",
+        "position": "bottom-left",
+        "size": "md",
+        "tone": "pink"
+      },
+      {
+        "id": "orb-center-right",
+        "position": "center-right",
+        "size": "sm",
+        "tone": "indigo"
+      }
+    ],
+    "shapes": [
+      {
+        "id": "dots",
+        "position": "top-left",
+        "type": "dots"
+      },
+      {
+        "id": "dots-right",
+        "position": "top-right",
+        "type": "dots-right"
+      },
+      {
+        "id": "pills",
+        "position": "top-right",
+        "type": "pills"
+      },
+      {
+        "id": "rings",
+        "position": "gallery",
+        "type": "rings"
+      },
+      {
+        "id": "triangle",
+        "position": "mid-left",
+        "type": "triangle"
+      },
+      {
+        "id": "wave",
+        "position": "mid-right",
+        "type": "wave"
+      }
+    ]
+  },
+  "description": "Everything you need to release, manage, and grow your music career or label — with global distribution, rights protection, and dedicated support at every step.",
+  "features": [
+    {
+      "icon": "ShieldCheck",
+      "id": "secure-trusted",
+      "title": "Secure & Trusted",
+      "tone": "orange"
+    },
+    {
+      "icon": "CircleDollarSign",
+      "id": "transparent-revenue",
+      "title": "Transparent Revenue",
+      "tone": "green"
+    },
+    {
+      "icon": "BarChart3",
+      "id": "global-reach",
+      "title": "Global Reach",
+      "tone": "indigo"
+    },
+    {
+      "icon": "Headphones",
+      "id": "dedicated-support",
+      "title": "Dedicated Support",
+      "tone": "blue"
+    }
+  ],
+  "floatingCards": [
+    {
+      "footer": {
+        "icon": "Globe",
+        "text": "150+ Platforms"
+      },
+      "id": "platform-availability",
+      "platforms": [
+        {
+          "alt": "Spotify",
+          "id": "spotify",
+          "logo": "/images/platforms/spotify.svg",
+          "name": "Spotify"
+        },
+        {
+          "alt": "Apple Music",
+          "id": "apple-music",
+          "logo": "/images/platforms/apple-music.svg",
+          "name": "Apple Music"
+        },
+        {
+          "alt": "Amazon Music",
+          "id": "amazon-music",
+          "logo": "/images/platforms/amazon-music.svg",
+          "name": "Amazon Music"
+        },
+        {
+          "alt": "YouTube Music",
+          "id": "youtube",
+          "logo": "/images/platforms/youtube.svg",
+          "name": "YouTube Music"
+        }
+      ],
+      "title": "Music Available On",
+      "type": "platforms"
+    }
+  ],
+  "gallery": {
+    "floating": [
+      {
+        "alt": "Producer working in a music studio",
+        "height": 220,
+        "id": "float-top-right",
+        "position": "top-right",
+        "src": "/images/about/about-2.png",
+        "width": 220
+      },
+      {
+        "alt": "Artist listening with headphones in creative session",
+        "height": 240,
+        "id": "float-bottom-left",
+        "position": "bottom-left",
+        "src": "/artists/artist-3.webp",
+        "width": 180
+      }
+    ],
+    "main": {
+      "alt": "Music artist performing under stage lights",
+      "height": 720,
+      "src": "/artists/artist-1.webp",
+      "width": 640
+    }
+  },
+  "heading": {
+    "id": "hero-heading",
+    "lines": [
+      {
+        "id": "line-distribute-protect",
+        "segments": [
+          {
+            "gradient": false,
+            "text": "Distribute. Protect."
+          }
+        ]
+      },
+      {
+        "id": "line-grow",
+        "segments": [
+          {
+            "gradient": true,
+            "text": "Grow Your Music."
+          }
+        ]
+      }
+    ]
+  },
+  "trustSection": {
+    "enabled": true,
+    "platforms": [
+      {
+        "alt": "Spotify logo",
+        "id": "spotify",
+        "logo": "/images/platforms/spotify.svg",
+        "name": "Spotify"
+      },
+      {
+        "alt": "Apple Music logo",
+        "id": "apple-music",
+        "logo": "/images/platforms/apple-music.svg",
+        "name": "Apple Music"
+      },
+      {
+        "alt": "YouTube logo",
+        "id": "youtube",
+        "logo": "/images/platforms/youtube.svg",
+        "name": "YouTube"
+      },
+      {
+        "alt": "Amazon Music logo",
+        "id": "amazon-music",
+        "logo": "/images/platforms/amazon-music.svg",
+        "name": "Amazon Music"
+      },
+      {
+        "alt": "JioSaavn logo",
+        "id": "jiosaavn",
+        "logo": "/images/platforms/jiosaavn.svg",
+        "name": "JioSaavn"
+      }
+    ],
+    "stat": {
+      "label": "Platforms",
+      "value": "150+"
+    },
+    "text": {
+      "highlight": "Artists, Labels & Content Creators",
+      "prefix": "Trusted by ",
+      "suffix": " Worldwide"
+    }
+  }
+}
