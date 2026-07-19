@@ -85,16 +85,18 @@ function MobileMenu({ isOpen, onClose }) {
           <Link
             to="/"
             onClick={onClose}
-            className="flex flex-col focus-ring rounded-md group"
+            className="flex items-center shrink-0 focus-ring rounded-md group"
             aria-label={navData.logo.ariaLabel}
           >
-            <span className="leading-none font-heading font-black text-lg tracking-tight">
-              <span className="text-neutral-900">{navData.logo.text}</span>
-              <span className="text-accent-500">{navData.logo.textHighlight}</span>
-            </span>
-            <span className="text-[0.5rem] font-semibold tracking-[0.22em] uppercase text-neutral-400 leading-none mt-0.5">
-              {navData.logo.subtext}
-            </span>
+            <img
+              src="/logo.jpeg"
+              alt="LabelAlly Entertainment Logo"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+              className="h-10 w-[60px] object-contain"
+            />
           </Link>
 
           {/* Close Button */}

@@ -45,14 +45,17 @@ function Footer() {
             <Link
               to="/"
               aria-label="LabelAlly Entertainment — Go to homepage"
-              className="inline-flex items-center gap-1 focus-ring rounded-md w-fit"
+              className="inline-flex items-center focus-ring rounded-md w-fit group"
             >
-              <span className="font-heading text-xl font-bold text-neutral-900">
-                {footerData.company.name}
-              </span>
-              <span className="font-heading text-xl font-bold text-primary-600">
-                {footerData.company.nameHighlight}
-              </span>
+              <img
+                src="/logo.jpeg"
+                alt="LabelAlly Entertainment Logo"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+                className="h-16 w-24 md:h-20 md:w-[120px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              />
             </Link>
 
             {/* Description */}

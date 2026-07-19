@@ -60,7 +60,7 @@ function Header() {
             className={[
               'flex items-center justify-between',
               'transition-all duration-300',
-              scrolled ? 'h-16' : 'h-[4.5rem]',
+              scrolled ? 'h-18' : 'h-24',
             ].join(' ')}
           >
 
@@ -68,19 +68,22 @@ function Header() {
             <Link
               to="/"
               aria-label={navData.logo.ariaLabel}
-              className="flex flex-col shrink-0 focus-ring rounded-md group"
+              className="flex items-center shrink-0 focus-ring rounded-md group"
             >
-              <span className="leading-none font-heading font-black text-xl tracking-tight">
-                <span className="text-neutral-900 group-hover:text-neutral-700 transition-colors duration-200">
-                  {navData.logo.text}
-                </span>
-                <span className="text-accent-500 group-hover:text-accent-600 transition-colors duration-200">
-                  {navData.logo.textHighlight}
-                </span>
-              </span>
-              <span className="text-[0.55rem] font-semibold tracking-[0.22em] uppercase text-neutral-400 leading-none mt-0.5">
-                {navData.logo.subtext}
-              </span>
+              <img
+                src="/logo.jpeg"
+                alt="LabelAlly Entertainment Logo"
+                width={1536}
+                height={1024}
+                loading="eager"
+                decoding="async"
+                className={[
+                  'object-contain transition-all duration-300',
+                  scrolled
+                    ? 'h-10 w-[60px] md:h-11 md:w-[66px] lg:h-12 lg:w-[72px]'
+                    : 'h-12 w-[72px] md:h-14 md:w-[84px] lg:h-16 lg:w-24',
+                ].join(' ')}
+              />
             </Link>
 
             {/* ── Desktop Navigation (center) ──────────────────── */}
@@ -222,7 +225,7 @@ function Header() {
       </header>
 
       {/* Spacer — prevents content from hiding under fixed header */}
-      <div className="h-[4.5rem]" aria-hidden="true" />
+      <div className="h-24" aria-hidden="true" />
 
       {/* Mobile / Tablet Menu */}
       <MobileMenu isOpen={menuOpen} onClose={closeMenu} />
