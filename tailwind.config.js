@@ -35,6 +35,8 @@ export default {
           page: 'var(--color-page-bg)',
           section: 'var(--color-section-bg)',
           card: 'var(--color-card-surface)',
+          logoCard: 'var(--color-logo-card-surface)',
+          logoCardBorder: 'var(--color-logo-card-border)',
           header: 'var(--color-header-bg)',
           footer: 'var(--color-footer-bg)',
           heading: 'var(--color-heading-text)',
@@ -190,6 +192,9 @@ export default {
         22: '5.5rem',
         30: '7.5rem',
         128: '32rem',
+        'logo-compact': '2.75rem',
+        'logo-standard': '3.5rem',
+        'logo-wide': '3rem',
       },
 
       // ── Container ──────────────────────────────────────────────────────────
@@ -199,6 +204,17 @@ export default {
         'container-lg': '1024px',
         'container-xl': '1280px',
         'container-2xl': '1400px',
+        'logo-compact': '7rem',
+        'logo-standard': '10rem',
+        'logo-wide': '12rem',
+        'logo-extra-wide': '14rem',
+      },
+
+      // ── Min Height ─────────────────────────────────────────────────────────
+      minHeight: {
+        'partner-card': '7rem',
+        'partner-card-md': '8rem',
+        'partner-card-lg': '9rem',
       },
 
       // ── Typography ─────────────────────────────────────────────────────────

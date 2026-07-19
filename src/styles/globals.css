@@ -37,6 +37,8 @@
   --color-page-bg: #FCFCFF;
   --color-section-bg: #FFFFFF;
   --color-card-surface: #FFFFFF;
+  --color-logo-card-surface: #FFFFFF;
+  --color-logo-card-border: #e2e8f0;
   --color-header-bg: rgba(252, 252, 255, 0.95);
   --color-footer-bg: #09090b;
   --color-heading-text: #11143E;
@@ -94,6 +96,8 @@
   --color-page-bg: #0B0F19;
   --color-section-bg: #0F172A;
   --color-card-surface: #1E293B;
+  --color-logo-card-surface: #F8FAFC;
+  --color-logo-card-border: #E2E8F0;
   --color-header-bg: rgba(11, 15, 25, 0.9);
   --color-footer-bg: #080A10;
   --color-heading-text: #F8FAFC;

@@ -20,20 +20,20 @@ function GradientBackground({
 }) {
   // Variant class map — uses gradient utilities from tailwind.config.js
   const variantMap = {
-    // Deep midnight hero gradient (primary brand)
-    hero: 'bg-gradient-hero',
+    // Light hero gradient; solid theme surface in dark mode
+    hero: 'bg-gradient-hero dark:bg-none dark:bg-theme-page',
 
-    // Pure dark — now pure light/white
-    dark: 'bg-white',
+    // Solid page surface
+    dark: 'bg-white dark:bg-theme-page',
 
-    // Subtle surface gradient — slightly lighter light/off-white
-    subtle: 'bg-gradient-to-b from-neutral-50 to-white',
+    // Subtle surface gradient; solid theme section in dark mode
+    subtle: 'bg-gradient-to-b from-neutral-50 to-white dark:bg-none dark:bg-theme-section',
 
     // Accent gradient — gold/amber (use sparingly)
     accent: 'bg-gradient-accent',
 
     // Radial glow overlay — transparent center
-    glow: 'bg-gradient-glow',
+    glow: 'bg-gradient-glow dark:opacity-40',
   };
 
   const gradientClass = variantMap[variant] ?? variantMap.hero;

@@ -10,6 +10,9 @@
       "name": "Spotify",
       "logo": "/images/platforms/spotify.svg",
       "alt": "Spotify Music Logo",
+      "size": "wide",
+      "width": 160,
+      "height": 48,
       "order": 1,
       "enabled": true
     },
@@ -18,6 +21,9 @@
       "name": "Apple Music",
       "logo": "/images/platforms/apple-music.svg",
       "alt": "Apple Music Logo",
+      "size": "wide",
+      "width": 160,
+      "height": 48,
       "order": 2,
       "enabled": true
     },
@@ -26,7 +32,21 @@
       "name": "YouTube",
       "logo": "/images/platforms/youtube.svg",
       "alt": "YouTube Music Logo",
+      "size": "standard",
+      "width": 140,
+      "height": 48,
       "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "logo": "/images/platforms/facebook.svg",
+      "alt": "Facebook Logo",
+      "size": "wide",
+      "width": 160,
+      "height": 48,
+      "order": 4,
       "enabled": true
     },
     {
@@ -34,7 +54,10 @@
       "name": "Amazon Music",
       "logo": "/images/platforms/amazon-music.svg",
       "alt": "Amazon Music Logo",
-      "order": 4,
+      "size": "extraWide",
+      "width": 180,
+      "height": 48,
+      "order": 5,
       "enabled": true
     },
     {
@@ -42,7 +65,10 @@
       "name": "Resso",
       "logo": "/images/platforms/resso.svg",
       "alt": "Resso Music Logo",
-      "order": 5,
+      "size": "standard",
+      "width": 140,
+      "height": 48,
+      "order": 6,
       "enabled": true
     },
     {
@@ -50,7 +76,10 @@
       "name": "JioSaavn",
       "logo": "/images/platforms/jiosaavn.svg",
       "alt": "JioSaavn Music Logo",
-      "order": 6,
+      "size": "wide",
+      "width": 160,
+      "height": 48,
+      "order": 7,
       "enabled": true
     },
     {
@@ -58,7 +87,10 @@
       "name": "Hungama",
       "logo": "/images/platforms/hungama.svg",
       "alt": "Hungama Music Logo",
-      "order": 7,
+      "size": "wide",
+      "width": 160,
+      "height": 48,
+      "order": 8,
       "enabled": true
     }
   ]
