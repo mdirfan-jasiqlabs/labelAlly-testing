@@ -26,14 +26,14 @@ function PurposeCard({ card }) {
         'transition-colors duration-250',
       ].join(' ')}
     >
-      <div className="flex flex-col sm:flex-row sm:items-stretch p-5 sm:p-6 md:p-8 lg:p-10 gap-5 sm:gap-0">
+      <div className="flex flex-col sm:flex-row sm:items-center p-5 sm:p-6 md:p-7 lg:p-8 gap-5 sm:gap-0">
         {/* ── Icon Panel ── */}
         <div className="flex sm:items-center sm:justify-center shrink-0">
           <div
             aria-hidden="true"
             className={[
               'flex items-center justify-center',
-              'w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] md:w-20 md:h-20 lg:w-[5.5rem] lg:h-[5.5rem]',
+              'w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] md:w-20 md:h-20 lg:w-[5.5rem] lg:h-[5.5rem]',
               'rounded-2xl md:rounded-[1.35rem]',
               'bg-teal-50 dark:bg-teal-950/25',
               'border border-teal-100/60 dark:border-teal-900/30',
@@ -43,20 +43,26 @@ function PurposeCard({ card }) {
               <IconComponent
                 size={32}
                 strokeWidth={1.75}
-                className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-teal-600 dark:text-teal-400"
+                className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 text-teal-600 dark:text-teal-400"
               />
             )}
           </div>
         </div>
 
+        {/* ── Horizontal Divider (mobile) ── */}
+        <div
+          aria-hidden="true"
+          className="sm:hidden w-full h-px my-1 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
+        />
+
         {/* ── Vertical Divider (desktop) ── */}
         <div
           aria-hidden="true"
-          className="hidden sm:block w-px self-center mx-6 md:mx-8 lg:mx-10 h-[calc(100%-1rem)] min-h-[5rem] max-h-[7.5rem] bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
+          className="hidden sm:block w-px self-center mx-5 md:mx-7 lg:mx-8 h-16 md:h-20 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
         />
 
         {/* ── Content Area ── */}
-        <div className="flex-1 flex flex-col gap-3 md:gap-4 min-w-0">
+        <div className="flex-1 flex flex-col gap-3 min-w-0">
           <span
             id={`${card.id}-label`}
             className={[

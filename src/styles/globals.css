@@ -266,7 +266,22 @@
 
   /* Section vertical spacing */
   .section-spacing {
-    @apply py-16 md:py-20 lg:py-28;
+    @apply py-12 sm:py-16 md:py-20 lg:py-28;
+  }
+
+  /* Compact hero / page banner spacing */
+  .section-spacing-hero {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  /* Shared heading-group to content rhythm */
+  .section-heading-stack {
+    @apply mb-8 sm:mb-10 md:mb-12 lg:mb-14;
+  }
+
+  /* Shared subheading to content rhythm */
+  .section-subheading-stack {
+    @apply mb-5 sm:mb-6 md:mb-8;
   }
 
   /* Hide scrollbar (for horizontal scroll on mobile) */

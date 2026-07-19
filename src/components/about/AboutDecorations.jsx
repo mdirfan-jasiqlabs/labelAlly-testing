@@ -16,15 +16,15 @@ const POSITION_CLASSES = {
 };
 
 const VISIBILITY_CLASSES = {
-  'top-left':        'hidden md:block',
+  'top-left':        'hidden lg:block',
   'top-left-inner':  'hidden lg:block',
-  'top-right':       'hidden md:block',
-  'top-right-inner': 'hidden md:block',
+  'top-right':       'hidden lg:block',
+  'top-right-inner': 'hidden lg:block',
   'middle-left':     'hidden lg:block',
   'middle-right':    'hidden lg:block',
-  center:            'hidden sm:block',
-  'center-top':      'hidden md:block',
-  'center-right':    'hidden md:block',
+  center:            'hidden md:block',
+  'center-top':      'hidden lg:block',
+  'center-right':    'hidden lg:block',
 };
 
 function DecorationShape({ type, position }) {

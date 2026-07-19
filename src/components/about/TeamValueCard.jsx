@@ -47,7 +47,7 @@ function TeamValueCard({ value }) {
         'bg-white dark:bg-theme-card',
         'border border-neutral-200/70 dark:border-theme-border/50',
         'shadow-sm dark:shadow-theme',
-        'p-5 sm:p-6 md:p-7',
+        'p-5 sm:p-6',
         'transition-all duration-300 ease-out',
         'motion-reduce:transition-none',
         'hover:-translate-y-0.5 hover:shadow-card',
@@ -61,7 +61,7 @@ function TeamValueCard({ value }) {
           'w-14 h-14 md:w-16 md:h-16',
           'rounded-2xl border',
           accent.iconSurface,
-          'mb-5 md:mb-6',
+          'mb-4 md:mb-5',
         ].join(' ')}
       >
         {IconComponent && (
@@ -73,13 +73,13 @@ function TeamValueCard({ value }) {
         )}
       </div>
 
-      <h4 className="font-heading font-bold text-base sm:text-lg text-neutral-900 dark:text-theme-heading leading-snug mb-2">
+      <h4 className="font-heading font-bold text-base sm:text-lg text-neutral-900 dark:text-theme-heading leading-snug mb-2.5">
         {value.title}
       </h4>
 
       <div
         aria-hidden="true"
-        className={['w-10 h-0.5 rounded-full mb-3 md:mb-4', accent.line].join(' ')}
+        className={['w-10 h-0.5 rounded-full mb-3', accent.line].join(' ')}
       />
 
       <p className="text-[0.88rem] sm:text-sm leading-relaxed text-neutral-600 dark:text-theme-body flex-1">

@@ -19,15 +19,15 @@ function MissionVisionSection() {
     <section
       role="region"
       aria-labelledby="mission-vision-heading"
-      className="relative w-full overflow-hidden bg-neutral-50/60 dark:bg-theme-section py-16 md:py-24 lg:py-28 transition-colors duration-250"
+      className="relative w-full overflow-hidden bg-neutral-50/60 dark:bg-theme-section section-spacing transition-colors duration-250"
     >
       <AboutDecorations decorations={decorations} />
 
       <Container size="2xl" className="relative z-10">
         {/* ── Heading Group ── */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-14 lg:mb-16">
+        <div className="flex flex-col items-center text-center section-heading-stack">
           {eyebrow?.enabled && eyebrow.text && (
-            <div className="flex items-center gap-3 mb-4 md:mb-5">
+            <div className="flex items-center gap-3 mb-5 md:mb-6">
               <span
                 aria-hidden="true"
                 className="block w-8 sm:w-10 h-px bg-accent-500/70 dark:bg-accent-400/60"

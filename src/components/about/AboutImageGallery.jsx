@@ -14,7 +14,7 @@ function AboutImageGallery() {
   if (enabledImages.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full animate-fade-in">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 w-full animate-fade-in">
       {enabledImages.slice(0, 4).map((image) => (
         <div
           key={image.id}
