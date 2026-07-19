@@ -38,7 +38,8 @@ export default async function handler(req, res) {
   }
 
   // 3. Rate Limiting verification
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown-ip';
+  const clientIp =
+    req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown-ip';
   const now = Date.now();
   const clientRecord = rateLimitCache.get(clientIp);
 
@@ -83,18 +84,17 @@ export default async function handler(req, res) {
       });
     }
 
-    // 5. Server-Side Validation using Zod
-    const validatedData = contactSchema.parse(payload);
-
-    // 6. Honeypot check (website field must be empty)
-    if (validatedData.website && validatedData.website.trim().length > 0) {
-      // Generic mock response to confuse spam bots without throwing errors or running email adapters
+    // Honeypot before Zod — filled bots get a silent success and never reach email
+    if (payload?.website && String(payload.website).trim().length > 0) {
       console.log(`[${timestamp}] Honeypot spam submission blocked.`);
       return res.status(200).json({
         success: true,
         message: 'Your enquiry has been received.',
       });
     }
+
+    // Server-Side Validation using Zod
+    const validatedData = contactSchema.parse(payload);
 
     // 7. Dispatch sanitized email via provider adapter
     const sanitisedData = {

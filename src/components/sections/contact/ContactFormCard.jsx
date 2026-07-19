@@ -170,7 +170,10 @@ function ContactFormCard({ formConfig }) {
 
       {formStatus !== 'success' && (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 sm:gap-5" noValidate>
-          <div className="absolute -z-50 opacity-0 h-0 w-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div
+            className="absolute -z-50 opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+            inert
+          >
             <label htmlFor="form-website">Website</label>
             <input
               id="form-website"
