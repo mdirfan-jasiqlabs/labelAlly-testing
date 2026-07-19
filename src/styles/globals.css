@@ -67,6 +67,9 @@
   --color-border-default: var(--color-border);
   --color-border-subtle:  #f1f5f9;
 
+  /* Form controls — recessed vs card surface in both themes */
+  --color-input-surface: #F4F6FB;
+
   /* Gradients */
   --gradient-hero:    linear-gradient(135deg, #eef2ff 0%, #ffffff 50%, #fffbeb 100%);
   --gradient-accent:  linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
@@ -110,6 +113,10 @@
   --color-focus: #818cf8;
   --color-toggle-bg: #1e293b;
   --color-toggle-active: #0f172a;
+
+  /* Form controls — darker recessed fields inside elevated cards */
+  --color-input-surface: #0F172A;
+  --color-border-subtle: #1e293b;
 
   /* Custom overrides for scrollbar and backgrounds in dark */
   --scrollbar-thumb: #475569;
@@ -158,9 +165,12 @@
     @apply max-w-full;
   }
 
-  /* Focus visible — accessibility */
+  /* Focus visible — accessibility (theme-aware ring offset) */
   :focus-visible {
-    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white;
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--color-page-bg),
+      0 0 0 4px var(--color-focus);
   }
 
   /* Selection */
@@ -224,9 +234,81 @@
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
   }
 
-  /* ── Focus Ring (accessible) ─────────────────────────────── */
+  /* ── Focus Ring (accessible, theme-aware) ────────────────── */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    --tw-ring-color: var(--color-focus);
+    --tw-ring-offset-color: var(--color-page-bg);
+  }
+
+  /* ── Shared form controls (light + dark) ─────────────────── */
+  .form-control {
+    width: 100%;
+    border-radius: theme('borderRadius.control');
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-border);
+    background-color: var(--color-input-surface);
+    color: var(--color-heading-text);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 250ms;
+  }
+
+  .form-control::placeholder {
+    color: var(--color-muted-text);
+    opacity: 0.85;
+  }
+
+  .form-control:hover {
+    border-color: #d4d4d8;
+  }
+
+  :root.dark .form-control:hover,
+  [data-theme="dark"] .form-control:hover {
+    border-color: #64748b;
+  }
+
+  .form-control-input {
+    @apply form-control h-11 pl-10 pr-4 focus-ring;
+  }
+
+  .form-control-select {
+    @apply form-control h-11 pl-10 pr-8 appearance-none focus-ring;
+  }
+
+  .form-control-textarea {
+    @apply form-control min-h-[8.75rem] pl-10 pr-4 py-3 resize-y focus-ring;
+  }
+
+  .form-control-invalid {
+    border-color: #f87171;
+  }
+
+  :root.dark .form-control-invalid,
+  [data-theme="dark"] .form-control-invalid {
+    border-color: #ef4444;
+  }
+
+  .form-control-invalid:focus-visible {
+    --tw-ring-color: #ef4444;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .form-control {
+      transition: none;
+    }
+  }
+
+  /* Browser autofill remains readable in both themes */
+  .form-control:-webkit-autofill,
+  .form-control:-webkit-autofill:hover,
+  .form-control:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-heading-text);
+    caret-color: var(--color-heading-text);
+    box-shadow: 0 0 0 1000px var(--color-input-surface) inset;
+    transition: background-color 99999s ease-in-out 0s;
   }
 
   /* ── Link Base ───────────────────────────────────────────── */

@@ -6,7 +6,8 @@ import SEO                 from '../components/common/SEO';
  * ContactPage — Route: /contact
  *
  * Renders the Contact page layout.
- * Content is sourced from src/data/contact.json.
+ * Content is sourced from src/data/contact.json (intro) and
+ * src/data/contactData.js (form section; verified channels from footer.json).
  */
 function ContactPage() {
   return (

@@ -2,68 +2,38 @@ import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from 'react-router-dom';
-import {
-  CheckCircle2,
-  AlertCircle,
-  ArrowRight,
-  User,
-  Mail,
-  Phone,
-  Building2,
-  ListFilter,
-  MessageSquare,
-  Send,
-} from 'lucide-react';
+import { CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import Button from '../../common/Button';
 import { contactSchema } from '../../../schemas/contactSchema';
 import { sendContactForm } from '../../../services/contactApi';
-import contactData from '../../../data/contact.json';
-
-const inputBase = [
-  'w-full h-11 pl-10 pr-4 rounded-xl',
-  'bg-surface-page dark:bg-theme-page',
-  'border text-sm text-ink-primary dark:text-theme-heading',
-  'placeholder:text-ink-muted/70 dark:placeholder:text-theme-muted/70',
-  'focus-ring transition-colors duration-250',
-].join(' ');
-
-const selectBase = [
-  'w-full h-11 pl-10 pr-8 rounded-xl appearance-none',
-  'bg-surface-page dark:bg-theme-page',
-  'border text-sm text-ink-primary dark:text-theme-heading',
-  'focus-ring transition-colors duration-250',
-].join(' ');
-
-const textareaBase = [
-  'w-full min-h-[140px] pl-10 pr-4 py-3 rounded-xl resize-y',
-  'bg-surface-page dark:bg-theme-page',
-  'border text-sm text-ink-primary dark:text-theme-heading',
-  'placeholder:text-ink-muted/70 dark:placeholder:text-theme-muted/70',
-  'focus-ring transition-colors duration-250',
-].join(' ');
-
-function fieldBorder(hasError) {
-  return hasError
-    ? 'border-red-400 focus-visible:ring-red-500'
-    : 'border-theme-border/80 dark:border-theme-border hover:border-neutral-300 dark:hover:border-theme-border';
-}
+import { getEnabledInterests } from '../../../data/contactData';
+import { resolveContactIcon } from './contactFormMaps';
 
 function FieldError({ id, message }) {
   if (!message) return null;
   return (
-    <span id={id} className="text-xs text-red-500 mt-1 flex items-center gap-1.5" role="alert">
+    <span id={id} className="text-xs text-red-500 dark:text-red-400 mt-1 flex items-center gap-1.5" role="alert">
       <AlertCircle size={14} aria-hidden="true" />
       {message}
     </span>
   );
 }
 
+function FieldIcon({ iconKey }) {
+  const Icon = resolveContactIcon(iconKey);
+  return <Icon size={16} aria-hidden="true" />;
+}
+
+function controlClass(base, hasError) {
+  return [base, hasError ? 'form-control-invalid' : ''].filter(Boolean).join(' ');
+}
+
 /**
- * ContactFormCard — Right-side form card. Preserves existing submit / validation flow.
- * Subject is intentionally omitted — not supported in schema/API/email template.
+ * ContactFormCard — Right-side form card.
+ * Preserves RHF + Zod + honeypot + /api/contact payload field names.
+ * Subject stays disabled (not in schema/API/email).
  */
-function ContactFormCard({ formCard }) {
-  const { form } = contactData;
+function ContactFormCard({ formConfig }) {
   const [formStatus, setFormStatus] = useState('idle');
   const statusRef = useRef(null);
 
@@ -87,8 +57,13 @@ function ContactFormCard({ formCard }) {
     },
   });
 
+  const fields = formConfig?.fields ?? {};
+  const interests = getEnabledInterests({ form: formConfig });
+  const messageMax = fields.message?.maxLength ?? 1500;
   const messageVal = watch('message', '');
   const messageCharCount = messageVal.length;
+  const isSubmitting = formStatus === 'submitting';
+  const SendIcon = resolveContactIcon('send');
 
   useEffect(() => {
     if (formStatus !== 'idle' && statusRef.current) {
@@ -96,10 +71,7 @@ function ContactFormCard({ formCard }) {
     }
   }, [formStatus]);
 
-  if (!form) return null;
-
-  const heading = formCard?.heading || form.heading;
-  const description = formCard?.description || form.description;
+  if (!formConfig) return null;
 
   const onSubmit = async (data) => {
     setFormStatus('submitting');
@@ -119,25 +91,30 @@ function ContactFormCard({ formCard }) {
     }
   };
 
+  const showSecurityNote = Boolean(
+    formConfig.securityNote?.enabled && formConfig.securityNote?.text
+  );
+
   return (
     <div
       className={[
         'h-full flex flex-col',
-        'rounded-2xl',
+        'rounded-card sm:rounded-2xl',
         'bg-surface-card dark:bg-theme-card',
         'border border-theme-border/70 dark:border-theme-border/50',
         'shadow-card dark:shadow-theme',
-        'p-5 sm:p-6 md:p-8',
-        'relative overflow-hidden',
+        'p-4 sm:p-6 md:p-8',
+        'relative overflow-visible',
+        'transition-colors duration-250 motion-reduce:transition-none',
       ].join(' ')}
     >
-      <div className="mb-6 sm:mb-7">
+      <div className="mb-5 sm:mb-7">
         <h3 className="text-xl sm:text-2xl font-bold font-heading text-ink-primary dark:text-theme-heading">
-          {heading}
+          {formConfig.title}
         </h3>
-        {description && (
+        {formConfig.description && (
           <p className="mt-2 text-sm text-ink-muted dark:text-theme-muted leading-relaxed max-w-prose">
-            {description}
+            {formConfig.description}
           </p>
         )}
       </div>
@@ -158,10 +135,10 @@ function ContactFormCard({ formCard }) {
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="text-xl font-bold font-heading text-ink-primary dark:text-theme-heading">
-              {form.status.success.heading}
+              {formConfig.status.success.heading}
             </h4>
             <p className="text-sm text-ink-secondary dark:text-theme-body max-w-sm leading-relaxed mx-auto">
-              {form.status.success.message}
+              {formConfig.status.success.message}
             </p>
           </div>
           <Button
@@ -171,14 +148,14 @@ function ContactFormCard({ formCard }) {
             onClick={() => setFormStatus('idle')}
             rightIcon={<ArrowRight size={16} />}
           >
-            Send Another Message
+            {formConfig.sendAnotherLabel}
           </Button>
         </div>
       )}
 
       {formStatus !== 'success' && (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5" noValidate>
-          <div className="absolute -z-50 opacity-0 h-0 w-0 pointer-events-none" aria-hidden="true">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 sm:gap-5" noValidate>
+          <div className="absolute -z-50 opacity-0 h-0 w-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <label htmlFor="form-website">Website</label>
             <input
               id="form-website"
@@ -189,239 +166,265 @@ function ContactFormCard({ formCard }) {
             />
           </div>
 
-          {/* Row 1: Name | Email */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="form-name" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                {form.labels.name} <span className="text-brand-orange" aria-hidden="true">*</span>
-              </label>
-              <div className="relative">
-                <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
-                  <User size={16} />
-                </span>
-                <input
-                  id="form-name"
-                  type="text"
-                  placeholder={form.placeholders.name}
-                  autoComplete="name"
-                  aria-invalid={errors.name ? 'true' : 'false'}
-                  aria-describedby={errors.name ? 'name-error' : undefined}
-                  className={[inputBase, fieldBorder(errors.name)].join(' ')}
-                  {...register('name')}
-                />
+            {fields.name?.enabled !== false && (
+              <div className="flex flex-col gap-1.5 min-w-0">
+                <label htmlFor="form-name" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                  {fields.name.label}
+                  {fields.name.required && (
+                    <span className="text-brand-orange" aria-hidden="true"> *</span>
+                  )}
+                </label>
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
+                    <FieldIcon iconKey={fields.name.icon} />
+                  </span>
+                  <input
+                    id="form-name"
+                    type="text"
+                    placeholder={fields.name.placeholder}
+                    autoComplete="name"
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    className={controlClass('form-control-input', errors.name)}
+                    {...register('name')}
+                  />
+                </div>
+                <FieldError id="name-error" message={errors.name?.message} />
               </div>
-              <FieldError id="name-error" message={errors.name?.message} />
-            </div>
+            )}
 
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="form-email" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                {form.labels.email} <span className="text-brand-orange" aria-hidden="true">*</span>
-              </label>
-              <div className="relative">
-                <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
-                  <Mail size={16} />
-                </span>
-                <input
-                  id="form-email"
-                  type="email"
-                  placeholder={form.placeholders.email}
-                  autoComplete="email"
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
-                  className={[inputBase, fieldBorder(errors.email)].join(' ')}
-                  {...register('email')}
-                />
+            {fields.email?.enabled !== false && (
+              <div className="flex flex-col gap-1.5 min-w-0">
+                <label htmlFor="form-email" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                  {fields.email.label}
+                  {fields.email.required && (
+                    <span className="text-brand-orange" aria-hidden="true"> *</span>
+                  )}
+                </label>
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
+                    <FieldIcon iconKey={fields.email.icon} />
+                  </span>
+                  <input
+                    id="form-email"
+                    type="email"
+                    placeholder={fields.email.placeholder}
+                    autoComplete="email"
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    className={controlClass('form-control-input', errors.email)}
+                    {...register('email')}
+                  />
+                </div>
+                <FieldError id="email-error" message={errors.email?.message} />
               </div>
-              <FieldError id="email-error" message={errors.email?.message} />
-            </div>
+            )}
           </div>
 
-          {/* Row 2: Phone | Company (Subject not in schema/API — keep existing optional company) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="form-phone" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                {form.labels.phone} <span className="text-brand-orange" aria-hidden="true">*</span>
+            {fields.phone?.enabled !== false && (
+              <div className="flex flex-col gap-1.5 min-w-0">
+                <label htmlFor="form-phone" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                  {fields.phone.label}
+                  {fields.phone.required && (
+                    <span className="text-brand-orange" aria-hidden="true"> *</span>
+                  )}
+                </label>
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
+                    <FieldIcon iconKey={fields.phone.icon} />
+                  </span>
+                  <input
+                    id="form-phone"
+                    type="tel"
+                    placeholder={fields.phone.placeholder}
+                    autoComplete="tel"
+                    aria-invalid={errors.phone ? 'true' : 'false'}
+                    aria-describedby={errors.phone ? 'phone-error' : undefined}
+                    className={controlClass('form-control-input', errors.phone)}
+                    {...register('phone')}
+                  />
+                </div>
+                <FieldError id="phone-error" message={errors.phone?.message} />
+              </div>
+            )}
+
+            {fields.company?.enabled && (
+              <div className="flex flex-col gap-1.5 min-w-0">
+                <label htmlFor="form-company" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                  {fields.company.label}
+                </label>
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
+                    <FieldIcon iconKey={fields.company.icon} />
+                  </span>
+                  <input
+                    id="form-company"
+                    type="text"
+                    placeholder={fields.company.placeholder}
+                    autoComplete="organization"
+                    aria-invalid={errors.company ? 'true' : 'false'}
+                    aria-describedby={errors.company ? 'company-error' : undefined}
+                    className={controlClass('form-control-input', errors.company)}
+                    {...register('company')}
+                  />
+                </div>
+                <FieldError id="company-error" message={errors.company?.message} />
+              </div>
+            )}
+          </div>
+
+          {fields.service?.enabled && (
+            <div className="flex flex-col gap-1.5 min-w-0">
+              <label htmlFor="form-interest" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                {fields.service.label}
+                {fields.service.required && (
+                  <span className="text-brand-orange" aria-hidden="true"> *</span>
+                )}
               </label>
               <div className="relative">
-                <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
-                  <Phone size={16} />
+                <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none z-[1]">
+                  <FieldIcon iconKey={fields.service.icon} />
                 </span>
-                <input
-                  id="form-phone"
-                  type="tel"
-                  placeholder={form.placeholders.phone}
-                  autoComplete="tel"
-                  aria-invalid={errors.phone ? 'true' : 'false'}
-                  aria-describedby={errors.phone ? 'phone-error' : undefined}
-                  className={[inputBase, fieldBorder(errors.phone)].join(' ')}
-                  {...register('phone')}
-                />
-              </div>
-              <FieldError id="phone-error" message={errors.phone?.message} />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="form-company" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                {form.labels.company}
-              </label>
-              <div className="relative">
-                <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
-                  <Building2 size={16} />
-                </span>
-                <input
-                  id="form-company"
-                  type="text"
-                  placeholder={form.placeholders.company}
-                  autoComplete="organization"
-                  aria-invalid={errors.company ? 'true' : 'false'}
-                  aria-describedby={errors.company ? 'company-error' : undefined}
-                  className={[inputBase, fieldBorder(errors.company)].join(' ')}
-                  {...register('company')}
-                />
-              </div>
-              <FieldError id="company-error" message={errors.company?.message} />
-            </div>
-          </div>
-
-          {/* Service Interest — required by existing schema */}
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="form-interest" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-              {form.labels.interest} <span className="text-brand-orange" aria-hidden="true">*</span>
-            </label>
-            <div className="relative">
-              <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none z-[1]">
-                <ListFilter size={16} />
-              </span>
-              <select
-                id="form-interest"
-                aria-invalid={errors.service ? 'true' : 'false'}
-                aria-describedby={errors.service ? 'interest-error' : undefined}
-                className={[selectBase, fieldBorder(errors.service)].join(' ')}
-                {...register('service')}
-              >
-                {form.interests.map((option, index) => (
-                  <option key={option} value={index === 0 ? '' : option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <FieldError id="interest-error" message={errors.service?.message} />
-          </div>
-
-          {/* Message */}
-          <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center gap-3">
-              <label htmlFor="form-message" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                {form.labels.message} <span className="text-brand-orange" aria-hidden="true">*</span>
-              </label>
-              <span
-                className={[
-                  'text-xs tabular-nums',
-                  messageCharCount > 1500 ? 'text-red-500' : 'text-ink-muted dark:text-theme-muted',
-                ].join(' ')}
-                aria-live="polite"
-              >
-                {messageCharCount} / 1500
-              </span>
-            </div>
-            <div className="relative">
-              <span aria-hidden="true" className="absolute left-3 top-3.5 text-ink-muted dark:text-theme-muted pointer-events-none">
-                <MessageSquare size={16} />
-              </span>
-              <textarea
-                id="form-message"
-                rows={5}
-                placeholder={form.placeholders.message}
-                aria-invalid={errors.message ? 'true' : 'false'}
-                aria-describedby={errors.message ? 'message-error' : undefined}
-                className={[textareaBase, fieldBorder(errors.message)].join(' ')}
-                {...register('message')}
-              />
-            </div>
-            <FieldError id="message-error" message={errors.message?.message} />
-          </div>
-
-          {/* Consent */}
-          <div className="flex flex-col gap-2">
-            <div className="flex items-start gap-3">
-              <input
-                id="form-consent"
-                type="checkbox"
-                aria-invalid={errors.consent ? 'true' : 'false'}
-                aria-describedby={errors.consent ? 'consent-error' : undefined}
-                className={[
-                  'mt-1 w-4 h-4 rounded border text-brand-orange focus-ring cursor-pointer bg-surface-page dark:bg-theme-page',
-                  errors.consent ? 'border-red-400' : 'border-theme-border',
-                ].join(' ')}
-                {...register('consent')}
-              />
-              <label htmlFor="form-consent" className="text-xs text-ink-secondary dark:text-theme-body leading-relaxed select-none cursor-pointer">
-                {form.labels.consent}{' '}
-                Read our{' '}
-                <Link
-                  to="/privacy-policy"
-                  className="text-brand-orange hover:opacity-80 transition-opacity focus-ring rounded"
+                <select
+                  id="form-interest"
+                  aria-invalid={errors.service ? 'true' : 'false'}
+                  aria-describedby={errors.service ? 'interest-error' : undefined}
+                  className={controlClass('form-control-select', errors.service)}
+                  {...register('service')}
                 >
-                  Privacy Policy
-                </Link>
-                .
-              </label>
+                  {interests.map((option) => (
+                    <option key={option.id} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <FieldError id="interest-error" message={errors.service?.message} />
             </div>
-            <FieldError id="consent-error" message={errors.consent?.message} />
+          )}
+
+          {fields.message?.enabled !== false && (
+            <div className="flex flex-col gap-1.5 min-w-0">
+              <div className="flex justify-between items-center gap-3">
+                <label htmlFor="form-message" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                  {fields.message.label}
+                  {fields.message.required && (
+                    <span className="text-brand-orange" aria-hidden="true"> *</span>
+                  )}
+                </label>
+                <span
+                  className={[
+                    'text-xs tabular-nums',
+                    messageCharCount > messageMax
+                      ? 'text-red-500 dark:text-red-400'
+                      : 'text-ink-muted dark:text-theme-muted',
+                  ].join(' ')}
+                  aria-live="polite"
+                >
+                  {messageCharCount} / {messageMax}
+                </span>
+              </div>
+              <div className="relative">
+                <span aria-hidden="true" className="absolute left-3 top-3.5 text-ink-muted dark:text-theme-muted pointer-events-none">
+                  <FieldIcon iconKey={fields.message.icon} />
+                </span>
+                <textarea
+                  id="form-message"
+                  rows={5}
+                  placeholder={fields.message.placeholder}
+                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                  className={controlClass('form-control-textarea', errors.message)}
+                  {...register('message')}
+                />
+              </div>
+              <FieldError id="message-error" message={errors.message?.message} />
+            </div>
+          )}
+
+          {formConfig.consent?.enabled !== false && (
+            <div className="flex flex-col gap-2">
+              <div className="flex items-start gap-3">
+                <input
+                  id="form-consent"
+                  type="checkbox"
+                  aria-invalid={errors.consent ? 'true' : 'false'}
+                  aria-describedby={errors.consent ? 'consent-error' : undefined}
+                  className={[
+                    'mt-1 w-4 h-4 rounded border text-brand-orange focus-ring cursor-pointer',
+                    'bg-surface-input dark:bg-surface-input',
+                    errors.consent ? 'border-red-400 dark:border-red-500' : 'border-theme-border',
+                  ].join(' ')}
+                  {...register('consent')}
+                />
+                <label htmlFor="form-consent" className="text-xs sm:text-sm text-ink-secondary dark:text-theme-body leading-relaxed select-none cursor-pointer">
+                  {formConfig.consent.text}
+                  {formConfig.consent.privacyHref && formConfig.consent.privacyLabel && (
+                    <>
+                      {' '}
+                      {formConfig.consent.privacyPrefix}{' '}
+                      <Link
+                        to={formConfig.consent.privacyHref}
+                        className="text-brand-orange hover:opacity-80 transition-opacity focus-ring rounded motion-reduce:transition-none"
+                      >
+                        {formConfig.consent.privacyLabel}
+                      </Link>
+                      .
+                    </>
+                  )}
+                </label>
+              </div>
+              <FieldError id="consent-error" message={errors.consent?.message} />
+            </div>
+          )}
+
+          {(formStatus === 'serverError' ||
+            formStatus === 'rateLimited' ||
+            formStatus === 'networkError') && (
+            <div
+              ref={statusRef}
+              tabIndex={-1}
+              role="alert"
+              aria-live="assertive"
+              className="flex items-start gap-3 p-4 rounded-control bg-red-50 dark:bg-red-950/35 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
+            >
+              <AlertCircle size={18} className="shrink-0 mt-0.5" aria-hidden="true" />
+              <p>
+                {formStatus === 'rateLimited'
+                  ? formConfig.status.errors.rateLimited
+                  : formStatus === 'networkError'
+                    ? formConfig.status.errors.networkError
+                    : formConfig.status.errors.serverError}
+              </p>
+            </div>
+          )}
+
+          <div className="pt-1">
+            <Button
+              type="submit"
+              size="lg"
+              fullWidth
+              loading={isSubmitting}
+              disabled={isSubmitting}
+              leftIcon={<SendIcon size={18} />}
+              className={[
+                '!bg-gradient-to-r !from-brand-orange !to-brand-pink',
+                '!border-transparent !text-white',
+                'shadow-md hover:shadow-lg hover:!opacity-95',
+                'motion-reduce:transition-none motion-reduce:hover:scale-100',
+              ].join(' ')}
+            >
+              {isSubmitting ? formConfig.submittingLabel : formConfig.submitLabel}
+            </Button>
           </div>
 
-          {formStatus === 'serverError' && (
-            <div
-              ref={statusRef}
-              tabIndex={-1}
-              role="alert"
-              className="flex items-center gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
-            >
-              <AlertCircle size={18} className="shrink-0" aria-hidden="true" />
-              <p>{form.status.errors.serverError}</p>
-            </div>
+          {showSecurityNote && (
+            <p className="text-center text-xs text-ink-muted dark:text-theme-muted">
+              {formConfig.securityNote.text}
+            </p>
           )}
-
-          {formStatus === 'rateLimited' && (
-            <div
-              ref={statusRef}
-              tabIndex={-1}
-              role="alert"
-              className="flex items-center gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
-            >
-              <AlertCircle size={18} className="shrink-0" aria-hidden="true" />
-              <p>{form.status.errors.rateLimited}</p>
-            </div>
-          )}
-
-          {formStatus === 'networkError' && (
-            <div
-              ref={statusRef}
-              tabIndex={-1}
-              role="alert"
-              className="flex items-center gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
-            >
-              <AlertCircle size={18} className="shrink-0" aria-hidden="true" />
-              <p>{form.status.errors.networkError}</p>
-            </div>
-          )}
-
-          <Button
-            type="submit"
-            size="lg"
-            fullWidth
-            loading={formStatus === 'submitting'}
-            leftIcon={<Send size={18} />}
-            className={[
-              '!bg-gradient-to-r !from-brand-orange !to-brand-pink',
-              '!border-transparent !text-white',
-              'shadow-md hover:shadow-lg hover:!opacity-95',
-              '!ring-offset-surface-page dark:!ring-offset-theme-page',
-            ].join(' ')}
-          >
-            {form.labels.submit}
-          </Button>
         </form>
       )}
     </div>

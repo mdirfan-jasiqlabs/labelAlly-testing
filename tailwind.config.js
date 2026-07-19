@@ -100,6 +100,8 @@ export default {
           page:  'var(--color-page-bg)',
           card:  'var(--color-card-surface)',
           muted: 'var(--color-section-bg)',
+          // Form fields / recessed controls (distinct from elevated cards)
+          input: 'var(--color-input-surface)',
         },
 
         // ── Ink (text) tokens (CSS-var driven for dark mode) ──────────
@@ -182,6 +184,9 @@ export default {
       // ── Border Radius ──────────────────────────────────────────────────────
       borderRadius: {
         artist: '30px',
+        // Reusable semantic radii for cards + form controls
+        card: '1rem',
+        control: '0.75rem',
         '3xl': '2rem',
         '4xl': '2.5rem',
       },
