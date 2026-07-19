@@ -1,94 +1,74 @@
 {
+  "enabled": true,
+  "logo": {
+    "src": "/logo.jpeg",
+    "alt": "LabelAlly Entertainment Logo",
+    "width": 1536,
+    "height": 1024
+  },
   "company": {
-    "name": "LabelAlly",
-    "nameHighlight": "Entertainment",
-    "description": "A full-service music industry partner providing distribution, marketing, sync licensing, and artist development services.",
-    "tagline": "Your Vision, Amplified."
+    "description": "We empower artists, labels, and creators with world-class music distribution, YouTube channel management, and digital growth solutions."
   },
-  "groups": [
-    {
-      "id": "company",
-      "heading": "Company",
-      "links": [
-        { "id": "home",    "label": "Home",  "href": "/" },
-        { "id": "about",   "label": "About", "href": "/about" }
-      ]
-    },
-    {
-      "id": "services",
-      "heading": "Services",
-      "links": [
-        { "id": "services", "label": "Our Services", "href": "/services" }
-      ]
-    },
-    {
-      "id": "partners",
-      "heading": "Partners",
-      "links": [
-        {
-          "id": "artists-labels-partners",
-          "label": "Artists & Partners",
-          "href": "/artists-labels-partners"
-        }
-      ]
-    },
-    {
-      "id": "legal",
-      "heading": "Legal",
-      "links": [
-        { "id": "privacy-policy",      "label": "Privacy Policy",      "href": "/privacy-policy" },
-        { "id": "terms-and-conditions","label": "Terms & Conditions",  "href": "/terms-and-conditions" }
-      ]
-    }
-  ],
+  "socials": {
+    "heading": "Follow Us",
+    "items": [
+      { "id": "facebook", "label": "Facebook", "href": "https://facebook.com", "icon": "Facebook", "enabled": true },
+      { "id": "instagram", "label": "Instagram", "href": "https://instagram.com", "icon": "Instagram", "enabled": true },
+      { "id": "youtube", "label": "YouTube", "href": "https://youtube.com", "icon": "Youtube", "enabled": true },
+      { "id": "linkedin", "label": "LinkedIn", "href": "https://linkedin.com", "icon": "Linkedin", "enabled": true },
+      { "id": "whatsapp", "label": "WhatsApp", "href": "https://wa.me/918709002433", "icon": "WhatsApp", "enabled": true }
+    ]
+  },
+  "quickLinks": {
+    "heading": "Quick Links",
+    "links": [
+      { "id": "about", "label": "About Us", "href": "/about", "enabled": true },
+      { "id": "services", "label": "Our Services", "href": "/services", "enabled": true },
+      { "id": "artists", "label": "Artists & Labels", "href": "/artists-labels-partners", "enabled": true },
+      { "id": "contact", "label": "Contact Us", "href": "/contact", "enabled": true },
+      { "id": "privacy", "label": "Privacy Policy", "href": "/privacy-policy", "enabled": true },
+      { "id": "terms", "label": "Terms & Conditions", "href": "/terms-and-conditions", "enabled": true }
+    ]
+  },
   "contact": {
-    "heading": "Contact",
-    "email": "",
-    "phone": "",
-    "address": "",
-    "businessHours": ""
+    "heading": "Contact Us",
+    "address": {
+      "heading": "Address",
+      "value": "Ram Das Heritage, Room No - 604 E, Block Mithapur Bypass, Bhusaripur, Sanskriti Garden, Patna, Bihar 800020",
+      "enabled": true
+    },
+    "email": {
+      "heading": "Email",
+      "value": "work@somplexnetwork.com",
+      "href": "mailto:work@somplexnetwork.com",
+      "enabled": true
+    },
+    "phone": {
+      "heading": "Phone",
+      "value": "+91 8709002433",
+      "href": "tel:+918709002433",
+      "enabled": true
+    },
+    "whatsapp": {
+      "heading": "WhatsApp",
+      "value": "+91 8709002433",
+      "href": "https://wa.me/918709002433",
+      "enabled": true
+    }
   },
-  "social": [
-    {
-      "id": "instagram",
-      "label": "Instagram",
-      "href": "",
-      "icon": "AtSign"
-    },
-    {
-      "id": "twitter",
-      "label": "Twitter / X",
-      "href": "",
-      "icon": "Send"
-    },
-    {
-      "id": "linkedin",
-      "label": "LinkedIn",
-      "href": "",
-      "icon": "Globe"
-    },
-    {
-      "id": "youtube",
-      "label": "YouTube",
-      "href": "",
-      "icon": "Share2"
-    },
-    {
-      "id": "spotify",
-      "label": "Spotify",
-      "href": "",
-      "icon": "Music"
-    }
-  ],
+  "whyUs": {
+    "heading": "Why LabelAlly?",
+    "items": [
+      { "id": "expertise", "heading": "Industry Expertise", "description": "Years of experience in music distribution and digital growth.", "icon": "Award", "enabled": true },
+      { "id": "creator", "heading": "Creator First Approach", "description": "We focus on your growth and long-term success.", "icon": "Users", "enabled": true },
+      { "id": "secure", "heading": "Secure & Transparent", "description": "Safe processes, clear policies, and full transparency.", "icon": "ShieldCheck", "enabled": true },
+      { "id": "growth", "heading": "Growth Driven", "description": "Smart strategies designed to maximize your reach.", "icon": "TrendingUp", "enabled": true }
+    ]
+  },
   "bottom": {
-    "copyright": "LabelAlly Entertainment. All rights reserved.",
-    "privacyLink": {
-      "label": "Privacy Policy",
-      "href": "/privacy-policy"
-    },
-    "termsLink": {
-      "label": "Terms & Conditions",
-      "href": "/terms-and-conditions"
-    }
+    "copyright": "LabelAlly Entertainment. All Rights Reserved.",
+    "privacyLink": { "label": "Privacy Policy", "href": "/privacy-policy", "enabled": true },
+    "termsLink": { "label": "Terms & Conditions", "href": "/terms-and-conditions", "enabled": true },
+    "scrollToTop": { "enabled": true }
   }
 }
