@@ -176,8 +176,8 @@ function WhatWeDoSection() {
               {/* Top-Left Image: Shorter Height */}
               <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
                 <img
-                  src={images.topLeft}
-                  alt="Creators collaborating around work desk"
+                  src={images.topLeft.src}
+                  alt={images.topLeft.alt}
                   width="280"
                   height="270"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105"
@@ -187,8 +187,8 @@ function WhatWeDoSection() {
               {/* Bottom-Left Image: Taller Height */}
               <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
                 <img
-                  src={images.bottomLeft}
-                  alt="Music performance with guitar"
+                  src={images.bottomLeft.src}
+                  alt={images.bottomLeft.alt}
                   width="280"
                   height="350"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105"
@@ -201,8 +201,8 @@ function WhatWeDoSection() {
               {/* Top-Right Image: Taller Height */}
               <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
                 <img
-                  src={images.topRight}
-                  alt="Team discussion around table"
+                  src={images.topRight.src}
+                  alt={images.topRight.alt}
                   width="280"
                   height="350"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105"
@@ -212,8 +212,8 @@ function WhatWeDoSection() {
               {/* Bottom-Right Image: Shorter Height */}
               <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
                 <img
-                  src={images.bottomRight}
-                  alt="Developer workspace"
+                  src={images.bottomRight.src}
+                  alt={images.bottomRight.alt}
                   width="280"
                   height="270"
                   className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-105"

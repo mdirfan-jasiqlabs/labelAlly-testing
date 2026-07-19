@@ -179,7 +179,7 @@ function ArtistsSection() {
     }
   };
 
-  // Autoplay Logic - har 2 seconds me right advance (snappy 450ms smooth transition)
+  // Autoplay Logic - advance right on configurable interval (snappy 450ms smooth transition)
   useEffect(() => {
     if (!featuredArtists) return;
     const shouldPlay =
@@ -197,7 +197,7 @@ function ArtistsSection() {
       if (scrollToIndexRef.current) {
         scrollToIndexRef.current(targetActualIndex, 450);
       }
-    }, 2000);
+    }, featuredArtists.autoplaySpeed || 2000);
 
     return () => clearInterval(interval);
   }, [isIntersecting, isTabVisible, prefersReducedMotion, isHovered, isFocused, activeIndex, featuredArtists]);

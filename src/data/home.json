@@ -48,41 +48,6 @@
       }
     ]
   },
-  "platformStrip": {
-    "headingPrimary": "We Distribute On",
-    "headingAccent": "All Major Platforms",
-    "items": [
-      {
-        "id": "spotify",
-        "label": "Spotify"
-      },
-      {
-        "id": "apple-music",
-        "label": "Apple Music"
-      },
-      {
-        "id": "youtube",
-        "label": "YouTube"
-      },
-      {
-        "id": "amazon-music",
-        "label": "Amazon Music"
-      },
-      {
-        "id": "resso",
-        "label": "Resso"
-      },
-      {
-        "id": "jiosaavn",
-        "label": "JioSaavn"
-      },
-      {
-        "id": "hungama",
-        "label": "Hungama"
-      }
-    ],
-    "overflow": "+ more platforms"
-  },
   "about": {
     "badge": "About Us",
     "heading": "Your Trusted Digital Partner Dedicated To",
@@ -264,6 +229,7 @@
     ]
   },
   "featuredArtists": {
+    "autoplaySpeed": 2000,
     "badge": "Our Featured Artists",
     "title": {
       "lineOne": "Shining Lights",
@@ -369,12 +335,6 @@
       "ariaLabel": "Contact us to learn more about our reporting and payment schedules"
     }
   },
-  "testimonials": {
-    "badge": "Our Partners",
-    "heading": "Trusted by Music Professionals",
-    "description": "We are proud to support independent creators, record labels, and creative brands in achieving their goals.",
-    "items": []
-  },
   "whatWeDo": {
     "badge": "What We Do",
     "title": {
@@ -414,10 +374,10 @@
       }
     ],
     "images": {
-      "topLeft": "/artists/artist-1.webp",
-      "topRight": "/process-team.jpg",
-      "bottomLeft": "/hero-artist.png",
-      "bottomRight": "/artists/artist-2.webp"
+      "topLeft":     { "src": "/artists/artist-1.webp",   "alt": "Creators collaborating around a work desk" },
+      "topRight":    { "src": "/process-team.jpg",         "alt": "Team discussion around a table" },
+      "bottomLeft":  { "src": "/hero-artist.png",          "alt": "Music artist performing with a guitar" },
+      "bottomRight": { "src": "/artists/artist-2.webp",   "alt": "Creative workspace with digital equipment" }
     }
   },
   "finalCta": {
