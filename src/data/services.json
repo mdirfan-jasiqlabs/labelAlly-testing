@@ -177,6 +177,7 @@
     "description": "LabelAlly helps distribute and manage content across leading digital and streaming platforms used by artists, labels, and creators."
   },
   "cta": {
+    "enabled": true,
     "heading": "Ready to Optimize Your Music?",
     "description": "Partner with us today. Reach out to get started with distribution, channel management, or rights auditing.",
     "primaryCta": {
