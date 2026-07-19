@@ -1,0 +1,68 @@
+{
+  "enabled": true,
+  "badge": "Some Of Our Clients",
+  "heading": "Trusted By Leading Music Labels, Artists & Digital Creators Across India",
+  "grid": {
+    "desktop": "lg:grid-cols-4",
+    "tablet": "md:grid-cols-2",
+    "mobile": "grid-cols-2"
+  },
+  "logos": [
+    {
+      "id": "aashish-yadav",
+      "name": "Aashish Yadav Entertainment",
+      "image": "/images/clients/aashish-yadav.png",
+      "alt": "Aashish Yadav Entertainment Logo",
+      "enabled": true
+    },
+    {
+      "id": "bac-bye-creation",
+      "name": "BAC Bye Creation",
+      "image": "/images/clients/bac-bye-creation.png",
+      "alt": "BAC Bye Creation Logo",
+      "enabled": true
+    },
+    {
+      "id": "raja-entertainment",
+      "name": "Raja Entertainment",
+      "image": "/images/clients/raja-entertainment.png",
+      "alt": "Raja Entertainment Logo",
+      "enabled": true
+    },
+    {
+      "id": "shanti-films",
+      "name": "Shanti Films",
+      "image": "/images/clients/shanti-films.png",
+      "alt": "Shanti Films Logo",
+      "enabled": true
+    },
+    {
+      "id": "gb-music",
+      "name": "GB Music",
+      "image": "/images/clients/gb-music.png",
+      "alt": "GB Music Logo",
+      "enabled": true
+    },
+    {
+      "id": "shweta-sargam",
+      "name": "Shweta Sargam Entertainment",
+      "image": "/images/clients/shweta-sargam.png",
+      "alt": "Shweta Sargam Entertainment Logo",
+      "enabled": true
+    },
+    {
+      "id": "motichur-entertainment",
+      "name": "Motichur Entertainment",
+      "image": "/images/clients/motichur-entertainment.png",
+      "alt": "Motichur Entertainment Logo",
+      "enabled": true
+    },
+    {
+      "id": "royank-entertainment",
+      "name": "Royank Entertainment",
+      "image": "/images/clients/royank-entertainment.png",
+      "alt": "Royank Entertainment Logo",
+      "enabled": true
+    }
+  ]
+}

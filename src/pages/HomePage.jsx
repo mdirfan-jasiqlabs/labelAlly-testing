@@ -4,7 +4,7 @@ import AboutSection        from '../components/sections/home/AboutSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import WhatWeDoSection     from '../components/sections/home/WhatWeDoSection';
-import AnalyticsSection    from '../components/sections/home/AnalyticsSection';
+import ClientsSection      from '../components/sections/home/ClientsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import FinalCtaSection     from '../components/sections/home/FinalCtaSection';
 import SEO                 from '../components/common/SEO';
@@ -20,7 +20,7 @@ import SEO                 from '../components/common/SEO';
  * 4. HowItWorksSection
  * 5. ArtistsSection
  * 6. WhatWeDoSection
- * 7. AnalyticsSection
+ * 7. ClientsSection
  * 8. TestimonialsSection
  * 9. FinalCtaSection
  */
@@ -39,7 +39,7 @@ function HomePage() {
       <HowItWorksSection />
       <ArtistsSection />
       <WhatWeDoSection />
-      <AnalyticsSection />
+      <ClientsSection />
       <TestimonialsSection />
       <FinalCtaSection />
     </main>
