@@ -158,7 +158,7 @@ export const artistsLabelsOnboardingStyles = {
     content:
       'flex flex-col justify-center px-5 py-7 sm:px-8 sm:py-9 lg:px-9 xl:px-10 order-1',
     eyebrow:
-      'inline-flex items-center gap-2.5 self-start text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-orange-400',
+      'inline-flex items-center justify-center gap-2.5 self-center lg:self-start text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-orange-400',
     eyebrowLine: 'h-px w-6 bg-orange-400/80 dark:bg-orange-400/50',
     heading:
       'mt-4 font-heading font-extrabold tracking-tight text-slate-900 dark:text-white text-[1.5rem] leading-[1.2] sm:text-3xl lg:text-[1.9rem]',
@@ -200,7 +200,7 @@ export const artistsLabelsOnboardingStyles = {
     buttonIcon:
       'transition-transform duration-300 ease-out group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0',
     imageWrapper:
-      'relative order-2 min-h-[260px] sm:min-h-[320px] lg:min-h-[420px] xl:min-h-[460px]',
+      'relative order-2 hidden lg:block min-h-[260px] sm:min-h-[320px] lg:min-h-[420px] xl:min-h-[460px]',
     image: 'absolute inset-0 h-full w-full object-cover object-center',
   },
 
