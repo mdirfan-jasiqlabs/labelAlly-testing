@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "badge": "Testimonial",
+  "heading": "You Can See Our Clients Feedback What You Say?",
+  "autoplaySpeed": 2000,
+  "testimonials": [
+    {
+      "id": "aashish-yadav",
+      "name": "Ashish Yadav",
+      "role": "Singer/Actor",
+      "quote": "आपकी कंपनी के साथ काम करना मेरे करियर का सबसे बेहतरीन अनुभव रहा है। वीडियो मार्केटिंग से लेकर म्यूज़िक डिस्ट्रीब्यूशन और सोशल मीडिया प्रमोशन तक, हर चीज़ को जिस प्रोफेशनल तरीके से संभाला गया, उससे मुझे बहुत लाभ मिला। आज मेरी पहचान एक सिंगर के रूप में जितनी बड़ी हुई है, उसमें आपकी टीम का बड़ा योगदान है। दिल से धन्यवाद!",
+      "image": "/images/testimonials/aashish-yadav.webp",
+      "alt": "Ashish Yadav Singer and Actor Testimonial Portrait",
+      "enabled": true
+    },
+    {
+      "id": "khushi-kakkar",
+      "name": "Khushi Kakkar",
+      "role": "Singer/Actress",
+      "quote": "एक आर्टिस्ट के तौर पर मुझे अपने टैलेंट को सही प्लेटफॉर्म पर दिखाने का मौका आपकी कंपनी ने दिया। वीडियो प्रोडक्शन, म्यूज़िक रिलीज़ और सोशल मीडिया प्रमोशन – हर चीज़ को जिस प्रोफेशनल तरीके से मैनेज किया गया, उससे मुझे नया आत्मविश्वास मिला। आपकी टीम के साथ काम करना मेरे लिए गर्व की बात है। तहे दिल से शुक्रिया!",
+      "image": "/images/testimonials/khushi-kakkar.webp",
+      "alt": "Khushi Kakkar Singer and Actress Testimonial Portrait",
+      "enabled": true
+    },
+    {
+      "id": "amit-parimal",
+      "name": "Amit Parimal",
+      "role": "Actor",
+      "quote": "मैंने कई डिजिटल प्लेटफॉर्म्स के साथ काम किया है, लेकिन आपकी कंपनी ने जिस तरह से मेरे कंटेंट को प्रमोट किया, उसका असर सीधा मेरे फॉलोअर्स और व्यूज़ पर देखने को मिला। टीम की क्रिएटिव सोच, ब्रांडिंग की समझ और प्रोफेशनल अप्रोच काबिल-ए-तारीफ है। एक डिजिटल क्रिएटर के रूप में मेरी ग्रोथ में आपका योगदान अमूल्य है।",
+      "image": "/images/testimonials/amit-parimal.webp",
+      "alt": "Amit Parimal Actor Testimonial Portrait",
+      "enabled": true
+    }
+  ]
+}

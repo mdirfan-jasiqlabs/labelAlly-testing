@@ -6,6 +6,7 @@ import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import WhatWeDoSection     from '../components/sections/home/WhatWeDoSection';
 import ClientsSection      from '../components/sections/home/ClientsSection';
+import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import SEO                 from '../components/common/SEO';
 
 /**
@@ -21,6 +22,7 @@ import SEO                 from '../components/common/SEO';
  * 6. WhatWeDoSection
  * 7. ClientsSection
  * 8. ServicesSection
+ * 9. TestimonialsSection
  */
 function HomePage() {
   return (
@@ -39,6 +41,7 @@ function HomePage() {
       <WhatWeDoSection />
       <ClientsSection />
       <ServicesSection />
+      <TestimonialsSection />
     </main>
   );
 }
