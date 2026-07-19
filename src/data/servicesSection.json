@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "badge": "Our Services",
+  "heading": "Solutions Built For Music And Digital Growth",
+  "description": "We combine professional systems and tailored strategies to help manage your distribution, protect copyright, and support digital presence across platforms.",
+  "services": [
+    {
+      "id": "music-distribution",
+      "title": "Music Distribution",
+      "description": "Help manage distribution and release music on major global streaming platforms, ensuring your catalog is delivered efficiently.",
+      "icon": "/images/services/music-distribution.svg",
+      "alt": "Music distribution vector icon showing a phone and a vinyl disc",
+      "enabled": true
+    },
+    {
+      "id": "youtube-channel",
+      "title": "YouTube Channel Management",
+      "description": "Support digital growth with professional channel management, optimization, thumbnails, uploads, and monetization setup.",
+      "icon": "/images/services/youtube-channel.svg",
+      "alt": "YouTube channel management vector icon showing a screen and megaphone",
+      "enabled": true
+    },
+    {
+      "id": "rights-management",
+      "title": "Content Rights Management",
+      "description": "Support rights protection and resolve licensing conflicts to ensure content creators protect and manage their digital ownership.",
+      "icon": "/images/services/rights-management.svg",
+      "alt": "Rights management vector icon showing a folder and security shield",
+      "enabled": true
+    },
+    {
+      "id": "youtube-cms",
+      "title": "YouTube CMS & Content ID",
+      "description": "Improve content management, track catalog rights, resolve claims, and secure content identification via official YouTube CMS tools.",
+      "icon": "/images/services/youtube-cms.svg",
+      "alt": "YouTube CMS vector icon showing a secure key and media tracks",
+      "enabled": true
+    },
+    {
+      "id": "revenue-optimization",
+      "title": "Revenue Optimization",
+      "description": "Strengthen digital presence and optimize monetization streams across audio and video platforms with transparent reporting.",
+      "icon": "/images/services/revenue-optimization.svg",
+      "alt": "Revenue optimization vector icon showing a growing bar chart and coin",
+      "enabled": true
+    }
+  ]
+}

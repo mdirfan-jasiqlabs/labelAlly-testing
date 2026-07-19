@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <!-- Background Blob -->
+  <path d="M25,25 C40,15 75,10 85,25 C95,40 80,75 65,80 C50,85 20,70 15,55 C10,40 10,35 25,25 Z" fill="#96E012" fill-opacity="0.12" />
+  <!-- Folder/Document -->
+  <path d="M22,26 L42,26 L48,34 L78,34 L78,74 L22,74 Z" stroke="#11143E" stroke-width="2.5" stroke-linejoin="round" fill="#FFFFFF" />
+  <!-- Shield for Rights/Security -->
+  <path d="M40,42 C40,42 50,38 50,38 C50,38 60,42 60,42 C60,42 60,54 50,60 C40,54 40,42 40,42 Z" stroke="#2B83FC" stroke-width="2.5" stroke-linejoin="round" fill="#FFFFFF" />
+  <!-- Checkmark in shield -->
+  <path d="M46,50 L49,53 L54,47" stroke="#2B83FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
