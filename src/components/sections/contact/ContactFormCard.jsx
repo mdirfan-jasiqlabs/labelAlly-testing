@@ -29,13 +29,15 @@ function controlClass(base, hasError) {
 }
 
 /**
- * ContactFormCard — Right-side form card.
- * Preserves RHF + Zod + honeypot + /api/contact payload field names.
- * Subject stays disabled (not in schema/API/email).
+ * ContactFormCard — Reference form layout.
+ * Subject (Optional) maps to API `company`. Hidden `service` defaults for schema.
  */
 function ContactFormCard({ formConfig }) {
   const [formStatus, setFormStatus] = useState('idle');
   const statusRef = useRef(null);
+
+  const defaultService = formConfig?.defaultService || 'Other';
+  const showServiceField = formConfig?.fields?.service?.enabled === true;
 
   const {
     register,
@@ -50,7 +52,7 @@ function ContactFormCard({ formConfig }) {
       phone: '',
       email: '',
       company: '',
-      service: '',
+      service: defaultService,
       message: '',
       consent: false,
       website: '',
@@ -64,6 +66,7 @@ function ContactFormCard({ formConfig }) {
   const messageCharCount = messageVal.length;
   const isSubmitting = formStatus === 'submitting';
   const SendIcon = resolveContactIcon('send');
+  const LockIcon = resolveContactIcon(formConfig?.securityNote?.icon || 'lock');
 
   useEffect(() => {
     if (formStatus !== 'idle' && statusRef.current) {
@@ -76,9 +79,21 @@ function ContactFormCard({ formConfig }) {
   const onSubmit = async (data) => {
     setFormStatus('submitting');
     try {
-      await sendContactForm(data);
+      await sendContactForm({
+        ...data,
+        service: data.service || defaultService,
+      });
       setFormStatus('success');
-      reset();
+      reset({
+        name: '',
+        phone: '',
+        email: '',
+        company: '',
+        service: defaultService,
+        message: '',
+        consent: false,
+        website: '',
+      });
     } catch (err) {
       console.error('Submission request failed:', err);
       if (err.status === 429) {
@@ -99,21 +114,21 @@ function ContactFormCard({ formConfig }) {
     <div
       className={[
         'h-full flex flex-col',
-        'rounded-card sm:rounded-2xl',
+        'rounded-2xl',
         'bg-surface-card dark:bg-theme-card',
-        'border border-theme-border/70 dark:border-theme-border/50',
+        'border border-theme-border/60 dark:border-theme-border/40',
         'shadow-card dark:shadow-theme',
-        'p-4 sm:p-6 md:p-8',
-        'relative overflow-visible',
+        'p-5 sm:p-6 md:p-8',
+        'relative',
         'transition-colors duration-250 motion-reduce:transition-none',
       ].join(' ')}
     >
-      <div className="mb-5 sm:mb-7">
+      <div className="mb-5 sm:mb-6">
         <h3 className="text-xl sm:text-2xl font-bold font-heading text-ink-primary dark:text-theme-heading">
           {formConfig.title}
         </h3>
         {formConfig.description && (
-          <p className="mt-2 text-sm text-ink-muted dark:text-theme-muted leading-relaxed max-w-prose">
+          <p className="mt-1.5 sm:mt-2 text-sm text-ink-muted dark:text-theme-muted leading-relaxed">
             {formConfig.description}
           </p>
         )}
@@ -166,14 +181,16 @@ function ContactFormCard({ formConfig }) {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          {!showServiceField && (
+            <input type="hidden" {...register('service')} />
+          )}
+
+          {/* Row 1: Name | Email — stacks on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {fields.name?.enabled !== false && (
               <div className="flex flex-col gap-1.5 min-w-0">
                 <label htmlFor="form-name" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
                   {fields.name.label}
-                  {fields.name.required && (
-                    <span className="text-brand-orange" aria-hidden="true"> *</span>
-                  )}
                 </label>
                 <div className="relative">
                   <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
@@ -198,9 +215,6 @@ function ContactFormCard({ formConfig }) {
               <div className="flex flex-col gap-1.5 min-w-0">
                 <label htmlFor="form-email" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
                   {fields.email.label}
-                  {fields.email.required && (
-                    <span className="text-brand-orange" aria-hidden="true"> *</span>
-                  )}
                 </label>
                 <div className="relative">
                   <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
@@ -222,14 +236,12 @@ function ContactFormCard({ formConfig }) {
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          {/* Row 2: Phone | Subject (Optional) → company */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {fields.phone?.enabled !== false && (
               <div className="flex flex-col gap-1.5 min-w-0">
                 <label htmlFor="form-phone" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
                   {fields.phone.label}
-                  {fields.phone.required && (
-                    <span className="text-brand-orange" aria-hidden="true"> *</span>
-                  )}
                 </label>
                 <div className="relative">
                   <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none">
@@ -263,7 +275,7 @@ function ContactFormCard({ formConfig }) {
                     id="form-company"
                     type="text"
                     placeholder={fields.company.placeholder}
-                    autoComplete="organization"
+                    autoComplete="off"
                     aria-invalid={errors.company ? 'true' : 'false'}
                     aria-describedby={errors.company ? 'company-error' : undefined}
                     className={controlClass('form-control-input', errors.company)}
@@ -275,13 +287,10 @@ function ContactFormCard({ formConfig }) {
             )}
           </div>
 
-          {fields.service?.enabled && (
+          {showServiceField && (
             <div className="flex flex-col gap-1.5 min-w-0">
               <label htmlFor="form-interest" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
                 {fields.service.label}
-                {fields.service.required && (
-                  <span className="text-brand-orange" aria-hidden="true"> *</span>
-                )}
               </label>
               <div className="relative">
                 <span aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted dark:text-theme-muted pointer-events-none z-[1]">
@@ -307,25 +316,9 @@ function ContactFormCard({ formConfig }) {
 
           {fields.message?.enabled !== false && (
             <div className="flex flex-col gap-1.5 min-w-0">
-              <div className="flex justify-between items-center gap-3">
-                <label htmlFor="form-message" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
-                  {fields.message.label}
-                  {fields.message.required && (
-                    <span className="text-brand-orange" aria-hidden="true"> *</span>
-                  )}
-                </label>
-                <span
-                  className={[
-                    'text-xs tabular-nums',
-                    messageCharCount > messageMax
-                      ? 'text-red-500 dark:text-red-400'
-                      : 'text-ink-muted dark:text-theme-muted',
-                  ].join(' ')}
-                  aria-live="polite"
-                >
-                  {messageCharCount} / {messageMax}
-                </span>
-              </div>
+              <label htmlFor="form-message" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
+                {fields.message.label}
+              </label>
               <div className="relative">
                 <span aria-hidden="true" className="absolute left-3 top-3.5 text-ink-muted dark:text-theme-muted pointer-events-none">
                   <FieldIcon iconKey={fields.message.icon} />
@@ -340,34 +333,46 @@ function ContactFormCard({ formConfig }) {
                   {...register('message')}
                 />
               </div>
-              <FieldError id="message-error" message={errors.message?.message} />
+              <div className="flex justify-between gap-2">
+                <FieldError id="message-error" message={errors.message?.message} />
+                <span
+                  className={[
+                    'text-xs tabular-nums ml-auto',
+                    messageCharCount > messageMax
+                      ? 'text-red-500 dark:text-red-400'
+                      : 'text-ink-muted dark:text-theme-muted',
+                  ].join(' ')}
+                  aria-live="polite"
+                >
+                  {messageCharCount} / {messageMax}
+                </span>
+              </div>
             </div>
           )}
 
           {formConfig.consent?.enabled !== false && (
-            <div className="flex flex-col gap-2">
-              <div className="flex items-start gap-3">
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-start gap-2.5">
                 <input
                   id="form-consent"
                   type="checkbox"
                   aria-invalid={errors.consent ? 'true' : 'false'}
                   aria-describedby={errors.consent ? 'consent-error' : undefined}
                   className={[
-                    'mt-1 w-4 h-4 rounded border text-brand-orange focus-ring cursor-pointer',
-                    'bg-surface-input dark:bg-surface-input',
-                    errors.consent ? 'border-red-400 dark:border-red-500' : 'border-theme-border',
+                    'mt-0.5 w-4 h-4 shrink-0 rounded border text-brand-orange focus-ring cursor-pointer',
+                    'bg-surface-input',
+                    errors.consent ? 'border-red-400' : 'border-theme-border',
                   ].join(' ')}
                   {...register('consent')}
                 />
-                <label htmlFor="form-consent" className="text-xs sm:text-sm text-ink-secondary dark:text-theme-body leading-relaxed select-none cursor-pointer">
-                  {formConfig.consent.text}
+                <label htmlFor="form-consent" className="text-xs text-ink-muted dark:text-theme-muted leading-relaxed select-none cursor-pointer">
+                  {formConfig.consent.text}{' '}
                   {formConfig.consent.privacyHref && formConfig.consent.privacyLabel && (
                     <>
-                      {' '}
                       {formConfig.consent.privacyPrefix}{' '}
                       <Link
                         to={formConfig.consent.privacyHref}
-                        className="text-brand-orange hover:opacity-80 transition-opacity focus-ring rounded motion-reduce:transition-none"
+                        className="text-brand-orange hover:opacity-80 transition-opacity focus-ring rounded"
                       >
                         {formConfig.consent.privacyLabel}
                       </Link>
@@ -388,7 +393,7 @@ function ContactFormCard({ formConfig }) {
               tabIndex={-1}
               role="alert"
               aria-live="assertive"
-              className="flex items-start gap-3 p-4 rounded-control bg-red-50 dark:bg-red-950/35 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
+              className="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl bg-red-50 dark:bg-red-950/35 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-sm outline-none"
             >
               <AlertCircle size={18} className="shrink-0 mt-0.5" aria-hidden="true" />
               <p>
@@ -401,28 +406,28 @@ function ContactFormCard({ formConfig }) {
             </div>
           )}
 
-          <div className="pt-1">
-            <Button
-              type="submit"
-              size="lg"
-              fullWidth
-              loading={isSubmitting}
-              disabled={isSubmitting}
-              leftIcon={<SendIcon size={18} />}
-              className={[
-                '!bg-gradient-to-r !from-brand-orange !to-brand-pink',
-                '!border-transparent !text-white',
-                'shadow-md hover:shadow-lg hover:!opacity-95',
-                'motion-reduce:transition-none motion-reduce:hover:scale-100',
-              ].join(' ')}
-            >
-              {isSubmitting ? formConfig.submittingLabel : formConfig.submitLabel}
-            </Button>
-          </div>
+          <Button
+            type="submit"
+            size="lg"
+            fullWidth
+            loading={isSubmitting}
+            disabled={isSubmitting}
+            leftIcon={<SendIcon size={18} />}
+            className={[
+              'min-h-12',
+              '!bg-gradient-to-r !from-brand-orange !to-brand-pink',
+              '!border-transparent !text-white !rounded-xl',
+              'shadow-md hover:shadow-lg hover:!opacity-95',
+              'motion-reduce:transition-none motion-reduce:hover:scale-100',
+            ].join(' ')}
+          >
+            {isSubmitting ? formConfig.submittingLabel : formConfig.submitLabel}
+          </Button>
 
           {showSecurityNote && (
-            <p className="text-center text-xs text-ink-muted dark:text-theme-muted">
-              {formConfig.securityNote.text}
+            <p className="flex items-center justify-center gap-1.5 text-center text-xs text-emerald-600 dark:text-emerald-400">
+              <LockIcon size={13} aria-hidden="true" />
+              <span>{formConfig.securityNote.text}</span>
             </p>
           )}
         </form>

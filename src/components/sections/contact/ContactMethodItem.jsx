@@ -1,8 +1,7 @@
 import { resolveContactIcon, resolveContactAccent } from './contactFormMaps';
 
 /**
- * ContactMethodItem — Reusable channel row for panel + strip layouts.
- * Icons and accents resolve from static maps (no dynamic Tailwind).
+ * ContactMethodItem — Panel + strip layouts matching reference icon treatment.
  */
 function ContactMethodItem({
   channel,
@@ -25,7 +24,7 @@ function ContactMethodItem({
       rel={isExternal ? 'noopener noreferrer' : undefined}
       className={[
         'text-sm leading-relaxed break-words focus-ring rounded-sm',
-        'hover:text-brand-orange transition-colors duration-250 motion-reduce:transition-none',
+        'hover:opacity-80 transition-opacity duration-250 motion-reduce:transition-none',
         valueClass,
       ].join(' ')}
     >
@@ -43,8 +42,9 @@ function ContactMethodItem({
         <div
           aria-hidden="true"
           className={[
-            'shrink-0 w-10 h-10 rounded-full border bg-surface-card dark:bg-theme-card',
+            'shrink-0 w-10 h-10 rounded-full border',
             'flex items-center justify-center',
+            'bg-surface-card dark:bg-theme-card',
             accent.ring,
           ].join(' ')}
         >
@@ -61,7 +61,7 @@ function ContactMethodItem({
   }
 
   return (
-    <div className={['flex items-start gap-3.5 py-3.5 sm:py-4 first:pt-0 last:pb-0', className].join(' ')}>
+    <div className={['flex items-start gap-3.5 py-4 first:pt-4 last:pb-1', className].join(' ')}>
       <div
         aria-hidden="true"
         className={[

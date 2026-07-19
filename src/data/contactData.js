@@ -84,8 +84,8 @@ const contactMethodDefs = [
     type: 'whatsapp',
     sourceKey: 'whatsapp',
     label: 'WhatsApp',
-    displayValue: 'Chat with our team',
-    icon: 'message-circle',
+    displayValue: 'Chat with us on WhatsApp',
+    icon: 'whatsapp',
     accent: 'whatsapp',
     showInPanel: true,
     showInStrip: false,
@@ -104,7 +104,7 @@ export const contactFormSectionData = {
     badge: 'Get In Touch',
     title: "Let's Start a Conversation",
     description:
-      'Have a catalog, release, or partnership in mind? Reach out and our team will help you take the next step.',
+      "We'd love to hear from you! Whether you have a question, need support, or want to explore a partnership, our team is here to help.",
     enabled: true,
   },
 
@@ -113,8 +113,9 @@ export const contactFormSectionData = {
     description: 'Reach out to us using any of the channels below.',
     icon: 'headphones',
     responseNote: {
-      text: '',
-      enabled: false,
+      text: 'We typically respond within a few hours during business days.',
+      icon: 'clock',
+      enabled: true,
     },
     enabled: true,
   },
@@ -126,8 +127,10 @@ export const contactFormSectionData = {
 
   form: {
     title: 'Send Us a Message',
-    description:
-      'Complete the form below and our team will get back to you as soon as possible.',
+    description: "Fill out the form and we'll get back to you as soon as possible.",
+
+    // Hidden default for API `service` when the UI matches the reference (no service dropdown)
+    defaultService: 'Other',
 
     fields: {
       name: {
@@ -151,29 +154,28 @@ export const contactFormSectionData = {
         required: true,
         enabled: true,
       },
-      // Not supported in schema / API / email template — keep disabled
+      // UI label matches reference; value still posts as API `company`
+      company: {
+        label: 'Subject (Optional)',
+        placeholder: 'How can we help?',
+        icon: 'tag',
+        required: false,
+        enabled: true,
+      },
+      // Not shown in reference UI — still sent via defaultService
+      service: {
+        label: 'Service Interest',
+        placeholder: 'Select a service...',
+        icon: 'list-filter',
+        required: true,
+        enabled: false,
+      },
       subject: {
         label: 'Subject',
         placeholder: 'Select or enter a subject',
         icon: 'tag',
         required: false,
         enabled: false,
-      },
-      // Existing optional field (maps to API `company`)
-      company: {
-        label: 'Company / Label (Optional)',
-        placeholder: 'Your label or brand name',
-        icon: 'building',
-        required: false,
-        enabled: true,
-      },
-      // Required by existing Zod schema + serverless payload
-      service: {
-        label: 'Service Interest',
-        placeholder: 'Select a service...',
-        icon: 'list-filter',
-        required: true,
-        enabled: true,
       },
       message: {
         label: 'Message',
@@ -226,8 +228,9 @@ export const contactFormSectionData = {
     },
 
     securityNote: {
-      text: '',
-      enabled: false,
+      text: 'Your information is secure and will never be shared.',
+      icon: 'lock',
+      enabled: true,
     },
   },
 };
