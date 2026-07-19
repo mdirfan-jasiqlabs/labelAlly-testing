@@ -1,6 +1,6 @@
 import Container from '../common/Container';
 import PurposeCard from './PurposeCard';
-import SectionDecorations from './SectionDecorations';
+import AboutDecorations from './AboutDecorations';
 import { missionVisionData } from '../../data/aboutData';
 
 /**
@@ -21,7 +21,7 @@ function MissionVisionSection() {
       aria-labelledby="mission-vision-heading"
       className="relative w-full overflow-hidden bg-neutral-50/60 dark:bg-theme-section py-16 md:py-24 lg:py-28 transition-colors duration-250"
     >
-      <SectionDecorations decorations={decorations} />
+      <AboutDecorations decorations={decorations} />
 
       <Container size="2xl" className="relative z-10">
         {/* ── Heading Group ── */}

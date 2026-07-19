@@ -1,26 +1,35 @@
 /**
- * SectionDecorations — Subtle abstract background shapes for section surfaces.
- * Renders decoration items defined in missionVisionData.decorations.
+ * AboutDecorations — Subtle abstract background shapes for About page sections.
+ * Renders decoration items from JSON with static position maps.
  */
 
 const POSITION_CLASSES = {
-  'top-left':       'left-[6%] top-[12%] -rotate-45',
-  'top-left-inner': 'left-[14%] top-[8%] rotate-12',
-  'top-right':      'right-[5%] top-[10%] rotate-45',
-  'top-right-inner':'right-[10%] top-[18%] rotate-[25deg]',
-  center:           'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
+  'top-left':        'left-[4%] top-[8%]',
+  'top-left-inner':  'left-[12%] top-[6%] rotate-12',
+  'top-right':       'right-[4%] top-[6%] rotate-45',
+  'top-right-inner': 'right-[8%] top-[14%] rotate-[25deg]',
+  'middle-left':     'left-[3%] top-[42%] -rotate-45',
+  'middle-right':    'right-[4%] top-[38%] rotate-[25deg]',
+  'center':          'left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2',
+  'center-top':      'left-[18%] top-[22%]',
+  'center-right':    'right-[16%] top-[28%]',
 };
 
 const VISIBILITY_CLASSES = {
-  'top-left':       'hidden md:block',
-  'top-left-inner': 'hidden lg:block',
-  'top-right':      'hidden md:block',
-  'top-right-inner':'hidden md:block',
-  center:           'hidden sm:block',
+  'top-left':        'hidden md:block',
+  'top-left-inner':  'hidden lg:block',
+  'top-right':       'hidden md:block',
+  'top-right-inner': 'hidden md:block',
+  'middle-left':     'hidden lg:block',
+  'middle-right':    'hidden lg:block',
+  center:            'hidden sm:block',
+  'center-top':      'hidden md:block',
+  'center-right':    'hidden md:block',
 };
 
 function DecorationShape({ type, position }) {
   const isRightSide = position?.includes('right');
+  const isMiddleLeft = position === 'middle-left';
 
   switch (type) {
     case 'capsule':
@@ -34,6 +43,11 @@ function DecorationShape({ type, position }) {
         />
       );
 
+    case 'capsule-green':
+      return (
+        <div className="w-5 h-14 rounded-full bg-teal-500/20 dark:bg-teal-500/10" />
+      );
+
     case 'triangle-faded':
       return (
         <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[14px] border-b-neutral-300/40 dark:border-b-neutral-600/20" />
@@ -41,10 +55,28 @@ function DecorationShape({ type, position }) {
 
     case 'triangle-outline':
       return (
-        <div className="w-10 h-10 border-2 border-accent-500/25 dark:border-accent-500/15 rounded-sm" />
+        <div
+          className={
+            isMiddleLeft
+              ? 'w-8 h-8 border-2 border-pink-500/25 dark:border-pink-500/15 rounded-sm rotate-12'
+              : 'w-10 h-10 border-2 border-teal-500/25 dark:border-teal-500/15 rounded-sm'
+          }
+        />
       );
 
     case 'dots':
+      return (
+        <div
+          className={[
+            'w-32 h-32 md:w-40 md:h-40 rounded-full',
+            'opacity-[0.20] dark:opacity-[0.10]',
+            'bg-[radial-gradient(circle,theme(colors.neutral.400)_1.5px,transparent_1.5px)]',
+            '[background-size:10px_10px]',
+          ].join(' ')}
+        />
+      );
+
+    case 'dots-large':
       return (
         <div
           className={[
@@ -61,7 +93,7 @@ function DecorationShape({ type, position }) {
   }
 }
 
-function SectionDecorations({ decorations = [] }) {
+function AboutDecorations({ decorations = [] }) {
   const enabledDecorations = decorations.filter((item) => item.enabled);
 
   if (enabledDecorations.length === 0) return null;
@@ -90,4 +122,4 @@ function SectionDecorations({ decorations = [] }) {
   );
 }
 
-export default SectionDecorations;
+export default AboutDecorations;

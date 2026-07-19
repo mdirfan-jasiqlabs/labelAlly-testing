@@ -233,8 +233,153 @@ export const missionVisionData = {
     },
     {
       id: 'decoration-dots',
-      type: 'dots',
+      type: 'dots-large',
       position: 'center',
+      enabled: true,
+    },
+  ],
+};
+
+export const teamSectionData = {
+  enabled: true,
+
+  badge: {
+    text: 'Creative Team',
+    enabled: true,
+  },
+
+  heading: 'Meet the Team Behind LabelAlly Entertainment',
+
+  paragraphs: [
+    {
+      id: 'team-paragraph-1',
+      enabled: true,
+      segments: [
+        {
+          id: 'team-segment-1a',
+          text: 'LabelAlly Entertainment was established to address a critical need in the modern music ecosystem: ',
+          emphasis: false,
+        },
+        {
+          id: 'team-segment-1b',
+          text: 'accessible, high-quality, and transparent business infrastructure for independent music professionals',
+          emphasis: true,
+        },
+        {
+          id: 'team-segment-1c',
+          text: '.',
+          emphasis: false,
+        },
+      ],
+    },
+    {
+      id: 'team-paragraph-2',
+      enabled: true,
+      segments: [
+        {
+          id: 'team-segment-2a',
+          text: 'Our team brings together collective experience in ',
+          emphasis: false,
+        },
+        {
+          id: 'team-segment-2b',
+          text: 'digital licensing, platform management, and marketing',
+          emphasis: true,
+        },
+        {
+          id: 'team-segment-2c',
+          text: ' to serve as an extension of your own operations.',
+          emphasis: false,
+        },
+      ],
+    },
+  ],
+
+  valuesHeading: {
+    text: 'What Our Team Brings To You',
+    enabled: true,
+  },
+
+  values: [
+    {
+      id: 'experience',
+      title: 'Experience & Expertise',
+      description:
+        'Knowledge across music distribution, digital media, rights management, and creator services.',
+      icon: 'users',
+      accent: 'rose',
+      enabled: true,
+    },
+    {
+      id: 'innovation',
+      title: 'Innovation',
+      description:
+        'Practical digital strategies for distribution, marketing, and platform growth.',
+      icon: 'lightbulb',
+      accent: 'emerald',
+      enabled: true,
+    },
+    {
+      id: 'commitment',
+      title: 'Commitment',
+      description:
+        'Focused on transparent reporting, clear communication, and responsible support.',
+      icon: 'shield-check',
+      accent: 'amber',
+      enabled: true,
+    },
+    {
+      id: 'collaboration',
+      title: 'Collaboration',
+      description:
+        'Working closely with artists, labels, creators, and business partners as an extension of your operations.',
+      icon: 'handshake',
+      accent: 'cyan',
+      enabled: true,
+    },
+  ],
+
+  decorations: [
+    {
+      id: 'team-decoration-dots-left',
+      type: 'dots',
+      position: 'top-left',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-dots-right',
+      type: 'dots',
+      position: 'top-right',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-capsule-left',
+      type: 'capsule-green',
+      position: 'middle-left',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-triangle-left',
+      type: 'triangle-outline',
+      position: 'center-top',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-capsule-right',
+      type: 'capsule',
+      position: 'middle-right',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-triangle-right',
+      type: 'triangle-outline',
+      position: 'top-right',
+      enabled: true,
+    },
+    {
+      id: 'team-decoration-dots-center',
+      type: 'dots',
+      position: 'center-right',
       enabled: true,
     },
   ],

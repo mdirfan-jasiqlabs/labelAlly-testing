@@ -1,6 +1,7 @@
 import AboutPageBanner     from '../components/about/AboutPageBanner';
 import AboutIntroSection   from '../components/about/AboutIntroSection';
 import MissionVisionSection from '../components/about/MissionVisionSection';
+import TeamSection          from '../components/about/TeamSection';
 import SEO               from '../components/common/SEO';
 
 /**
@@ -20,6 +21,7 @@ function AboutPage() {
       <AboutPageBanner />
       <AboutIntroSection />
       <MissionVisionSection />
+      <TeamSection />
     </main>
   );
 }
