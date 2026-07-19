@@ -3,7 +3,6 @@ import {
   MapPin,
   Mail,
   Phone,
-  ArrowUp,
   ChevronRight,
   ShieldCheck,
   TrendingUp,
@@ -64,13 +63,6 @@ function Footer() {
   if (!footerData || !footerData.enabled) return null;
 
   const { logo, company, socials, quickLinks, contact, whyUs, bottom } = footerData;
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
 
   const enabledSocials = socials?.items ? socials.items.filter(s => s.enabled) : [];
   const enabledQuickLinks = quickLinks?.links ? quickLinks.links.filter(l => l.enabled) : [];
@@ -363,42 +355,28 @@ function Footer() {
                 &copy; {currentYear} <span className="text-[#FF2E74] font-semibold">LabelAlly</span> {bottom.copyright}
               </p>
 
-              {/* Legal links & Scroll to Top */}
-              <div className="flex items-center gap-6 flex-wrap justify-center">
-                <nav aria-label="Legal links" className="flex items-center gap-4 text-xs text-neutral-500">
-                  {bottom.privacyLink?.enabled && (
-                    <Link
-                      to={bottom.privacyLink.href}
-                      className="hover:text-white transition-colors duration-250 focus-ring rounded"
-                    >
-                      {bottom.privacyLink.label}
-                    </Link>
-                  )}
-                  {bottom.privacyLink?.enabled && bottom.termsLink?.enabled && (
-                    <span className="text-neutral-800" aria-hidden="true">|</span>
-                  )}
-                  {bottom.termsLink?.enabled && (
-                    <Link
-                      to={bottom.termsLink.href}
-                      className="hover:text-white transition-colors duration-250 focus-ring rounded"
-                    >
-                      {bottom.termsLink.label}
-                    </Link>
-                  )}
-                </nav>
-
-                {/* Scroll to Top Button */}
-                {bottom.scrollToTop?.enabled && (
-                  <button
-                    type="button"
-                    onClick={scrollToTop}
-                    aria-label="Scroll to top of the page"
-                    className="w-10 h-10 rounded-lg bg-[#FF2E74] hover:bg-[#E02060] text-white flex items-center justify-center transition-all duration-200 focus-ring hover:shadow-[0_4px_12px_rgba(255,46,116,0.3)] active:scale-95 shrink-0"
+              {/* Legal links */}
+              <nav aria-label="Legal links" className="flex items-center gap-4 text-xs text-neutral-500">
+                {bottom.privacyLink?.enabled && (
+                  <Link
+                    to={bottom.privacyLink.href}
+                    className="hover:text-white transition-colors duration-250 focus-ring rounded"
                   >
-                    <ArrowUp size={18} strokeWidth={2.5} aria-hidden="true" />
-                  </button>
+                    {bottom.privacyLink.label}
+                  </Link>
                 )}
-              </div>
+                {bottom.privacyLink?.enabled && bottom.termsLink?.enabled && (
+                  <span className="text-neutral-800" aria-hidden="true">|</span>
+                )}
+                {bottom.termsLink?.enabled && (
+                  <Link
+                    to={bottom.termsLink.href}
+                    className="hover:text-white transition-colors duration-250 focus-ring rounded"
+                  >
+                    {bottom.termsLink.label}
+                  </Link>
+                )}
+              </nav>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import PageLoader from '../common/PageLoader';
@@ -7,20 +7,14 @@ import ScrollToTopButton from '../common/ScrollToTopButton';
 
 /**
  * PageLayout — Shared layout wrapper for all pages.
- *
- * Structure:
- *   <div> (root)
- *     <Header />        — sticky top navigation
- *     <main>            — page content via <Outlet />
- *       <Outlet />
- *     </main>
- *     <Footer />        — persistent bottom section
- *   </div>
- *
- * Every route rendered inside this layout inherits the
- * consistent header and footer automatically.
  */
 function PageLayout() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* ── Header ── */}
