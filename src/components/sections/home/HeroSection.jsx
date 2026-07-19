@@ -184,8 +184,12 @@ function HeroSection() {
             {/* Artist Image Wrapper & Element (with smooth entrance animation) */}
             <div className="relative w-full h-full flex items-end justify-center lg:justify-end overflow-visible z-10 animate-fade-in">
               <img
-                src="/hero-artist.png"
-                alt="Independent music artist performing with an electric guitar"
+                src={hero.image.src}
+                alt={hero.image.alt}
+                width="540"
+                height="540"
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 className="block w-auto h-full max-h-[500px] xl:max-h-[540px] object-contain object-bottom select-none pointer-events-none transform lg:-translate-x-12 lg:-translate-y-14 md:-translate-y-8"
                 style={{

@@ -54,6 +54,8 @@ function HowItWorksSection() {
               <img
                 src={process.image.src}
                 alt={process.image.alt}
+                width="380"
+                height="475"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover pointer-events-none select-none"
