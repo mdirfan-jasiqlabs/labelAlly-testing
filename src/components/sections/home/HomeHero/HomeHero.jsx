@@ -6,7 +6,7 @@ import HeroImage from './HeroImage';
 import PlatformSection from './PlatformSection';
 
 /**
- * Homepage Hero — JSON-driven premium hero matching the reference composition.
+ * Homepage Hero — compact two-column layout matching the reference spacing.
  */
 function HomeHero() {
   return (
@@ -26,8 +26,12 @@ function HomeHero() {
             description={data.description}
             buttons={data.buttons}
             features={data.features}
+            image={data.image}
           />
-          <HeroImage image={data.image} />
+
+          <div className={styles.image.colDesktop}>
+            <HeroImage image={data.image} />
+          </div>
         </div>
 
         <PlatformSection platforms={data.platforms} />

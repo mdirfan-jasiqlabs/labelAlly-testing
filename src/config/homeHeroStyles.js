@@ -1,6 +1,6 @@
 /**
  * Configurable Tailwind class maps for the homepage Hero.
- * Tuned to the reference: ~58/42 split, soft purple disc + artist, purple CTA.
+ * Compact reference layout: tight left stack + side image, no stretched row gaps.
  */
 
 export const homeHeroStyles = {
@@ -10,76 +10,79 @@ export const homeHeroStyles = {
       'bg-white dark:bg-neutral-950',
     ].join(' '),
     container:
-      'relative z-10 w-full mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-10 pb-10 sm:pb-12',
+      'relative z-10 w-full mx-auto max-w-[1400px] px-3 sm:px-4 lg:px-5 xl:px-6 pt-5 sm:pt-6 lg:pt-5 pb-5 sm:pb-6',
     layout: [
       'grid grid-cols-1 lg:grid-cols-12',
-      'gap-8 lg:gap-8 xl:gap-12',
+      'gap-4 sm:gap-5 lg:gap-x-4 lg:gap-y-0 xl:gap-x-5',
       'items-center',
-      'lg:min-h-[560px] xl:min-h-[600px]',
     ].join(' '),
   },
 
   content: {
-    col: [
-      'lg:col-span-7 relative z-10',
+    stack: [
+      'lg:col-span-6 relative z-10',
       'flex flex-col justify-center',
       'items-center text-center',
       'lg:items-start lg:text-left',
+      'gap-0',
       'motion-safe:animate-fade-up',
     ].join(' '),
+    mobileImage: 'relative z-0 w-full flex justify-center my-2 sm:my-3 lg:hidden pointer-events-none',
     badge:
       'inline-flex items-center gap-2 text-[0.7rem] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink-secondary',
     badgeIcon: 'text-accent-500 shrink-0',
     heading: [
-      'mt-5 sm:mt-6 font-heading font-black tracking-tight',
+      'mt-3 sm:mt-4 font-heading font-black tracking-tight',
       'text-ink-primary',
-      'text-[1.9rem] leading-[1.05]',
-      'xs:text-[2.2rem]',
-      'sm:text-[3.2rem]',
-      'md:text-[3.75rem]',
-      'lg:text-[4rem]',
-      'xl:text-[4.35rem]',
+      'text-[1.85rem] leading-[1.08]',
+      'xs:text-[2.1rem]',
+      'sm:text-[2.85rem]',
+      'md:text-[3.25rem]',
+      'lg:text-[3.5rem]',
+      'xl:text-[3.85rem]',
     ].join(' '),
     headingLine: 'block',
     accent: 'text-accent-500',
     description: [
-      'mt-4 sm:mt-5',
-      'max-w-[480px]',
-      'text-sm sm:text-[0.95rem] sm:text-base leading-relaxed text-ink-secondary',
+      'mt-3 sm:mt-3.5',
+      'max-w-[460px]',
+      'text-sm sm:text-[0.95rem] leading-relaxed text-ink-secondary',
     ].join(' '),
   },
 
   buttons: {
     row: [
-      'mt-6 sm:mt-8',
+      'relative z-30',
+      'mt-4 sm:mt-5 lg:mt-5',
       'flex w-full flex-col sm:flex-row',
       'items-stretch sm:items-center',
       'justify-center lg:justify-start',
       'gap-3',
+      'isolate',
     ].join(' '),
     base: [
       'group inline-flex items-center justify-center gap-2.5',
-      'h-12 px-6 sm:px-7 rounded-xl',
-      'text-sm font-bold whitespace-nowrap',
+      'relative z-30',
+      'h-11 sm:h-12 px-5 sm:px-6 rounded-xl',
+      'text-sm font-semibold whitespace-nowrap',
       'transition-all duration-300 ease-out',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-      'focus-visible:ring-primary-500 focus-visible:ring-offset-white',
+      'focus-visible:ring-orange-400 focus-visible:ring-offset-white',
       'dark:focus-visible:ring-offset-neutral-950',
       'active:scale-[0.98]',
       'w-full sm:w-auto',
     ].join(' '),
     primary: [
-      'bg-primary-600 hover:bg-primary-700 text-white',
-      'border border-primary-600 hover:border-primary-700',
-      'shadow-[0_10px_28px_-8px_rgba(79,70,229,0.45)]',
-      'hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(79,70,229,0.4)]',
+      'bg-gradient-to-r from-orange-500 to-rose-500 text-white',
+      'border border-transparent',
+      'shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
+      'hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(244,63,94,0.5)]',
       'motion-reduce:hover:translate-y-0',
     ].join(' '),
     secondary: [
-      'bg-white dark:bg-neutral-900',
+      'bg-white dark:bg-neutral-950',
       'text-accent-600 dark:text-accent-400',
       'border border-accent-400 dark:border-accent-500/60',
-      'shadow-sm',
       'hover:bg-accent-50 dark:hover:bg-neutral-800',
       'hover:-translate-y-0.5',
       'motion-reduce:hover:translate-y-0',
@@ -90,40 +93,77 @@ export const homeHeroStyles = {
 
   features: {
     row: [
-      'mt-8 sm:mt-10',
+      'relative z-30',
+      'mt-6 sm:mt-7',
       'grid grid-cols-2 md:grid-cols-4',
-      'gap-x-5 gap-y-5',
+      'gap-x-4 gap-y-4',
       'w-full max-w-xl lg:max-w-none',
       'justify-items-center lg:justify-items-start',
       'text-center lg:text-left',
     ].join(' '),
-    item: 'flex flex-col gap-1.5 items-center lg:items-start',
+    item: 'flex flex-col gap-1 items-center lg:items-start',
     iconWrap:
-      'flex h-9 w-9 items-center justify-center rounded-xl bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-300',
-    title: 'text-[0.8rem] font-bold text-ink-primary leading-tight',
-    description: 'text-[0.72rem] text-ink-muted leading-tight',
+      'flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-300',
+    title: 'text-[0.78rem] sm:text-[0.8rem] font-bold text-ink-primary leading-tight',
+    description: 'text-[0.7rem] text-ink-muted leading-tight',
   },
 
   image: {
     col: [
-      'relative z-10',
-      'hidden lg:flex',
-      'lg:col-span-5',
-      'items-center justify-center',
+      'relative z-0',
+      'flex',
+      'justify-center items-center',
+      'w-full',
+      'overflow-visible',
+      'pointer-events-none',
     ].join(' '),
-    stage:
-      'relative w-full max-w-[460px] xl:max-w-[500px] aspect-square',
+    colDesktop: [
+      'relative z-0',
+      'hidden lg:flex',
+      'justify-center items-center',
+      'lg:col-span-6',
+      'overflow-visible',
+      'pointer-events-none',
+    ].join(' '),
+    stage: [
+      'relative w-full mx-auto overflow-visible',
+      'max-w-[340px] sm:max-w-[380px]',
+      'lg:max-w-[480px] xl:max-w-[520px]',
+      'aspect-square',
+    ].join(' '),
     glow: [
-      'absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2',
+      'absolute left-1/2 top-1/2 z-0',
       'h-[88%] w-[88%] rounded-full',
-      'bg-[#D8C9F8] dark:bg-violet-500/35',
-      'blur-[2px]',
+      'bg-[#D4C2F8] dark:bg-violet-500/40',
+      'blur-[1px]',
+      'motion-safe:animate-hero-glow-pulse',
+      'motion-reduce:opacity-95 motion-reduce:translate-x-[-50%] motion-reduce:translate-y-[-50%]',
     ].join(' '),
     glowSoft: [
-      'absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2',
-      'h-[100%] w-[100%] rounded-full',
-      'bg-violet-300/35 dark:bg-violet-500/20',
+      'absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2',
+      'h-[105%] w-[105%] rounded-full',
+      'bg-violet-300/40 dark:bg-violet-500/25',
       'blur-3xl',
+      'motion-safe:animate-hero-orb-drift',
+    ].join(' '),
+    glowAccent: [
+      'absolute left-[62%] top-[58%] z-0',
+      'h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 rounded-full',
+      'bg-orange-300/25 dark:bg-orange-500/15',
+      'blur-3xl',
+      'motion-safe:animate-hero-float',
+    ].join(' '),
+    ring: [
+      'absolute left-1/2 top-1/2 z-[1]',
+      'h-[94%] w-[94%] rounded-full',
+      'border border-dashed border-violet-300/50 dark:border-violet-400/30',
+      'motion-safe:animate-hero-ring-spin',
+      'motion-reduce:translate-x-[-50%] motion-reduce:translate-y-[-50%]',
+    ].join(' '),
+    ringInner: [
+      'absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2',
+      'h-[76%] w-[76%] rounded-full',
+      'border border-violet-200/45 dark:border-violet-400/20',
     ].join(' '),
     waveWrap: [
       'absolute inset-0 z-[5]',
@@ -131,47 +171,52 @@ export const homeHeroStyles = {
       'pointer-events-none',
     ].join(' '),
     waveRow:
-      'flex h-[42%] w-[78%] items-center justify-center gap-[3px] sm:gap-1',
-    waveBar:
-      'w-[3px] sm:w-[3.5px] shrink-0 rounded-full bg-white/85 shadow-sm dark:bg-white/40',
+      'flex h-[48%] w-[74%] max-w-[360px] items-center justify-center gap-[3px] sm:gap-1',
+    waveBar: [
+      'w-[3px] sm:w-[3.5px] h-[80%] shrink-0 rounded-full',
+      'bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]',
+      'dark:bg-white/55 dark:shadow-[0_0_8px_rgba(255,255,255,0.18)]',
+      'origin-center will-change-transform',
+      'motion-reduce:animate-none',
+    ].join(' '),
     floatBadge: [
-      'absolute top-[10%] right-[8%] z-20',
-      'flex h-12 w-12 xl:h-14 xl:w-14 items-center justify-center rounded-full',
+      'absolute top-[8%] right-[8%] z-20',
+      'flex h-11 w-11 sm:h-12 sm:w-12 xl:h-14 xl:w-14 items-center justify-center rounded-full',
       'bg-white dark:bg-neutral-900',
       'text-primary-600 dark:text-primary-300',
-      'shadow-[0_12px_30px_-10px_rgba(79,70,229,0.35)]',
+      'shadow-[0_12px_28px_-10px_rgba(79,70,229,0.35)]',
       'ring-1 ring-primary-100 dark:ring-white/10',
       'motion-safe:animate-hero-float',
     ].join(' '),
     figure: [
       'absolute inset-0 z-10',
-      'flex items-end justify-center',
-      'pb-0',
+      'flex items-center justify-center',
+      'scale-[1.12] sm:scale-[1.16] lg:scale-[1.28] xl:scale-[1.32]',
     ].join(' '),
     img: [
-      'block h-[92%] w-auto max-h-none',
-      'object-contain object-bottom select-none',
-      'mix-blend-lighten dark:mix-blend-lighten',
-      'drop-shadow-[0_20px_40px_rgba(79,70,229,0.18)]',
-      '[mask-image:linear-gradient(to_bottom,black_68%,transparent_100%)]',
-      '[-webkit-mask-image:linear-gradient(to_bottom,black_68%,transparent_100%)]',
+      'block h-full w-auto max-h-[100%]',
+      'object-contain object-center select-none',
+      'mix-blend-lighten',
+      'drop-shadow-[0_20px_40px_rgba(79,70,229,0.2)]',
+      '[mask-image:linear-gradient(to_bottom,black_74%,transparent_100%)]',
+      '[-webkit-mask-image:linear-gradient(to_bottom,black_74%,transparent_100%)]',
     ].join(' '),
   },
 
   platforms: {
-    root: 'relative z-10 mt-6 sm:mt-8 lg:mt-4',
+    root: 'relative z-10 mt-4 sm:mt-5 lg:mt-4',
     shell: [
       'rounded-2xl sm:rounded-3xl',
       'border border-neutral-200/80 dark:border-white/10',
       'bg-white dark:bg-neutral-900/85',
       'shadow-platform-strip',
-      'px-4 py-5 sm:px-6 sm:py-6',
+      'px-4 py-4 sm:px-6 sm:py-5',
     ].join(' '),
     heading: [
       'text-center text-[0.7rem] sm:text-xs font-bold',
       'tracking-[0.16em] uppercase',
       'text-accent-500',
-      'mb-5 sm:mb-6 select-none',
+      'mb-4 sm:mb-5 select-none',
     ].join(' '),
     highlight: 'text-accent-500',
     logosWrap:
@@ -193,11 +238,11 @@ export const homeHeroStyles = {
   },
 
   decorations: {
-    layer: 'pointer-events-none absolute inset-0 overflow-hidden',
+    layer: 'pointer-events-none absolute inset-0 overflow-hidden z-0',
     orbPrimary:
-      'absolute -top-20 right-[-4%] h-[380px] w-[380px] rounded-full bg-violet-300/15 blur-3xl dark:bg-violet-500/12',
+      'absolute -top-20 right-[-4%] hidden lg:block h-[320px] w-[320px] rounded-full bg-violet-300/12 blur-3xl dark:bg-violet-500/10',
     orbAccent:
-      'absolute bottom-24 -left-20 h-[240px] w-[240px] rounded-full bg-accent-300/10 blur-3xl dark:bg-accent-500/8',
+      'absolute bottom-20 -left-16 hidden lg:block h-[200px] w-[200px] rounded-full bg-accent-300/10 blur-3xl dark:bg-accent-500/8',
     softCircle: 'hidden',
   },
 };

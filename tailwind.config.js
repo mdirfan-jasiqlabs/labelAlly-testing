@@ -239,12 +239,43 @@ export default {
           '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
           '50%': { transform: 'translate3d(12px, -16px, 0)' },
         },
+        'eq-bar': {
+          '0%, 100%': { transform: 'scaleY(0.28)' },
+          '25%': { transform: 'scaleY(0.85)' },
+          '50%': { transform: 'scaleY(1)' },
+          '75%': { transform: 'scaleY(0.55)' },
+        },
+        'hero-glow-pulse': {
+          '0%, 100%': {
+            opacity: '0.9',
+            transform: 'translate(-50%, -50%) scale(1)',
+          },
+          '50%': {
+            opacity: '1',
+            transform: 'translate(-50%, -50%) scale(1.06)',
+          },
+        },
+        'hero-ring-spin': {
+          '0%': { transform: 'translate(-50%, -50%) rotate(0deg)' },
+          '100%': { transform: 'translate(-50%, -50%) rotate(360deg)' },
+        },
+        'hero-orb-drift': {
+          '0%, 100%': { transform: 'translate(-50%, -50%) translate(0, 0)' },
+          '33%': { transform: 'translate(-50%, -50%) translate(18px, -14px)' },
+          '66%': { transform: 'translate(-50%, -50%) translate(-12px, 10px)' },
+        },
       },
       animation: {
         'hero-float': 'hero-float 5s ease-in-out infinite',
         'hero-float-delayed': 'hero-float 6.5s ease-in-out 0.8s infinite',
         'hero-drift': 'hero-drift 12s ease-in-out infinite',
         'hero-drift-delayed': 'hero-drift 14s ease-in-out 1.2s infinite',
+        'eq-bar': 'eq-bar 0.85s ease-in-out infinite',
+        'eq-bar-fast': 'eq-bar 0.55s ease-in-out infinite',
+        'eq-bar-slow': 'eq-bar 1.1s ease-in-out infinite',
+        'hero-glow-pulse': 'hero-glow-pulse 3.8s ease-in-out infinite',
+        'hero-ring-spin': 'hero-ring-spin 22s linear infinite',
+        'hero-orb-drift': 'hero-orb-drift 8s ease-in-out infinite',
       },
 
       transitionDuration: {
