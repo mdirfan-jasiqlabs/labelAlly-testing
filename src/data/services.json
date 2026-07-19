@@ -1,48 +1,89 @@
 {
   "hero": {
-    "badge": "Our Services",
-    "title": "Comprehensive Music Industry Solutions",
-    "description": "We provide creators, labels, and brands with the technical infrastructure, distribution networks, and management expertise required to grow in today's digital landscape."
+    "badge": "Our Service",
+    "title": "At LabelAlly Entertainment,",
+    "description": "We empower creators, businesses, and brands with end-to-end digital, media, and technology solutions. From music distribution to business growth strategies, we provide everything you need to succeed in the digital world."
   },
   "list": {
     "heading": "Professional Capabilities",
     "description": "Explore our specialized services designed to protect your intellectual property, expand your reach, and optimize your catalog's revenue potential.",
+    "controls": {
+      "batchSize": 3,
+      "showMoreLabel": "Show More",
+      "showLessLabel": "Show Less"
+    },
     "items": [
       {
         "id": "music-distribution",
         "title": "Music Distribution",
         "description": "Deliver your tracks, albums, and music videos directly to all major streaming platforms worldwide. We handle digital supply chain management, store onboarding, and automated metadata delivery.",
-        "icon": "Globe"
+        "icon": "Globe",
+        "accent": "rose",
+        "enabled": true
       },
       {
         "id": "youtube-channel-management",
         "title": "YouTube Channel Management",
         "description": "Comprehensive channel administration including content upload schedules, metadata optimization, custom playlist creation, card/end-screen annotation, and direct fan engagement strategies.",
-        "icon": "PlayCircle"
+        "icon": "PlayCircle",
+        "accent": "emerald",
+        "enabled": true
       },
       {
         "id": "content-rights-management",
         "title": "Content Rights Management",
         "description": "Protect your content on global platforms. We monitor, enforce, and manage digital licensing agreements to ensure your copyrights are protected from unauthorized use and monetization.",
-        "icon": "Shield"
+        "icon": "Shield",
+        "accent": "amber",
+        "enabled": true
       },
       {
         "id": "youtube-cms-content-id",
         "title": "YouTube CMS & Content ID",
         "description": "Audit and claim royalties across user-generated content (UGC) on YouTube. We configure matching policies, manage standard assets, resolve ownership conflicts, and maximize Content ID revenue.",
-        "icon": "Fingerprint"
+        "icon": "Fingerprint",
+        "accent": "cyan",
+        "enabled": true
       },
       {
         "id": "ott-distribution",
         "title": "OTT Distribution",
         "description": "Expand your reach onto over-the-top media platforms. We format and deliver video content to smart TV applications, streaming sticks, and digital television networks.",
-        "icon": "Tv"
+        "icon": "Tv",
+        "accent": "rose",
+        "enabled": true
       },
       {
         "id": "revenue-optimization",
         "title": "Revenue Optimization",
         "description": "Audit and streamline multi-channel payouts. We resolve payout discrepancies, optimize digital streams reporting, and consolidate mechanicals, performance, and sync licensing collection.",
-        "icon": "TrendingUp"
+        "icon": "TrendingUp",
+        "accent": "emerald",
+        "enabled": true
+      },
+      {
+        "id": "artist-label-support",
+        "title": "Artist & Label Support",
+        "description": "Dedicated account management and strategic guidance for artists and labels. We provide personalized support to help you navigate the music industry landscape.",
+        "icon": "Users",
+        "accent": "amber",
+        "enabled": true
+      },
+      {
+        "id": "digital-promotion",
+        "title": "Digital Promotion",
+        "description": "Strategic marketing campaigns across social media, streaming platforms, and digital channels. We help you reach wider audiences and grow your fanbase effectively.",
+        "icon": "Megaphone",
+        "accent": "cyan",
+        "enabled": true
+      },
+      {
+        "id": "content-monetization",
+        "title": "Content Monetization",
+        "description": "Maximize your revenue through multiple monetization channels. We optimize your content for maximum earnings across all platforms and distribution networks.",
+        "icon": "DollarSign",
+        "accent": "rose",
+        "enabled": true
       }
     ]
   },

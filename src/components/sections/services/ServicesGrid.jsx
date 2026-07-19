@@ -1,30 +1,81 @@
-import { Globe, PlayCircle, Shield, Fingerprint, Tv, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
 import Container from '../../common/Container';
 import SectionHeading from '../../common/SectionHeading';
-import Card from '../../common/Card';
+import ServiceCard from './ServiceCard';
+import ServicesControls from './ServicesControls';
 import servicesData from '../../../data/services.json';
 
-const ICON_MAP = {
-  Globe,
-  PlayCircle,
-  Shield,
-  Fingerprint,
-  Tv,
-  TrendingUp,
-};
-
 /**
- * ServicesGrid — Displays the detailed grid of all 6 services on the Services page.
+ * ServicesGrid — Displays the detailed grid of services with batch-based Show More/Less controls.
  */
 function ServicesGrid() {
   const { list } = servicesData;
 
   if (!list) return null;
 
+  const { controls, items } = list;
+  const batchSize = controls?.batchSize ?? 3;
+  const showMoreLabel = controls?.showMoreLabel ?? 'Show More';
+  const showLessLabel = controls?.showLessLabel ?? 'Show Less';
+
+  // Filter enabled services
+  const enabledServices = items.filter((item) => item.enabled);
+  const totalServices = enabledServices.length;
+
+  // State for visible service count
+  const [visibleCount, setVisibleCount] = useState(batchSize);
+
+  // Handle Show More
+  const handleShowMore = () => {
+    setVisibleCount((prev) => Math.min(prev + batchSize, totalServices));
+  };
+
+  // Handle Show Less with batch boundary logic
+  const handleShowLess = () => {
+    setVisibleCount((prev) => {
+      if (prev <= batchSize) return batchSize;
+
+      // Calculate previous batch boundary
+      const previousBoundary = Math.ceil((prev - batchSize) / batchSize) * batchSize;
+      return Math.max(batchSize, previousBoundary);
+    });
+  };
+
+  // Get visible services
+  const visibleServices = enabledServices.slice(0, visibleCount);
+
+  // If fewer than 3 enabled services, show all without controls
+  if (totalServices <= batchSize) {
+    return (
+      <section
+        aria-labelledby="services-list-heading"
+        className="py-16 md:py-24 bg-white dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/30"
+      >
+        <Container>
+          <SectionHeading
+            titleAs="h2"
+            title={list.heading}
+            description={list.description}
+            align="center"
+            className="mb-14"
+          />
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 list-none p-0 m-0">
+            {visibleServices.map((service) => (
+              <li key={service.id} className="h-full">
+                <ServiceCard service={service} />
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section
       aria-labelledby="services-list-heading"
-      className="py-16 md:py-24 bg-white border-t border-neutral-100"
+      className="py-16 md:py-24 bg-white dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/30"
     >
       <Container>
         <SectionHeading
@@ -35,33 +86,23 @@ function ServicesGrid() {
           className="mb-14"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {list.items.map((service) => {
-            const Icon = ICON_MAP[service.icon];
-            return (
-              <Card
-                key={service.id}
-                padding="lg"
-                radius="xl"
-                bordered
-                hover
-                className="flex flex-col gap-5 bg-neutral-50/50"
-              >
-                {Icon && (
-                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-50 border border-primary-100 text-primary-600">
-                    <Icon size={22} aria-hidden="true" />
-                  </div>
-                )}
-                <h3 className="text-xl font-bold font-heading text-neutral-900">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </Card>
-            );
-          })}
-        </div>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 list-none p-0 m-0">
+          {visibleServices.map((service) => (
+            <li key={service.id} className="h-full">
+              <ServiceCard service={service} />
+            </li>
+          ))}
+        </ul>
+
+        <ServicesControls
+          visibleCount={visibleCount}
+          totalCount={totalServices}
+          batchSize={batchSize}
+          showMoreLabel={showMoreLabel}
+          showLessLabel={showLessLabel}
+          onShowMore={handleShowMore}
+          onShowLess={handleShowLess}
+        />
       </Container>
     </section>
   );
