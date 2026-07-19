@@ -22,6 +22,21 @@
 
     <!-- Theme color — matches brand light background -->
     <meta name="theme-color" content="#ffffff" />
+
+    <!-- Prevent incorrect-theme flash during initial load -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

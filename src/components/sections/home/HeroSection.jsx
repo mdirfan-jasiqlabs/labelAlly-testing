@@ -51,7 +51,7 @@ function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/30 to-surface-page"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/30 to-surface-page dark:from-transparent dark:to-transparent dark:bg-theme-page"
     >
       {/* ── Background decorative blobs ──────────────────────────────── */}
       <div
@@ -134,7 +134,7 @@ function HeroSection() {
                 className={[
                   'inline-flex items-center gap-2.5',
                   'h-12 px-6 rounded-xl',
-                  'bg-white hover:bg-accent-50',
+                  'bg-white hover:bg-accent-50 dark:bg-theme-card dark:hover:bg-theme-hover',
                   'text-sm font-bold text-accent-600 hover:text-accent-700',
                   'border border-accent-400 hover:border-accent-500',
                   'shadow-sm hover:shadow-[0_4px_14px_rgba(245,158,11,0.2)]',
@@ -153,7 +153,7 @@ function HeroSection() {
                 const Icon = ICON_MAP[item.icon] ?? Globe;
                 return (
                   <div key={item.id} className="flex flex-col gap-1.5">
-                    <div className="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center shrink-0">
                       <Icon size={17} className="text-primary-600" aria-hidden="true" strokeWidth={2} />
                     </div>
                     <p className="text-[0.8rem] font-bold text-ink-primary leading-tight">{item.title}</p>
@@ -213,7 +213,7 @@ function HeroSection() {
         {platformsData && platformsData.enabled && enabledPlatforms.length > 0 && (
           <div className="mt-8 mb-0">
             <div
-              className="rounded-2xl border border-neutral-200/80 bg-white shadow-platform-strip px-6 py-6"
+              className="rounded-2xl border border-neutral-200/80 dark:border-theme-border bg-white dark:bg-theme-card shadow-platform-strip px-6 py-6"
             >
               {/* Heading */}
               <p className="text-center text-sm font-semibold text-ink-primary mb-6 select-none">
@@ -245,7 +245,7 @@ function HeroSection() {
                   <div className="w-full flex items-center justify-center py-2">
                     <Link
                       to={platformsData.moreHref || '/services'}
-                      className="inline-flex items-center justify-center w-full h-8 px-3 rounded-full border border-neutral-200 text-[11px] sm:text-xs font-semibold text-neutral-500 hover:text-neutral-900 hover:border-neutral-300 hover:bg-neutral-50 transition-colors duration-250 whitespace-nowrap text-center focus-ring"
+                      className="inline-flex items-center justify-center w-full h-8 px-3 rounded-full border border-neutral-200 dark:border-theme-border text-[11px] sm:text-xs font-semibold text-neutral-500 dark:text-theme-muted hover:text-neutral-900 dark:hover:text-theme-heading hover:border-neutral-300 dark:hover:border-theme-border hover:bg-neutral-50 dark:hover:bg-theme-hover transition-colors duration-250 whitespace-nowrap text-center focus-ring"
                     >
                       {platformsData.moreLabel}
                     </Link>

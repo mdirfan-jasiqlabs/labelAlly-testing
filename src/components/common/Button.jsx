@@ -62,21 +62,24 @@ function Button({
     // Filled secondary — neutral light
     secondary: [
       'bg-neutral-100 hover:bg-neutral-200 active:bg-neutral-300',
-      'text-neutral-800',
-      'border-neutral-200 hover:border-neutral-300',
+      'dark:bg-theme-card dark:hover:bg-theme-hover dark:active:bg-theme-border/40',
+      'text-neutral-800 dark:text-theme-heading',
+      'border-neutral-200 hover:border-neutral-300 dark:border-theme-border dark:hover:border-theme-border',
     ].join(' '),
 
     // Outlined — transparent with primary border
     outline: [
       'bg-transparent hover:bg-primary-50/50',
-      'text-primary-600 hover:text-primary-700',
-      'border-primary-600 hover:border-primary-500',
+      'dark:hover:bg-primary-900/30',
+      'text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300',
+      'border-primary-600 hover:border-primary-500 dark:border-primary-500 dark:hover:border-primary-400',
     ].join(' '),
 
     // Ghost — no border, no background
     ghost: [
       'bg-transparent hover:bg-neutral-100 active:bg-neutral-200',
-      'text-neutral-600 hover:text-neutral-900',
+      'dark:hover:bg-theme-hover dark:active:bg-theme-border/30',
+      'text-neutral-600 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
       'border-transparent',
     ].join(' '),
   };

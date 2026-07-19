@@ -51,7 +51,7 @@ function ClientsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="clients-section-title"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
     >
       <Container size="xl" className="relative z-10 flex flex-col items-center">
         {/* ── Section Header ── */}
@@ -96,14 +96,14 @@ function ClientsSection() {
 
         {/* ── Responsive Logo Grid ── */}
         <div
-          className={`w-full grid ${gridMobileClass} ${gridTabletClass} ${gridDesktopClass} border-t border-l border-neutral-200/70 bg-white shadow-soft transition-all duration-1000 ease-out delay-300 ${
+          className={`w-full grid ${gridMobileClass} ${gridTabletClass} ${gridDesktopClass} border-t border-l border-neutral-200/70 dark:border-theme-border/50 bg-white dark:bg-theme-card shadow-soft transition-all duration-1000 ease-out delay-300 ${
             isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
           {enabledLogos.map((logo) => (
             <div
               key={logo.id}
-              className="border-r border-b border-neutral-200/70 bg-white flex items-center justify-center p-4 md:p-6 aspect-[1.6] md:aspect-[1.5] transition-colors duration-300 hover:bg-neutral-50/30 group"
+              className="border-r border-b border-neutral-200/70 dark:border-theme-border/50 bg-white dark:bg-theme-card flex items-center justify-center p-4 md:p-6 aspect-[1.6] md:aspect-[1.5] transition-colors duration-300 hover:bg-neutral-50/30 dark:hover:bg-theme-hover group"
             >
               <img
                 src={logo.image}

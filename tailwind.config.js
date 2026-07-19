@@ -30,6 +30,24 @@ export default {
 
       // ── Brand Colors ───────────────────────────────────────────────────────
       colors: {
+        // Semantic Design Tokens for Theme Toggle
+        theme: {
+          page: 'var(--color-page-bg)',
+          section: 'var(--color-section-bg)',
+          card: 'var(--color-card-surface)',
+          header: 'var(--color-header-bg)',
+          footer: 'var(--color-footer-bg)',
+          heading: 'var(--color-heading-text)',
+          body: 'var(--color-body-text)',
+          muted: 'var(--color-muted-text)',
+          border: 'var(--color-border)',
+          accent: 'var(--color-brand-accent)',
+          hover: 'var(--color-hover)',
+          focus: 'var(--color-focus)',
+          toggle: 'var(--color-toggle-bg)',
+          toggleActive: 'var(--color-toggle-active)',
+        },
+
         // Primary — premium indigo
         primary: {
           50: '#eef2ff',
@@ -139,6 +157,7 @@ export default {
 
       // ── Box Shadows ────────────────────────────────────────────────────────
       boxShadow: {
+        theme: 'var(--color-shadow)',
         artist: '0 18px 45px rgba(40, 40, 90, 0.08)',
         artistHover: '0 30px 60px rgba(40, 40, 90, 0.14)',
         glow: '0 0 30px rgba(99, 102, 241, 0.16)',

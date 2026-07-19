@@ -127,7 +127,7 @@ function TestimonialsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="testimonials-section-heading"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
       onKeyDown={handleKeyDown}
       tabIndex={0}
       onMouseEnter={() => setIsHovered(true)}
@@ -182,7 +182,7 @@ function TestimonialsSection() {
       {/* Background shape */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-0 w-[450px] h-[450px] translate-x-1/4 translate-y-1/4 rounded-full bg-primary-100/30 blur-3xl z-0"
+        className="absolute bottom-0 right-0 w-[450px] h-[450px] translate-x-1/4 translate-y-1/4 rounded-full bg-primary-100/30 dark:bg-primary-900/20 blur-3xl z-0"
       />
 
       <Container size="xl" className="relative z-10 flex flex-col items-center">
@@ -274,7 +274,7 @@ function TestimonialsSection() {
                 />
                 {/* Inner mask holding the image */}
                 <div 
-                  className="absolute inset-[6px] bg-white overflow-hidden" 
+                  className="absolute inset-[6px] bg-white dark:bg-theme-card overflow-hidden" 
                   style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
                 >
                   <img
@@ -300,12 +300,12 @@ function TestimonialsSection() {
                 }`}
               >
                 {/* Large outlined Quote Icon */}
-                <div className="text-neutral-200/80 mb-5 lg:-ml-1">
+                <div className="text-neutral-200/80 dark:text-theme-border/60 mb-5 lg:-ml-1">
                   <Quote size={54} fill="currentColor" strokeWidth={1} />
                 </div>
 
                 {/* Hindi Testimonial Quote */}
-                <blockquote className="font-heading text-neutral-800 text-base md:text-[1.18rem] font-medium leading-relaxed italic mb-6 max-w-xl">
+                <blockquote className="font-heading text-neutral-800 dark:text-theme-heading text-base md:text-[1.18rem] font-medium leading-relaxed italic mb-6 max-w-xl">
                   "{currentSlide.quote}"
                 </blockquote>
 
@@ -315,7 +315,7 @@ function TestimonialsSection() {
                 </span>
 
                 {/* Profession / Role */}
-                <cite className="not-italic text-xs font-bold text-neutral-400 tracking-wider uppercase">
+                <cite className="not-italic text-xs font-bold text-neutral-400 dark:text-theme-muted tracking-wider uppercase">
                   {currentSlide.role}
                 </cite>
               </div>
@@ -329,7 +329,7 @@ function TestimonialsSection() {
                     type="button"
                     onClick={handlePrev}
                     aria-label="Previous testimonial slide"
-                    className="w-10 h-10 rounded-full border border-neutral-300 hover:border-brand-pink text-neutral-500 hover:text-brand-pink bg-white flex items-center justify-center transition-all duration-200 focus-ring hover:shadow-[0_2px_8px_rgba(255,46,116,0.15)] active:scale-95"
+                    className="w-10 h-10 rounded-full border border-neutral-300 dark:border-theme-border hover:border-brand-pink text-neutral-500 dark:text-theme-muted hover:text-brand-pink bg-white dark:bg-theme-card flex items-center justify-center transition-all duration-200 focus-ring hover:shadow-[0_2px_8px_rgba(255,46,116,0.15)] active:scale-95"
                   >
                     <ChevronLeft size={20} strokeWidth={2.5} />
                   </button>
@@ -337,7 +337,7 @@ function TestimonialsSection() {
                     type="button"
                     onClick={handleNext}
                     aria-label="Next testimonial slide"
-                    className="w-10 h-10 rounded-full border border-neutral-300 hover:border-brand-pink text-neutral-500 hover:text-brand-pink bg-white flex items-center justify-center transition-all duration-200 focus-ring hover:shadow-[0_2px_8px_rgba(255,46,116,0.15)] active:scale-95"
+                    className="w-10 h-10 rounded-full border border-neutral-300 dark:border-theme-border hover:border-brand-pink text-neutral-500 dark:text-theme-muted hover:text-brand-pink bg-white dark:bg-theme-card flex items-center justify-center transition-all duration-200 focus-ring hover:shadow-[0_2px_8px_rgba(255,46,116,0.15)] active:scale-95"
                   >
                     <ChevronRight size={20} strokeWidth={2.5} />
                   </button>
@@ -357,7 +357,7 @@ function TestimonialsSection() {
                         className={`w-3.5 h-3.5 rounded-full border transition-all duration-300 focus-ring ${
                           isActive
                             ? 'bg-brand-pink border-brand-pink scale-110 shadow-sm'
-                            : 'bg-white border-neutral-300 hover:border-neutral-400 hover:bg-neutral-50'
+                            : 'bg-white dark:bg-theme-card border-neutral-300 dark:border-theme-border hover:border-neutral-400 dark:hover:border-theme-muted hover:bg-neutral-50 dark:hover:bg-theme-hover'
                         }`}
                       />
                     );

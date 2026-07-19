@@ -328,14 +328,14 @@ function ArtistsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="artists-section-title"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page overflow-hidden border-t border-neutral-100"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page overflow-hidden border-t border-neutral-100 dark:border-theme-border/50"
     >
       {/* ── Soft Background Decorations ── */}
       <div className="absolute inset-0 bg-artistGlow pointer-events-none opacity-80" />
 
       {/* Dotted Grid Decoration (Left) */}
       <svg
-        className="absolute top-16 left-6 w-24 h-24 text-neutral-200/80 opacity-60 pointer-events-none hidden md:block"
+        className="absolute top-16 left-6 w-24 h-24 text-neutral-200/80 dark:text-theme-border/40 opacity-60 pointer-events-none hidden md:block"
         fill="currentColor"
         viewBox="0 0 100 100"
         aria-hidden="true"
@@ -350,7 +350,7 @@ function ArtistsSection() {
 
       {/* Dotted Grid Decoration (Right) */}
       <svg
-        className="absolute top-16 right-6 w-24 h-24 text-neutral-200/80 opacity-60 pointer-events-none hidden md:block"
+        className="absolute top-16 right-6 w-24 h-24 text-neutral-200/80 dark:text-theme-border/40 opacity-60 pointer-events-none hidden md:block"
         fill="currentColor"
         viewBox="0 0 100 100"
         aria-hidden="true"
@@ -441,7 +441,7 @@ function ArtistsSection() {
           <button
             onClick={handlePrev}
             aria-label="View previous artist"
-            className="absolute left-2 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white border border-neutral-200/80 shadow-sm hover:shadow-md text-neutral-500 hover:text-brand-pink hover:bg-neutral-50 hover:border-neutral-300 active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
+            className="absolute left-2 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border shadow-sm hover:shadow-md text-neutral-500 dark:text-theme-muted hover:text-brand-pink hover:bg-neutral-50 dark:hover:bg-theme-hover hover:border-neutral-300 dark:hover:border-theme-border active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
           >
             <ChevronLeft size={20} className="stroke-[2.5]" />
           </button>
@@ -475,7 +475,7 @@ function ArtistsSection() {
                   }}
                 >
                   {/* Clean premium SaaS product style card without outer padding */}
-                  <div className="group relative overflow-hidden bg-white border border-neutral-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+                  <div className="group relative overflow-hidden bg-white dark:bg-theme-card border border-neutral-100 dark:border-theme-border/50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
                     
                     {/* Featured Artist Badge */}
                     {artist.featured && (
@@ -486,7 +486,7 @@ function ArtistsSection() {
                     )}
 
                     {/* Image Container (Stretched to top/left/right borders of the card, aspect-[4/3]) */}
-                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-neutral-50">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-neutral-50 dark:bg-theme-hover">
                       <img
                         src={artist.image}
                         alt={`${artist.name} - ${artist.role}`}
@@ -500,10 +500,10 @@ function ArtistsSection() {
 
                     {/* Meta Content (Simple, clean, minimal padding at the bottom) */}
                     <div className="flex-1 flex flex-col items-center text-center p-6 pb-8">
-                      <h3 className="font-heading text-base font-bold text-neutral-900 leading-snug">
+                      <h3 className="font-heading text-base font-bold text-neutral-900 dark:text-theme-heading leading-snug">
                         {artist.name}
                       </h3>
-                      <p className="text-xs text-neutral-500 font-medium mt-0.5">
+                      <p className="text-xs text-neutral-500 dark:text-theme-muted font-medium mt-0.5">
                         {artist.role}
                       </p>
 
@@ -519,7 +519,7 @@ function ArtistsSection() {
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Visit ${artist.name}'s Instagram`}
-                          className={`text-neutral-400 hover:text-brand-pink transition-colors focus:outline-none focus:text-brand-pink ${
+                          className={`text-neutral-400 dark:text-theme-muted hover:text-brand-pink transition-colors focus:outline-none focus:text-brand-pink ${
                             socials.instagram ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
                           }`}
                         >
@@ -533,7 +533,7 @@ function ArtistsSection() {
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Visit ${artist.name}'s YouTube channel`}
-                          className={`text-neutral-400 hover:text-[#FF0000] transition-colors focus:outline-none focus:text-[#FF0000] ${
+                          className={`text-neutral-400 dark:text-theme-muted hover:text-[#FF0000] transition-colors focus:outline-none focus:text-[#FF0000] ${
                             socials.youtube ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
                           }`}
                         >
@@ -547,7 +547,7 @@ function ArtistsSection() {
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Listen to ${artist.name} on Spotify`}
-                          className={`text-neutral-400 hover:text-[#1DB954] transition-colors focus:outline-none focus:text-[#1DB954] ${
+                          className={`text-neutral-400 dark:text-theme-muted hover:text-[#1DB954] transition-colors focus:outline-none focus:text-[#1DB954] ${
                             socials.spotify ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
                           }`}
                         >
@@ -565,7 +565,7 @@ function ArtistsSection() {
           <button
             onClick={handleNext}
             aria-label="View next artist"
-            className="absolute right-2 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white border border-neutral-200/80 shadow-sm hover:shadow-md text-neutral-500 hover:text-brand-pink hover:bg-neutral-50 hover:border-neutral-300 active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
+            className="absolute right-2 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border shadow-sm hover:shadow-md text-neutral-500 dark:text-theme-muted hover:text-brand-pink hover:bg-neutral-50 dark:hover:bg-theme-hover hover:border-neutral-300 dark:hover:border-theme-border active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
           >
             <ChevronRight size={20} className="stroke-[2.5]" />
           </button>
@@ -585,7 +585,7 @@ function ArtistsSection() {
               className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 ${
                 activeIndex === index
                   ? 'w-6 bg-brand-pink'
-                  : 'w-2 bg-neutral-300 hover:bg-neutral-400'
+                  : 'w-2 bg-neutral-300 dark:bg-theme-border hover:bg-neutral-400 dark:hover:bg-theme-muted/60'
               }`}
             />
           ))}

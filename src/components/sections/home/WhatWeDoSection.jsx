@@ -39,7 +39,7 @@ function WhatWeDoSection() {
     <section
       ref={sectionRef}
       aria-labelledby="what-we-do-heading"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/70 to-neutral-100/45 py-20 md:py-28 lg:py-32 border-t border-neutral-100"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/70 to-neutral-100/45 dark:bg-theme-section dark:from-transparent dark:to-transparent py-20 md:py-28 lg:py-32 border-t border-neutral-100 dark:border-theme-border/50"
     >
       {/* ── Soft Background Glows ──────────────────────────────── */}
       <div
@@ -96,7 +96,7 @@ function WhatWeDoSection() {
             {/* Heading */}
             <h2
               id="what-we-do-heading"
-              className={`font-heading font-black tracking-tight leading-[1.12] text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 mb-4 transition-all duration-700 ease-out delay-100 ${
+              className={`font-heading font-black tracking-tight leading-[1.12] text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 dark:text-theme-heading mb-4 transition-all duration-700 ease-out delay-100 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -120,7 +120,7 @@ function WhatWeDoSection() {
 
             {/* Description */}
             <p
-              className={`text-sm sm:text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 mb-8 max-w-full sm:max-w-[540px] transition-all duration-700 ease-out delay-200 ${
+              className={`text-sm sm:text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body mb-8 max-w-full sm:max-w-[540px] transition-all duration-700 ease-out delay-200 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -138,7 +138,7 @@ function WhatWeDoSection() {
                   <div key={feature.id} className="flex items-center gap-2.5">
                     {/* Pink accent horizontal line bullet */}
                     <span className="w-3.5 h-[2px] bg-brand-pink shrink-0 rounded-full" />
-                    <span className="text-[13px] sm:text-[14px] font-bold text-neutral-800 tracking-wide select-none">
+                    <span className="text-[13px] sm:text-[14px] font-bold text-neutral-800 dark:text-theme-heading tracking-wide select-none">
                       {feature.title}
                     </span>
                   </div>
@@ -174,7 +174,7 @@ function WhatWeDoSection() {
             {/* Left Column of Masonry (Shorter top, Taller bottom) */}
             <div className="flex-1 flex flex-col gap-4 sm:gap-6 pt-6 lg:pt-8">
               {/* Top-Left Image: Shorter Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 dark:border-theme-border/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100 dark:bg-theme-card">
                 <img
                   src={images.topLeft.src}
                   alt={images.topLeft.alt}
@@ -185,7 +185,7 @@ function WhatWeDoSection() {
               </div>
               
               {/* Bottom-Left Image: Taller Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 dark:border-theme-border/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100 dark:bg-theme-card">
                 <img
                   src={images.bottomLeft.src}
                   alt={images.bottomLeft.alt}
@@ -199,7 +199,7 @@ function WhatWeDoSection() {
             {/* Right Column of Masonry (Taller top, Shorter bottom) */}
             <div className="flex-1 flex flex-col gap-4 sm:gap-6">
               {/* Top-Right Image: Taller Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 dark:border-theme-border/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100 dark:bg-theme-card">
                 <img
                   src={images.topRight.src}
                   alt={images.topRight.alt}
@@ -210,7 +210,7 @@ function WhatWeDoSection() {
               </div>
               
               {/* Bottom-Right Image: Shorter Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 dark:border-theme-border/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100 dark:bg-theme-card">
                 <img
                   src={images.bottomRight.src}
                   alt={images.bottomRight.alt}

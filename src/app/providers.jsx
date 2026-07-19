@@ -1,6 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
+import { ThemeProvider } from '../context/ThemeContext';
 import router from './router';
 
 /**
@@ -11,16 +12,15 @@ import router from './router';
  *
  * Current providers:
  *   - HelmetProvider  (react-helmet-async) — manages <head> meta tags
+ *   - ThemeProvider   (ThemeContext)        — drives app theme (light/dark/system)
  *   - RouterProvider  (react-router-dom)   — drives client-side routing
- *
- * Future providers (added in later phases):
- *   - ThemeProvider (if needed)
- *   - ToastProvider (if needed)
  */
 function Providers() {
   return (
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </HelmetProvider>
   );
 }

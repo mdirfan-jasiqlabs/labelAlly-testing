@@ -18,7 +18,7 @@ function HowItWorksSection() {
     <section
       role="region"
       aria-labelledby="process-heading"
-      className="relative w-full bg-white py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="relative w-full bg-white dark:bg-theme-section py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       {/* ── Background curved / radial lavender shape (right) ── */}
       <div
@@ -73,10 +73,10 @@ function HowItWorksSection() {
             {/* Title / Heading */}
             <h2
               id="process-heading"
-              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900"
+              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading"
             >
               <span className="block">{process.title.lineOne}</span>
-              <span className="block text-primary-900">{process.title.lineTwo}</span>
+              <span className="block text-primary-900 dark:text-primary-200">{process.title.lineTwo}</span>
             </h2>
 
             {/* Small Brand Divider */}
@@ -95,7 +95,7 @@ function HowItWorksSection() {
                     {!isLast && (
                       <div
                         aria-hidden="true"
-                        className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-neutral-200 pointer-events-none"
+                        className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-neutral-200 dark:bg-theme-border pointer-events-none"
                       />
                     )}
 
@@ -116,10 +116,10 @@ function HowItWorksSection() {
 
                     {/* Step Copy */}
                     <div className="flex flex-col gap-1.5 pt-1 max-w-xl">
-                      <h3 className="font-heading font-black text-lg text-neutral-900 leading-snug">
+                      <h3 className="font-heading font-black text-lg text-neutral-900 dark:text-theme-heading leading-snug">
                         {step.title}
                       </h3>
-                      <p className="text-[0.88rem] sm:text-[0.92rem] leading-relaxed text-neutral-500">
+                      <p className="text-[0.88rem] sm:text-[0.92rem] leading-relaxed text-neutral-500 dark:text-theme-muted">
                         {step.description}
                       </p>
                     </div>

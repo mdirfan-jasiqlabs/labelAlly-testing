@@ -35,7 +35,7 @@ function FinalCtaSection() {
             radius="2xl"
             bordered
             hover={false}
-            className="flex flex-col items-center text-center gap-5 bg-neutral-50/50 border border-neutral-200/80 py-10 sm:py-16 px-4 sm:px-12 md:py-20 relative z-10"
+            className="flex flex-col items-center text-center gap-5 bg-neutral-50/50 dark:bg-theme-card/80 border border-neutral-200/80 dark:border-theme-border/60 py-10 sm:py-16 px-4 sm:px-12 md:py-20 relative z-10"
           >
             {/* Badge */}
             {finalCta.badge && (
@@ -45,12 +45,12 @@ function FinalCtaSection() {
             )}
 
             {/* Heading */}
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-neutral-900 leading-tight max-w-2xl">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-neutral-900 dark:text-theme-heading leading-tight max-w-2xl">
               {finalCta.heading}
             </h2>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-neutral-600 max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-neutral-600 dark:text-theme-body max-w-xl leading-relaxed">
               {finalCta.description}
             </p>
 
@@ -82,7 +82,7 @@ function FinalCtaSection() {
 
             {/* Contact Note */}
             {finalCta.contactNote && (
-              <p className="text-xs text-neutral-900 mt-2">
+              <p className="text-xs text-neutral-900 dark:text-theme-body mt-2">
                 {finalCta.contactNote}
               </p>
             )}

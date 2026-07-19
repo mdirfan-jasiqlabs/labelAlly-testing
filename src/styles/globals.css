@@ -14,7 +14,7 @@
 
 /* ─── CSS Custom Properties (Design Tokens) ──────────────── */
 :root {
-  /* Brand Colors */
+  /* Design Tokens */
   --color-primary-50:  #eef2ff;
   --color-primary-100: #e0e7ff;
   --color-primary-200: #c7d2fe;
@@ -33,19 +33,36 @@
   --color-accent-600: #d97706;
   --color-accent-950: #451a03;
 
+  /* Theme-specific Colors - Light Mode default */
+  --color-page-bg: #FCFCFF;
+  --color-section-bg: #FFFFFF;
+  --color-card-surface: #FFFFFF;
+  --color-header-bg: rgba(252, 252, 255, 0.95);
+  --color-footer-bg: #09090b;
+  --color-heading-text: #11143E;
+  --color-body-text: #555B70;
+  --color-muted-text: #7B8092;
+  --color-border: #e2e8f0;
+  --color-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -6px rgba(15, 23, 42, 0.05);
+  --color-brand-accent: #FF2E74;
+  --color-hover: rgba(244, 244, 245, 0.6);
+  --color-focus: #6366f1;
+  --color-toggle-bg: #f4f4f5;
+  --color-toggle-active: #ffffff;
+
   /* Background Layers */
-  --color-bg-primary:   #ffffff;
-  --color-bg-secondary: #fafafa;
+  --color-bg-primary:   var(--color-page-bg);
+  --color-bg-secondary: var(--color-section-bg);
   --color-bg-tertiary:  #f4f4f5;
   --color-bg-elevated:  #e4e4e7;
 
   /* Text */
-  --color-text-primary:   #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-muted:     #64748b;
+  --color-text-primary:   var(--color-heading-text);
+  --color-text-secondary: var(--color-body-text);
+  --color-text-muted:     var(--color-muted-text);
 
   /* Borders */
-  --color-border-default: #e2e8f0;
+  --color-border-default: var(--color-border);
   --color-border-subtle:  #f1f5f9;
 
   /* Gradients */
@@ -71,6 +88,29 @@
   --scrollbar-track: #f8fafc;
 }
 
+.dark {
+  /* Theme-specific Colors - Premium Dark Mode */
+  --color-page-bg: #0B0F19;
+  --color-section-bg: #0F172A;
+  --color-card-surface: #1E293B;
+  --color-header-bg: rgba(11, 15, 25, 0.9);
+  --color-footer-bg: #080A10;
+  --color-heading-text: #F8FAFC;
+  --color-body-text: #CBD5E1;
+  --color-muted-text: #94A3B8;
+  --color-border: #334155;
+  --color-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5), 0 4px 12px -6px rgba(0, 0, 0, 0.3);
+  --color-brand-accent: #FF2E74;
+  --color-hover: rgba(51, 65, 85, 0.5);
+  --color-focus: #818cf8;
+  --color-toggle-bg: #1e293b;
+  --color-toggle-active: #0f172a;
+
+  /* Custom overrides for scrollbar and backgrounds in dark */
+  --scrollbar-thumb: #475569;
+  --scrollbar-track: #0f172a;
+}
+
 /* ─── Base Layer Overrides ────────────────────────────────── */
 @layer base {
   /* Document root */
@@ -82,21 +122,24 @@
     overflow-x: hidden;
   }
 
-  /* Light theme by default */
+  /* Theme driven body */
   body {
-    @apply bg-white text-neutral-900;
+    background-color: var(--color-page-bg);
+    color: var(--color-body-text);
     font-family: var(--font-body);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     touch-action: pan-y;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Headings */
+  /* Theme driven headings */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    @apply font-bold tracking-tight text-neutral-900;
+    color: var(--color-heading-text);
+    @apply font-bold tracking-tight;
   }
 
   /* Links */
@@ -166,12 +209,14 @@
   /* ── Heading Styles ──────────────────────────────────────── */
   .heading-display {
     font-family: var(--font-heading);
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-neutral-900;
+    color: var(--color-heading-text);
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
   }
 
   .heading-section {
     font-family: var(--font-heading);
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900;
+    color: var(--color-heading-text);
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
   }
 
   /* ── Focus Ring (accessible) ─────────────────────────────── */
@@ -181,7 +226,7 @@
 
   /* ── Link Base ───────────────────────────────────────────── */
   .link-base {
-    @apply text-neutral-600 hover:text-neutral-900 transition-colors duration-250;
+    @apply text-theme-body hover:text-theme-heading transition-colors duration-250;
   }
 
   .link-accent {

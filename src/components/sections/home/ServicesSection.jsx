@@ -46,12 +46,12 @@ function ServicesSection() {
     <section
       ref={sectionRef}
       aria-labelledby="services-section-heading"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
     >
       {/* ── Subtle Dotted Background (aria-hidden) ── */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70 pointer-events-none z-0"
+        className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] dark:bg-[radial-gradient(#334155_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70 dark:opacity-30 pointer-events-none z-0"
       />
 
       <Container size="xl" className="relative z-10">

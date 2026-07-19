@@ -241,7 +241,7 @@ function AboutSection() {
     <section
       role="region"
       aria-labelledby="about-heading"
-      className="relative w-full bg-white py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="relative w-full bg-white dark:bg-theme-section py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       {/* ── Background decoration radial glow ── */}
       <div
@@ -292,7 +292,7 @@ function AboutSection() {
             {about.checklist?.length > 0 && (
               <ul className="flex flex-col gap-4">
                 {about.checklist.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3.5 text-[0.95rem] font-medium text-neutral-600">
+                  <li key={idx} className="flex items-center gap-3.5 text-[0.95rem] font-medium text-neutral-600 dark:text-theme-body">
                     {/* Pink checkmark */}
                     <span className="shrink-0 flex items-center justify-center text-pink-600" aria-hidden="true">
                       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -324,11 +324,11 @@ function AboutSection() {
                       key={card.id}
                       className={[
                         'flex flex-col items-center text-center',
-                        'p-6 sm:p-8 rounded-[1.75rem] border border-neutral-100/70',
-                        'bg-white shadow-[0_12px_36px_rgba(25,24,70,0.03)]',
+                        'p-6 sm:p-8 rounded-[1.75rem] border border-neutral-100/70 dark:border-theme-border/40',
+                        'bg-white dark:bg-theme-card shadow-[0_12px_36px_rgba(25,24,70,0.03)]',
                         'transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(25,24,70,0.06)]',
                         'snap-start shrink-0',
-                        'w-full md:w-[calc(50%-12px)] min-h-[320px] sm:min-h-[360px]', // 1 card on mobile, 2 cards on desktop
+                        'w-full md:w-[calc(50%-12px)] min-h-[320px] sm:min-h-[360px]',
                       ].join(' ')}
                     >
                       {/* Illustrated Icon */}
@@ -339,7 +339,7 @@ function AboutSection() {
                       )}
 
                       {/* Title */}
-                      <h3 className="font-heading font-black text-lg text-neutral-900 leading-snug">
+                      <h3 className="font-heading font-black text-lg text-neutral-900 dark:text-theme-heading leading-snug">
                         {card.title}
                       </h3>
 
@@ -350,7 +350,7 @@ function AboutSection() {
                       />
 
                       {/* Description */}
-                      <p className="text-[0.85rem] sm:text-[0.9rem] leading-relaxed text-neutral-500 max-w-[240px]">
+                      <p className="text-[0.85rem] sm:text-[0.9rem] leading-relaxed text-neutral-500 dark:text-theme-muted max-w-[240px]">
                         {card.description}
                       </p>
                     </div>
@@ -368,7 +368,7 @@ function AboutSection() {
                     aria-label={`Go to slide ${idx + 1}`}
                     className={[
                       'w-2 h-2 rounded-full transition-all duration-300',
-                      activeStep === idx ? 'bg-pink-600 w-5' : 'bg-neutral-200 hover:bg-neutral-300',
+                      activeStep === idx ? 'bg-pink-600 w-5' : 'bg-neutral-200 dark:bg-theme-border hover:bg-neutral-300 dark:hover:bg-theme-muted/60',
                     ].join(' ')}
                   />
                 ))}
@@ -385,7 +385,7 @@ function AboutSection() {
           <div className="mt-12 md:mt-16">
             <div
               className={[
-                'rounded-3xl border border-neutral-100/70 bg-white',
+                'rounded-3xl border border-neutral-100/70 dark:border-theme-border/40 bg-white dark:bg-theme-card',
                 'shadow-[0_16px_50px_rgba(25,24,70,0.04)]',
                 'px-8 py-8 md:py-10',
               ].join(' ')}
@@ -399,7 +399,7 @@ function AboutSection() {
                       className={[
                         'flex flex-col items-center justify-center text-center',
                         // Vertical divider on desktop, skip for last item
-                        idx < 3 ? 'lg:border-r lg:border-neutral-200/50' : '',
+                        idx < 3 ? 'lg:border-r lg:border-neutral-200/50 dark:lg:border-theme-border/30' : '',
                       ].filter(Boolean).join(' ')}
                     >
                       {/* Stat Icon */}
@@ -410,7 +410,7 @@ function AboutSection() {
                       )}
 
                       {/* Number */}
-                      <p className="font-heading font-black text-2xl sm:text-3xl text-neutral-900 leading-none mb-2">
+                      <p className="font-heading font-black text-2xl sm:text-3xl text-neutral-900 dark:text-theme-heading leading-none mb-2">
                         {stat.value}
                       </p>
 
@@ -434,7 +434,7 @@ function AboutSection() {
         className="absolute bottom-0 left-0 right-0 h-10 w-full pointer-events-none select-none overflow-hidden"
       >
         <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
-          <path d="M0 40H1440V12C1280 28 1120 28 960 12C800 -4 640 -4 480 12C320 28 160 28 0 12V40Z" fill="#F7F7FC" />
+          <path d="M0 40H1440V12C1280 28 1120 28 960 12C800 -4 640 -4 480 12C320 28 160 28 0 12V40Z" fill="var(--color-page-bg)" />
         </svg>
       </div>
     </section>

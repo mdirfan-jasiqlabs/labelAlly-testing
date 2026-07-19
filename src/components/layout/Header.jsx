@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, Phone, ArrowRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import navData from '../../data/navigation.json';
+import ThemeToggle from '../ui/ThemeToggle';
 
 /**
  * Header — Premium sticky site header.
@@ -42,16 +43,14 @@ function Header() {
 
   return (
     <>
-      {/* ═══════════════════════════════════════════════════════
-          HEADER
-      ═══════════════════════════════════════════════════════ */}
+      {/* ─── HEADER ─── */}
       <header
         role="banner"
         className={[
           'fixed top-0 left-0 right-0 z-[200] w-full',
           'transition-all duration-300 ease-out',
           scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-neutral-200/70 shadow-[0_1px_20px_rgba(15,23,42,0.08)]'
+            ? 'bg-theme-header backdrop-blur-md border-b border-theme-border shadow-theme'
             : 'bg-transparent border-b border-transparent',
         ].join(' ')}
       >
@@ -107,8 +106,8 @@ function Header() {
                           'focus-ring',
                           'group',
                           isActive
-                            ? 'text-neutral-900'
-                            : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50',
+                            ? 'text-neutral-900 dark:text-theme-heading'
+                            : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 dark:text-theme-muted dark:hover:text-theme-heading dark:hover:bg-theme-hover',
                         ].join(' ')
                       }
                     >
@@ -136,6 +135,8 @@ function Header() {
 
             {/* ── Right Side: Phone + CTA ───────────────────────── */}
             <div className="flex items-center gap-2.5">
+              {/* Theme Toggle */}
+              <ThemeToggle />
 
               {/* Phone Pill — Desktop only */}
               <a
@@ -145,9 +146,9 @@ function Header() {
                   'hidden md:inline-flex items-center gap-2',
                   'h-9 px-4',
                   'rounded-full',
-                  'border border-neutral-200 hover:border-primary-300',
-                  'text-xs font-semibold text-neutral-700 hover:text-primary-600',
-                  'bg-white hover:bg-primary-50',
+                  'border border-neutral-200 hover:border-primary-300 dark:border-theme-border dark:hover:border-primary-400',
+                  'text-xs font-semibold text-neutral-700 hover:text-primary-600 dark:text-theme-body dark:hover:text-primary-300',
+                  'bg-white hover:bg-primary-50 dark:bg-theme-card dark:hover:bg-theme-hover',
                   'transition-all duration-200',
                   'focus-ring',
                   'whitespace-nowrap',
@@ -188,9 +189,9 @@ function Header() {
                   'md:hidden',
                   'flex items-center justify-center',
                   'w-9 h-9 rounded-full',
-                  'border border-neutral-200',
-                  'bg-white text-neutral-700',
-                  'hover:border-primary-300 hover:text-primary-600 hover:bg-primary-50',
+                  'border border-neutral-200 dark:border-theme-border',
+                  'bg-white text-neutral-700 dark:bg-theme-card dark:text-theme-body',
+                  'hover:border-primary-300 hover:text-primary-600 hover:bg-primary-50 dark:hover:border-primary-400 dark:hover:text-primary-300 dark:hover:bg-theme-hover',
                   'transition-all duration-200',
                   'focus-ring',
                 ].join(' ')}
@@ -209,9 +210,9 @@ function Header() {
                   'lg:hidden',
                   'flex items-center justify-center',
                   'w-9 h-9 rounded-lg',
-                  'text-neutral-600 hover:text-neutral-900',
-                  'hover:bg-neutral-100',
-                  'border border-transparent hover:border-neutral-200',
+                  'text-neutral-600 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
+                  'hover:bg-neutral-100 dark:hover:bg-theme-hover',
+                  'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
                   'transition-all duration-200',
                   'focus-ring',
                 ].join(' ')}

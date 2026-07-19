@@ -71,7 +71,7 @@ function MobileMenu({ isOpen, onClose }) {
         className={[
           'fixed top-0 right-0 bottom-0 z-[200]',
           'w-full max-w-[320px] sm:max-w-[360px]',
-          'bg-white',
+          'bg-white dark:bg-theme-section',
           'flex flex-col',
           'shadow-[−20px_0_60px_rgba(15,23,42,0.12)]',
           'transition-transform duration-300 ease-out',
@@ -80,7 +80,7 @@ function MobileMenu({ isOpen, onClose }) {
       >
 
         {/* ── Panel Header ──────────────────────────────────── */}
-        <div className="flex items-center justify-between px-6 h-[4.5rem] border-b border-neutral-100 shrink-0">
+        <div className="flex items-center justify-between px-6 h-[4.5rem] border-b border-neutral-100 dark:border-theme-border shrink-0">
           {/* Logo */}
           <Link
             to="/"
@@ -106,9 +106,9 @@ function MobileMenu({ isOpen, onClose }) {
             className={[
               'flex items-center justify-center',
               'w-9 h-9 rounded-lg',
-              'text-neutral-500 hover:text-neutral-900',
-              'hover:bg-neutral-100',
-              'border border-transparent hover:border-neutral-200',
+              'text-neutral-500 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
+              'hover:bg-neutral-100 dark:hover:bg-theme-hover',
+              'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
               'transition-all duration-200',
               'focus-ring',
             ].join(' ')}
@@ -140,8 +140,8 @@ function MobileMenu({ isOpen, onClose }) {
                         'transition-all duration-200',
                         'focus-ring',
                         isActive
-                          ? 'bg-primary-50 text-primary-700'
-                          : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50',
+                          ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
+                          : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 dark:text-theme-muted dark:hover:text-theme-heading dark:hover:bg-theme-hover',
                       ].join(' ')
                     }
                   >
@@ -159,8 +159,8 @@ function MobileMenu({ isOpen, onClose }) {
                           className={[
                             'flex items-center justify-center w-8 h-8 rounded-lg shrink-0',
                             isActive
-                              ? 'bg-primary-100 text-primary-600'
-                              : 'bg-neutral-100 text-neutral-500',
+                              ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/40 dark:text-primary-300'
+                              : 'bg-neutral-100 text-neutral-500 dark:bg-theme-hover dark:text-theme-muted',
                           ].join(' ')}
                         >
                           <Icon size={15} aria-hidden="true" strokeWidth={2} />
@@ -177,7 +177,7 @@ function MobileMenu({ isOpen, onClose }) {
         </nav>
 
         {/* ── Bottom CTA Area ───────────────────────────────── */}
-        <div className="px-5 py-5 border-t border-neutral-100 shrink-0 flex flex-col gap-3">
+        <div className="px-5 py-5 border-t border-neutral-100 dark:border-theme-border shrink-0 flex flex-col gap-3">
           {/* Phone pill */}
           <a
             href={navData.phone.href}
@@ -187,9 +187,9 @@ function MobileMenu({ isOpen, onClose }) {
               'flex items-center justify-center gap-2',
               'w-full h-11',
               'rounded-xl',
-              'border border-neutral-200 hover:border-primary-300',
-              'bg-white hover:bg-primary-50',
-              'text-sm font-semibold text-neutral-700 hover:text-primary-600',
+              'border border-neutral-200 hover:border-primary-300 dark:border-theme-border dark:hover:border-primary-400',
+              'bg-white hover:bg-primary-50 dark:bg-theme-card dark:hover:bg-theme-hover',
+              'text-sm font-semibold text-neutral-700 hover:text-primary-600 dark:text-theme-body dark:hover:text-primary-300',
               'transition-all duration-200',
               'focus-ring',
             ].join(' ')}

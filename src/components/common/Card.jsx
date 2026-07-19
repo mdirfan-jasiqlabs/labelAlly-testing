@@ -53,18 +53,18 @@ function Card({
     <Tag
       className={[
         // Base
-        'relative bg-white animate-fade-in shadow-sm',
+        'relative bg-white dark:bg-theme-card animate-fade-in shadow-sm',
         radiusClass,
         paddingClass,
 
         // Border
-        bordered ? 'border border-neutral-200/80' : '',
+        bordered ? 'border border-neutral-200/80 dark:border-theme-border/50' : '',
 
         // Hover
         hover ? [
           'transition-all duration-300 ease-out',
           'hover:-translate-y-1 hover:scale-[1.01]',
-          'hover:border-neutral-300',
+          'hover:border-neutral-300 dark:hover:border-theme-border',
           'hover:shadow-card-hover',
         ].join(' ') : '',
 
