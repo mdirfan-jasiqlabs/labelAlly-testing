@@ -41,9 +41,10 @@ function Button({
     'hover:scale-[1.015] active:scale-[0.985]',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
-    'focus-visible:ring-primary-500',
+    'focus-visible:ring-orange-500',
     'focus-visible:ring-offset-2',
-    'focus-visible:ring-offset-neutral-950',
+    'focus-visible:ring-offset-white',
+    'dark:focus-visible:ring-offset-neutral-950',
     'select-none',
     'whitespace-nowrap',
     'cursor-pointer',
@@ -51,12 +52,13 @@ function Button({
 
   // ── Variant class map ───────────────────────────────────────────
   const variantMap = {
-    // Filled primary — brand indigo
+    // Filled primary — brand orange
     primary: [
-      'bg-primary-600 hover:bg-primary-500 active:bg-primary-700',
+      'bg-orange-500 hover:bg-orange-600 active:bg-orange-700',
       'text-white',
-      'border-primary-600 hover:border-primary-500',
-      'shadow-sm hover:shadow-glow-sm',
+      'border-orange-500 hover:border-orange-600',
+      'shadow-sm hover:shadow-[0_8px_24px_-8px_rgba(249,115,22,0.55)]',
+      'focus-visible:ring-orange-500',
     ].join(' '),
 
     // Filled secondary — neutral light
@@ -67,12 +69,12 @@ function Button({
       'border-neutral-200 hover:border-neutral-300 dark:border-theme-border dark:hover:border-theme-border',
     ].join(' '),
 
-    // Outlined — transparent with primary border
+    // Outlined — transparent with orange border
     outline: [
-      'bg-transparent hover:bg-primary-50/50',
-      'dark:hover:bg-primary-900/30',
-      'text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300',
-      'border-primary-600 hover:border-primary-500 dark:border-primary-500 dark:hover:border-primary-400',
+      'bg-transparent hover:bg-orange-50/60',
+      'dark:hover:bg-orange-500/10',
+      'text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300',
+      'border-orange-500 hover:border-orange-600 dark:border-orange-400 dark:hover:border-orange-300',
     ].join(' '),
 
     // Ghost — no border, no background

@@ -1,4 +1,4 @@
-import { artistsLabelsWhoWeWorkWithData as data } from '../../../../data/artistsLabelsWhoWeWorkWithData';
+import data from '../../../../data/artistsLabelsWhoWeWorkWith.json';
 import { artistsLabelsWhoWeWorkWithStyles as styles } from '../../../../config/artistsLabelsWhoWeWorkWithStyles';
 import BackgroundDecorations from './BackgroundDecorations';
 import WhoWeWorkWithHeader from './WhoWeWorkWithHeader';
@@ -7,7 +7,7 @@ import TrustMessage from './TrustMessage';
 
 /**
  * Who We Work With — Artists & Labels audience segmentation section.
- * Renders only from artistsLabelsWhoWeWorkWithData.
+ * Renders only from artistsLabelsWhoWeWorkWith.json.
  */
 function WhoWeWorkWith() {
   return (

@@ -1,4 +1,4 @@
-import { artistsLabelsOnboardingData as data } from '../../../../data/artistsLabelsOnboardingData';
+import data from '../../../../data/artistsLabelsOnboarding.json';
 import { artistsLabelsOnboardingStyles as styles } from '../../../../config/artistsLabelsOnboardingStyles';
 import BackgroundDecorations from './BackgroundDecorations';
 import OnboardingHeader from './OnboardingHeader';
@@ -7,7 +7,7 @@ import OnboardingCTA from './OnboardingCTA';
 
 /**
  * Onboarding Process + CTA — Artists & Labels journey section.
- * Renders only from artistsLabelsOnboardingData.
+ * Renders only from artistsLabelsOnboarding.json.
  */
 function OnboardingProcess() {
   return (

@@ -1,0 +1,124 @@
+{
+  "sectionId": "home-hero",
+  "ariaLabel": "LabelAlly Entertainment homepage hero",
+  "badge": {
+    "label": "Empowering Artists. Elevating Music.",
+    "icon": "star"
+  },
+  "heading": {
+    "id": "hero-heading",
+    "lineOne": "Your Music.",
+    "lineTwoPrimary": "Global",
+    "lineTwoAccent": "Impact."
+  },
+  "description": "LabelAlly Entertainment helps artists, labels, and creators distribute their music, manage YouTube channels, protect content rights, and grow across leading global platforms.",
+  "buttons": [
+    {
+      "id": "primary-cta",
+      "label": "Distribute Your Music",
+      "href": "/contact",
+      "ariaLabel": "Distribute your music — contact LabelAlly Entertainment",
+      "variant": "primary",
+      "icon": "arrowRight",
+      "external": false
+    },
+    {
+      "id": "secondary-cta",
+      "label": "Talk to Us",
+      "href": "https://wa.me/918709002433",
+      "ariaLabel": "Chat with LabelAlly Entertainment on WhatsApp",
+      "variant": "secondary",
+      "icon": "whatsapp",
+      "external": true
+    }
+  ],
+  "image": {
+    "src": "/images/home/hero-artist.png",
+    "alt": "Independent music artist performing with a guitar",
+    "width": 720,
+    "height": 900
+  },
+  "features": [
+    {
+      "id": "global-platforms",
+      "icon": "globe",
+      "title": "Global Platforms",
+      "description": "Reach fans worldwide"
+    },
+    {
+      "id": "rights-protection",
+      "icon": "shieldCheck",
+      "title": "Rights Protection",
+      "description": "Keep your content safe"
+    },
+    {
+      "id": "revenue-growth",
+      "icon": "barChart",
+      "title": "Revenue Growth",
+      "description": "Maximize your earnings"
+    },
+    {
+      "id": "artist-support",
+      "icon": "headphones",
+      "title": "Artist Support",
+      "description": "We're here for you"
+    }
+  ],
+  "platforms": {
+    "enabled": true,
+    "heading": "Available On",
+    "highlightText": "150+ Platforms",
+    "moreLabel": "",
+    "moreHref": "/services",
+    "items": [
+      {
+        "id": "spotify",
+        "name": "Spotify",
+        "logo": "/images/platforms/spotify.svg",
+        "alt": "Spotify Music Logo"
+      },
+      {
+        "id": "apple-music",
+        "name": "Apple Music",
+        "logo": "/images/platforms/apple-music.svg",
+        "alt": "Apple Music Logo"
+      },
+      {
+        "id": "youtube",
+        "name": "YouTube",
+        "logo": "/images/platforms/youtube.svg",
+        "alt": "YouTube Music Logo"
+      },
+      {
+        "id": "facebook",
+        "name": "Facebook",
+        "logo": "/images/platforms/facebook.svg",
+        "alt": "Facebook Logo"
+      },
+      {
+        "id": "amazon-music",
+        "name": "Amazon Music",
+        "logo": "/images/platforms/amazon-music.svg",
+        "alt": "Amazon Music Logo"
+      },
+      {
+        "id": "resso",
+        "name": "Resso",
+        "logo": "/images/platforms/resso.svg",
+        "alt": "Resso Music Logo"
+      },
+      {
+        "id": "jiosaavn",
+        "name": "JioSaavn",
+        "logo": "/images/platforms/jiosaavn.svg",
+        "alt": "JioSaavn Music Logo"
+      },
+      {
+        "id": "hungama",
+        "name": "Hungama",
+        "logo": "/images/platforms/hungama.svg",
+        "alt": "Hungama Music Logo"
+      }
+    ]
+  }
+}

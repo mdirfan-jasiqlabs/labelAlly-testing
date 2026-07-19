@@ -1,4 +1,4 @@
-import { artistsLabelsWhatYouGetData as data } from '../../../../data/artistsLabelsWhatYouGetData';
+import data from '../../../../data/artistsLabelsWhatYouGet.json';
 import { artistsLabelsWhatYouGetStyles as styles } from '../../../../config/artistsLabelsWhatYouGetStyles';
 import BackgroundDecorations from './BackgroundDecorations';
 import WhatYouGetHeader from './WhatYouGetHeader';
@@ -7,7 +7,7 @@ import WhatYouGetCTA from './WhatYouGetCTA';
 
 /**
  * What You Get — Artists & Labels value rows + CTA.
- * Renders only from artistsLabelsWhatYouGetData.
+ * Renders only from artistsLabelsWhatYouGet.json.
  */
 function WhatYouGet() {
   return (
