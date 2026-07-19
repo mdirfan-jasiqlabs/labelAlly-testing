@@ -16,7 +16,7 @@ function PageLayout() {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-theme-page">
       {/* ── Header ── */}
       <Header />
 

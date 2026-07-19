@@ -93,18 +93,18 @@ export default {
           950: '#09090b',
         },
 
-        // ── Semantic surface tokens ───────────────────────────
+        // ── Semantic surface tokens (now CSS-var driven for dark mode) ─
         surface: {
-          page:  '#FCFCFF',
-          card:  '#FFFFFF',
-          muted: '#F7F7FC',
+          page:  'var(--color-page-bg)',
+          card:  'var(--color-card-surface)',
+          muted: 'var(--color-section-bg)',
         },
 
-        // ── Ink (text) tokens ─────────────────────────────────
+        // ── Ink (text) tokens (CSS-var driven for dark mode) ──────────
         ink: {
-          primary:   '#11143E',
-          secondary: '#555B70',
-          muted:     '#7B8092',
+          primary:   'var(--color-heading-text)',
+          secondary: 'var(--color-body-text)',
+          muted:     'var(--color-muted-text)',
         },
 
         // ── Brand Custom Colors ───────────────────────────────

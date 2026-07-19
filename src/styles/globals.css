@@ -88,7 +88,8 @@
   --scrollbar-track: #f8fafc;
 }
 
-.dark {
+:root.dark,
+[data-theme="dark"] {
   /* Theme-specific Colors - Premium Dark Mode */
   --color-page-bg: #0B0F19;
   --color-section-bg: #0F172A;
