@@ -127,7 +127,7 @@ function TestimonialsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="testimonials-section-heading"
-      className="relative py-20 md:py-28 lg:py-36 bg-surface-page border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 overflow-hidden"
       onKeyDown={handleKeyDown}
       tabIndex={0}
       onMouseEnter={() => setIsHovered(true)}
@@ -187,7 +187,7 @@ function TestimonialsSection() {
 
       <Container size="xl" className="relative z-10 flex flex-col items-center">
         {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-12 md:mb-16">
           {badge && (
             <span
               className={`inline-flex items-center px-4 py-1.5 rounded-sm text-xs font-bold text-white bg-brand-pink mb-6 uppercase tracking-wider select-none transition-all duration-700 ease-out ${

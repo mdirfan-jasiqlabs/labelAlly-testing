@@ -39,7 +39,7 @@ function WhatWeDoSection() {
     <section
       ref={sectionRef}
       aria-labelledby="what-we-do-heading"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#f9fafc] to-[#f6f8fb] py-20 md:py-28 lg:py-36 border-t border-neutral-100"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#f9fafc] to-[#f6f8fb] py-20 md:py-28 lg:py-32 border-t border-neutral-100"
     >
       {/* ── Soft Background Glows ──────────────────────────────── */}
       <div
@@ -96,7 +96,7 @@ function WhatWeDoSection() {
             {/* Heading */}
             <h2
               id="what-we-do-heading"
-              className={`font-heading font-black tracking-tight leading-[1.12] text-[2.4rem] sm:text-[3.2rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 mb-6 transition-all duration-700 ease-out delay-100 ${
+              className={`font-heading font-black tracking-tight leading-[1.12] text-[2.4rem] sm:text-[3.2rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 mb-4 transition-all duration-700 ease-out delay-100 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >

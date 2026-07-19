@@ -46,7 +46,7 @@ function ServicesSection() {
     <section
       ref={sectionRef}
       aria-labelledby="services-section-heading"
-      className="relative py-20 md:py-28 lg:py-36 bg-[#FCFCFF] border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-[#FCFCFF] border-t border-neutral-100 overflow-hidden"
     >
       {/* ── Subtle Dotted Background (aria-hidden) ── */}
       <div

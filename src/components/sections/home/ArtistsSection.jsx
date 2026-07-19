@@ -328,7 +328,7 @@ function ArtistsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="artists-section-title"
-      className="relative py-20 md:py-28 lg:py-36 bg-surface-page overflow-hidden border-t border-neutral-100"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page overflow-hidden border-t border-neutral-100"
     >
       {/* ── Soft Background Decorations ── */}
       <div className="absolute inset-0 bg-artistGlow pointer-events-none opacity-80" />

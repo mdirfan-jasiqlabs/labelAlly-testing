@@ -241,7 +241,7 @@ function AboutSection() {
     <section
       role="region"
       aria-labelledby="about-heading"
-      className="relative w-full bg-white py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative w-full bg-white py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       {/* ── Background decoration radial glow ── */}
       <div
@@ -382,7 +382,7 @@ function AboutSection() {
             BOTTOM STATS CONTAINER
         ═══════════════════════════════════════════════════════ */}
         {about.stats?.length > 0 && (
-          <div className="mt-16 md:mt-24">
+          <div className="mt-12 md:mt-16">
             <div
               className={[
                 'rounded-3xl border border-neutral-100/70 bg-white',

@@ -20,7 +20,7 @@ function FinalCtaSection() {
     <GradientBackground
       as="section"
       variant="subtle"
-      className="py-20 md:py-28 lg:py-36 border-t border-neutral-100 overflow-hidden relative"
+      className="py-20 md:py-28 lg:py-32 border-t border-neutral-100 overflow-hidden relative"
     >
       {/* Decorative glows */}
       <div
