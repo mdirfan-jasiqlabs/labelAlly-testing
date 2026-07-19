@@ -1,4 +1,69 @@
 {
+  "banner": {
+    "enabled": true,
+    "title": "Contact Us",
+    "supportingText": "We'd love to hear from you — get in touch today."
+  },
+  "offices": {
+    "enabled": true,
+    "items": [
+      {
+        "id": "office-patna",
+        "city": "Patna",
+        "address": "Ram Das Heritage, Room No - 604 B - Block Mithapur Bypass, Bhupatipur Sanskriti Garden, Friends Colony Patna, Bihar",
+        "phone": {
+          "display": "+91-8709062433",
+          "href": "tel:+918709062433"
+        },
+        "email": {
+          "display": "info@somplexnetwork.com",
+          "href": "mailto:info@somplexnetwork.com"
+        },
+        "icon": "landmark",
+        "accent": "rose",
+        "enabled": true
+      },
+      {
+        "id": "office-lucknow",
+        "city": "Lucknow",
+        "address": "Laxmi Niwas, Near SRM Mercedes Benz Workshop, Syam Bihar Colony, Tiwariganj, Chinhat, Lucknow, Uttar Pradesh - 226028",
+        "phone": {
+          "display": "+91-8104460098",
+          "href": "tel:+918104460098"
+        },
+        "email": {
+          "display": "work@somplexnetwork.com",
+          "href": "mailto:work@somplexnetwork.com"
+        },
+        "icon": "building",
+        "accent": "cyan",
+        "enabled": true
+      },
+      {
+        "id": "office-jagdalpur",
+        "city": "Jagdalpur",
+        "address": "Azad Chowk, Dubey Complex, Jaiswal Colony, Jagdalpur, Chhattisgarh 494001",
+        "phone": {
+          "display": "+91-8652068152",
+          "href": "tel:+918652068152"
+        },
+        "email": {
+          "display": "work@somplexnetwork.com",
+          "href": "mailto:work@somplexnetwork.com"
+        },
+        "icon": "map-pin",
+        "accent": "emerald",
+        "enabled": true
+      }
+    ]
+  },
+  "helpStrip": {
+    "enabled": true,
+    "text": "We are here to help and answer any question you might have.",
+    "icon": "headphones",
+    "buttonLabel": "Chat on WhatsApp",
+    "ariaLabel": "Chat with LabelAlly Entertainment on WhatsApp"
+  },
   "hero": {
     "badge": "Get in Touch",
     "title": "Start Your Onboarding Journey",

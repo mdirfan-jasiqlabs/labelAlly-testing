@@ -288,6 +288,59 @@
     @apply mb-5 sm:mb-6 md:mb-8;
   }
 
+  /* Soft dotted texture for section corners */
+  .bg-dot-grid {
+    background-image: radial-gradient(circle, currentColor 1.25px, transparent 1.25px);
+    background-size: 10px 10px;
+  }
+
+  /* Contact banner: extra bottom space so cards can overlap safely */
+  .contact-banner-overlap {
+    @apply pb-16 sm:pb-20 md:pb-24 lg:pb-28;
+  }
+
+  .contact-cards-pull {
+    @apply -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16;
+  }
+
+  /* Contact banner decorative positions — reusable, no JSX arbitrary % */
+  .contact-deco-zigzag {
+    @apply absolute left-4 top-8 lg:left-8 lg:top-16;
+  }
+
+  .contact-deco-capsule-left {
+    @apply absolute left-8 top-1/3 lg:left-16;
+  }
+
+  .contact-deco-triangle-left {
+    @apply absolute left-16 top-2/3 lg:left-24;
+  }
+
+  .contact-deco-capsule-right {
+    @apply absolute right-12 top-12 lg:right-20 lg:top-16;
+  }
+
+  .contact-deco-outline-right {
+    @apply absolute right-4 top-10 lg:right-8 lg:top-14;
+  }
+
+  .contact-deco-triangle-right {
+    @apply absolute right-16 top-1/2 lg:right-24;
+  }
+
+  .contact-deco-triangle-center {
+    @apply absolute left-1/2 bottom-24 -translate-x-1/2;
+  }
+
+  /* Brand multicolor underline used across sections */
+  .brand-underline {
+    @apply h-1 w-20 rounded-full bg-gradient-to-r from-amber-400 via-pink-500 to-teal-400;
+  }
+
+  .brand-underline-sm {
+    @apply h-0.5 w-12 rounded-full;
+  }
+
   /* Hide scrollbar (for horizontal scroll on mobile) */
   .scrollbar-hide {
     -ms-overflow-style: none;
