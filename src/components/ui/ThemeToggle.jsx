@@ -57,7 +57,7 @@ export default function ThemeToggle() {
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Change color theme. Current theme is ${getThemeLabel(theme)}`}
-        className="flex items-center justify-center w-9 h-9 rounded-xl border border-theme-border bg-theme-toggle hover:bg-theme-hover focus-ring transition-all duration-200"
+        className="flex items-center justify-center w-11 h-11 rounded-xl border border-theme-border bg-theme-toggle hover:bg-theme-hover focus-ring transition-all duration-200"
       >
         {getThemeIcon(theme)}
       </button>
@@ -68,7 +68,7 @@ export default function ThemeToggle() {
           role="listbox"
           aria-label="Theme options"
           tabIndex={-1}
-          className="absolute right-0 mt-2.5 w-32 rounded-2xl border border-theme-border bg-theme-card p-1.5 shadow-theme z-50 animate-fade-in focus:outline-none"
+          className="absolute right-0 mt-2.5 w-36 rounded-2xl border border-theme-border bg-theme-card p-1.5 shadow-theme z-50 animate-fade-in focus:outline-none"
         >
           {options.map((opt) => {
             const isActive = theme === opt;
@@ -81,7 +81,7 @@ export default function ThemeToggle() {
                   setTheme(opt);
                   setIsOpen(false);
                 }}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold cursor-pointer select-none transition-colors duration-150 ${
+                className={`flex items-center gap-2.5 px-3 py-2.5 min-h-11 rounded-xl text-xs font-bold cursor-pointer select-none transition-colors duration-150 ${
                   isActive
                     ? 'bg-theme-toggleActive text-theme-heading shadow-sm'
                     : 'text-theme-body hover:bg-theme-hover hover:text-theme-heading'

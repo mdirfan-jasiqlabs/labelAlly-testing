@@ -13,13 +13,13 @@
  * @param {string}     [className]— Additional Tailwind classes
  */
 function Container({ children, as: Tag = 'div', size = '2xl', className = '', ...props }) {
-  // Max-width map aligned with theme.js spacing.container
+  // Max-width map aligned with tailwind theme maxWidth.container-*
   const sizeMap = {
-    sm:  'max-w-screen-sm',   // 640px
-    md:  'max-w-screen-md',   // 768px
-    lg:  'max-w-screen-lg',   // 1024px
-    xl:  'max-w-screen-xl',   // 1280px
-    '2xl': 'max-w-[1400px]',  // 1400px (brand container)
+    sm: 'max-w-container-sm',
+    md: 'max-w-container-md',
+    lg: 'max-w-container-lg',
+    xl: 'max-w-container-xl',
+    '2xl': 'max-w-container-2xl',
   };
 
   const maxWidth = sizeMap[size] ?? sizeMap['2xl'];
@@ -27,11 +27,13 @@ function Container({ children, as: Tag = 'div', size = '2xl', className = '', ..
   return (
     <Tag
       className={[
-        'w-full mx-auto',
-        'px-4 sm:px-6 lg:px-8',
+        'w-full min-w-0 mx-auto',
+        'px-4 sm:px-6 lg:px-8 xl:px-10',
         maxWidth,
         className,
-      ].filter(Boolean).join(' ')}
+      ]
+        .filter(Boolean)
+        .join(' ')}
       {...props}
     >
       {children}

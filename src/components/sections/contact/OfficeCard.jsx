@@ -87,7 +87,7 @@ function OfficeCard({ office }) {
       />
 
       {office.address && (
-        <p className="text-sm leading-relaxed text-neutral-500 dark:text-theme-muted mb-6 sm:mb-8 max-w-[15rem] sm:max-w-xs flex-1">
+        <p className="text-sm leading-relaxed text-neutral-500 dark:text-theme-muted mb-6 sm:mb-8 max-w-none sm:max-w-xs flex-1">
           {office.address}
         </p>
       )}
@@ -104,7 +104,7 @@ function OfficeCard({ office }) {
             aria-hidden="true"
             className={['shrink-0', accent.icon].join(' ')}
           />
-          <span className="whitespace-nowrap">{phoneDisplay}</span>
+          <span className="break-all sm:whitespace-nowrap">{phoneDisplay}</span>
         </a>
       )}
     </article>

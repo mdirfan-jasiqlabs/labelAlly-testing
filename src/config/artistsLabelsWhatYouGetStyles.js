@@ -55,8 +55,8 @@ export const whatYouGetAccentBarClasses = {
 
 export const artistsLabelsWhatYouGetStyles = {
   section: {
-    base: 'relative w-full overflow-hidden bg-white dark:bg-neutral-950 pt-18 sm:pt-22 md:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24',
-    container: 'relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+    base: 'relative w-full overflow-hidden bg-white dark:bg-neutral-950 pt-12 sm:pt-16 md:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24',
+    container: 'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
     content: 'relative z-10 flex flex-col items-center',
   },
 

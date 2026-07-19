@@ -241,7 +241,7 @@ function AboutSection() {
     <section
       role="region"
       aria-labelledby="about-heading"
-      className="relative w-full bg-white dark:bg-theme-section py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="relative w-full bg-white dark:bg-theme-section section-spacing overflow-hidden"
     >
       {/* ── Background decoration radial glow ── */}
       <div
@@ -277,7 +277,7 @@ function AboutSection() {
             {/* Heading */}
             <h2
               id="about-heading"
-              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900"
+              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading"
             >
               {about.heading}
             </h2>
@@ -326,7 +326,7 @@ function AboutSection() {
                         'flex flex-col items-center text-center',
                         'p-6 sm:p-8 rounded-[1.75rem] border border-neutral-100/70 dark:border-theme-border/40',
                         'bg-white dark:bg-theme-card shadow-[0_12px_36px_rgba(25,24,70,0.03)]',
-                        'transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(25,24,70,0.06)]',
+                        'transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(25,24,70,0.06)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none',
                         'snap-start shrink-0',
                         'w-full md:w-[calc(50%-12px)] min-h-[320px] sm:min-h-[360px]',
                       ].join(' ')}

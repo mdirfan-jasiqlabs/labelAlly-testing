@@ -189,7 +189,7 @@ function ContactFormCard({ formConfig }) {
           )}
 
           {/* Row 1: Name | Email — stacks on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {fields.name?.enabled !== false && (
               <div className="flex flex-col gap-1.5 min-w-0">
                 <label htmlFor="form-name" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">
@@ -240,7 +240,7 @@ function ContactFormCard({ formConfig }) {
           </div>
 
           {/* Row 2: Phone | Subject (Optional) → company */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {fields.phone?.enabled !== false && (
               <div className="flex flex-col gap-1.5 min-w-0">
                 <label htmlFor="form-phone" className="text-sm font-semibold text-ink-primary dark:text-theme-heading">

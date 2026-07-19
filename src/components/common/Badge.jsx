@@ -37,7 +37,7 @@ function Badge({ children, variant = 'primary', className = '', ...props }) {
         'inline-flex items-center',
         'px-3 py-1',
         'rounded-full',
-        'text-xs font-semibold tracking-wider uppercase',
+        'font-body text-label uppercase',
         'whitespace-nowrap',
         // Variant
         variantClasses,

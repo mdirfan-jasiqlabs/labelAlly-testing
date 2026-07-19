@@ -8,7 +8,7 @@ export const heroClasses = {
     'relative w-full overflow-hidden bg-slate-50 dark:bg-neutral-950',
 
   containerClass:
-    'relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+    'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
 
   layoutClass: [
     'grid grid-cols-1 lg:grid-cols-12',
@@ -95,7 +95,7 @@ export const heroClasses = {
   },
 
   featureClass: {
-    list: 'mt-9 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-5 w-full max-w-xl',
+    list: 'mt-9 sm:mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 w-full max-w-xl',
     item: [
       'group flex flex-col items-start gap-2.5',
       'transition-transform duration-300 ease-smooth',
@@ -117,7 +117,7 @@ export const heroClasses = {
   galleryClass: {
     root: 'relative z-10 w-full',
     stage:
-      'relative mx-auto w-full max-w-[480px] lg:max-w-[520px] xl:max-w-[560px] aspect-[4/5] sm:aspect-[5/6]',
+      'relative mx-auto w-full max-w-[480px] lg:max-w-[520px] xl:max-w-[560px] aspect-[4/5] sm:aspect-[5/6] overflow-hidden',
     mainWrap: [
       'absolute left-[8%] right-[10%] top-[6%] bottom-[14%]',
       'overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]',
@@ -131,7 +131,7 @@ export const heroClasses = {
     float: {
       'top-right': [
         'absolute top-[0%] right-[0%] z-20',
-        'w-[34%] min-w-[108px] max-w-[168px] aspect-[5/4]',
+        'w-[34%] min-w-0 max-w-[168px] aspect-[5/4]',
         'overflow-hidden rounded-2xl',
         'bg-white dark:bg-neutral-900',
         'ring-4 ring-white dark:ring-neutral-950',
@@ -141,7 +141,7 @@ export const heroClasses = {
       ].join(' '),
       'bottom-left': [
         'absolute bottom-[8%] left-[0%] z-20',
-        'w-[32%] min-w-[100px] max-w-[156px] aspect-square',
+        'w-[32%] min-w-0 max-w-[156px] aspect-square',
         'overflow-hidden rounded-2xl',
         'bg-white dark:bg-neutral-900',
         'ring-4 ring-white dark:ring-neutral-950',
@@ -153,7 +153,7 @@ export const heroClasses = {
     floatImage: 'h-full w-full object-cover',
     cardAnchor: [
       'absolute bottom-[0%] right-[0%] z-30',
-      'w-[56%] min-w-[190px] max-w-[250px]',
+      'w-[56%] min-w-0 max-w-[250px]',
       'motion-safe:animate-hero-float-delayed',
     ].join(' '),
   },

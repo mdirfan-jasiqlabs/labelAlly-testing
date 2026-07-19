@@ -18,7 +18,7 @@ function HowItWorksSection() {
     <section
       role="region"
       aria-labelledby="process-heading"
-      className="relative w-full bg-white dark:bg-theme-section py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="relative w-full bg-white dark:bg-theme-section section-spacing overflow-hidden"
     >
       {/* ── Background curved / radial lavender shape (right) ── */}
       <div

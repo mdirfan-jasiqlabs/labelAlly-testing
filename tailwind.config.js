@@ -24,7 +24,14 @@ export default {
       // ── Font Families ──────────────────────────────────────────────────────
       fontFamily: {
         heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'sans-serif',
+        ],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
 
@@ -121,12 +128,19 @@ export default {
         },
       },
 
-      // ── Background Colors ──────────────────────────────────────────────────
+      // ── Background Colors (semantic — CSS-var driven) ─────────────────────
       backgroundColor: {
-        page: '#ffffff',
-        surface: '#fafafa',
-        elevated: '#f4f4f5',
-        panel: '#ffffff',
+        page: 'var(--color-page-bg)',
+        surface: 'var(--color-section-bg)',
+        elevated: 'var(--color-card-surface)',
+        panel: 'var(--color-card-surface)',
+      },
+
+      // ── Border Colors ──────────────────────────────────────────────────────
+      borderColor: {
+        theme: 'var(--color-border)',
+        subtle: 'var(--color-border-subtle)',
+        strong: 'var(--color-border-strong)',
       },
 
       // ── Gradients ──────────────────────────────────────────────────────────
@@ -191,7 +205,7 @@ export default {
         '4xl': '2.5rem',
       },
 
-      // ── Spacing ────────────────────────────────────────────────────────────
+      // ── Spacing (section rhythm helpers via theme) ──────────────────────────
       spacing: {
         18: '4.5rem',
         22: '5.5rem',
@@ -200,6 +214,9 @@ export default {
         'logo-compact': '2.75rem',
         'logo-standard': '3.5rem',
         'logo-wide': '3rem',
+        'section-compact-y': '3rem',
+        'section-y': '4rem',
+        'section-large-y': '5rem',
       },
 
       // ── Container ──────────────────────────────────────────────────────────
@@ -223,10 +240,32 @@ export default {
       },
 
       // ── Typography ─────────────────────────────────────────────────────────
+      // Fluid semantic scales — use these for new/shared headings & body UI.
+      // Do not change page copy; components may adopt these tokens gradually.
       fontSize: {
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
+        display: [
+          'clamp(2.5rem, 1.4rem + 4.2vw, 5.5rem)',
+          { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' },
+        ],
+        section: [
+          'clamp(2rem, 1.35rem + 2.4vw, 3.75rem)',
+          { lineHeight: '1.12', letterSpacing: '-0.02em', fontWeight: '700' },
+        ],
+        'card-title': [
+          'clamp(1.125rem, 1.05rem + 0.35vw, 1.5rem)',
+          { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '700' },
+        ],
+        'body-md': [
+          'clamp(0.9375rem, 0.9rem + 0.2vw, 1.125rem)',
+          { lineHeight: '1.625', fontWeight: '400' },
+        ],
+        label: [
+          '0.75rem',
+          { lineHeight: '1.25', letterSpacing: '0.06em', fontWeight: '600' },
+        ],
       },
 
       // ── Animation & Transition ─────────────────────────────────────────────

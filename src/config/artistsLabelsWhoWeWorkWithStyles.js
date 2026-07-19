@@ -44,8 +44,8 @@ export const accentBarClasses = {
 
 export const artistsLabelsWhoWeWorkWithStyles = {
   section: {
-    base: 'relative w-full overflow-hidden bg-slate-50 dark:bg-neutral-950 pt-18 sm:pt-22 md:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24',
-    container: 'relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+    base: 'relative w-full overflow-hidden bg-slate-50 dark:bg-neutral-950 pt-12 sm:pt-16 md:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24',
+    container: 'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
     content: 'relative z-10 flex flex-col items-center',
   },
 
@@ -66,7 +66,7 @@ export const artistsLabelsWhoWeWorkWithStyles = {
 
   grid: {
     wrapper:
-      'mt-10 sm:mt-12 lg:mt-14 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8',
+      'mt-10 sm:mt-12 lg:mt-14 w-full grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8',
     card: [
       'group relative flex h-full flex-col',
       'rounded-2xl sm:rounded-3xl',
@@ -78,7 +78,7 @@ export const artistsLabelsWhoWeWorkWithStyles = {
       'hover:-translate-y-1',
       'hover:shadow-[0_22px_50px_-22px_rgba(15,23,42,0.28)]',
       'dark:hover:shadow-[0_22px_50px_-18px_rgba(0,0,0,0.7)]',
-      'md:last:col-span-2 md:last:max-w-md md:last:justify-self-center lg:last:col-span-1 lg:last:max-w-none',
+      'lg:last:col-span-1 lg:last:max-w-none',
     ].join(' '),
     imageWrapper: 'relative w-full overflow-hidden aspect-[5/3.4] rounded-t-2xl sm:rounded-t-3xl',
     image:

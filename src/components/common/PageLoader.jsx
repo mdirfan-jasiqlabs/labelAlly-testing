@@ -13,7 +13,7 @@ function PageLoader() {
       role="status"
       aria-live="polite"
       aria-label="Loading page"
-      className="flex flex-col items-center justify-center min-h-[50vh] w-full bg-white px-4"
+      className="flex flex-col items-center justify-center min-h-[50vh] w-full bg-white dark:bg-theme-page px-4"
     >
       <div className="flex flex-col items-center gap-4 text-center">
         {/* Soft Brand Accent Glow / Spinner */}
@@ -27,7 +27,7 @@ function PageLoader() {
         </div>
         
         {/* Loading text */}
-        <span className="text-sm font-medium font-heading text-neutral-600 tracking-wide select-none">
+        <span className="text-sm font-medium font-heading text-neutral-600 dark:text-theme-body tracking-wide select-none">
           Loading...
         </span>
         

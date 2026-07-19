@@ -72,7 +72,7 @@ function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site footer"
-      className="w-full bg-[#080B11] text-neutral-400 border-t border-neutral-900 relative overflow-hidden pt-20 pb-8 animate-fade-in"
+      className="w-full bg-[#080B11] text-neutral-400 border-t border-neutral-900 relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-8 animate-fade-in"
     >
       {/* ── Custom CSS Animations Block ── */}
       <style>{`
@@ -124,7 +124,7 @@ function Footer() {
         ♫
       </div>
 
-      <div className="section-container relative z-10 pb-16">
+      <div className="section-container relative z-10 pb-10 sm:pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
 
           {/* ── Column 1: Brand & Socials ── */}
@@ -174,7 +174,7 @@ function Footer() {
                         aria-label={item.label}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-800 bg-neutral-900/30 text-neutral-400 hover:text-white hover:border-[#FF2E74] transition-all duration-200 focus-ring hover:shadow-[0_0_10px_rgba(255,46,116,0.2)]"
+                        className="flex items-center justify-center w-11 h-11 rounded-full border border-neutral-800 bg-neutral-900/30 text-neutral-400 hover:text-white hover:border-[#FF2E74] transition-all duration-200 focus-ring hover:shadow-[0_0_10px_rgba(255,46,116,0.2)]"
                       >
                         <SvgIcon className="w-4 h-4" aria-hidden="true" />
                       </a>
@@ -356,11 +356,11 @@ function Footer() {
               </p>
 
               {/* Legal links */}
-              <nav aria-label="Legal links" className="flex items-center gap-4 text-xs text-neutral-500">
+              <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 text-xs text-neutral-500">
                 {bottom.privacyLink?.enabled && (
                   <Link
                     to={bottom.privacyLink.href}
-                    className="hover:text-white transition-colors duration-250 focus-ring rounded"
+                    className="inline-flex items-center min-h-11 px-1 hover:text-white transition-colors duration-250 focus-ring rounded"
                   >
                     {bottom.privacyLink.label}
                   </Link>
@@ -371,7 +371,7 @@ function Footer() {
                 {bottom.termsLink?.enabled && (
                   <Link
                     to={bottom.termsLink.href}
-                    className="hover:text-white transition-colors duration-250 focus-ring rounded"
+                    className="inline-flex items-center min-h-11 px-1 hover:text-white transition-colors duration-250 focus-ring rounded"
                   >
                     {bottom.termsLink.label}
                   </Link>

@@ -46,7 +46,7 @@ function ServiceCard({ service }) {
   const accent = ACCENT_STYLES[service.accent] ?? ACCENT_STYLES.rose;
 
   return (
-    <article className="group h-full flex flex-row items-start gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border/50 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-card-hover">
+    <article className="group h-full flex flex-col xs:flex-row items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border/50 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-card-hover motion-reduce:hover:translate-y-0 motion-reduce:transition-none">
       {/* Icon Surface */}
       <div
         aria-hidden="true"

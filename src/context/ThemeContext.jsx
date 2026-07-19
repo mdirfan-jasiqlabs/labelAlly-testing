@@ -24,9 +24,11 @@ export function ThemeProvider({ children }) {
       if (isDark) {
         root.classList.add('dark');
         root.setAttribute('data-theme', 'dark');
+        root.style.colorScheme = 'dark';
       } else {
         root.classList.remove('dark');
         root.setAttribute('data-theme', 'light');
+        root.style.colorScheme = 'light';
       }
     };
 

@@ -23,7 +23,7 @@ function AnalyticsSection() {
   return (
     <section
       aria-labelledby="analytics-section-heading"
-      className="py-20 md:py-28 lg:py-36 bg-white border-t border-neutral-100"
+      className="section-spacing-large bg-white dark:bg-theme-page border-t border-neutral-100 dark:border-theme-border/50"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -38,7 +38,7 @@ function AnalyticsSection() {
               align="left"
             />
             {analytics.supportingNote && (
-              <p className="text-sm text-neutral-900 italic">
+              <p className="text-sm text-neutral-600 dark:text-theme-muted italic">
                 {analytics.supportingNote}
               </p>
             )}
@@ -69,18 +69,18 @@ function AnalyticsSection() {
                   radius="lg"
                   bordered
                   hover
-                  className="flex items-start gap-4 bg-white"
+                  className="flex items-start gap-4 bg-white dark:bg-theme-card"
                 >
                   {Icon && (
-                    <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-primary-50 border border-primary-100 text-primary-600">
+                    <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-500/15 border border-primary-100 dark:border-primary-400/20 text-primary-600 dark:text-primary-400">
                       <Icon size={20} aria-hidden="true" />
                     </div>
                   )}
                   <div>
-                    <h3 className="text-base font-semibold font-heading text-neutral-900 mb-1">
+                    <h3 className="text-base font-semibold font-heading text-neutral-900 dark:text-theme-heading mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-neutral-900 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark:text-theme-body leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

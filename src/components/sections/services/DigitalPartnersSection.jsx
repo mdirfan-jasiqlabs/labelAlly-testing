@@ -57,7 +57,7 @@ function DigitalPartnersSection() {
         </div>
 
         {/* ── Partner Logo Grid ── */}
-        <ul className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0 max-w-5xl mx-auto">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0 max-w-5xl mx-auto">
           {enabledPartners.map((partner) => (
             <li key={partner.id} className="h-full min-w-0">
               <PartnerLogoCard partner={partner} />

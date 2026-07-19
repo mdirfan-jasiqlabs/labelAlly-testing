@@ -66,6 +66,7 @@
   /* Borders */
   --color-border-default: var(--color-border);
   --color-border-subtle:  #f1f5f9;
+  --color-border-strong:  #cbd5e1;
 
   /* Form controls — recessed vs card surface in both themes */
   --color-input-surface: #F4F6FB;
@@ -77,7 +78,7 @@
 
   /* Typography */
   --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Transitions */
   --transition-fast:   150ms ease;
@@ -86,6 +87,7 @@
 
   /* Layout */
   --header-height: 4.5rem;
+  --container-max: 1400px;
 
   /* Scrollbar */
   --scrollbar-width: 8px;
@@ -117,6 +119,7 @@
   /* Form controls — darker recessed fields inside elevated cards */
   --color-input-surface: #0F172A;
   --color-border-subtle: #1e293b;
+  --color-border-strong: #475569;
 
   /* Custom overrides for scrollbar and backgrounds in dark */
   --scrollbar-thumb: #475569;
@@ -131,7 +134,12 @@
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    overflow-x: hidden;
+    color-scheme: light;
+  }
+
+  html.dark,
+  html[data-theme='dark'] {
+    color-scheme: dark;
   }
 
   /* Theme driven body */
@@ -142,9 +150,16 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    min-width: 0;
     touch-action: pan-y;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  #root {
+    min-height: 100dvh;
+    min-width: 0;
+    isolation: isolate;
   }
 
   /* Theme driven headings */
@@ -160,9 +175,19 @@
     transition-duration: var(--transition-base);
   }
 
-  /* Images */
-  img, video {
+  /* Media — prevent overflow without hiding genuine layout bugs */
+  img, video, svg, canvas {
     @apply max-w-full;
+    height: auto;
+  }
+
+  img {
+    display: block;
+  }
+
+  /* Long unbroken strings should wrap instead of forcing overflow */
+  p, li, h1, h2, h3, h4, h5, h6, label, td, th {
+    overflow-wrap: break-word;
   }
 
   /* Focus visible — accessibility (theme-aware ring offset) */
@@ -196,6 +221,18 @@
     border: 1px solid rgba(226, 232, 240, 0.8);
   }
 
+  :root.dark .glass,
+  [data-theme='dark'] .glass {
+    background: rgba(15, 23, 42, 0.72);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :root.dark .glass-strong,
+  [data-theme='dark'] .glass-strong {
+    background: rgba(30, 41, 59, 0.88);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
   /* ── Gradient Border ─────────────────────────────────────── */
   .gradient-border {
     position: relative;
@@ -218,20 +255,32 @@
 
   /* ── Section Container ───────────────────────────────────── */
   .section-container {
-    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-container-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10;
   }
 
   /* ── Heading Styles ──────────────────────────────────────── */
   .heading-display {
     font-family: var(--font-heading);
     color: var(--color-heading-text);
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+    @apply font-heading text-display;
   }
 
   .heading-section {
     font-family: var(--font-heading);
     color: var(--color-heading-text);
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+    @apply font-heading text-section;
+  }
+
+  .heading-card {
+    font-family: var(--font-heading);
+    color: var(--color-heading-text);
+    @apply font-heading text-card-title;
+  }
+
+  .text-body-ui {
+    font-family: var(--font-body);
+    color: var(--color-body-text);
+    @apply font-body text-body-md;
   }
 
   /* ── Focus Ring (accessible, theme-aware) ────────────────── */
@@ -258,7 +307,7 @@
 
   .form-control::placeholder {
     color: var(--color-muted-text);
-    opacity: 0.85;
+    opacity: 1;
   }
 
   .form-control:hover {
@@ -347,17 +396,25 @@
 
   /* Container with responsive padding */
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-4 sm:px-6 lg:px-8 xl:px-10;
   }
 
-  /* Section vertical spacing */
+  /* Section vertical spacing — compact / normal / large */
+  .section-spacing-compact {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
   .section-spacing {
-    @apply py-12 sm:py-16 md:py-20 lg:py-28;
+    @apply py-16 sm:py-20 lg:py-24 xl:py-28;
+  }
+
+  .section-spacing-large {
+    @apply py-20 sm:py-24 lg:py-28 xl:py-32;
   }
 
   /* Compact hero / page banner spacing */
   .section-spacing-hero {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+    @apply py-12 sm:py-16 lg:py-20 xl:py-24;
   }
 
   /* Shared heading-group to content rhythm */
@@ -382,7 +439,7 @@
   }
 
   .contact-cards-pull {
-    @apply -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16;
+    @apply -mt-6 sm:-mt-10 md:-mt-12 lg:-mt-16;
   }
 
   /* Contact banner decorative positions — reusable, no JSX arbitrary % */
@@ -518,11 +575,30 @@
   .animate-hero-float,
   .animate-hero-float-delayed,
   .animate-hero-drift,
-  .animate-hero-drift-delayed {
+  .animate-hero-drift-delayed,
+  .animate-eq-bar,
+  .animate-eq-bar-fast,
+  .animate-eq-bar-slow,
+  .animate-hero-glow-pulse,
+  .animate-hero-ring-spin,
+  .animate-hero-orb-drift {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
     transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Non-essential hover lifts / zooms */
+  .hover\:-translate-y-1:hover,
+  .hover\:-translate-y-1\.5:hover,
+  .hover\:-translate-y-0\.5:hover,
+  .hover\:scale-\[1\.01\]:hover,
+  .hover\:scale-\[1\.02\]:hover {
+    transform: none !important;
   }
 }
 

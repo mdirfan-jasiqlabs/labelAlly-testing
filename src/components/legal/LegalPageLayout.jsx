@@ -17,30 +17,28 @@ import Container from '../common/Container';
  */
 function LegalPageLayout({ title, lastUpdated, introduction, children }) {
   return (
-    <article className="py-16 md:py-24 bg-white text-neutral-600">
-      <Container className="max-w-3xl">
-        {/* Header */}
-        <header className="border-b border-neutral-200/80 pb-8 mb-10">
-          <h1 className="font-heading font-black text-4xl sm:text-5xl text-neutral-900 mb-3 tracking-tight">
-            {title}
-          </h1>
-          {lastUpdated && (
-            <p className="text-xs text-neutral-400 font-medium">
-              Last Updated: {lastUpdated}
-            </p>
-          )}
-        </header>
+    <article className="section-spacing bg-white dark:bg-theme-page text-neutral-600 dark:text-theme-body">
+      <Container>
+        <div className="mx-auto w-full max-w-3xl min-w-0">
+          <header className="border-b border-neutral-200/80 dark:border-theme-border pb-8 mb-10">
+            <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading mb-3 tracking-tight leading-tight">
+              {title}
+            </h1>
+            {lastUpdated ? (
+              <p className="text-xs text-neutral-400 dark:text-theme-muted font-medium">
+                Last Updated: {lastUpdated}
+              </p>
+            ) : null}
+          </header>
 
-        {/* Content */}
-        <div className="flex flex-col gap-8">
-          {introduction && (
-            <p className="text-base sm:text-lg text-neutral-500 leading-relaxed font-medium">
-              {introduction}
-            </p>
-          )}
+          <div className="flex flex-col gap-8">
+            {introduction ? (
+              <p className="text-base sm:text-lg text-neutral-500 dark:text-theme-body leading-relaxed font-medium">
+                {introduction}
+              </p>
+            ) : null}
 
-          <div className="flex flex-col gap-10">
-            {children}
+            <div className="flex flex-col gap-10 break-words">{children}</div>
           </div>
         </div>
       </Container>

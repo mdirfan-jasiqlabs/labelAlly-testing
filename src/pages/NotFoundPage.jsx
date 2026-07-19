@@ -17,7 +17,7 @@ function NotFoundPage() {
       as="section"
       variant="hero"
       aria-labelledby="not-found-heading"
-      className="min-h-[80vh] flex items-center justify-center text-center relative overflow-hidden w-full"
+      className="min-h-[70svh] sm:min-h-[80vh] flex items-center justify-center text-center relative overflow-hidden w-full"
     >
       <SEO
         title="Page Not Found | LabelAlly Entertainment"
@@ -29,16 +29,16 @@ function NotFoundPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
-        <div className="w-[600px] h-[300px] rounded-full bg-primary-100/50 blur-3xl animate-pulse-slow" />
+        <div className="w-[min(100%,20rem)] sm:w-[28rem] md:w-[36rem] lg:w-[600px] h-[180px] sm:h-[240px] md:h-[300px] rounded-full bg-primary-100/50 dark:bg-primary-900/20 blur-3xl animate-pulse-slow" />
       </div>
 
-      <Container className="relative z-10 py-16 flex flex-col items-center justify-center max-w-2xl mx-auto">
+      <Container className="relative z-10 py-12 sm:py-16 flex flex-col items-center justify-center max-w-2xl mx-auto">
         <GlowEffect color="primary" intensity="md" className="w-full max-w-md mx-auto">
           <div className="flex flex-col items-center justify-center text-center w-full">
             {/* Error Code */}
             <span
               aria-hidden="true"
-              className="text-8xl sm:text-9xl font-black font-heading text-primary-200/60 select-none tracking-tighter mb-4"
+              className="text-6xl xs:text-7xl sm:text-8xl md:text-9xl font-black font-heading text-primary-200/60 dark:text-primary-800/50 select-none tracking-tighter mb-4"
             >
               {notFoundData.errorCode}
             </span>
@@ -46,13 +46,13 @@ function NotFoundPage() {
             {/* Heading */}
             <h1
               id="not-found-heading"
-              className="font-heading font-bold text-3xl sm:text-4xl text-neutral-900 mb-4 tracking-tight text-center"
+              className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-neutral-900 dark:text-theme-heading mb-4 tracking-tight text-center"
             >
               {notFoundData.heading}
             </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-neutral-600 max-w-md leading-relaxed mb-8 text-center">
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-theme-body max-w-md leading-relaxed mb-8 text-center px-1">
               {notFoundData.description}
             </p>
 

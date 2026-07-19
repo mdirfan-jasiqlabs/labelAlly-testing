@@ -105,7 +105,7 @@ function MobileMenu({ isOpen, onClose }) {
             aria-label={navData.mobile.closeLabel}
             className={[
               'flex items-center justify-center',
-              'w-9 h-9 rounded-lg',
+              'w-11 h-11 rounded-lg',
               'text-neutral-500 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
               'hover:bg-neutral-100 dark:hover:bg-theme-hover',
               'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
@@ -177,7 +177,7 @@ function MobileMenu({ isOpen, onClose }) {
         </nav>
 
         {/* ── Bottom CTA Area ───────────────────────────────── */}
-        <div className="px-5 py-5 border-t border-neutral-100 dark:border-theme-border shrink-0 flex flex-col gap-3">
+        <div className="px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-neutral-100 dark:border-theme-border shrink-0 flex flex-col gap-3">
           {/* Phone pill */}
           <a
             href={navData.phone.href}

@@ -26,7 +26,7 @@ function PurposeCard({ card }) {
         'transition-colors duration-250',
       ].join(' ')}
     >
-      <div className="flex flex-col sm:flex-row sm:items-center p-5 sm:p-6 md:p-7 lg:p-8 gap-5 sm:gap-0">
+      <div className="flex flex-col sm:flex-row sm:items-stretch p-5 sm:p-6 md:p-7 lg:p-8 gap-5 sm:gap-5">
         {/* ── Icon Panel ── */}
         <div className="flex sm:items-center sm:justify-center shrink-0">
           <div
@@ -58,7 +58,7 @@ function PurposeCard({ card }) {
         {/* ── Vertical Divider (desktop) ── */}
         <div
           aria-hidden="true"
-          className="hidden sm:block w-px self-center mx-5 md:mx-7 lg:mx-8 h-16 md:h-20 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
+          className="hidden sm:block w-px self-stretch mx-5 md:mx-7 lg:mx-8 min-h-16 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
         />
 
         {/* ── Content Area ── */}

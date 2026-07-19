@@ -23,11 +23,11 @@ function PrivacyPolicyPage() {
           <section key={sec.id} aria-labelledby={`sec-${sec.id}`} className="flex flex-col gap-3">
             <h2
               id={`sec-${sec.id}`}
-              className="font-heading font-bold text-xl sm:text-2xl text-neutral-900 tracking-tight"
+              className="font-heading font-bold text-xl sm:text-2xl text-neutral-900 dark:text-theme-heading tracking-tight"
             >
               {sec.heading}
             </h2>
-            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-theme-body leading-relaxed">
               {sec.content}
             </p>
         </section>

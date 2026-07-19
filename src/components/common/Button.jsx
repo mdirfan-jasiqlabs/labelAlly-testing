@@ -34,20 +34,21 @@ function Button({
   // ── Base classes (applied to all variants) ──────────────────────
   const base = [
     'inline-flex items-center justify-center gap-2',
-    'font-semibold',
+    'font-body font-semibold',
     'rounded-lg',
     'border',
     'transition-all duration-250 ease-out',
     'hover:scale-[1.015] active:scale-[0.985]',
+    'motion-reduce:hover:scale-100 motion-reduce:active:scale-100',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
     'focus-visible:ring-orange-500',
     'focus-visible:ring-offset-2',
-    'focus-visible:ring-offset-white',
-    'dark:focus-visible:ring-offset-neutral-950',
+    'focus-visible:ring-offset-[var(--color-page-bg)]',
     'select-none',
     'whitespace-nowrap',
     'cursor-pointer',
+    'min-h-11',
   ].join(' ');
 
   // ── Variant class map ───────────────────────────────────────────
@@ -86,11 +87,11 @@ function Button({
     ].join(' '),
   };
 
-  // ── Size class map ──────────────────────────────────────────────
+  // ── Size class map (md+ meet ~44px touch target) ────────────────
   const sizeMap = {
-    sm: 'h-8  px-3   text-xs  gap-1.5',
-    md: 'h-10 px-5   text-sm  gap-2',
-    lg: 'h-12 px-7   text-base gap-2.5',
+    sm: 'h-9  min-h-9  px-3   text-xs  gap-1.5',
+    md: 'h-11 min-h-11 px-5   text-sm  gap-2',
+    lg: 'h-12 min-h-12 px-7   text-base gap-2.5',
   };
 
   // ── Disabled / loading state ────────────────────────────────────

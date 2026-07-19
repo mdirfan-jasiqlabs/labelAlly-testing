@@ -64,6 +64,7 @@ function Card({
         hover ? [
           'transition-all duration-300 ease-out',
           'hover:-translate-y-1 hover:scale-[1.01]',
+          'motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100',
           'hover:border-neutral-300 dark:hover:border-theme-border',
           'hover:shadow-card-hover',
         ].join(' ') : '',

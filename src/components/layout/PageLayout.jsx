@@ -16,14 +16,14 @@ function PageLayout() {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-theme-page">
+    <div className="flex flex-col min-h-screen min-w-0 overflow-x-hidden bg-theme-page">
       {/* ── Header ── */}
       <Header />
 
       {/* ── Main Content ── */}
       <main
         id="main-content"
-        className="flex-1"
+        className="flex-1 min-w-0 w-full"
         role="main"
         tabIndex={-1}
       >

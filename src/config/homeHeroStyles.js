@@ -10,7 +10,7 @@ export const homeHeroStyles = {
       'bg-white dark:bg-neutral-950',
     ].join(' '),
     container:
-      'relative z-10 w-full mx-auto max-w-[1400px] px-3 sm:px-4 lg:px-5 xl:px-6 pt-5 sm:pt-6 lg:pt-5 pb-5 sm:pb-6',
+      'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 sm:pt-8 lg:pt-6 pb-6 sm:pb-8',
     layout: [
       'grid grid-cols-1 lg:grid-cols-12',
       'gap-4 sm:gap-5 lg:gap-x-4 lg:gap-y-0 xl:gap-x-5',
@@ -93,9 +93,8 @@ export const homeHeroStyles = {
 
   features: {
     row: [
-      'relative z-30',
       'mt-6 sm:mt-7',
-      'grid grid-cols-2 md:grid-cols-4',
+      'grid grid-cols-2 lg:grid-cols-4',
       'gap-x-4 gap-y-4',
       'w-full max-w-xl lg:max-w-none',
       'justify-items-center lg:justify-items-start',
@@ -191,7 +190,7 @@ export const homeHeroStyles = {
     figure: [
       'absolute inset-0 z-10',
       'flex items-center justify-center',
-      'scale-[1.12] sm:scale-[1.16] lg:scale-[1.28] xl:scale-[1.32]',
+      'scale-[1.05] sm:scale-[1.1] lg:scale-[1.22] xl:scale-[1.28]',
     ].join(' '),
     img: [
       'block h-full w-auto max-h-[100%]',

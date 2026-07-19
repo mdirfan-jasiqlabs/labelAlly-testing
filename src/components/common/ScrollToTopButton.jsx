@@ -38,7 +38,9 @@ function ScrollToTopButton() {
       onClick={scrollToTop}
       aria-label="Scroll to top of the page"
       className={[
-        'fixed bottom-8 right-8 z-[210]',
+        'fixed z-[210]',
+        'bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))]',
+        'sm:bottom-8 sm:right-8',
         'flex items-center justify-center',
         'w-12 h-12 rounded-full',
         'bg-pink-600 hover:bg-pink-700 active:bg-pink-800',

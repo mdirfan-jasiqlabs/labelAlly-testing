@@ -24,16 +24,13 @@ function SectionHeading({
   titleAs: TitleTag = 'h2',
   className = '',
 }) {
-  // Alignment map
   const alignMap = {
-    left:   'items-start text-left',
+    left: 'items-start text-left',
     center: 'items-center text-center',
-    right:  'items-end text-right',
+    right: 'items-end text-right',
   };
 
-  // Description max-width by alignment
   const descMaxWidth = align === 'center' ? 'max-w-2xl' : 'max-w-3xl';
-
   const alignClasses = alignMap[align] ?? alignMap.center;
 
   return (
@@ -42,41 +39,28 @@ function SectionHeading({
         'flex flex-col gap-4 animate-fade-up',
         alignClasses,
         className,
-      ].filter(Boolean).join(' ')}
+      ]
+        .filter(Boolean)
+        .join(' ')}
     >
-      {/* ── Badge (optional) ── */}
-      {badge && (
-        <Badge variant={badgeVariant}>
-          {badge}
-        </Badge>
-      )}
+      {badge ? <Badge variant={badgeVariant}>{badge}</Badge> : null}
 
-      {/* ── Title ── */}
-      <TitleTag
-        className={[
-          'font-heading font-bold tracking-tight',
-          'text-3xl sm:text-4xl lg:text-5xl',
-          'text-neutral-900 dark:text-theme-heading',
-          'leading-tight',
-        ].join(' ')}
-      >
-        {title}
-      </TitleTag>
+      <TitleTag className="heading-section text-ink-primary">{title}</TitleTag>
 
-      {/* ── Description (optional) ── */}
-      {description && (
+      {description ? (
         <p
           className={[
-            'text-neutral-600 dark:text-theme-body',
-            'text-base sm:text-lg',
+            'font-body text-body-md text-ink-secondary',
             'leading-relaxed',
             descMaxWidth,
             align === 'center' ? 'mx-auto' : '',
-          ].filter(Boolean).join(' ')}
+          ]
+            .filter(Boolean)
+            .join(' ')}
         >
           {description}
         </p>
-      )}
+      ) : null}
     </div>
   );
 }

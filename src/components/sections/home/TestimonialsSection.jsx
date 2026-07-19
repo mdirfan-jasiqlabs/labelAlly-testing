@@ -127,7 +127,7 @@ function TestimonialsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="testimonials-section-heading"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
+      className="relative section-spacing bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
       onKeyDown={handleKeyDown}
       tabIndex={0}
       onMouseEnter={() => setIsHovered(true)}
@@ -292,7 +292,7 @@ function TestimonialsSection() {
             </div>
 
             {/* Right Column: Quote text and controls */}
-            <div className="lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-left relative z-10 px-4 md:px-6">
+            <div className="lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-left relative z-10 min-w-0">
               
               <div
                 className={`transition-all duration-300 transform flex flex-col items-center lg:items-start ${

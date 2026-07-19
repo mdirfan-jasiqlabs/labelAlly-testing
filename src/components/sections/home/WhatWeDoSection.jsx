@@ -39,7 +39,7 @@ function WhatWeDoSection() {
     <section
       ref={sectionRef}
       aria-labelledby="what-we-do-heading"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/70 to-neutral-100/45 dark:bg-theme-section dark:from-transparent dark:to-transparent py-20 md:py-28 lg:py-32 border-t border-neutral-100 dark:border-theme-border/50"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/70 to-neutral-100/45 dark:bg-theme-section dark:from-transparent dark:to-transparent section-spacing border-t border-neutral-100 dark:border-theme-border/50"
     >
       {/* ── Soft Background Glows ──────────────────────────────── */}
       <div

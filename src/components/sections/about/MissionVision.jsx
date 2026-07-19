@@ -19,7 +19,7 @@ function MissionVision() {
   const sections = [missionVision.mission, missionVision.vision];
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-50/60 border-t border-neutral-100">
+    <section className="py-16 md:py-24 bg-neutral-50/60 dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/50">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {sections.map((sec, index) => {
@@ -31,17 +31,17 @@ function MissionVision() {
                 radius="xl"
                 bordered
                 hover
-                className="flex flex-col gap-5 bg-white/40"
+                className="flex flex-col gap-5 bg-white dark:bg-theme-card"
               >
                 {Icon && (
-                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-50 border border-primary-100 text-primary-600">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-500/15 border border-primary-100 dark:border-primary-400/20 text-primary-600 dark:text-primary-400">
                     <Icon size={24} aria-hidden="true" />
                   </div>
                 )}
-                <h3 className="text-2xl font-bold font-heading text-neutral-900">
+                <h3 className="text-2xl font-bold font-heading text-neutral-900 dark:text-theme-heading">
                   {sec.title}
                 </h3>
-                <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-600 dark:text-theme-body leading-relaxed">
                   {sec.description}
                 </p>
               </Card>

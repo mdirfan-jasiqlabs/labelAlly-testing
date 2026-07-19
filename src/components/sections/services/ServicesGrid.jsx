@@ -53,7 +53,7 @@ function ServicesGrid() {
       </h2>
 
       <Container>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 list-none p-0 m-0">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 list-none p-0 m-0">
           {visibleServices.map((service) => (
             <li key={service.id} className="h-full min-w-0">
               <ServiceCard service={service} />

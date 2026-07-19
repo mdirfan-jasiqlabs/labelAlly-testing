@@ -99,7 +99,7 @@ function Header() {
                       className={({ isActive }) =>
                         [
                           'relative flex flex-col items-center',
-                          'px-4 py-2',
+                          'px-2.5 xl:px-4 py-2',
                           'text-[0.8125rem] font-medium',
                           'rounded-lg',
                           'transition-all duration-200',
@@ -134,17 +134,17 @@ function Header() {
             </nav>
 
             {/* ── Right Side: Phone + CTA ───────────────────────── */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 shrink-0">
               {/* Theme Toggle */}
               <ThemeToggle />
 
-              {/* Phone Pill — Desktop only */}
+              {/* Phone Pill — Desktop only (avoid tablet crowding) */}
               <a
                 href={navData.phone.href}
                 aria-label={navData.phone.ariaLabel}
                 className={[
-                  'hidden md:inline-flex items-center gap-2',
-                  'h-9 px-4',
+                  'hidden lg:inline-flex items-center gap-2',
+                  'h-11 px-4',
                   'rounded-full',
                   'border border-neutral-200 hover:border-primary-300 dark:border-theme-border dark:hover:border-primary-400',
                   'text-xs font-semibold text-neutral-700 hover:text-primary-600 dark:text-theme-body dark:hover:text-primary-300',
@@ -164,8 +164,8 @@ function Header() {
                 to={navData.cta.href}
                 aria-label={navData.cta.ariaLabel}
                 className={[
-                  'hidden md:inline-flex items-center gap-2',
-                  'h-9 px-5',
+                  'hidden lg:inline-flex items-center gap-2',
+                  'h-11 px-5',
                   'rounded-lg',
                   'bg-primary-600 hover:bg-primary-700',
                   'text-xs font-semibold text-white',
@@ -181,14 +181,14 @@ function Header() {
                 <ArrowRight size={13} aria-hidden="true" strokeWidth={2.5} />
               </Link>
 
-              {/* Mobile: Phone icon button */}
+              {/* Mobile / Tablet: Phone icon button */}
               <a
                 href={navData.phone.href}
                 aria-label={navData.phone.ariaLabel}
                 className={[
-                  'md:hidden',
+                  'lg:hidden',
                   'flex items-center justify-center',
-                  'w-9 h-9 rounded-full',
+                  'w-11 h-11 rounded-full',
                   'border border-neutral-200 dark:border-theme-border',
                   'bg-white text-neutral-700 dark:bg-theme-card dark:text-theme-body',
                   'hover:border-primary-300 hover:text-primary-600 hover:bg-primary-50 dark:hover:border-primary-400 dark:hover:text-primary-300 dark:hover:bg-theme-hover',
@@ -209,7 +209,7 @@ function Header() {
                 className={[
                   'lg:hidden',
                   'flex items-center justify-center',
-                  'w-9 h-9 rounded-lg',
+                  'w-11 h-11 rounded-lg',
                   'text-neutral-600 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
                   'hover:bg-neutral-100 dark:hover:bg-theme-hover',
                   'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
@@ -225,8 +225,8 @@ function Header() {
         </div>
       </header>
 
-      {/* Spacer — prevents content from hiding under fixed header */}
-      <div className="h-20 md:h-24" aria-hidden="true" />
+      {/* Spacer — matches unscrolled header height (h-24) */}
+      <div className="h-24" aria-hidden="true" />
 
       {/* Mobile / Tablet Menu */}
       <MobileMenu isOpen={menuOpen} onClose={closeMenu} />

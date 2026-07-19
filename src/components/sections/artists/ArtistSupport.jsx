@@ -14,7 +14,7 @@ function ArtistSupport() {
   return (
     <section
       aria-labelledby="support-heading"
-      className="py-16 md:py-24 bg-white border-t border-neutral-100"
+      className="py-16 md:py-24 bg-white dark:bg-theme-page border-t border-neutral-100 dark:border-theme-border/50"
     >
       <Container>
         <SectionHeading
@@ -33,12 +33,12 @@ function ArtistSupport() {
               radius="xl"
               bordered
               hover
-              className="flex flex-col gap-4 bg-neutral-50/60"
+              className="flex flex-col gap-4 bg-neutral-50/60 dark:bg-theme-card/60"
             >
-              <h3 className="text-2xl font-bold font-heading text-neutral-900">
+              <h3 className="text-2xl font-bold font-heading text-neutral-900 dark:text-theme-heading">
                 {item.title}
               </h3>
-              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-600 dark:text-theme-body leading-relaxed">
                 {item.description}
               </p>
             </Card>

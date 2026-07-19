@@ -51,7 +51,7 @@ function ClientsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="clients-section-title"
-      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
+      className="relative section-spacing bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
     >
       <Container size="xl" className="relative z-10 flex flex-col items-center">
         {/* ── Section Header ── */}
