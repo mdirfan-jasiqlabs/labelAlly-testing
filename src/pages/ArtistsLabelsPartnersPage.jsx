@@ -1,4 +1,5 @@
 import ArtistsHero         from '../components/sections/artists/ArtistsHero';
+import WhoWeWorkWith       from '../components/sections/artists/WhoWeWorkWith/WhoWeWorkWith';
 import ArtistSupport       from '../components/sections/artists/ArtistSupport';
 import ArtistCapabilities  from '../components/sections/artists/ArtistCapabilities';
 import ArtistsCta          from '../components/sections/artists/ArtistsCta';
@@ -8,7 +9,7 @@ import SEO                 from '../components/common/SEO';
  * ArtistsLabelsPartnersPage — Route: /artists-labels-partners
  *
  * Renders the full Artists & Labels page layout.
- * Content is sourced from src/data/artists.json.
+ * Content is sourced from src/data/artists.json and section data modules.
  */
 function ArtistsLabelsPartnersPage() {
   return (
@@ -19,6 +20,7 @@ function ArtistsLabelsPartnersPage() {
         canonical="https://label-ally-testing.vercel.app/artists-labels-partners"
       />
       <ArtistsHero />
+      <WhoWeWorkWith />
       <ArtistSupport />
       <ArtistCapabilities />
       <ArtistsCta />
