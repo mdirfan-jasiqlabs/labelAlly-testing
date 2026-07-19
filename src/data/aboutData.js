@@ -124,3 +124,118 @@ export const aboutIntroData = {
     }
   ]
 };
+
+export const missionVisionData = {
+  enabled: true,
+
+  eyebrow: {
+    text: 'Our Purpose',
+    enabled: true,
+  },
+
+  heading: 'Our Mission & Vision',
+
+  cards: [
+    {
+      id: 'mission',
+      type: 'mission',
+      label: 'Our Mission',
+      icon: 'target',
+      content: [
+        {
+          id: 'mission-text-1',
+          text: 'To ',
+          emphasis: false,
+        },
+        {
+          id: 'mission-text-2',
+          text: 'amplify the reach and value of independent music',
+          emphasis: true,
+        },
+        {
+          id: 'mission-text-3',
+          text: ', providing artists and labels with ',
+          emphasis: false,
+        },
+        {
+          id: 'mission-text-4',
+          text: 'transparent tools, distribution networks, and rights management solutions',
+          emphasis: true,
+        },
+        {
+          id: 'mission-text-5',
+          text: ' to sustain and grow their careers.',
+          emphasis: false,
+        },
+      ],
+      enabled: true,
+    },
+    {
+      id: 'vision',
+      type: 'vision',
+      label: 'Our Vision',
+      icon: 'eye',
+      content: [
+        {
+          id: 'vision-text-1',
+          text: 'To foster a ',
+          emphasis: false,
+        },
+        {
+          id: 'vision-text-2',
+          text: 'fair, transparent, and thriving global music ecosystem',
+          emphasis: true,
+        },
+        {
+          id: 'vision-text-3',
+          text: ' where ',
+          emphasis: false,
+        },
+        {
+          id: 'vision-text-4',
+          text: 'creators of all scales',
+          emphasis: true,
+        },
+        {
+          id: 'vision-text-5',
+          text: ' can seamlessly monetize and protect their intellectual property without barriers.',
+          emphasis: false,
+        },
+      ],
+      enabled: true,
+    },
+  ],
+
+  decorations: [
+    {
+      id: 'decoration-capsule-left',
+      type: 'capsule',
+      position: 'top-left',
+      enabled: true,
+    },
+    {
+      id: 'decoration-triangle-faded',
+      type: 'triangle-faded',
+      position: 'top-left-inner',
+      enabled: true,
+    },
+    {
+      id: 'decoration-triangle-outline',
+      type: 'triangle-outline',
+      position: 'top-right',
+      enabled: true,
+    },
+    {
+      id: 'decoration-capsule-right',
+      type: 'capsule',
+      position: 'top-right-inner',
+      enabled: true,
+    },
+    {
+      id: 'decoration-dots',
+      type: 'dots',
+      position: 'center',
+      enabled: true,
+    },
+  ],
+};
