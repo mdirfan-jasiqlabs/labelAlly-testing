@@ -1,5 +1,6 @@
 import ServicesHero from '../components/sections/services/ServicesHero';
 import ServicesGrid from '../components/sections/services/ServicesGrid';
+import ProcessSection from '../components/sections/services/ProcessSection';
 import ServicesCta  from '../components/sections/services/ServicesCta';
 import SEO          from '../components/common/SEO';
 
@@ -19,6 +20,7 @@ function ServicesPage() {
       />
       <ServicesHero />
       <ServicesGrid />
+      <ProcessSection />
       <ServicesCta />
     </main>
   );

@@ -87,6 +87,86 @@
       }
     ]
   },
+  "process": {
+    "enabled": true,
+    "image": {
+      "src": "/images/about/about-1.png",
+      "alt": "LabelAlly team collaborating on music distribution and creator services",
+      "width": 900,
+      "height": 1000
+    },
+    "heading": {
+      "badge": "How It Works",
+      "title": "Here's How Our Process Works"
+    },
+    "steps": [
+      {
+        "id": "connect",
+        "number": "01",
+        "title": "Connect With Us",
+        "description": "Reach out to discuss your music distribution, rights management, or channel optimization needs.",
+        "enabled": true
+      },
+      {
+        "id": "requirements",
+        "number": "02",
+        "title": "Share Your Requirements",
+        "description": "Provide details about your catalog, channels, and specific goals for your music or content.",
+        "enabled": true
+      },
+      {
+        "id": "onboarding",
+        "number": "03",
+        "title": "Onboarding & Setup",
+        "description": "We configure your distribution, rights management, or channel services with proper metadata and assets.",
+        "enabled": true
+      },
+      {
+        "id": "activation",
+        "number": "04",
+        "title": "Distribution & Service Activation",
+        "description": "Your content goes live across platforms with rights protection and monetization enabled.",
+        "enabled": true
+      },
+      {
+        "id": "support",
+        "number": "05",
+        "title": "Reporting & Ongoing Support",
+        "description": "Receive transparent reporting and dedicated support to optimize your revenue and growth.",
+        "enabled": true
+      }
+    ],
+    "highlights": [
+      {
+        "id": "creator-support",
+        "title": "Creator-Focused Support",
+        "icon": "users",
+        "accent": "rose",
+        "enabled": true
+      },
+      {
+        "id": "rights-management",
+        "title": "Secure Rights Management",
+        "icon": "shield-check",
+        "accent": "emerald",
+        "enabled": true
+      },
+      {
+        "id": "distribution",
+        "title": "Multi-Platform Distribution",
+        "icon": "globe",
+        "accent": "amber",
+        "enabled": true
+      },
+      {
+        "id": "reporting",
+        "title": "Transparent Reporting",
+        "icon": "bar-chart-2",
+        "accent": "cyan",
+        "enabled": true
+      }
+    ]
+  },
   "cta": {
     "heading": "Ready to Optimize Your Music?",
     "description": "Partner with us today. Reach out to get started with distribution, channel management, or rights auditing.",
