@@ -1,5 +1,5 @@
 import ContactIntroSection from '../components/sections/contact/ContactIntroSection';
-import ContactForm         from '../components/sections/contact/ContactForm';
+import ContactFormSection  from '../components/sections/contact/ContactFormSection';
 import SEO                 from '../components/common/SEO';
 
 /**
@@ -17,7 +17,7 @@ function ContactPage() {
         canonical="https://label-ally-testing.vercel.app/contact"
       />
       <ContactIntroSection />
-      <ContactForm />
+      <ContactFormSection />
     </main>
   );
 }

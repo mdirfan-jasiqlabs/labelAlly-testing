@@ -79,26 +79,41 @@
       "hours": "Business Hours"
     }
   },
+  "formSection": {
+    "enabled": true,
+    "badge": "Get In Touch",
+    "title": "Let's Start a Conversation",
+    "description": "Have a catalog, release, or partnership in mind? Reach out and our team will help you take the next step.",
+    "infoPanel": {
+      "title": "We're Here to Help",
+      "description": "Reach out to us using any of the channels below.",
+      "whatsappLabel": "Chat with us on WhatsApp"
+    },
+    "formCard": {
+      "heading": "Send Us a Message",
+      "description": "Complete the form below and our team will get back to you as soon as possible."
+    }
+  },
   "form": {
-    "heading": "Send a Message",
-    "description": "Complete the form below and one of our catalog coordinators will schedule a consultation.",
+    "heading": "Send Us a Message",
+    "description": "Complete the form below and our team will get back to you as soon as possible.",
     "labels": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "company": "Company / Label Name (Optional)",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company / Label (Optional)",
       "interest": "Service Interest",
-      "message": "Tell us about your project",
+      "message": "Message",
       "consent": "I agree that LabelAlly Entertainment may use my submitted information to contact me regarding this enquiry.",
       "submit": "Send Message"
     },
     "placeholders": {
-      "name": "Your name",
+      "name": "Your full name",
       "email": "yourname@example.com",
-      "phone": "+1 (555) 000-0000",
+      "phone": "+91 00000 00000",
       "company": "Your label or brand name",
       "interest": "Select a service...",
-      "message": "Provide details about your music catalog, release plans, or channel optimization goals..."
+      "message": "Tell us about your catalog, release plans, or how we can help..."
     },
     "interests": [
       "Select a service...",
@@ -114,7 +129,7 @@
     "status": {
       "success": {
         "heading": "Message Sent Successfully",
-        "message": "Thank you for reaching out. One of our catalog coordinators will evaluate your details and respond within 24–48 hours."
+        "message": "Thank you for reaching out. Our team will review your enquiry and respond soon."
       },
       "errors": {
         "serverError": "We encountered an error processing your request. Please try again later.",
