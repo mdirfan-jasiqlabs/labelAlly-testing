@@ -225,7 +225,7 @@ function Header() {
       </header>
 
       {/* Spacer — prevents content from hiding under fixed header */}
-      <div className="h-24" aria-hidden="true" />
+      <div className="h-20 md:h-24" aria-hidden="true" />
 
       {/* Mobile / Tablet Menu */}
       <MobileMenu isOpen={menuOpen} onClose={closeMenu} />

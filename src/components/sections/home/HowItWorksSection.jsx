@@ -44,7 +44,7 @@ function HowItWorksSection() {
 
             {/* Organic blob image wrapper */}
             <div
-              className="relative w-full aspect-[4/5] max-w-[420px] lg:max-w-none overflow-hidden z-10"
+              className="relative w-full aspect-[4/5] max-w-[320px] sm:max-w-[380px] lg:max-w-none overflow-hidden z-10"
               style={{
                 clipPath: 'url(#blob-clip)',
                 WebkitClipPath: 'url(#blob-clip)',
@@ -71,7 +71,7 @@ function HowItWorksSection() {
             {/* Title / Heading */}
             <h2
               id="process-heading"
-              className="font-heading font-black tracking-tight leading-[1.1] text-3xl sm:text-4xl md:text-5xl text-neutral-900"
+              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900"
             >
               <span className="block">{process.title.lineOne}</span>
               <span className="block text-primary-900">{process.title.lineTwo}</span>

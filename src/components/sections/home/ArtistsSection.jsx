@@ -384,7 +384,7 @@ function ArtistsSection() {
       <Container size="xl" className="relative z-10 flex flex-col items-center">
         
         {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-16">
+        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-10 md:mb-16">
           {/* Badge styled like other sections (bg-pink-600 white text rounded-lg) */}
           <span
             className={`inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-pink-600 mb-6 uppercase tracking-wider select-none transition-all duration-700 ease-out ${
@@ -397,7 +397,7 @@ function ArtistsSection() {
           {/* Heading */}
           <h2
             id="artists-section-title"
-            className={`font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-5 leading-tight tracking-tight transition-all duration-700 ease-out delay-100 ${
+            className={`font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-5 leading-tight tracking-tight transition-all duration-700 ease-out delay-100 ${
               isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -455,8 +455,8 @@ function ArtistsSection() {
             onBlur={() => setIsFocused(false)}
             tabIndex={0}
             aria-label="Featured artists slider"
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-6 px-1 md:px-2 rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/30"
-            style={{ scrollbarWidth: 'none' }}
+            className="flex gap-5 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-6 px-1 md:px-2 rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/30"
+            style={{ scrollbarWidth: 'none', touchAction: 'pan-x' }}
           >
             {displayArtists.map((artist, index) => {
               const socials = artist.socials || {};

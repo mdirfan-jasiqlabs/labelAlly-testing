@@ -201,7 +201,7 @@ function TestimonialsSection() {
           {heading && (
             <h2
               id="testimonials-section-heading"
-              className={`font-heading text-3xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] font-extrabold text-ink-primary mt-3 leading-tight tracking-tight text-center transition-all duration-700 ease-out delay-100 ${
+              className={`font-heading text-2xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] font-extrabold text-ink-primary mt-3 leading-tight tracking-tight text-center transition-all duration-700 ease-out delay-100 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -225,11 +225,11 @@ function TestimonialsSection() {
         </div>
 
         {/* ── Carousel Slider Container ── */}
-        <div className="w-full max-w-5xl mx-auto min-h-[36rem] sm:min-h-[30rem] lg:min-h-[26rem] flex items-center justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+        <div className="w-full max-w-5xl mx-auto flex items-center justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center w-full">
             
             {/* Left Column: Portrait in Organic Frame & Pulsing Soundwaves */}
-            <div className="lg:col-span-5 flex justify-center items-center relative h-80 sm:h-96 w-full">
+            <div className="lg:col-span-5 flex justify-center items-center relative h-64 sm:h-80 md:h-96 w-full">
               
               {/* Concentric soundwave pulsing rings */}
               <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
@@ -263,7 +263,7 @@ function TestimonialsSection() {
 
               {/* Organic fluid frame with gradient border */}
               <div 
-                className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-88 md:h-88 flex items-center justify-center z-10 transition-all duration-300 transform ${
+                className={`relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center z-10 transition-all duration-300 transform ${
                   isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
               >
@@ -303,7 +303,7 @@ function TestimonialsSection() {
                 </div>
 
                 {/* Hindi Testimonial Quote */}
-                <blockquote className="font-heading text-neutral-800 text-lg md:text-[1.28rem] font-medium leading-relaxed italic mb-8 max-w-xl">
+                <blockquote className="font-heading text-neutral-800 text-base md:text-[1.18rem] font-medium leading-relaxed italic mb-6 max-w-xl">
                   "{currentSlide.quote}"
                 </blockquote>
 
@@ -319,7 +319,7 @@ function TestimonialsSection() {
               </div>
 
               {/* ── Controls: Arrows & Navigation dots ── */}
-              <div className="flex flex-col sm:flex-row items-center gap-6 mt-12 w-full justify-between select-none">
+              <div className="flex flex-row items-center gap-5 mt-8 w-full justify-between select-none">
                 
                 {/* Left/Right Arrow Buttons */}
                 <div className="flex items-center gap-3 order-2 sm:order-1">

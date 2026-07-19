@@ -71,7 +71,7 @@ function HeroSection() {
         {/* ═══════════════════════════════════════════════════════
             MAIN HERO — Two column layout
         ═══════════════════════════════════════════════════════ */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 pt-8 md:pt-12 lg:pt-6 pb-0 lg:min-h-[640px] xl:min-h-[700px]">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-12 pt-6 md:pt-12 lg:pt-6 pb-0 lg:min-h-[640px] xl:min-h-[700px]">
 
           {/* ── LEFT COLUMN — Content ─────────────────────────── */}
           <div className="w-full lg:w-[49%] flex flex-col justify-center text-left animate-fade-up py-0 z-10">
@@ -91,7 +91,7 @@ function HeroSection() {
             {/* Heading */}
             <h1
               id="hero-heading"
-              className="font-heading font-black tracking-tight leading-[1.05] text-[2.6rem] sm:text-[3.4rem] md:text-[4rem] lg:text-[4.2rem] mb-6"
+              className="font-heading font-black tracking-tight leading-[1.05] text-[1.9rem] xs:text-[2.2rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[4.2rem] mb-4 sm:mb-6"
             >
               <span className="block text-ink-primary">{hero.heading.lineOne}</span>
               <span className="block">
@@ -101,12 +101,12 @@ function HeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="text-[0.95rem] sm:text-base leading-relaxed text-ink-secondary mb-8 max-w-[440px]">
+            <p className="text-sm sm:text-[0.95rem] sm:text-base leading-relaxed text-ink-secondary mb-6 sm:mb-8 max-w-[440px]">
               {hero.description}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 mb-8 sm:mb-10">
               {/* Primary */}
               <Link
                 to={hero.primaryCta.href}
@@ -166,7 +166,7 @@ function HeroSection() {
           </div>
 
           {/* ── RIGHT COLUMN — Artist Image ───────────────────── */}
-          <div className="relative w-full lg:w-[51%] flex items-end justify-center lg:justify-end self-end h-[340px] sm:h-[450px] lg:h-auto z-10">
+          <div className="relative w-full lg:w-[51%] flex items-end justify-center lg:justify-end self-end h-[260px] sm:h-[380px] md:h-[450px] lg:h-auto z-10">
 
             {/* Subtle radial indigo glow behind the image */}
             <div
@@ -219,7 +219,7 @@ function HeroSection() {
               </p>
 
               {/* Platform logos & Action Button */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-5 items-center justify-items-center">
+              <div className="grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-5 items-center justify-items-center">
                 {enabledPlatforms.map((platform) => (
                   <div
                     key={platform.id}

@@ -56,7 +56,7 @@ function ServicesSection() {
 
       <Container size="xl" className="relative z-10">
         {/* ── Responsive 3-Column Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 md:gap-x-12 md:gap-y-16 lg:gap-x-16 lg:gap-y-20 items-start">
           
           {/* Slot 1: Section Introduction Block */}
           <div
@@ -75,7 +75,7 @@ function ServicesSection() {
             {heading && (
               <h2
                 id="services-section-heading"
-                className="font-heading text-3xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] font-extrabold text-ink-primary mt-2 tracking-tight"
+                className="font-heading text-2xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] font-extrabold text-ink-primary mt-2 tracking-tight"
               >
                 {heading}
               </h2>

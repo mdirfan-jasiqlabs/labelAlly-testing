@@ -277,7 +277,7 @@ function AboutSection() {
             {/* Heading */}
             <h2
               id="about-heading"
-              className="font-heading font-black tracking-tight leading-[1.1] text-3xl sm:text-4xl md:text-5xl text-neutral-900"
+              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900"
             >
               {about.heading}
             </h2>
@@ -324,11 +324,11 @@ function AboutSection() {
                       key={card.id}
                       className={[
                         'flex flex-col items-center text-center',
-                        'p-8 rounded-[1.75rem] border border-neutral-100/70',
+                        'p-6 sm:p-8 rounded-[1.75rem] border border-neutral-100/70',
                         'bg-white shadow-[0_12px_36px_rgba(25,24,70,0.03)]',
                         'transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(25,24,70,0.06)]',
                         'snap-start shrink-0',
-                        'w-full md:w-[calc(50%-12px)] h-[360px]', // 1 card on mobile, 2 cards on desktop
+                        'w-full md:w-[calc(50%-12px)] min-h-[320px] sm:min-h-[360px]', // 1 card on mobile, 2 cards on desktop
                       ].join(' ')}
                     >
                       {/* Illustrated Icon */}

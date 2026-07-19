@@ -96,7 +96,7 @@ function WhatWeDoSection() {
             {/* Heading */}
             <h2
               id="what-we-do-heading"
-              className={`font-heading font-black tracking-tight leading-[1.12] text-[2.4rem] sm:text-[3.2rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 mb-4 transition-all duration-700 ease-out delay-100 ${
+              className={`font-heading font-black tracking-tight leading-[1.12] text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] lg:text-[3.8rem] text-neutral-900 mb-4 transition-all duration-700 ease-out delay-100 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -120,7 +120,7 @@ function WhatWeDoSection() {
 
             {/* Description */}
             <p
-              className={`text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 mb-8 max-w-[540px] transition-all duration-700 ease-out delay-200 ${
+              className={`text-sm sm:text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 mb-8 max-w-full sm:max-w-[540px] transition-all duration-700 ease-out delay-200 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -174,7 +174,7 @@ function WhatWeDoSection() {
             {/* Left Column of Masonry (Shorter top, Taller bottom) */}
             <div className="flex-1 flex flex-col gap-4 sm:gap-6 pt-6 lg:pt-8">
               {/* Top-Left Image: Shorter Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[140px] xs:h-[180px] sm:h-[240px] lg:h-[270px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
                 <img
                   src={images.topLeft}
                   alt="Creators collaborating around work desk"
@@ -185,7 +185,7 @@ function WhatWeDoSection() {
               </div>
               
               {/* Bottom-Left Image: Taller Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[180px] xs:h-[240px] sm:h-[300px] lg:h-[350px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
                 <img
                   src={images.bottomLeft}
                   alt="Music performance with guitar"
@@ -199,7 +199,7 @@ function WhatWeDoSection() {
             {/* Right Column of Masonry (Taller top, Shorter bottom) */}
             <div className="flex-1 flex flex-col gap-4 sm:gap-6">
               {/* Top-Right Image: Taller Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[180px] xs:h-[240px] sm:h-[300px] lg:h-[350px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[160px] sm:h-[260px] lg:h-[350px] bg-neutral-100">
                 <img
                   src={images.topRight}
                   alt="Team discussion around table"
@@ -210,7 +210,7 @@ function WhatWeDoSection() {
               </div>
               
               {/* Bottom-Right Image: Shorter Height */}
-              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[140px] xs:h-[180px] sm:h-[240px] lg:h-[270px] bg-neutral-100">
+              <div className="overflow-hidden rounded-3xl shadow-sm border border-neutral-200/40 w-full h-[120px] sm:h-[200px] lg:h-[270px] bg-neutral-100">
                 <img
                   src={images.bottomRight}
                   alt="Developer workspace"

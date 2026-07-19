@@ -71,7 +71,7 @@ function ClientsSection() {
           {heading && (
             <h2
               id="clients-section-title"
-              className={`font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-3 leading-tight tracking-tight text-center transition-all duration-700 ease-out delay-100 ${
+              className={`font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-3 leading-tight tracking-tight text-center transition-all duration-700 ease-out delay-100 ${
                 isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
