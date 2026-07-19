@@ -46,7 +46,7 @@ function ServicesSection() {
     <section
       ref={sectionRef}
       aria-labelledby="services-section-heading"
-      className="relative py-20 md:py-28 lg:py-32 bg-[#FCFCFF] border-t border-neutral-100 overflow-hidden"
+      className="relative py-20 md:py-28 lg:py-32 bg-surface-page border-t border-neutral-100 overflow-hidden"
     >
       {/* ── Subtle Dotted Background (aria-hidden) ── */}
       <div
@@ -89,10 +89,10 @@ function ServicesSection() {
               style={{ transformOrigin: 'left' }}
               aria-hidden="true"
             >
-              <span className="flex-1 h-full bg-[#96E012] rounded-full" />
-              <span className="flex-1 h-full bg-[#FF2E74] rounded-full" />
-              <span className="flex-1 h-full bg-[#FF7E40] rounded-full" />
-              <span className="flex-1 h-full bg-[#2B83FC] rounded-full" />
+              <span className="flex-1 h-full bg-brand-green rounded-full" />
+              <span className="flex-1 h-full bg-brand-pink rounded-full" />
+              <span className="flex-1 h-full bg-brand-orange rounded-full" />
+              <span className="flex-1 h-full bg-brand-blue rounded-full" />
             </div>
 
             {/* Description */}

@@ -51,8 +51,7 @@ function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative w-full overflow-hidden bg-surface-page"
-      style={{ background: 'linear-gradient(180deg, #fbfbfe 0%, #fcfcff 100%)' }}
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/30 to-surface-page"
     >
       {/* ── Background decorative blobs ──────────────────────────────── */}
       <div

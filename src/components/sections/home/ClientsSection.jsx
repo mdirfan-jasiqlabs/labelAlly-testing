@@ -87,10 +87,10 @@ function ClientsSection() {
             style={{ transformOrigin: 'center' }}
             aria-hidden="true"
           >
-            <span className="flex-1 h-full bg-[#96E012] rounded-full" />
-            <span className="flex-1 h-full bg-[#FF2E74] rounded-full" />
-            <span className="flex-1 h-full bg-[#FF7E40] rounded-full" />
-            <span className="flex-1 h-full bg-[#2B83FC] rounded-full" />
+            <span className="flex-1 h-full bg-brand-green rounded-full" />
+            <span className="flex-1 h-full bg-brand-pink rounded-full" />
+            <span className="flex-1 h-full bg-brand-orange rounded-full" />
+            <span className="flex-1 h-full bg-brand-blue rounded-full" />
           </div>
         </div>
 

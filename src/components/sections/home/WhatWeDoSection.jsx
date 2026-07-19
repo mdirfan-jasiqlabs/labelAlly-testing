@@ -39,7 +39,7 @@ function WhatWeDoSection() {
     <section
       ref={sectionRef}
       aria-labelledby="what-we-do-heading"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#f9fafc] to-[#f6f8fb] py-20 md:py-28 lg:py-32 border-t border-neutral-100"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/70 to-neutral-100/45 py-20 md:py-28 lg:py-32 border-t border-neutral-100"
     >
       {/* ── Soft Background Glows ──────────────────────────────── */}
       <div
@@ -101,7 +101,7 @@ function WhatWeDoSection() {
               }`}
             >
               <span className="block">{title.line1}</span>
-              <span className="block mt-1 text-[#0F172A]">{title.line2}</span>
+              <span className="block mt-1 text-ink-primary">{title.line2}</span>
             </h2>
 
             {/* Brand Divider */}
@@ -112,10 +112,10 @@ function WhatWeDoSection() {
               style={{ transformOrigin: 'left' }}
               aria-hidden="true"
             >
-              <span className="flex-1 h-full bg-[#FF2E74] rounded-full" />
-              <span className="flex-1 h-full bg-[#FF7E40] rounded-full" />
-              <span className="flex-1 h-full bg-[#96E012] rounded-full" />
-              <span className="flex-1 h-full bg-[#2B83FC] rounded-full" />
+              <span className="flex-1 h-full bg-brand-pink rounded-full" />
+              <span className="flex-1 h-full bg-brand-orange rounded-full" />
+              <span className="flex-1 h-full bg-brand-green rounded-full" />
+              <span className="flex-1 h-full bg-brand-blue rounded-full" />
             </div>
 
             {/* Description */}

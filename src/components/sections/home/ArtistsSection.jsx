@@ -421,10 +421,10 @@ function ArtistsSection() {
             style={{ transformOrigin: 'center' }}
             aria-hidden="true"
           >
-            <span className="flex-1 h-full bg-[#FF2E74] rounded-full" />
-            <span className="flex-1 h-full bg-[#FF7E40] rounded-full" />
-            <span className="flex-1 h-full bg-[#96E012] rounded-full" />
-            <span className="flex-1 h-full bg-[#2B83FC] rounded-full" />
+            <span className="flex-1 h-full bg-brand-pink rounded-full" />
+            <span className="flex-1 h-full bg-brand-orange rounded-full" />
+            <span className="flex-1 h-full bg-brand-green rounded-full" />
+            <span className="flex-1 h-full bg-brand-blue rounded-full" />
           </div>
         </div>
 
@@ -519,7 +519,7 @@ function ArtistsSection() {
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Visit ${artist.name}'s Instagram`}
-                          className={`text-neutral-400 hover:text-[#FF2E74] transition-colors focus:outline-none focus:text-[#FF2E74] ${
+                          className={`text-neutral-400 hover:text-brand-pink transition-colors focus:outline-none focus:text-brand-pink ${
                             socials.instagram ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
                           }`}
                         >

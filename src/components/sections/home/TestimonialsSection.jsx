@@ -217,10 +217,10 @@ function TestimonialsSection() {
             style={{ transformOrigin: 'center' }}
             aria-hidden="true"
           >
-            <span className="flex-1 h-full bg-[#96E012] rounded-full" />
-            <span className="flex-1 h-full bg-[#FF2E74] rounded-full" />
-            <span className="flex-1 h-full bg-[#FF7E40] rounded-full" />
-            <span className="flex-1 h-full bg-[#2B83FC] rounded-full" />
+            <span className="flex-1 h-full bg-brand-green rounded-full" />
+            <span className="flex-1 h-full bg-brand-pink rounded-full" />
+            <span className="flex-1 h-full bg-brand-orange rounded-full" />
+            <span className="flex-1 h-full bg-brand-blue rounded-full" />
           </div>
         </div>
 
@@ -243,14 +243,14 @@ function TestimonialsSection() {
                 aria-hidden="true"
                 className="absolute bottom-4 left-[10%] right-[10%] flex items-end justify-center gap-1.5 h-12 opacity-25 z-0 pointer-events-none"
               >
-                <span className="w-1 bg-[#FF2E74] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.1s', height: '40%' }} />
-                <span className="w-1 bg-[#FF7E40] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.3s', height: '70%' }} />
-                <span className="w-1 bg-[#96E012] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.5s', height: '100%' }} />
-                <span className="w-1 bg-[#2B83FC] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.2s', height: '60%' }} />
-                <span className="w-1 bg-[#FF2E74] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.4s', height: '80%' }} />
-                <span className="w-1 bg-[#FF7E40] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.6s', height: '50%' }} />
-                <span className="w-1 bg-[#96E012] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.7s', height: '90%' }} />
-                <span className="w-1 bg-[#2B83FC] rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.3s', height: '40%' }} />
+                <span className="w-1 bg-brand-pink rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.1s', height: '40%' }} />
+                <span className="w-1 bg-brand-orange rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.3s', height: '70%' }} />
+                <span className="w-1 bg-brand-green rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.5s', height: '100%' }} />
+                <span className="w-1 bg-brand-blue rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.2s', height: '60%' }} />
+                <span className="w-1 bg-brand-pink rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.4s', height: '80%' }} />
+                <span className="w-1 bg-brand-orange rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.6s', height: '50%' }} />
+                <span className="w-1 bg-brand-green rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.7s', height: '90%' }} />
+                <span className="w-1 bg-brand-blue rounded-t-full animate-wave-bounce" style={{ animationDelay: '0.3s', height: '40%' }} />
               </div>
 
               {/* Floating music note symbols */}
