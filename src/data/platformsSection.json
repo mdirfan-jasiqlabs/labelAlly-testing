@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "heading": "We Distribute On",
+  "highlightText": "All Major Platforms",
+  "moreLabel": "+ more platforms",
+  "moreHref": "/services",
+  "platforms": [
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "logo": "/images/platforms/spotify.svg",
+      "alt": "Spotify Music Logo",
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "apple-music",
+      "name": "Apple Music",
+      "logo": "/images/platforms/apple-music.svg",
+      "alt": "Apple Music Logo",
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "logo": "/images/platforms/youtube.svg",
+      "alt": "YouTube Music Logo",
+      "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "amazon-music",
+      "name": "Amazon Music",
+      "logo": "/images/platforms/amazon-music.svg",
+      "alt": "Amazon Music Logo",
+      "order": 4,
+      "enabled": true
+    },
+    {
+      "id": "resso",
+      "name": "Resso",
+      "logo": "/images/platforms/resso.svg",
+      "alt": "Resso Music Logo",
+      "order": 5,
+      "enabled": true
+    },
+    {
+      "id": "jiosaavn",
+      "name": "JioSaavn",
+      "logo": "/images/platforms/jiosaavn.svg",
+      "alt": "JioSaavn Music Logo",
+      "order": 6,
+      "enabled": true
+    },
+    {
+      "id": "hungama",
+      "name": "Hungama",
+      "logo": "/images/platforms/hungama.svg",
+      "alt": "Hungama Music Logo",
+      "order": 7,
+      "enabled": true
+    }
+  ]
+}

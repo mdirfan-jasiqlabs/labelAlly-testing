@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, ShieldCheck, BarChart3, Headphones, Music2 } from 'lucide-react';
 import Container from '../../common/Container';
 import homeData from '../../../data/home.json';
+import platformsData from '../../../data/platformsSection.json';
 
 /**
  * HeroSection — Reference-driven homepage hero (v2).
@@ -39,7 +40,13 @@ function WhatsAppIcon({ size = 18 }) {
 }
 
 function HeroSection() {
-  const { hero, platformStrip } = homeData;
+  const { hero } = homeData;
+
+  const enabledPlatforms = platformsData?.platforms
+    ? [...platformsData.platforms]
+        .filter((p) => p.enabled)
+        .sort((a, b) => a.order - b.order)
+    : [];
 
   return (
     <section
@@ -200,34 +207,45 @@ function HeroSection() {
         {/* ═══════════════════════════════════════════════════════
             PLATFORM STRIP — inside section, below hero columns
         ═══════════════════════════════════════════════════════ */}
-        {platformStrip?.items?.length > 0 && (
+        {platformsData && platformsData.enabled && enabledPlatforms.length > 0 && (
           <div className="mt-8 mb-0">
             <div
-              className="rounded-2xl border border-neutral-200/80 bg-white shadow-platform-strip px-6 py-5"
+              className="rounded-2xl border border-neutral-200/80 bg-white shadow-platform-strip px-6 py-6"
             >
               {/* Heading */}
-              <p className="text-center text-sm font-semibold text-ink-primary mb-5">
-                {platformStrip.headingPrimary}{' '}
-                <span className="text-accent-500">{platformStrip.headingAccent}</span>
+              <p className="text-center text-sm font-semibold text-ink-primary mb-6 select-none">
+                {platformsData.heading}{' '}
+                <span className="text-accent-500">{platformsData.highlightText}</span>
               </p>
 
-              {/* Platform logos / text pills */}
-              <div className="flex items-center justify-between gap-3 overflow-x-auto scrollbar-hide pb-1">
-                {platformStrip.items.map((platform) => (
+              {/* Platform logos & Action Button */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-5 items-center justify-items-center">
+                {enabledPlatforms.map((platform) => (
                   <div
                     key={platform.id}
-                    className="flex-shrink-0 flex items-center justify-center"
+                    className="w-full flex items-center justify-center py-2"
                   >
-                    <PlatformLogo id={platform.id} label={platform.label} />
+                    <img
+                      src={platform.logo}
+                      alt={platform.alt}
+                      width={120}
+                      height={32}
+                      loading="eager"
+                      decoding="async"
+                      className="h-6 w-auto object-contain filter hover:brightness-105 transition-all duration-200 select-none pointer-events-none"
+                    />
                   </div>
                 ))}
 
-                {/* Overflow pill */}
-                {platformStrip.overflow && (
-                  <div className="flex-shrink-0">
-                    <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-neutral-200 text-xs font-semibold text-ink-muted bg-neutral-50 whitespace-nowrap">
-                      {platformStrip.overflow}
-                    </span>
+                {/* Overflow Pill / More platforms Link */}
+                {platformsData.moreLabel && (
+                  <div className="w-full flex items-center justify-center py-2">
+                    <Link
+                      to={platformsData.moreHref || '/services'}
+                      className="inline-flex items-center justify-center w-full h-8 px-3 rounded-full border border-neutral-200 text-[11px] sm:text-xs font-semibold text-neutral-500 hover:text-neutral-900 hover:border-neutral-300 hover:bg-neutral-50 transition-colors duration-250 whitespace-nowrap text-center focus-ring"
+                    >
+                      {platformsData.moreLabel}
+                    </Link>
                   </div>
                 )}
               </div>
@@ -240,79 +258,6 @@ function HeroSection() {
       {/* Bottom spacing */}
       <div className="h-10" aria-hidden="true" />
     </section>
-  );
-}
-
-/**
- * PlatformLogo — Renders an SVG-based branded logo for each platform.
- * Uses inline SVG for crisp rendering — no external requests.
- */
-function PlatformLogo({ id, label }) {
-  const logos = {
-    'spotify': (
-      <div className="flex items-center gap-1.5">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#1DB954" aria-hidden="true">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-        </svg>
-        <span className="text-sm font-bold text-[#1DB954]">Spotify</span>
-      </div>
-    ),
-    'apple-music': (
-      <div className="flex items-center gap-1.5">
-        <svg width="20" height="22" viewBox="0 0 814 1000" fill="currentColor" className="text-neutral-900" aria-hidden="true">
-          <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 380.8 17.4 233 77.7 113.8c28.1-57.1 78.4-93.8 133.7-94.2 52.6-.6 96.6 35.7 156.7 35.7 60.4 0 97.2-35.7 163.7-35.7 62.3.6 113.1 35.7 148.4 92.5zm-252.5-184.4C524.4 27.8 579.2 0 633.5 0c6.7 49.5-12.8 98.3-42.8 136.1-31.3 40.8-79 71.8-129.2 67.5-7.9-48.3 12.7-98.2 44.1-133.1z" />
-        </svg>
-        <span className="text-sm font-bold text-neutral-900">Music</span>
-      </div>
-    ),
-    'youtube': (
-      <div className="flex items-center gap-1.5">
-        <svg width="26" height="18" viewBox="0 0 576 512" fill="#FF0000" aria-hidden="true">
-          <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
-        </svg>
-        <span className="text-sm font-bold text-neutral-900">YouTube</span>
-      </div>
-    ),
-    'amazon-music': (
-      <div className="flex items-center gap-1">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9900" aria-hidden="true">
-          <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705a.659.659 0 01-.753.074c-1.058-.878-1.249-1.286-1.83-2.122-1.748 1.786-2.989 2.32-5.258 2.32-2.684 0-4.779-1.657-4.779-4.975 0-2.591 1.404-4.351 3.398-5.212 1.73-.77 4.147-.905 5.993-1.114v-.416c0-.765.06-1.667-.391-2.327-.397-.591-1.154-.838-1.823-.838-1.237 0-2.343.635-2.614 1.95-.056.287-.275.57-.566.584l-3.165-.342c-.267-.06-.563-.274-.484-.679C5.758 2.786 8.65 1.807 11.232 1.807c1.305 0 3.009.346 4.039 1.332C16.543 4.289 16.5 5.822 16.5 7.48v6.134c0 1.843.765 2.654 1.486 3.652.253.354.309.776-.013 1.039l-2.83 2.49z" />
-        </svg>
-        <span className="text-sm font-bold text-neutral-900">amazon <span className="text-[#FF9900]">music</span></span>
-      </div>
-    ),
-    'resso': (
-      <div className="flex items-center gap-1.5">
-        <div className="w-5 h-5 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center" aria-hidden="true">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="white">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-          </svg>
-        </div>
-        <span className="text-sm font-bold text-neutral-900">Resso</span>
-      </div>
-    ),
-    'jiosaavn': (
-      <div className="flex items-center gap-1.5">
-        <div className="w-5 h-5 rounded-full bg-[#00A85A] flex items-center justify-center" aria-hidden="true">
-          <span className="text-[7px] font-black text-white leading-none">Jio</span>
-        </div>
-        <span className="text-sm font-bold text-neutral-900">JioSaavn</span>
-      </div>
-    ),
-    'hungama': (
-      <div className="flex items-center gap-1.5">
-        <div className="w-5 h-5 rounded-sm bg-[#E8230D] flex items-center justify-center" aria-hidden="true">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="white">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-          </svg>
-        </div>
-        <span className="text-sm font-bold text-neutral-900">hungama</span>
-      </div>
-    ),
-  };
-
-  return logos[id] ?? (
-    <span className="text-sm font-semibold text-ink-secondary px-2">{label}</span>
   );
 }
 
