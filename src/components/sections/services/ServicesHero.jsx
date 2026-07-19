@@ -51,19 +51,17 @@ function ServicesHero() {
           )}
 
           {/* Heading */}
-          <GlowEffect color="primary" intensity="md" className="w-full">
-            <h1
-              id="services-hero-title"
-              className="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-neutral-900 dark:text-theme-heading tracking-tight leading-none mb-6"
-            >
-              {hero.title}
-            </h1>
-          </GlowEffect>
+          <h1
+            id="services-hero-title"
+            className="font-heading font-black text-4xl sm:text-5xl md:text-6xl text-neutral-900 dark:text-theme-heading tracking-tight leading-none mb-6"
+          >
+            {hero.title}
+          </h1>
 
           {/* Decorative Underline */}
           <div
             aria-hidden="true"
-            className="h-1 w-20 bg-gradient-to-r from-brand-pink via-brand-orange to-brand-green rounded-full mb-6"
+            className="h-1 w-20 bg-brand-pink rounded-full mb-6"
           />
 
           {/* Description */}
