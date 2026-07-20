@@ -1,54 +1,66 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import Container from '../../common/Container';
 import homeData from '../../../data/home.json';
+import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
+import { homeProcessStyles as styles } from '../../../config/homeProcessStyles';
 
 /**
  * HowItWorksSection — Homepage process steps section matching reference direction.
  *
  * Layout:
  * - Two-column split layout: Left side organic rounded team photo, Right side 3 process steps.
- * - Spacing and sizing match the approved reference exactly.
  * - Dynamic data driven via home.json.
  */
 function HowItWorksSection() {
   const { process } = homeData;
+  const reduceMotion = useReducedMotion();
 
   if (!process?.steps?.length) return null;
+
+  const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
+  const mediaVariants = reduceMotion ? motionConfig.mediaReduced : motionConfig.media;
+  const stepNumberVariants = reduceMotion
+    ? motionConfig.stepNumberReduced
+    : motionConfig.stepNumber;
 
   return (
     <section
       role="region"
       aria-labelledby="process-heading"
-      className="relative w-full bg-white dark:bg-theme-section section-spacing overflow-hidden"
+      className="relative w-full overflow-hidden bg-theme-page dark:bg-neutral-950 section-spacing"
     >
-      {/* ── Background curved / radial lavender shape (right) ── */}
+      {/* Background radial — hero-aligned dark mode */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-1/4 w-[600px] h-[600px] rounded-full opacity-[0.20] z-0"
-        style={{ background: 'radial-gradient(circle, rgba(139,120,255,0.15) 0%, transparent 70%)' }}
+        className="pointer-events-none absolute right-0 top-1/4 z-0 h-[600px] w-[600px] rounded-full bg-primary-400/10 blur-3xl opacity-20 dark:bg-violet-500/10 dark:opacity-30"
       />
 
       <Container size="2xl" className="relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-20 items-center justify-between">
 
-          {/* ── Left Column — Asymmetrical Organic Image (46%) ── */}
-          <div className="w-full lg:w-[46%] flex flex-col items-center justify-center relative shrink-0">
-            {/* Dotted grid backdrop decoration */}
+          {/* Left Column — Organic blob image */}
+          <motion.div
+            className="w-full lg:w-[46%] flex flex-col items-center justify-center relative shrink-0"
+            variants={mediaVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={motionConfig.viewport}
+          >
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-6 -top-6 w-40 h-40 opacity-[0.22] z-0"
-              style={{
-                backgroundImage: 'radial-gradient(#ec4899 1.5px, transparent 1.5px)',
-                backgroundSize: '16px 16px',
-              }}
+              className="pointer-events-none absolute -left-6 -top-6 z-0 h-40 w-40 opacity-[0.22] dark:opacity-[0.14] bg-[radial-gradient(theme(colors.orange.400)_1.5px,transparent_1.5px)] bg-[length:16px_16px]"
             />
 
-            {/* Organic blob image wrapper */}
             <div
-              className="relative w-full aspect-[4/5] max-w-[320px] sm:max-w-[380px] lg:max-w-none overflow-hidden z-10"
+              className={[
+                'relative z-10 w-full aspect-[4/5] max-w-[320px] sm:max-w-[380px] lg:max-w-none overflow-hidden',
+                'drop-shadow-[0_20px_40px_rgba(31,35,90,0.08)]',
+                'dark:drop-shadow-[0_20px_44px_rgba(0,0,0,0.45)]',
+                'ring-1 ring-violet-200/30 dark:ring-violet-400/15 rounded-2xl',
+              ].join(' ')}
               style={{
                 clipPath: 'url(#blob-clip)',
                 WebkitClipPath: 'url(#blob-clip)',
-                filter: 'drop-shadow(0 20px 40px rgba(31, 35, 90, 0.08))',
               }}
             >
               <img
@@ -61,78 +73,96 @@ function HowItWorksSection() {
                 className="w-full h-full object-cover pointer-events-none select-none"
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* ── Right Column — Steps (54%) ── */}
-          <div className="w-full lg:w-[54%] flex flex-col items-start text-left">
-            {/* Badge */}
-            <span className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-pink-600 mb-6">
+          {/* Right Column — Steps */}
+          <motion.div
+            className="w-full lg:w-[54%] flex flex-col items-start text-left"
+            variants={motionConfig.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={motionConfig.viewport}
+          >
+            <motion.span className={styles.badge} variants={itemVariants}>
               {process.badge}
-            </span>
+            </motion.span>
 
-            {/* Title / Heading */}
-            <h2
+            <motion.h2
               id="process-heading"
-              className="font-heading font-black tracking-tight leading-[1.1] text-2xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading"
+              className={styles.heading}
+              variants={itemVariants}
             >
               <span className="block">{process.title.lineOne}</span>
-              <span className="block text-primary-900 dark:text-primary-200">{process.title.lineTwo}</span>
-            </h2>
+              <span className={`block ${styles.headingAccent}`}>
+                {process.title.lineTwo}
+              </span>
+            </motion.h2>
 
-            {/* Small Brand Divider */}
-            <div
+            <motion.div
               aria-hidden="true"
-              className="h-1 w-20 bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 rounded-full mt-4 mb-10"
+              className={styles.divider}
+              variants={itemVariants}
             />
 
-            {/* Steps Timeline (Ordered List) */}
-            <ol className="w-full flex flex-col gap-8 md:gap-10">
+            <motion.ol
+              className="w-full flex flex-col gap-8 md:gap-10"
+              variants={motionConfig.container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={motionConfig.viewport}
+            >
               {process.steps.map((step, idx) => {
                 const isLast = idx === process.steps.length - 1;
+
                 return (
-                  <li key={step.number} className="relative flex items-start gap-5 group">
-                    {/* Vertical Connector Line (behind circles, centering aligned) */}
-                    {!isLast && (
+                  <motion.li
+                    key={step.number}
+                    variants={itemVariants}
+                    className="relative flex items-start gap-5 group"
+                  >
+                    {!isLast ? (
                       <div
                         aria-hidden="true"
                         className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-neutral-200 dark:bg-theme-border pointer-events-none"
                       />
-                    )}
+                    ) : null}
 
-                    {/* Step circle */}
-                    <div
+                    <motion.div
                       aria-hidden="true"
                       className={[
-                        'flex items-center justify-center shrink-0',
+                        'relative z-10 flex items-center justify-center shrink-0',
                         'w-10 h-10 rounded-full',
-                        'bg-pink-600 text-white font-heading font-extrabold text-sm',
-                        'shadow-[0_8px_20px_rgba(219,39,119,0.22)]',
-                        'transition-all duration-300 group-hover:scale-105',
-                        'z-10',
+                        'bg-orange-500 text-white',
+                        'font-heading font-extrabold text-sm',
+                        'border border-orange-500',
+                        'shadow-sm',
+                        'transition-all duration-300',
+                        'group-hover:bg-orange-600 group-hover:border-orange-600',
+                        'group-hover:scale-105 motion-reduce:group-hover:scale-100',
+                        'group-hover:shadow-card-hover',
                       ].join(' ')}
+                      variants={stepNumberVariants}
                     >
                       {step.number}
-                    </div>
+                    </motion.div>
 
-                    {/* Step Copy */}
                     <div className="flex flex-col gap-1.5 pt-1 max-w-xl">
-                      <h3 className="font-heading font-black text-lg text-neutral-900 dark:text-theme-heading leading-snug">
+                      <h3 className="font-heading font-black text-lg text-ink-primary dark:text-theme-heading leading-snug">
                         {step.title}
                       </h3>
-                      <p className="text-[0.88rem] sm:text-[0.92rem] leading-relaxed text-neutral-500 dark:text-theme-muted">
+                      <p className="text-[0.88rem] sm:text-[0.92rem] leading-relaxed text-ink-muted dark:text-theme-muted">
                         {step.description}
                       </p>
                     </div>
-                  </li>
+                  </motion.li>
                 );
               })}
-            </ol>
-          </div>
+            </motion.ol>
+          </motion.div>
 
         </div>
       </Container>
 
-      {/* ── Custom Clip Path for Organic Blob Shape ── */}
       <svg width="0" height="0" className="absolute pointer-events-none select-none" aria-hidden="true">
         <defs>
           <clipPath id="blob-clip" clipPathUnits="objectBoundingBox">
