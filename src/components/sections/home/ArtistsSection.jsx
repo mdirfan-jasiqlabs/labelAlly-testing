@@ -1,7 +1,67 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Music, Mic2 } from 'lucide-react';
 import Container from '../../common/Container';
 import homeData from '../../../data/home.json';
+import { homeArtistsStyles as styles } from '../../../config/homeArtistsStyles';
+import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
+
+const SPECTRUM_BAR_COUNT = 10;
+
+const DOT_PATTERN_LEFT = (
+  <svg fill="currentColor" viewBox="0 0 100 100" aria-hidden="true">
+    <defs>
+      <pattern id="dot-pattern-left" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.5" />
+      </pattern>
+    </defs>
+    <rect width="100" height="100" fill="url(#dot-pattern-left)" />
+  </svg>
+);
+
+const DOT_PATTERN_RIGHT = (
+  <svg fill="currentColor" viewBox="0 0 100 100" aria-hidden="true">
+    <defs>
+      <pattern id="dot-pattern-right" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.5" />
+      </pattern>
+    </defs>
+    <rect width="100" height="100" fill="url(#dot-pattern-right)" />
+  </svg>
+);
+
+function ArtistsSectionBackground() {
+  const { background: bg } = styles;
+
+  return (
+    <div className={bg.layer} aria-hidden="true">
+      <div className={bg.glow} />
+      <div className={bg.orbPrimary} />
+      <div className={bg.orbAccent} />
+      <div className={bg.flowLine} />
+
+      <div className={bg.spectrumRow}>
+        {Array.from({ length: SPECTRUM_BAR_COUNT }, (_, index) => (
+          <span
+            key={`artists-spectrum-${index}`}
+            className={bg.spectrumBar}
+            style={{ animationDelay: `${(index % 7) * 110}ms` }}
+          />
+        ))}
+      </div>
+
+      <div className={[bg.dotGrid, bg.dotGridLeft].join(' ')}>{DOT_PATTERN_LEFT}</div>
+      <div className={[bg.dotGrid, bg.dotGridRight].join(' ')}>{DOT_PATTERN_RIGHT}</div>
+
+      <div className={bg.musicNote} style={{ animationDelay: '0s' }}>
+        <Music size={42} className="stroke-[1.5]" />
+      </div>
+      <div className={bg.microphone} style={{ animationDelay: '1.8s' }}>
+        <Mic2 size={42} className="stroke-[1.5]" />
+      </div>
+    </div>
+  );
+}
 
 // Self-contained high-fidelity SVGs for social platforms
 const InstagramIcon = (props) => (
@@ -62,9 +122,14 @@ const animateScroll = (element, targetScrollLeft, duration, callback) => {
  */
 function ArtistsSection() {
   const { featuredArtists } = homeData;
+  const reduceMotion = useReducedMotion();
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isIntersecting, setIsIntersecting] = useState(false);
+
+  const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
+  const lineVariants = reduceMotion ? motionConfig.lineReduced : motionConfig.line;
+  const cardVariants = reduceMotion ? motionConfig.cardReduced : motionConfig.card;
   
   // User Autoplay controls state
   const [isHovered, setIsHovered] = useState(false);
@@ -328,125 +393,66 @@ function ArtistsSection() {
     <section
       ref={sectionRef}
       aria-labelledby="artists-section-title"
-      className="relative section-spacing bg-surface-page overflow-hidden border-t border-neutral-100 dark:border-theme-border/50"
+      className={styles.section}
     >
-      {/* ── Soft Background Decorations ── */}
-      <div className="absolute inset-0 bg-artistGlow pointer-events-none opacity-80" />
+      <ArtistsSectionBackground />
 
-      {/* Dotted Grid Decoration (Left) */}
-      <svg
-        className="absolute top-16 left-6 w-24 h-24 text-neutral-200/80 dark:text-theme-border/40 opacity-60 pointer-events-none hidden md:block"
-        fill="currentColor"
-        viewBox="0 0 100 100"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern id="dot-pattern-left" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" />
-          </pattern>
-        </defs>
-        <rect width="100" height="100" fill="url(#dot-pattern-left)" />
-      </svg>
-
-      {/* Dotted Grid Decoration (Right) */}
-      <svg
-        className="absolute top-16 right-6 w-24 h-24 text-neutral-200/80 dark:text-theme-border/40 opacity-60 pointer-events-none hidden md:block"
-        fill="currentColor"
-        viewBox="0 0 100 100"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern id="dot-pattern-right" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" />
-          </pattern>
-        </defs>
-        <rect width="100" height="100" fill="url(#dot-pattern-right)" />
-      </svg>
-
-      {/* Floating Music Note (Left) */}
-      <div
-        className="absolute top-40 left-[8%] md:left-[12%] lg:left-[15%] text-brand-pink opacity-25 pointer-events-none animate-float hidden md:block"
-        aria-hidden="true"
-      >
-        <Music size={42} className="stroke-[1.5]" />
-      </div>
-
-      {/* Floating Microphone (Right) */}
-      <div
-        className="absolute top-44 right-[8%] md:right-[12%] lg:right-[15%] text-brand-indigo opacity-25 pointer-events-none animate-float hidden md:block"
-        style={{ animationDelay: '1.8s' }}
-        aria-hidden="true"
-      >
-        <Mic2 size={42} className="stroke-[1.5]" />
-      </div>
-
-      {/* ── Main Layout Container ── */}
       <Container size="xl" className="relative z-10 flex flex-col items-center">
-        
-        {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-10 md:mb-16">
-          {/* Badge styled like other sections (bg-pink-600 white text rounded-lg) */}
-          <span
-            className={`inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-pink-600 mb-6 uppercase tracking-wider select-none transition-all duration-700 ease-out ${
-              isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-          >
-            {badge}
-          </span>
 
-          {/* Heading */}
-          <h2
+        <motion.div
+          className={styles.header}
+          variants={motionConfig.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={motionConfig.viewport}
+        >
+          <motion.span className={styles.badge} variants={itemVariants}>
+            {badge}
+          </motion.span>
+
+          <motion.h2
             id="artists-section-title"
-            className={`font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-5 leading-tight tracking-tight transition-all duration-700 ease-out delay-100 ${
-              isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={styles.heading}
+            variants={itemVariants}
           >
             {title.lineOne} {title.lineTwo}
-          </h2>
+          </motion.h2>
 
-          {/* Supporting Description */}
-          <p
-            className={`text-sm sm:text-base md:text-lg text-ink-secondary mt-4 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ease-out delay-200 ${
-              isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <motion.p className={styles.description} variants={itemVariants}>
             {description}
-          </p>
+          </motion.p>
 
-          {/* Brand Divider */}
-          <div
-            className={`flex items-center gap-1.5 w-20 h-1 mt-7 transition-all duration-700 ease-out delay-300 ${
-              isIntersecting ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-            }`}
-            style={{ transformOrigin: 'center' }}
+          <motion.div
+            className={styles.brandDivider}
+            variants={lineVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={motionConfig.viewport}
             aria-hidden="true"
           >
             <span className="flex-1 h-full bg-brand-pink rounded-full" />
             <span className="flex-1 h-full bg-brand-orange rounded-full" />
             <span className="flex-1 h-full bg-brand-green rounded-full" />
             <span className="flex-1 h-full bg-brand-blue rounded-full" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* ── Carousel Slider Component ── */}
-        <div 
-          className="relative w-full px-4 md:px-12 mt-4"
+        <div
+          className={styles.carouselWrap}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={() => setIsHovered(true)}
           onTouchEnd={() => setIsHovered(false)}
         >
           
-          {/* Navigation Arrow Left (Positioned outside with negative absolute coordinates) */}
           <button
             onClick={handlePrev}
             aria-label="View previous artist"
-            className="absolute left-2 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border shadow-sm hover:shadow-md text-neutral-500 dark:text-theme-muted hover:text-brand-pink hover:bg-neutral-50 dark:hover:bg-theme-hover hover:border-neutral-300 dark:hover:border-theme-border active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
+            className={[styles.navButton, styles.navButtonLeft].join(' ')}
           >
             <ChevronLeft size={20} className="stroke-[2.5]" />
           </button>
 
-          {/* Scroll Track */}
           <div
             ref={scrollRef}
             onScroll={handleScroll}
@@ -455,7 +461,7 @@ function ArtistsSection() {
             onBlur={() => setIsFocused(false)}
             tabIndex={0}
             aria-label="Featured artists slider"
-            className="flex gap-5 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-6 px-1 md:px-2 rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/30"
+            className={styles.scrollTrack}
             style={{ scrollbarWidth: 'none', touchAction: 'pan-x' }}
           >
             {displayArtists.map((artist, index) => {
@@ -463,30 +469,27 @@ function ArtistsSection() {
               const isClone = index < 3 || index >= artists.length + 3;
 
               return (
-                <div
+                <motion.div
                   key={`${artist.id}-clone-${index}`}
                   aria-hidden={isClone ? 'true' : 'false'}
                   tabIndex={isClone ? -1 : 0}
-                  className={`snap-start shrink-0 w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] transition-all duration-700 ease-out ${
-                    isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-                  }`}
-                  style={{
-                    transitionDelay: isClone ? '0ms' : `${(index - 3) * 120 + 350}ms`,
-                  }}
+                  className={styles.slide}
+                  variants={isClone ? undefined : cardVariants}
+                  initial={isClone ? false : 'hidden'}
+                  whileInView={isClone ? undefined : 'visible'}
+                  viewport={motionConfig.viewport}
+                  transition={isClone ? undefined : { delay: (index - 3) * 0.08 }}
                 >
-                  {/* Clean premium SaaS product style card without outer padding */}
-                  <div className="group relative overflow-hidden bg-white dark:bg-theme-card border border-neutral-100 dark:border-theme-border/50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
-                    
-                    {/* Featured Artist Badge */}
+                  <div className={styles.card}>
+
                     {artist.featured && (
-                      <div className="absolute top-4 right-4 z-10 bg-brand-pink text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm flex items-center gap-1 select-none animate-pulse-slow">
+                      <div className={styles.featuredBadge}>
                         <Star size={8} className="fill-current" />
                         <span>Featured</span>
                       </div>
                     )}
 
-                    {/* Image Container (Stretched to top/left/right borders of the card, aspect-[4/3]) */}
-                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-neutral-50 dark:bg-theme-hover">
+                    <div className={styles.imageWrap}>
                       <img
                         src={artist.image}
                         alt={`${artist.name} - ${artist.role}`}
@@ -494,102 +497,98 @@ function ArtistsSection() {
                         decoding="async"
                         width="340"
                         height="255"
-                        className={`w-full h-full object-cover select-none transition-transform duration-700 ease-out group-hover:scale-105 ${artist.imageClass || ''}`}
+                        className={[styles.image, artist.imageClass || ''].filter(Boolean).join(' ')}
                       />
                     </div>
 
-                    {/* Meta Content (Simple, clean, minimal padding at the bottom) */}
-                    <div className="flex-1 flex flex-col items-center text-center p-6 pb-8">
-                      <h3 className="font-heading text-base font-bold text-neutral-900 dark:text-theme-heading leading-snug">
-                        {artist.name}
-                      </h3>
-                      <p className="text-xs text-neutral-500 dark:text-theme-muted font-medium mt-0.5">
-                        {artist.role}
-                      </p>
+                    <div className={styles.cardBody}>
+                      <h3 className={styles.artistName}>{artist.name}</h3>
+                      <p className={styles.artistRole}>{artist.role}</p>
 
-                      {/* Small subtle accent divider */}
-                      <div className="w-6 h-[2px] bg-brand-pink/30 my-3.5 rounded-full" />
+                      <div className={styles.accentLine} aria-hidden="true" />
 
-                      {/* Social Actions (Subtle minimal flat icons - slightly enlarged) */}
                       <div className="flex gap-4.5">
-                        {/* Instagram */}
                         <a
                           href={socials.instagram || '#'}
                           target={isClone ? undefined : '_blank'}
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Visit ${artist.name}'s Instagram`}
-                          className={`text-neutral-400 dark:text-theme-muted hover:text-brand-pink transition-colors focus:outline-none focus:text-brand-pink ${
-                            socials.instagram ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
-                          }`}
+                          className={[
+                            styles.socialLink,
+                            'hover:text-brand-pink focus:text-brand-pink',
+                            socials.instagram ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
+                          ].join(' ')}
                         >
                           <InstagramIcon className="w-5.5 h-5.5" />
                         </a>
 
-                        {/* YouTube */}
                         <a
                           href={socials.youtube || '#'}
                           target={isClone ? undefined : '_blank'}
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Visit ${artist.name}'s YouTube channel`}
-                          className={`text-neutral-400 dark:text-theme-muted hover:text-[#FF0000] transition-colors focus:outline-none focus:text-[#FF0000] ${
-                            socials.youtube ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
-                          }`}
+                          className={[
+                            styles.socialLink,
+                            'hover:text-red-600 focus:text-red-600',
+                            socials.youtube ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
+                          ].join(' ')}
                         >
                           <YoutubeIcon className="w-5.5 h-5.5" />
                         </a>
 
-                        {/* Spotify */}
                         <a
                           href={socials.spotify || '#'}
                           target={isClone ? undefined : '_blank'}
                           rel="noopener noreferrer"
                           tabIndex={isClone ? -1 : 0}
                           aria-label={`Listen to ${artist.name} on Spotify`}
-                          className={`text-neutral-400 dark:text-theme-muted hover:text-[#1DB954] transition-colors focus:outline-none focus:text-[#1DB954] ${
-                            socials.spotify ? '' : 'opacity-30 cursor-not-allowed pointer-events-none'
-                          }`}
+                          className={[
+                            styles.socialLink,
+                            'hover:text-emerald-500 focus:text-emerald-500',
+                            socials.spotify ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
+                          ].join(' ')}
                         >
                           <SpotifyIcon className="w-5.5 h-5.5" />
                         </a>
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
-          {/* Navigation Arrow Right (Positioned outside with negative absolute coordinates) */}
           <button
             onClick={handleNext}
             aria-label="View next artist"
-            className="absolute right-2 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border shadow-sm hover:shadow-md text-neutral-500 dark:text-theme-muted hover:text-brand-pink hover:bg-neutral-50 dark:hover:bg-theme-hover hover:border-neutral-300 dark:hover:border-theme-border active:scale-95 transition-all duration-200 hidden md:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-pink/30"
+            className={[styles.navButton, styles.navButtonRight].join(' ')}
           >
             <ChevronRight size={20} className="stroke-[2.5]" />
           </button>
         </div>
 
-        {/* ── Carousel Pagination Dots ── */}
-        <div
-          className={`flex justify-center gap-2 mt-10 transition-all duration-700 ease-out delay-500 ${
-            isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+        <motion.div
+          className={styles.dotsWrap}
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={motionConfig.viewport}
         >
           {artists.map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
               aria-label={`Show slide ${index + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 ${
-                activeIndex === index
-                  ? 'w-6 bg-brand-pink'
-                  : 'w-2 bg-neutral-300 dark:bg-theme-border hover:bg-neutral-400 dark:hover:bg-theme-muted/60'
-              }`}
+              aria-current={activeIndex === index ? 'true' : undefined}
+              className={[
+                styles.dot,
+                activeIndex === index ? styles.dotActive : styles.dotIdle,
+              ].join(' ')}
             />
           ))}
-        </div>
+        </motion.div>
 
       </Container>
     </section>
