@@ -44,7 +44,7 @@ function ServicesGrid() {
         'relative w-full',
         'bg-surface-page dark:bg-theme-page',
         'pt-2 sm:pt-4 md:pt-6',
-        'pb-14 sm:pb-16 md:pb-20 lg:pb-24',
+        'pb-7 sm:pb-8 md:pb-10 lg:pb-12',
         'transition-colors duration-250',
       ].join(' ')}
     >

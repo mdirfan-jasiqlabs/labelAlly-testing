@@ -19,7 +19,7 @@ function MissionVision() {
   const sections = [missionVision.mission, missionVision.vision];
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-50/60 dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/50">
+    <section className="py-8 md:py-12 bg-neutral-50/60 dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/50">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {sections.map((sec, index) => {

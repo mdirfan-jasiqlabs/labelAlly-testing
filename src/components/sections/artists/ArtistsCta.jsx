@@ -19,7 +19,7 @@ function ArtistsCta() {
     <GradientBackground
       as="section"
       variant="subtle"
-      className="py-16 md:py-24 border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden relative"
+      className="py-8 md:py-12 border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden relative"
     >
       <Container>
         <GlowEffect color="primary" intensity="md" className="max-w-4xl mx-auto">

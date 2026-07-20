@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useMemo } from 'react';
-import { useReducedMotion } from 'framer-motion';
 import { platformMarqueeStyles as styles } from '../../config/platformMarqueeStyles';
 
 /** Logos whose wordmarks need a light/official dark-mode SVG variant. */
@@ -67,6 +65,38 @@ function PlatformLogo({ platform, className, hideFromAssistiveTech = false }) {
   );
 }
 
+function LogoSequence({ items, moreLabel, moreHref, duplicate = false }) {
+  return (
+    <ul
+      className={duplicate ? styles.sequenceDuplicate : styles.sequence}
+      aria-hidden={duplicate ? 'true' : undefined}
+      aria-label={duplicate ? undefined : 'Distribution platforms'}
+    >
+      {items.map((platform) => (
+        <li key={`${duplicate ? 'dup' : 'src'}-${platform.id}`} className={styles.item}>
+          <PlatformLogo
+            platform={platform}
+            className={styles.logo}
+            hideFromAssistiveTech={duplicate}
+          />
+        </li>
+      ))}
+
+      {moreLabel ? (
+        <li className={styles.item}>
+          {duplicate ? (
+            <span className={styles.more}>{moreLabel}</span>
+          ) : (
+            <Link to={moreHref || '/services'} className={styles.more}>
+              {moreLabel}
+            </Link>
+          )}
+        </li>
+      ) : null}
+    </ul>
+  );
+}
+
 /**
  * PlatformMarquee — Reusable infinite CSS logo marquee.
  *
@@ -87,16 +117,7 @@ function PlatformMarquee({
   support = null,
   className = '',
 }) {
-  const reduceMotion = useReducedMotion();
-
-  const marqueeItems = useMemo(
-    () => (reduceMotion ? items : [...items, ...items]),
-    [items, reduceMotion],
-  );
-
   if (!items.length) return null;
-
-  const originalCount = items.length;
 
   return (
     <div className={[styles.root, className].filter(Boolean).join(' ')}>
@@ -113,41 +134,19 @@ function PlatformMarquee({
         )}
 
         <div className={styles.marquee}>
-          <div className={styles.fadeLeft} aria-hidden="true" />
-          <div className={styles.fadeRight} aria-hidden="true" />
-
-          <ul
-            className={styles.track}
-            aria-label="Distribution platforms"
-          >
-            {marqueeItems.map((platform, index) => {
-              const isDuplicate = !reduceMotion && index >= originalCount;
-
-              return (
-                <li
-                  key={`${platform.id}-${index}`}
-                  className={styles.item}
-                  aria-hidden={isDuplicate ? 'true' : undefined}
-                >
-                  <div className={styles.logoWrap}>
-                    <PlatformLogo
-                      platform={platform}
-                      className={styles.logo}
-                      hideFromAssistiveTech={isDuplicate}
-                    />
-                  </div>
-                </li>
-              );
-            })}
-
-            {moreLabel ? (
-              <li className={styles.item}>
-                <Link to={moreHref || '/services'} className={styles.more}>
-                  {moreLabel}
-                </Link>
-              </li>
-            ) : null}
-          </ul>
+          <div className={styles.track}>
+            <LogoSequence
+              items={items}
+              moreLabel={moreLabel}
+              moreHref={moreHref}
+            />
+            <LogoSequence
+              items={items}
+              moreLabel={moreLabel}
+              moreHref={moreHref}
+              duplicate
+            />
+          </div>
         </div>
       </div>
     </div>

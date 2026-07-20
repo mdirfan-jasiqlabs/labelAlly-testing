@@ -24,7 +24,7 @@ function ContactFormSection() {
       className={[
         'relative w-full overflow-x-clip',
         'bg-surface-page dark:bg-theme-page',
-        'py-12 sm:py-16 md:py-20 lg:py-24',
+        'py-6 sm:py-8 md:py-10 lg:py-12',
         'transition-colors duration-250 motion-reduce:transition-none',
       ].join(' ')}
     >

@@ -331,7 +331,7 @@ export default {
         'hero-glow-pulse': 'hero-glow-pulse 3.8s ease-in-out infinite',
         'hero-ring-spin': 'hero-ring-spin 22s linear infinite',
         'hero-orb-drift': 'hero-orb-drift 8s ease-in-out infinite',
-        'platform-marquee': 'platform-marquee 32s linear infinite',
+        'platform-marquee': 'platform-marquee 28s linear infinite',
         'wave-flow': 'wave-flow 14s ease-in-out infinite alternate',
         'wave-flow-delayed': 'wave-flow 18s ease-in-out 1.5s infinite alternate-reverse',
         'spectrum-pulse': 'spectrum-pulse 2.4s ease-in-out infinite',

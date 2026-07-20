@@ -18,19 +18,15 @@ export const platformMarqueeStyles = {
     'mb-2 sm:mb-3',
   ].join(' '),
   supportHighlight: 'text-orange-500 dark:text-orange-400',
-  marquee: 'group relative w-full overflow-hidden',
-  fadeLeft: [
-    'pointer-events-none absolute inset-y-0 left-0 z-10',
-    'w-8 sm:w-12 md:w-16',
-    'bg-gradient-to-r from-theme-page to-transparent',
-  ].join(' '),
-  fadeRight: [
-    'pointer-events-none absolute inset-y-0 right-0 z-10',
-    'w-8 sm:w-12 md:w-16',
-    'bg-gradient-to-l from-theme-page to-transparent',
+  marquee: [
+    'group relative w-full overflow-hidden',
+    '[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]',
+    '[-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]',
+    'motion-reduce:[mask-image:none] motion-reduce:[-webkit-mask-image:none]',
+    'motion-reduce:overflow-visible',
   ].join(' '),
   track: [
-    'flex w-max shrink-0 items-center',
+    'flex w-max flex-nowrap items-center',
     'animate-platform-marquee',
     'motion-reduce:animate-none',
     'motion-reduce:w-full motion-reduce:max-w-full',
@@ -39,20 +35,20 @@ export const platformMarqueeStyles = {
     'will-change-transform',
     'motion-reduce:will-change-auto',
   ].join(' '),
+  sequence: [
+    'flex list-none m-0 p-0 items-center shrink-0',
+    'motion-reduce:flex-wrap motion-reduce:justify-center',
+  ].join(' '),
+  sequenceDuplicate: 'flex list-none m-0 p-0 items-center shrink-0 motion-reduce:hidden',
   item: [
-    'flex shrink-0 items-center justify-center',
+    'flex items-center justify-center shrink-0',
     'px-4 sm:px-6 md:px-7 lg:px-8',
     'py-1',
   ].join(' '),
-  logoWrap: [
-    'flex h-8 w-[5.5rem] sm:h-9 sm:w-[6.5rem] md:h-10 md:w-[7.5rem]',
-    'items-center justify-center',
-  ].join(' '),
   logo: [
-    'h-5 sm:h-6 md:h-7 w-full max-h-full',
+    'h-5 sm:h-6 md:h-7 w-auto',
+    'max-w-[5.5rem] sm:max-w-[6.5rem] md:max-w-[7.5rem]',
     'object-contain object-center',
-    'opacity-90 dark:opacity-95',
-    'dark:drop-shadow-[0_0_10px_rgba(255,255,255,0.06)]',
     'select-none pointer-events-none',
   ].join(' '),
   more: [

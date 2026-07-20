@@ -14,7 +14,7 @@ function ArtistSupport() {
   return (
     <section
       aria-labelledby="support-heading"
-      className="py-16 md:py-24 bg-white dark:bg-theme-page border-t border-neutral-100 dark:border-theme-border/50"
+      className="py-8 md:py-12 bg-white dark:bg-theme-page border-t border-neutral-100 dark:border-theme-border/50"
     >
       <Container>
         <SectionHeading

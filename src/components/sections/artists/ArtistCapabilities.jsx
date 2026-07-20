@@ -21,7 +21,7 @@ function ArtistCapabilities() {
   return (
     <section
       aria-labelledby="capabilities-heading"
-      className="py-16 md:py-24 bg-neutral-50/60 dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/50"
+      className="py-8 md:py-12 bg-neutral-50/60 dark:bg-theme-section border-t border-neutral-100 dark:border-theme-border/50"
     >
       <Container>
         <SectionHeading

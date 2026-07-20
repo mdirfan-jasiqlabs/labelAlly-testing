@@ -30,7 +30,7 @@ function OfficeCardsSection() {
       className={[
         'relative z-20 w-full overflow-visible',
         'bg-surface-page dark:bg-theme-page',
-        'pb-12 sm:pb-16 md:pb-20 lg:pb-24',
+        'pb-6 sm:pb-8 md:pb-10 lg:pb-12',
         'transition-colors duration-250',
       ].join(' ')}
     >
