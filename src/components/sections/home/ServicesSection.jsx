@@ -1,16 +1,49 @@
-import { useState, useEffect, useRef } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Container from '../../common/Container';
 import servicesData from '../../../data/servicesSection.json';
+import { homeServicesStyles as styles } from '../../../config/homeServicesStyles';
+import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
+
+const SPECTRUM_BAR_COUNT = 8;
+
+function ServicesSectionBackground() {
+  const { background: bg } = styles;
+
+  return (
+    <div className={bg.layer} aria-hidden="true">
+      <div className={bg.dotGrid} />
+      <div className={bg.orbPrimary} />
+      <div className={bg.orbAccent} />
+      <div className={bg.flowLine} />
+      <div className={bg.flowLineAlt} />
+
+      <div className={bg.spectrumRow}>
+        {Array.from({ length: SPECTRUM_BAR_COUNT }, (_, index) => (
+          <span
+            key={`services-spectrum-${index}`}
+            className={bg.spectrumBar}
+            style={{ animationDelay: `${(index % 6) * 100}ms` }}
+          />
+        ))}
+      </div>
+
+      {styles.sparkPositions.map((position, index) => (
+        <span
+          key={`services-node-${index}`}
+          className={[bg.node, position].join(' ')}
+          style={{ animationDelay: `${index * 0.6}s` }}
+        />
+      ))}
+    </div>
+  );
+}
 
 /**
- * ServicesSection — Displays dynamic, JSON-driven LabelAlly services.
- * Implements a premium, light-theme layout matching the reference UI.
+ * ServicesSection — JSON-driven LabelAlly services grid.
  */
 function ServicesSection() {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const sectionRef = useRef(null);
+  const reduceMotion = useReducedMotion();
 
-  // Return null if configuration is missing or disabled
   if (!servicesData || !servicesData.enabled) return null;
 
   const { badge, heading, description, services } = servicesData;
@@ -18,105 +51,75 @@ function ServicesSection() {
 
   if (enabledServices.length === 0) return null;
 
-  // Intersection Observer for scroll entrance animations
-  useEffect(() => {
-    const currentSectionRef = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (currentSectionRef) {
-      observer.observe(currentSectionRef);
-    }
-
-    return () => {
-      if (currentSectionRef) {
-        observer.unobserve(currentSectionRef);
-      }
-    };
-  }, []);
+  const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
+  const lineVariants = reduceMotion ? motionConfig.lineReduced : motionConfig.line;
+  const cardVariants = reduceMotion ? motionConfig.cardReduced : motionConfig.card;
 
   return (
     <section
-      ref={sectionRef}
       aria-labelledby="services-section-heading"
-      className="relative section-spacing bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
+      className={styles.section}
     >
-      {/* ── Subtle Dotted Background (aria-hidden) ── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] dark:bg-[radial-gradient(#334155_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70 dark:opacity-30 pointer-events-none z-0"
-      />
+      <ServicesSectionBackground />
 
       <Container size="xl" className="relative z-10">
-        {/* ── Responsive 3-Column Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 md:gap-x-12 md:gap-y-16 lg:gap-x-16 lg:gap-y-20 items-start">
-          
-          {/* Slot 1: Section Introduction Block */}
-          <div
-            className={`flex flex-col text-center items-center md:text-left md:items-start transition-all duration-700 ease-out ${
-              isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            {/* Badge */}
-            {badge && (
-              <span className="inline-flex items-center px-4 py-1.5 rounded-sm text-xs font-bold text-white bg-brand-pink mb-5 uppercase tracking-wider select-none">
-                {badge}
-              </span>
-            )}
+        <div className={styles.grid}>
 
-            {/* Heading */}
-            {heading && (
-              <h2
+          <motion.div
+            className={styles.intro}
+            variants={motionConfig.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={motionConfig.viewport}
+          >
+            {badge ? (
+              <motion.span className={styles.badge} variants={itemVariants}>
+                {badge}
+              </motion.span>
+            ) : null}
+
+            {heading ? (
+              <motion.h2
                 id="services-section-heading"
-                className="font-heading text-2xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15] font-extrabold text-ink-primary mt-2 tracking-tight"
+                className={styles.heading}
+                variants={itemVariants}
               >
                 {heading}
-              </h2>
-            )}
+              </motion.h2>
+            ) : null}
 
-            {/* Small Brand Divider */}
-            <div
-              className={`flex items-center gap-1.5 w-20 h-1 mt-6 mb-7 transition-all duration-700 ease-out delay-200 ${
-                isIntersecting ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-              }`}
-              style={{ transformOrigin: 'left' }}
+            <motion.div
+              className={styles.brandDivider}
+              variants={lineVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={motionConfig.viewport}
               aria-hidden="true"
             >
               <span className="flex-1 h-full bg-brand-green rounded-full" />
               <span className="flex-1 h-full bg-brand-pink rounded-full" />
               <span className="flex-1 h-full bg-brand-orange rounded-full" />
               <span className="flex-1 h-full bg-brand-blue rounded-full" />
-            </div>
+            </motion.div>
 
-            {/* Description */}
-            {description && (
-              <p className="text-[0.95rem] text-ink-secondary leading-relaxed max-w-sm">
+            {description ? (
+              <motion.p className={styles.description} variants={itemVariants}>
                 {description}
-              </p>
-            )}
-          </div>
+              </motion.p>
+            ) : null}
+          </motion.div>
 
-          {/* Slots 2-6: Dynamic Service Cards */}
-          {enabledServices.map((service, index) => (
-            <div
+          {enabledServices.map((service) => (
+            <motion.div
               key={service.id}
-              className={`flex flex-col items-center text-center p-4 transition-all duration-700 ease-out group ${
-                isIntersecting
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${(index + 1) * 100}ms` }}
+              className={styles.serviceCard}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={motionConfig.viewport}
             >
-              {/* Service Icon Container with subtle lift/scale hover animation */}
-              {service.icon && (
-                <div className="w-20 h-20 sm:w-22 sm:h-22 flex items-center justify-center mb-6 transition-all duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-105 select-none">
+              {service.icon ? (
+                <div className={styles.iconWrap}>
                   <img
                     src={service.icon}
                     alt={service.alt || service.title}
@@ -124,21 +127,16 @@ function ServicesSection() {
                     decoding="async"
                     width="88"
                     height="88"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain dark:brightness-110 dark:contrast-[1.03]"
                   />
                 </div>
-              )}
+              ) : null}
 
-              {/* Service Title */}
-              <h3 className="font-heading text-lg sm:text-xl font-bold text-ink-primary leading-snug">
-                {service.title}
-              </h3>
+              <div className={styles.iconAccent} aria-hidden="true" />
 
-              {/* Service Description */}
-              <p className="text-sm text-ink-secondary leading-relaxed mt-3 max-w-xs">
-                {service.description}
-              </p>
-            </div>
+              <h3 className={styles.serviceTitle}>{service.title}</h3>
+              <p className={styles.serviceDescription}>{service.description}</p>
+            </motion.div>
           ))}
 
         </div>

@@ -1,16 +1,37 @@
-import { useState, useEffect, useRef } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Container from '../../common/Container';
 import clientsData from '../../../data/clientsSection.json';
+import { homeClientsStyles as styles } from '../../../config/homeClientsStyles';
+import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
+
+function ClientsSectionBackground() {
+  const { background: bg } = styles;
+
+  return (
+    <div className={bg.layer} aria-hidden="true">
+      <div className={bg.orbPrimary} />
+      <div className={bg.orbAccent} />
+      <div className={bg.flowLineLeft} />
+      <div className={bg.flowLineRight} />
+
+      {styles.sparkPositions.map((position, index) => (
+        <span
+          key={`client-spark-${index}`}
+          className={[bg.spark, position].join(' ')}
+          style={{ animationDelay: `${index * 0.45}s` }}
+        />
+      ))}
+    </div>
+  );
+}
 
 /**
- * ClientsSection — Displays a premium light-theme clients logo grid.
+ * ClientsSection — Premium clients logo grid with individual cards.
  * Sourced fully from src/data/clientsSection.json.
  */
 function ClientsSection() {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const sectionRef = useRef(null);
+  const reduceMotion = useReducedMotion();
 
-  // If section is not configured or disabled, do not render anything
   if (!clientsData || !clientsData.enabled) return null;
 
   const { badge, heading, grid, logos } = clientsData;
@@ -18,103 +39,88 @@ function ClientsSection() {
 
   if (enabledLogos.length === 0) return null;
 
-  // Intersection Observer for viewport scroll entrance animation
-  useEffect(() => {
-    const currentSectionRef = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
+  const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
+  const lineVariants = reduceMotion ? motionConfig.lineReduced : motionConfig.line;
+  const cardVariants = reduceMotion ? motionConfig.cardReduced : motionConfig.card;
 
-    if (currentSectionRef) {
-      observer.observe(currentSectionRef);
-    }
-
-    return () => {
-      if (currentSectionRef) {
-        observer.unobserve(currentSectionRef);
-      }
-    };
-  }, []);
-
-  // Dynamically build grid classes from config
   const gridMobileClass = grid?.mobile || 'grid-cols-2';
   const gridTabletClass = grid?.tablet || 'md:grid-cols-2';
   const gridDesktopClass = grid?.desktop || 'lg:grid-cols-4';
 
   return (
     <section
-      ref={sectionRef}
       aria-labelledby="clients-section-title"
-      className="relative section-spacing bg-surface-page border-t border-neutral-100 dark:border-theme-border/50 overflow-hidden"
+      className={styles.section}
     >
-      <Container size="xl" className="relative z-10 flex flex-col items-center">
-        {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-12">
-          {/* Badge */}
-          {badge && (
-            <span
-              className={`inline-flex items-center px-4 py-1.5 rounded-sm text-xs font-bold text-white bg-brand-pink mb-6 uppercase tracking-wider select-none transition-all duration-700 ease-out ${
-                isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-            >
-              {badge}
-            </span>
-          )}
+      <ClientsSectionBackground />
 
-          {/* Heading */}
-          {heading && (
-            <h2
+      <Container size="xl" className="relative z-10 flex flex-col items-center">
+        <motion.div
+          className={styles.header}
+          variants={motionConfig.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={motionConfig.viewport}
+        >
+          {badge ? (
+            <motion.span className={styles.badge} variants={itemVariants}>
+              {badge}
+            </motion.span>
+          ) : null}
+
+          {heading ? (
+            <motion.h2
               id="clients-section-title"
-              className={`font-heading text-2xl sm:text-4xl md:text-5xl font-extrabold text-ink-primary mt-3 leading-tight tracking-tight text-center transition-all duration-700 ease-out delay-100 ${
-                isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+              className={styles.heading}
+              variants={itemVariants}
             >
               {heading}
-            </h2>
-          )}
+            </motion.h2>
+          ) : null}
 
-          {/* Brand Divider */}
-          <div
-            className={`flex items-center gap-1.5 w-20 h-1 mt-7 transition-all duration-700 ease-out delay-200 ${
-              isIntersecting ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-            }`}
-            style={{ transformOrigin: 'center' }}
+          <motion.div
+            className={styles.brandDivider}
+            variants={lineVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={motionConfig.viewport}
             aria-hidden="true"
           >
             <span className="flex-1 h-full bg-brand-green rounded-full" />
             <span className="flex-1 h-full bg-brand-pink rounded-full" />
             <span className="flex-1 h-full bg-brand-orange rounded-full" />
             <span className="flex-1 h-full bg-brand-blue rounded-full" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* ── Responsive Logo Grid ── */}
-        <div
-          className={`w-full grid ${gridMobileClass} ${gridTabletClass} ${gridDesktopClass} border-t border-l border-neutral-200/70 dark:border-theme-border/50 bg-white dark:bg-theme-card shadow-soft transition-all duration-1000 ease-out delay-300 ${
-            isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}
+        <motion.div
+          className={[styles.logoGrid, gridMobileClass, gridTabletClass, gridDesktopClass].join(' ')}
+          variants={motionConfig.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={motionConfig.viewport}
         >
           {enabledLogos.map((logo) => (
-            <div
+            <motion.div
               key={logo.id}
-              className="border-r border-b border-neutral-200/70 dark:border-theme-border/50 bg-white dark:bg-theme-card flex items-center justify-center p-4 md:p-6 aspect-[1.6] md:aspect-[1.5] transition-colors duration-300 hover:bg-neutral-50/30 dark:hover:bg-theme-hover group"
+              className={styles.logoCard}
+              variants={cardVariants}
             >
-              <img
-                src={logo.image}
-                alt={logo.alt || logo.name}
-                loading="lazy"
-                decoding="async"
-                className="max-w-[85%] max-h-[85%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-              />
-            </div>
+              <div className={styles.logoGlow} aria-hidden="true" />
+              <div className={styles.logoImageWrap}>
+                <img
+                  src={logo.image}
+                  alt={logo.alt || logo.name}
+                  loading="lazy"
+                  decoding="async"
+                  width="200"
+                  height="120"
+                  className={styles.logoImage}
+                />
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
