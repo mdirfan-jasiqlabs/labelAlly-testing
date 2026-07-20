@@ -4,8 +4,8 @@ import { homeHeroStyles } from './homeHeroStyles';
 export const homeArtistsStyles = {
   section: [
     'relative section-spacing overflow-hidden',
-    'bg-surface-page dark:bg-neutral-950',
-    'border-t border-neutral-100 dark:border-theme-border/50',
+    'bg-surface-page',
+    'border-t border-theme-border/50',
   ].join(' '),
 
   background: {
@@ -36,8 +36,8 @@ export const homeArtistsStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white uppercase tracking-wider select-none',
-    'bg-orange-500 shadow-sm mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground uppercase tracking-wider select-none',
+    'bg-theme-action-primary shadow-sm mb-6',
   ].join(' '),
 
   heading: [
@@ -55,17 +55,17 @@ export const homeArtistsStyles = {
   navButton: [
     'absolute top-1/2 -translate-y-1/2 z-20',
     'w-11 h-11 rounded-full',
-    'bg-white dark:bg-neutral-900/80',
-    'border border-neutral-200/80 dark:border-theme-border/70',
+    'bg-theme-card',
+    'border border-theme-border/80',
     'shadow-sm hover:shadow-md',
-    'text-neutral-500 dark:text-theme-muted',
-    'hover:text-orange-500 dark:hover:text-orange-400',
-    'hover:bg-neutral-50 dark:hover:bg-neutral-800/80',
-    'hover:border-orange-500/30 dark:hover:border-orange-400/25',
+    'text-ink-muted dark:text-theme-muted',
+    'hover:text-theme-action-primary',
+    'hover:bg-theme-hover',
+    'hover:border-theme-action-primary/30',
     'active:scale-95 transition-all duration-200',
     'hidden md:flex items-center justify-center',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
-    'focus-visible:ring-offset-2 focus-visible:ring-offset-surface-page dark:focus-visible:ring-offset-neutral-950',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+    'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
   ].join(' '),
 
   navButtonLeft: 'left-2 md:-left-4 lg:-left-6',
@@ -74,7 +74,7 @@ export const homeArtistsStyles = {
   scrollTrack: [
     'flex gap-5 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory',
     'py-6 px-1 md:px-2 rounded-3xl',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/40',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary/40',
   ].join(' '),
 
   slide:
@@ -82,26 +82,26 @@ export const homeArtistsStyles = {
 
   card: [
     'group relative overflow-hidden flex flex-col h-full',
-    'bg-white dark:bg-neutral-900/75',
-    'border border-neutral-100 dark:border-theme-border/60',
+    'bg-theme-card dark:bg-theme-card/75',
+    'border border-theme-border/50 dark:border-theme-border/60',
     'rounded-2xl shadow-sm',
     'ring-1 ring-transparent dark:ring-violet-400/10',
     'transition-all duration-300 ease-out',
     'hover:-translate-y-1 hover:shadow-card-hover',
-    'hover:border-orange-500/30 dark:hover:border-orange-400/25',
-    'dark:hover:ring-orange-400/10',
+    'hover:border-theme-action-primary/30',
+    'dark:hover:ring-theme-action-primary/10',
     'motion-reduce:hover:translate-y-0',
   ].join(' '),
 
   featuredBadge: [
     'absolute top-4 right-4 z-10',
-    'bg-orange-500 text-white',
+    'bg-theme-action-primary text-theme-action-primaryForeground',
     'text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm',
     'flex items-center gap-1 select-none animate-pulse-slow',
   ].join(' '),
 
   imageWrap:
-    'relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-neutral-50 dark:bg-neutral-800/50',
+    'relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-theme-secondary',
 
   image: [
     'w-full h-full object-cover object-[center_20%]',
@@ -111,21 +111,21 @@ export const homeArtistsStyles = {
 
   cardBody: 'flex-1 flex flex-col items-center text-center p-6 pb-8',
   artistName:
-    'font-heading text-base font-bold text-neutral-900 dark:text-theme-heading leading-snug',
-  artistRole: 'text-xs text-neutral-500 dark:text-theme-muted font-medium mt-0.5',
-  accentLine: 'w-6 h-[2px] bg-orange-500/35 dark:bg-orange-400/30 my-3.5 rounded-full',
+    'font-heading text-base font-bold text-ink-primary dark:text-theme-heading leading-snug',
+  artistRole: 'text-xs text-ink-muted dark:text-theme-muted font-medium mt-0.5',
+  accentLine: 'w-6 h-[2px] bg-theme-action-primary/35 my-3.5 rounded-full',
 
   socialLink: [
-    'text-neutral-400 dark:text-theme-muted transition-colors',
-    'focus-visible:outline-none focus-visible:text-orange-500',
+    'text-ink-muted dark:text-theme-muted transition-colors',
+    'focus-visible:outline-none focus-visible:text-theme-action-primary',
   ].join(' '),
 
   dotsWrap: 'flex justify-center gap-2 mt-10',
   dot: [
     'h-2 rounded-full transition-all duration-300',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
   ].join(' '),
-  dotActive: 'w-6 bg-orange-500',
+  dotActive: 'w-6 bg-theme-action-primary',
   dotIdle:
-    'w-2 bg-neutral-300 dark:bg-neutral-700 hover:bg-orange-300/60 dark:hover:bg-orange-400/50',
+    'w-2 bg-theme-border dark:bg-theme-border hover:bg-theme-action-primary/60',
 };

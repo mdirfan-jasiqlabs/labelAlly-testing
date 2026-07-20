@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { X, Phone, ArrowRight, Home, Info, LayoutGrid, Mic2, Mail } from 'lucide-react';
+import BrandLogo from '../common/BrandLogo';
 import navData from '../../data/navigation.json';
 
 /**
@@ -56,7 +57,7 @@ function MobileMenu({ isOpen, onClose }) {
         onClick={onClose}
         className={[
           'fixed inset-0 z-[190]',
-          'bg-neutral-950/25 backdrop-blur-[2px]',
+          'bg-theme-overlay backdrop-blur-[2px]',
           'transition-opacity duration-300',
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
         ].join(' ')}
@@ -71,16 +72,16 @@ function MobileMenu({ isOpen, onClose }) {
         className={[
           'fixed top-0 right-0 bottom-0 z-[200]',
           'w-full max-w-[320px] sm:max-w-[360px]',
-          'bg-white dark:bg-theme-section',
+          'bg-theme-section',
           'flex flex-col',
-          'shadow-[−20px_0_60px_rgba(15,23,42,0.12)]',
+          'shadow-[-20px_0_60px_rgba(15,23,42,0.12)]',
           'transition-transform duration-300 ease-out',
           isOpen ? 'translate-x-0' : 'translate-x-full',
         ].join(' ')}
       >
 
         {/* ── Panel Header ──────────────────────────────────── */}
-        <div className="flex items-center justify-between px-6 h-[4.5rem] border-b border-neutral-100 dark:border-theme-border shrink-0">
+        <div className="flex items-center justify-between px-6 h-[4.5rem] border-b border-theme-border shrink-0">
           {/* Logo */}
           <Link
             to="/"
@@ -88,15 +89,7 @@ function MobileMenu({ isOpen, onClose }) {
             className="flex items-center shrink-0 focus-ring rounded-md group"
             aria-label={navData.logo.ariaLabel}
           >
-            <img
-              src="/logo.jpeg"
-              alt="LabelAlly Entertainment Logo"
-              width={1536}
-              height={1024}
-              loading="lazy"
-              decoding="async"
-              className="h-10 w-[60px] object-contain"
-            />
+            <BrandLogo className="h-10 w-[60px] object-contain" />
           </Link>
 
           {/* Close Button */}
@@ -106,9 +99,9 @@ function MobileMenu({ isOpen, onClose }) {
             className={[
               'flex items-center justify-center',
               'w-11 h-11 rounded-lg',
-              'text-neutral-500 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
-              'hover:bg-neutral-100 dark:hover:bg-theme-hover',
-              'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
+              'text-theme-muted hover:text-theme-heading',
+              'hover:bg-theme-hover',
+              'border border-transparent hover:border-theme-border',
               'transition-all duration-200',
               'focus-ring',
             ].join(' ')}
@@ -140,8 +133,8 @@ function MobileMenu({ isOpen, onClose }) {
                         'transition-all duration-200',
                         'focus-ring',
                         isActive
-                          ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                          : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 dark:text-theme-muted dark:hover:text-theme-heading dark:hover:bg-theme-hover',
+                          ? 'bg-theme-navActive text-theme-navActiveFg'
+                          : 'text-theme-muted hover:text-theme-heading hover:bg-theme-hover',
                       ].join(' ')
                     }
                   >
@@ -151,7 +144,7 @@ function MobileMenu({ isOpen, onClose }) {
                         {isActive && (
                           <span
                             aria-hidden="true"
-                            className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 rounded-full bg-accent-500"
+                            className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 rounded-full bg-theme-accentDecorative"
                           />
                         )}
 
@@ -159,8 +152,8 @@ function MobileMenu({ isOpen, onClose }) {
                           className={[
                             'flex items-center justify-center w-8 h-8 rounded-lg shrink-0',
                             isActive
-                              ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/40 dark:text-primary-300'
-                              : 'bg-neutral-100 text-neutral-500 dark:bg-theme-hover dark:text-theme-muted',
+                              ? 'bg-theme-navActiveIcon text-theme-navActiveIconFg'
+                              : 'bg-theme-secondary text-theme-muted',
                           ].join(' ')}
                         >
                           <Icon size={15} aria-hidden="true" strokeWidth={2} />
@@ -177,7 +170,7 @@ function MobileMenu({ isOpen, onClose }) {
         </nav>
 
         {/* ── Bottom CTA Area ───────────────────────────────── */}
-        <div className="px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-neutral-100 dark:border-theme-border shrink-0 flex flex-col gap-3">
+        <div className="px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-theme-border shrink-0 flex flex-col gap-3">
           {/* Phone pill */}
           <a
             href={navData.phone.href}
@@ -187,9 +180,9 @@ function MobileMenu({ isOpen, onClose }) {
               'flex items-center justify-center gap-2',
               'w-full h-11',
               'rounded-xl',
-              'border border-neutral-200 hover:border-primary-300 dark:border-theme-border dark:hover:border-primary-400',
-              'bg-white hover:bg-primary-50 dark:bg-theme-card dark:hover:bg-theme-hover',
-              'text-sm font-semibold text-neutral-700 hover:text-primary-600 dark:text-theme-body dark:hover:text-primary-300',
+              'border border-theme-border hover:border-strong',
+              'bg-theme-card hover:bg-theme-hover',
+              'text-sm font-semibold text-theme-body hover:text-theme-heading',
               'transition-all duration-200',
               'focus-ring',
             ].join(' ')}
@@ -207,11 +200,11 @@ function MobileMenu({ isOpen, onClose }) {
               'flex items-center justify-center gap-2',
               'w-full h-12',
               'rounded-xl',
-              'bg-primary-600 hover:bg-primary-700',
-              'text-sm font-bold text-white',
-              'border border-primary-600 hover:border-primary-700',
+              'bg-theme-action-primary hover:bg-theme-action-primaryHover active:bg-theme-action-primaryActive',
+              'text-sm font-bold text-theme-action-primaryForeground',
+              'border border-theme-action-primaryBorder hover:border-theme-action-primaryBorderHover',
               'transition-all duration-200',
-              'hover:shadow-[0_4px_14px_rgba(79,70,229,0.35)]',
+              'hover:shadow-sm',
               'focus-ring',
             ].join(' ')}
           >

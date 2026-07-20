@@ -25,7 +25,7 @@ function ProcessTimeline() {
         {/* Heading */}
         <h2
           id="process-heading"
-          className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-neutral-900 dark:text-theme-heading mb-5 md:mb-6"
+          className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-ink-primary dark:text-theme-heading mb-5 md:mb-6"
         >
           {heading.title}
         </h2>
@@ -56,16 +56,16 @@ function ProcessTimeline() {
             {/* Connector Line (not for last item) */}
             {index < enabledSteps.length - 1 && (
               <div className="shrink-0 flex flex-col items-center">
-                <div className="w-px h-16 md:h-20 bg-neutral-300 dark:bg-theme-border/50 mt-2" />
+                <div className="w-px h-16 md:h-20 bg-theme-border dark:bg-theme-border/50 mt-2" />
               </div>
             )}
 
             {/* Content */}
             <div className="flex-1 pt-1 min-w-0">
-              <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-neutral-900 dark:text-theme-heading leading-snug mb-2">
+              <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl text-ink-primary dark:text-theme-heading leading-snug mb-2">
                 {step.title}
               </h3>
-              <p className="text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body">
+              <p className="text-sm sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body">
                 {step.description}
               </p>
             </div>

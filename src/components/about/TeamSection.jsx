@@ -20,7 +20,7 @@ function TeamSection() {
     <section
       role="region"
       aria-labelledby="team-section-heading"
-      className="relative w-full overflow-hidden bg-white dark:bg-theme-section section-spacing transition-colors duration-250"
+      className="relative w-full overflow-hidden bg-surface-page dark:bg-theme-section section-spacing transition-colors duration-250"
     >
       <AboutDecorations decorations={decorations} />
 
@@ -36,7 +36,7 @@ function TeamSection() {
           {heading && (
             <h2
               id="team-section-heading"
-              className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-neutral-900 dark:text-theme-heading max-w-4xl"
+              className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-ink-primary dark:text-theme-heading max-w-4xl"
             >
               {heading}
             </h2>
@@ -58,12 +58,12 @@ function TeamSection() {
                 return (
                   <p
                     key={paragraph.id}
-                    className="text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body"
+                    className="text-[0.92rem] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body"
                   >
                     {enabledSegments.map((segment) => (
                       <span
                         key={segment.id}
-                        className={segment.emphasis ? 'font-semibold text-neutral-800 dark:text-theme-heading' : ''}
+                        className={segment.emphasis ? 'font-semibold text-ink-primary dark:text-theme-heading' : ''}
                       >
                         {segment.text}
                       </span>
@@ -76,7 +76,7 @@ function TeamSection() {
 
           {valuesHeading?.enabled && valuesHeading.text && (
             <div className="text-left section-subheading-stack">
-              <h3 className="font-heading font-black text-xl sm:text-2xl md:text-3xl text-neutral-900 dark:text-theme-heading leading-snug">
+              <h3 className="font-heading font-black text-xl sm:text-2xl md:text-3xl text-ink-primary dark:text-theme-heading leading-snug">
                 {valuesHeading.text}
               </h3>
               <div

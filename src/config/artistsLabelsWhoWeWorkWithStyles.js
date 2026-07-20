@@ -44,7 +44,7 @@ export const accentBarClasses = {
 
 export const artistsLabelsWhoWeWorkWithStyles = {
   section: {
-    base: 'relative w-full overflow-hidden bg-slate-50 dark:bg-neutral-950 pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-12',
+    base: 'relative w-full overflow-hidden bg-theme-secondary pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-12',
     container: 'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
     content: 'relative z-10 flex flex-col items-center',
   },
@@ -53,14 +53,14 @@ export const artistsLabelsWhoWeWorkWithStyles = {
     wrapper: 'w-full max-w-3xl mx-auto flex flex-col items-center text-center',
     badge:
       'inline-flex items-center gap-2 rounded-full border border-orange-200/80 bg-[#FFE8D6] px-3.5 py-1.5 dark:border-orange-400/20 dark:bg-orange-500/15',
-    badgeIcon: 'shrink-0 text-[#E85D04] dark:text-orange-300',
+    badgeIcon: 'shrink-0 text-theme-action-primary dark:text-orange-300',
     badgeText:
-      'text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#E85D04] dark:text-orange-300',
+      'text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-theme-action-primary dark:text-orange-300',
     heading:
-      'mt-5 sm:mt-6 font-heading font-extrabold tracking-tight text-slate-950 dark:text-white text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]',
-    headingPlain: 'text-slate-950 dark:text-white',
+      'mt-5 sm:mt-6 font-heading font-extrabold tracking-tight text-ink-primary dark:text-theme-heading text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]',
+    headingPlain: 'text-ink-primary dark:text-theme-heading',
     description:
-      'mt-5 sm:mt-6 max-w-[50rem] text-[15px] sm:text-base leading-relaxed text-slate-600 dark:text-neutral-400',
+      'mt-5 sm:mt-6 max-w-[50rem] text-[15px] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body',
     accentRow: 'mt-4 sm:mt-5 flex items-center justify-center gap-1.5',
   },
 
@@ -70,8 +70,8 @@ export const artistsLabelsWhoWeWorkWithStyles = {
     card: [
       'group relative flex h-full flex-col',
       'rounded-2xl sm:rounded-3xl',
-      'border border-slate-200/90 dark:border-white/10',
-      'bg-white dark:bg-neutral-900/80',
+      'border border-theme-border/90 dark:border-theme-border',
+      'bg-theme-card dark:bg-theme-card/80',
       'shadow-[0_12px_40px_-20px_rgba(15,23,42,0.18)]',
       'dark:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.55)]',
       'transition-all duration-300 ease-out',
@@ -90,7 +90,7 @@ export const artistsLabelsWhoWeWorkWithStyles = {
       'flex items-center justify-center',
       'h-[72px] w-[72px] sm:h-[84px] sm:w-[84px] lg:h-[88px] lg:w-[88px]',
       'rounded-full border-2',
-      'bg-white dark:bg-neutral-900',
+      'bg-theme-card',
       'shadow-[0_10px_28px_-10px_rgba(15,23,42,0.35)]',
       'transition-transform duration-300 ease-out',
       'group-hover:-translate-y-0.5',
@@ -99,22 +99,22 @@ export const artistsLabelsWhoWeWorkWithStyles = {
     cardContent:
       'flex flex-1 flex-col px-5 sm:px-6 pt-14 sm:pt-16 pb-6 sm:pb-7 text-center',
     title:
-      'font-heading text-xl sm:text-[1.4rem] font-bold tracking-tight text-slate-950 dark:text-white',
+      'font-heading text-xl sm:text-[1.4rem] font-bold tracking-tight text-ink-primary dark:text-theme-heading',
     description:
-      'mt-3 text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-neutral-400 min-h-[4.5rem]',
-    divider: 'mt-5 mb-5 border-t border-slate-200 dark:border-white/10',
+      'mt-3 text-sm sm:text-[15px] leading-relaxed text-ink-secondary dark:text-theme-body min-h-[4.5rem]',
+    divider: 'mt-5 mb-5 border-t border-theme-border dark:border-theme-border',
     featureList: 'mt-auto flex flex-col gap-3 text-left',
     featureItem: 'flex items-start gap-3',
     featureIcon:
       'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border',
-    featureText: 'text-sm leading-snug text-slate-700 dark:text-neutral-300',
+    featureText: 'text-sm leading-snug text-ink-secondary dark:text-theme-body',
   },
 
   trust: {
     wrapper:
       'mt-10 sm:mt-12 lg:mt-14 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 text-center',
     icon: 'shrink-0 text-orange-500 dark:text-orange-400',
-    text: 'text-sm sm:text-[15px] font-medium text-slate-500 dark:text-neutral-400',
+    text: 'text-sm sm:text-[15px] font-medium text-ink-muted dark:text-theme-muted',
   },
 
   decorations: {

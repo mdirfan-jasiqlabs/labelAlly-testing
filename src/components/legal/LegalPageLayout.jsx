@@ -17,15 +17,15 @@ import Container from '../common/Container';
  */
 function LegalPageLayout({ title, lastUpdated, introduction, children }) {
   return (
-    <article className="section-spacing bg-white dark:bg-theme-page text-neutral-600 dark:text-theme-body">
+    <article className="section-spacing bg-surface-page text-ink-secondary">
       <Container>
         <div className="mx-auto w-full max-w-3xl min-w-0">
-          <header className="border-b border-neutral-200/80 dark:border-theme-border pb-8 mb-10">
-            <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading mb-3 tracking-tight leading-tight">
+          <header className="border-b border-theme-border/80 pb-8 mb-10">
+            <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-ink-primary mb-3 tracking-tight leading-tight">
               {title}
             </h1>
             {lastUpdated ? (
-              <p className="text-xs text-neutral-400 dark:text-theme-muted font-medium">
+              <p className="text-xs text-ink-muted font-medium">
                 Last Updated: {lastUpdated}
               </p>
             ) : null}
@@ -33,7 +33,7 @@ function LegalPageLayout({ title, lastUpdated, introduction, children }) {
 
           <div className="flex flex-col gap-8">
             {introduction ? (
-              <p className="text-base sm:text-lg text-neutral-500 dark:text-theme-body leading-relaxed font-medium">
+              <p className="text-base sm:text-lg text-ink-secondary leading-relaxed font-medium">
                 {introduction}
               </p>
             ) : null}

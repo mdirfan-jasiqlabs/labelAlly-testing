@@ -9,6 +9,7 @@ import {
   Users,
   Award,
 } from 'lucide-react';
+import BrandLogo from '../common/BrandLogo';
 import footerData from '../../data/footer.json';
 
 // Dynamic brand social SVG icons map to prevent any lucide bundle export errors
@@ -56,6 +57,7 @@ const WHY_ICONS = {
 /**
  * Footer — Premium dark-themed redesigned footer matching references.
  * Sourced dynamically from src/data/footer.json
+ * Uses always-dark footer chrome tokens + brand accent (#FF2E74).
  */
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -72,7 +74,7 @@ function Footer() {
     <footer
       role="contentinfo"
       aria-label="Site footer"
-      className="w-full bg-[#080B11] text-neutral-400 border-t border-neutral-900 relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-8 animate-fade-in"
+      className="w-full bg-theme-footer text-theme-footerMuted border-t border-theme-footerBorder relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-8 animate-fade-in"
     >
       {/* ── Custom CSS Animations Block ── */}
       <style>{`
@@ -94,32 +96,32 @@ function Footer() {
         }
       `}</style>
 
-      {/* ── Background Music Wave Equalizer Decoration ── */}
+      {/* ── Background Music Wave Equalizer Decorations ── */}
       <div 
         aria-hidden="true" 
         className="absolute left-6 top-10 flex items-end gap-1 h-36 opacity-[0.03] pointer-events-none select-none z-0"
       >
-        <span className="w-1 bg-[#FF2E74] h-[60%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[80%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[100%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[40%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[90%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[70%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[50%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[85%] rounded-t-full" />
-        <span className="w-1 bg-[#FF2E74] h-[65%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[60%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[80%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[100%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[40%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[90%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[70%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[50%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[85%] rounded-t-full" />
+        <span className="w-1 bg-theme-accent h-[65%] rounded-t-full" />
       </div>
 
       {/* Floating music note symbols */}
       <div 
         aria-hidden="true" 
-        className="absolute right-12 top-20 text-[#FF2E74]/5 text-5xl font-bold select-none pointer-events-none z-0 animate-float-note"
+        className="absolute right-12 top-20 text-theme-accent/5 text-5xl font-bold select-none pointer-events-none z-0 animate-float-note"
       >
         ♪
       </div>
       <div 
         aria-hidden="true" 
-        className="absolute right-36 bottom-32 text-[#FF2E74]/5 text-4xl font-bold select-none pointer-events-none z-0 animate-float-note-delayed"
+        className="absolute right-36 bottom-32 text-theme-accent/5 text-4xl font-bold select-none pointer-events-none z-0 animate-float-note-delayed"
       >
         ♫
       </div>
@@ -129,20 +131,16 @@ function Footer() {
 
           {/* ── Column 1: Brand & Socials ── */}
           <div className="lg:col-span-3 flex flex-col gap-6">
-            {/* Logo Wrapper (white card for exact logo colors rendering) */}
+            {/* Logo — transparent mark on always-dark footer (no white box) */}
             {logo && (
               <Link
                 to="/"
                 aria-label="LabelAlly Entertainment — Go to homepage"
-                className="inline-block focus-ring rounded-xl bg-white p-3.5 w-fit group shadow-sm transition-transform duration-300 hover:scale-[1.02]"
+                className="inline-block focus-ring rounded-md w-fit group transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img
-                  src={logo.src}
+                <BrandLogo
+                  variant="dark"
                   alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  loading="lazy"
-                  decoding="async"
                   className="h-12 w-[72px] object-contain"
                 />
               </Link>
@@ -150,7 +148,7 @@ function Footer() {
 
             {/* Description */}
             {company?.description && (
-              <p className="text-sm text-neutral-400 leading-relaxed">
+              <p className="text-sm text-theme-footerMuted leading-relaxed">
                 {company.description}
               </p>
             )}
@@ -158,9 +156,9 @@ function Footer() {
             {/* Follow Us Section */}
             {socials && enabledSocials.length > 0 && (
               <div>
-                <h3 className="font-heading font-bold text-white text-base tracking-wide mb-4 relative pb-2 select-none">
+                <h3 className="font-heading font-bold text-theme-footerHeading text-base tracking-wide mb-4 relative pb-2 select-none">
                   {socials.heading}
-                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-[#FF2E74] rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-theme-accent rounded-full" />
                 </h3>
                 
                 <div className="flex items-center gap-2.5 flex-wrap">
@@ -174,7 +172,7 @@ function Footer() {
                         aria-label={item.label}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-11 h-11 rounded-full border border-neutral-800 bg-neutral-900/30 text-neutral-400 hover:text-white hover:border-[#FF2E74] transition-all duration-200 focus-ring hover:shadow-[0_0_10px_rgba(255,46,116,0.2)]"
+                        className="flex items-center justify-center w-11 h-11 rounded-full border border-theme-footerDivider bg-theme-footerElevated text-theme-footerMuted hover:text-theme-footerHeading hover:border-theme-accent transition-all duration-200 focus-ring hover:shadow-[0_0_10px_var(--color-brand-accent-glow)]"
                       >
                         <SvgIcon className="w-4 h-4" aria-hidden="true" />
                       </a>
@@ -189,9 +187,9 @@ function Footer() {
           <div className="lg:col-span-3 flex flex-col gap-6">
             {quickLinks && (
               <>
-                <h3 className="font-heading font-bold text-white text-base tracking-wide relative pb-2 select-none">
+                <h3 className="font-heading font-bold text-theme-footerHeading text-base tracking-wide relative pb-2 select-none">
                   {quickLinks.heading}
-                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-[#FF2E74] rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-theme-accent rounded-full" />
                 </h3>
                 
                 <nav aria-label="Quick links navigation">
@@ -199,15 +197,15 @@ function Footer() {
                     {enabledQuickLinks.map((link) => (
                       <li 
                         key={link.id} 
-                        className="border-b border-neutral-900/60 py-2.5 last:border-0 last:pb-0"
+                        className="border-b border-theme-footerBorder/60 py-2.5 last:border-0 last:pb-0"
                       >
                         <Link
                           to={link.href}
-                          className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors duration-200 group/link focus-ring rounded"
+                          className="inline-flex items-center gap-2 text-sm text-theme-footerMuted hover:text-theme-footerHeading transition-colors duration-200 group/link focus-ring rounded"
                         >
                           <ChevronRight 
                             size={14} 
-                            className="text-[#FF2E74] transition-transform duration-250 group-hover/link:translate-x-1 shrink-0" 
+                            className="text-theme-accent transition-transform duration-250 group-hover/link:translate-x-1 shrink-0" 
                           />
                           <span>{link.label}</span>
                         </Link>
@@ -223,21 +221,21 @@ function Footer() {
           <div className="lg:col-span-3 flex flex-col gap-6">
             {contact && (
               <>
-                <h3 className="font-heading font-bold text-white text-base tracking-wide relative pb-2 select-none">
+                <h3 className="font-heading font-bold text-theme-footerHeading text-base tracking-wide relative pb-2 select-none">
                   {contact.heading}
-                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-[#FF2E74] rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-theme-accent rounded-full" />
                 </h3>
                 
                 <address className="not-italic flex flex-col gap-0.5">
                   {/* Address */}
                   {contact.address && contact.address.enabled && (
-                    <div className="flex gap-3.5 items-start py-3 border-b border-neutral-900/60">
-                      <div className="w-9 h-9 rounded-full border border-neutral-900 bg-neutral-900/40 flex items-center justify-center text-[#FF2E74] shrink-0 shadow-inner">
+                    <div className="flex gap-3.5 items-start py-3 border-b border-theme-footerBorder/60">
+                      <div className="w-9 h-9 rounded-full border border-theme-footerBorder bg-theme-footerIconSurface flex items-center justify-center text-theme-accent shrink-0 shadow-inner">
                         <MapPin size={16} aria-hidden="true" />
                       </div>
                       <div>
-                        <h4 className="font-heading font-semibold text-white text-sm select-none">{contact.address.heading}</h4>
-                        <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                        <h4 className="font-heading font-semibold text-theme-footerHeading text-sm select-none">{contact.address.heading}</h4>
+                        <p className="text-xs text-theme-footerMuted mt-1 leading-relaxed">
                           {contact.address.value}
                         </p>
                       </div>
@@ -248,14 +246,14 @@ function Footer() {
                   {contact.email && contact.email.enabled && (
                     <a
                       href={contact.email.href}
-                      className="flex gap-3.5 items-start py-3 border-b border-neutral-900/60 hover:bg-white/[0.01] transition-colors duration-200 focus-ring rounded group"
+                      className="flex gap-3.5 items-start py-3 border-b border-theme-footerBorder/60 hover:bg-theme-footerHover transition-colors duration-200 focus-ring rounded group"
                     >
-                      <div className="w-9 h-9 rounded-full border border-neutral-900 bg-neutral-900/40 flex items-center justify-center text-[#FF2E74] shrink-0 shadow-inner group-hover:border-[#FF2E74]/55 transition-colors duration-200">
+                      <div className="w-9 h-9 rounded-full border border-theme-footerBorder bg-theme-footerIconSurface flex items-center justify-center text-theme-accent shrink-0 shadow-inner group-hover:border-theme-accent/55 transition-colors duration-200">
                         <Mail size={16} aria-hidden="true" />
                       </div>
                       <div>
-                        <h4 className="font-heading font-semibold text-white text-sm group-hover:text-[#FF2E74] transition-colors duration-200">{contact.email.heading}</h4>
-                        <p className="text-xs text-neutral-400 mt-1 break-all">
+                        <h4 className="font-heading font-semibold text-theme-footerHeading text-sm group-hover:text-theme-accent transition-colors duration-200">{contact.email.heading}</h4>
+                        <p className="text-xs text-theme-footerMuted mt-1 break-all">
                           {contact.email.value}
                         </p>
                       </div>
@@ -266,14 +264,14 @@ function Footer() {
                   {contact.phone && contact.phone.enabled && (
                     <a
                       href={contact.phone.href}
-                      className="flex gap-3.5 items-start py-3 border-b border-neutral-900/60 hover:bg-white/[0.01] transition-colors duration-200 focus-ring rounded group"
+                      className="flex gap-3.5 items-start py-3 border-b border-theme-footerBorder/60 hover:bg-theme-footerHover transition-colors duration-200 focus-ring rounded group"
                     >
-                      <div className="w-9 h-9 rounded-full border border-neutral-900 bg-neutral-900/40 flex items-center justify-center text-[#FF2E74] shrink-0 shadow-inner group-hover:border-[#FF2E74]/55 transition-colors duration-200">
+                      <div className="w-9 h-9 rounded-full border border-theme-footerBorder bg-theme-footerIconSurface flex items-center justify-center text-theme-accent shrink-0 shadow-inner group-hover:border-theme-accent/55 transition-colors duration-200">
                         <Phone size={16} aria-hidden="true" />
                       </div>
                       <div>
-                        <h4 className="font-heading font-semibold text-white text-sm group-hover:text-[#FF2E74] transition-colors duration-200">{contact.phone.heading}</h4>
-                        <p className="text-xs text-neutral-400 mt-1">
+                        <h4 className="font-heading font-semibold text-theme-footerHeading text-sm group-hover:text-theme-accent transition-colors duration-200">{contact.phone.heading}</h4>
+                        <p className="text-xs text-theme-footerMuted mt-1">
                           {contact.phone.value}
                         </p>
                       </div>
@@ -286,9 +284,9 @@ function Footer() {
                       href={contact.whatsapp.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex gap-3.5 items-start py-3 hover:bg-white/[0.01] transition-colors duration-200 focus-ring rounded group"
+                      className="flex gap-3.5 items-start py-3 hover:bg-theme-footerHover transition-colors duration-200 focus-ring rounded group"
                     >
-                      <div className="w-9 h-9 rounded-full border border-neutral-900 bg-neutral-900/40 flex items-center justify-center text-[#FF2E74] shrink-0 shadow-inner group-hover:border-[#FF2E74]/55 transition-colors duration-200">
+                      <div className="w-9 h-9 rounded-full border border-theme-footerBorder bg-theme-footerIconSurface flex items-center justify-center text-theme-accent shrink-0 shadow-inner group-hover:border-theme-accent/55 transition-colors duration-200">
                         <svg 
                           viewBox="0 0 24 24" 
                           fill="currentColor" 
@@ -299,8 +297,8 @@ function Footer() {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-heading font-semibold text-white text-sm group-hover:text-[#FF2E74] transition-colors duration-200">{contact.whatsapp.heading}</h4>
-                        <p className="text-xs text-neutral-400 mt-1">
+                        <h4 className="font-heading font-semibold text-theme-footerHeading text-sm group-hover:text-theme-accent transition-colors duration-200">{contact.whatsapp.heading}</h4>
+                        <p className="text-xs text-theme-footerMuted mt-1">
                           {contact.whatsapp.value}
                         </p>
                       </div>
@@ -315,9 +313,9 @@ function Footer() {
           <div className="lg:col-span-3 flex flex-col gap-6">
             {whyUs && enabledWhyUs.length > 0 && (
               <>
-                <h3 className="font-heading font-bold text-white text-base tracking-wide relative pb-2 select-none">
+                <h3 className="font-heading font-bold text-theme-footerHeading text-base tracking-wide relative pb-2 select-none">
                   {whyUs.heading}
-                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-[#FF2E74] rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-8 h-[3px] bg-theme-accent rounded-full" />
                 </h3>
                 
                 <div className="flex flex-col gap-4">
@@ -325,12 +323,12 @@ function Footer() {
                     const TrustIcon = WHY_ICONS[item.icon];
                     return (
                       <div key={item.id} className="flex gap-3 items-start">
-                        <div className="text-[#FF2E74] shrink-0 mt-0.5" aria-hidden="true">
+                        <div className="text-theme-accent shrink-0 mt-0.5" aria-hidden="true">
                           {TrustIcon && <TrustIcon size={18} />}
                         </div>
                         <div>
-                          <h4 className="font-heading font-semibold text-white text-sm leading-tight">{item.heading}</h4>
-                          <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                          <h4 className="font-heading font-semibold text-theme-footerHeading text-sm leading-tight">{item.heading}</h4>
+                          <p className="text-xs text-theme-footerMuted mt-1 leading-relaxed">
                             {item.description}
                           </p>
                         </div>
@@ -347,31 +345,31 @@ function Footer() {
 
       {/* ── Bottom Bar ── */}
       {bottom && (
-        <div className="border-t border-neutral-900/80 pt-6">
+        <div className="border-t border-theme-footerBorder/80 pt-6">
           <div className="section-container">
             <div className="flex flex-col md:flex-row items-center justify-between gap-5">
               {/* Copyright */}
-              <p className="text-xs text-neutral-500 text-center md:text-left select-none">
-                &copy; {currentYear} <span className="text-[#FF2E74] font-semibold">LabelAlly</span> {bottom.copyright}
+              <p className="text-xs text-theme-footerMutedSoft text-center md:text-left select-none">
+                &copy; {currentYear} <span className="text-theme-accent font-semibold">LabelAlly</span> {bottom.copyright}
               </p>
 
               {/* Legal links */}
-              <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 text-xs text-neutral-500">
+              <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 text-xs text-theme-footerMutedSoft">
                 {bottom.privacyLink?.enabled && (
                   <Link
                     to={bottom.privacyLink.href}
-                    className="inline-flex items-center min-h-11 px-1 hover:text-white transition-colors duration-250 focus-ring rounded"
+                    className="inline-flex items-center min-h-11 px-1 hover:text-theme-footerHeading transition-colors duration-250 focus-ring rounded"
                   >
                     {bottom.privacyLink.label}
                   </Link>
                 )}
                 {bottom.privacyLink?.enabled && bottom.termsLink?.enabled && (
-                  <span className="text-neutral-800" aria-hidden="true">|</span>
+                  <span className="text-theme-footerDivider" aria-hidden="true">|</span>
                 )}
                 {bottom.termsLink?.enabled && (
                   <Link
                     to={bottom.termsLink.href}
-                    className="inline-flex items-center min-h-11 px-1 hover:text-white transition-colors duration-250 focus-ring rounded"
+                    className="inline-flex items-center min-h-11 px-1 hover:text-theme-footerHeading transition-colors duration-250 focus-ring rounded"
                   >
                     {bottom.termsLink.label}
                   </Link>

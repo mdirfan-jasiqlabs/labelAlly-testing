@@ -26,7 +26,7 @@ function AboutInfoGroup({ title, icon, items }) {
 
       {/* Right Column: Title and Bullet List */}
       <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4 text-left">
-        <h3 className="font-heading font-black text-lg sm:text-xl md:text-2xl text-neutral-900 dark:text-theme-heading leading-snug text-balance">
+        <h3 className="font-heading font-black text-lg sm:text-xl md:text-2xl text-ink-primary dark:text-theme-heading leading-snug text-balance">
           {title}
         </h3>
 
@@ -35,11 +35,11 @@ function AboutInfoGroup({ title, icon, items }) {
           {enabledItems.map((item) => (
             <li
               key={item.id}
-              className="flex items-start gap-2.5 text-sm sm:text-[0.92rem] text-neutral-600 dark:text-theme-body leading-snug"
+              className="flex items-start gap-2.5 text-sm sm:text-[0.92rem] text-ink-secondary dark:text-theme-body leading-snug"
             >
               {/* Checkmark icon with brand accent */}
               <span className="shrink-0 mt-0.5 text-pink-600 dark:text-pink-500" aria-hidden="true">
-                <CheckCircle2 size={15} strokeWidth={2.5} fill="currentColor" className="text-white dark:text-slate-900" />
+                <CheckCircle2 size={15} strokeWidth={2.5} fill="currentColor" className="text-white dark:text-theme-page" />
               </span>
               <span className="break-words">{item.text}</span>
             </li>

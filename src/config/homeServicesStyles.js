@@ -4,8 +4,8 @@ import { homeHeroStyles } from './homeHeroStyles';
 export const homeServicesStyles = {
   section: [
     'relative section-spacing overflow-hidden',
-    'bg-surface-page dark:bg-neutral-950',
-    'border-t border-neutral-100 dark:border-theme-border/50',
+    'bg-surface-page',
+    'border-t border-theme-border/50',
   ].join(' '),
 
   background: {
@@ -44,8 +44,8 @@ export const homeServicesStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white uppercase tracking-wider select-none',
-    'bg-orange-500 shadow-sm mb-5',
+    'text-xs font-bold text-theme-action-primaryForeground uppercase tracking-wider select-none',
+    'bg-theme-action-primary shadow-sm mb-5',
   ].join(' '),
 
   heading: [
@@ -62,16 +62,16 @@ export const homeServicesStyles = {
     'group flex flex-col items-center text-center h-full',
     'p-4 sm:p-5 rounded-2xl',
     'border border-transparent',
-    'bg-transparent dark:bg-neutral-900/40',
+    'bg-transparent dark:bg-theme-card/40',
     'dark:border-theme-border/40',
     'shadow-none dark:shadow-theme',
     'transition-all duration-300 ease-out',
-    'hover:-translate-y-1 hover:bg-neutral-50/70 dark:hover:bg-neutral-900/65',
-    'hover:border-orange-500/25 dark:hover:border-orange-400/20',
+    'hover:-translate-y-1 hover:bg-theme-hover dark:hover:bg-theme-card/65',
+    'hover:border-theme-action-primary/25',
     'hover:shadow-sm dark:hover:shadow-card-hover',
     'motion-reduce:hover:translate-y-0',
-    'focus-within:ring-2 focus-within:ring-orange-500/40 focus-within:ring-offset-2',
-    'focus-within:ring-offset-surface-page dark:focus-within:ring-offset-neutral-950',
+    'focus-within:ring-2 focus-within:ring-theme-action-primary/40 focus-within:ring-offset-2',
+    'focus-within:ring-offset-theme-page',
   ].join(' '),
 
   iconWrap: [

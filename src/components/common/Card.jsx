@@ -53,19 +53,19 @@ function Card({
     <Tag
       className={[
         // Base
-        'relative bg-white dark:bg-theme-card animate-fade-in shadow-sm',
+        'relative bg-theme-card animate-fade-in shadow-sm',
         radiusClass,
         paddingClass,
 
         // Border
-        bordered ? 'border border-neutral-200/80 dark:border-theme-border/50' : '',
+        bordered ? 'border border-theme-border/80' : '',
 
         // Hover
         hover ? [
           'transition-all duration-300 ease-out',
           'hover:-translate-y-1 hover:scale-[1.01]',
           'motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100',
-          'hover:border-neutral-300 dark:hover:border-theme-border',
+          'hover:border-strong',
           'hover:shadow-card-hover',
         ].join(' ') : '',
 

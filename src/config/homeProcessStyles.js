@@ -4,8 +4,8 @@ import { homeHeroStyles } from './homeHeroStyles';
 export const homeProcessStyles = {
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white',
-    'bg-orange-500 shadow-sm mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground',
+    'bg-theme-action-primary shadow-sm mb-6',
   ].join(' '),
 
   heading: [

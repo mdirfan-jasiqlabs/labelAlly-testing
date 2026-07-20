@@ -13,7 +13,7 @@ function AboutPageBanner() {
   return (
     <section
       role="banner"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50/50 to-white dark:from-slate-900/30 dark:to-theme-page section-spacing-hero border-b border-neutral-100 dark:border-theme-border/30"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-surface-muted/50 to-surface-page dark:from-theme-section/30 dark:to-theme-page section-spacing-hero border-b border-theme-border dark:border-theme-border/30"
     >
       {/* ── Background Decorative Abstract Shapes (Hidden on small viewports) ── */}
 
@@ -71,7 +71,7 @@ function AboutPageBanner() {
       <Container className="relative z-10 flex flex-col items-center">
         <h1
           id="about-page-title"
-          className="font-heading font-black tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-neutral-900 dark:text-theme-heading text-center leading-tight sm:leading-none text-balance px-2"
+          className="font-heading font-black tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-ink-primary dark:text-theme-heading text-center leading-tight sm:leading-none text-balance px-2"
         >
           {pageBanner.title}
         </h1>

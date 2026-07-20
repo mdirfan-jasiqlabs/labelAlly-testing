@@ -41,8 +41,8 @@ function OfficeCard({ office }) {
       className={[
         'group h-full flex flex-col items-center text-center',
         'rounded-2xl',
-        'bg-white dark:bg-theme-card',
-        'border border-neutral-200/80 dark:border-theme-border/50',
+        'bg-surface-card dark:bg-theme-card',
+        'border border-theme-border/80 dark:border-theme-border/50',
         'shadow-sm dark:shadow-theme',
         'px-6 py-8 sm:px-7 sm:py-9',
         'transition-shadow duration-300 ease-out',
@@ -87,7 +87,7 @@ function OfficeCard({ office }) {
       />
 
       {office.address && (
-        <p className="text-sm leading-relaxed text-neutral-500 dark:text-theme-muted mb-6 sm:mb-8 max-w-none sm:max-w-xs flex-1">
+        <p className="text-sm leading-relaxed text-ink-muted dark:text-theme-muted mb-6 sm:mb-8 max-w-none sm:max-w-xs flex-1">
           {office.address}
         </p>
       )}
@@ -96,7 +96,7 @@ function OfficeCard({ office }) {
         <a
           href={phoneHref}
           aria-label={`Call ${office.city} office at ${phoneDisplay}`}
-          className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-medium text-neutral-600 dark:text-theme-body hover:text-ink-primary dark:hover:text-theme-heading transition-colors duration-250 motion-reduce:transition-none focus-ring rounded-md px-1 py-1"
+          className="mt-auto inline-flex items-center justify-center gap-2 text-sm font-medium text-ink-secondary dark:text-theme-body hover:text-ink-primary dark:hover:text-theme-heading transition-colors duration-250 motion-reduce:transition-none focus-ring rounded-md px-1 py-1"
         >
           <Phone
             size={15}

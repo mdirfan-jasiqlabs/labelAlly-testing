@@ -37,11 +37,15 @@ export default {
 
       // ── Brand Colors ───────────────────────────────────────────────────────
       colors: {
-        // Semantic Design Tokens for Theme Toggle
+        // Semantic design tokens — map to CSS variables in globals.css
         theme: {
           page: 'var(--color-page-bg)',
           section: 'var(--color-section-bg)',
           card: 'var(--color-card-surface)',
+          elevated: 'var(--color-elevated-surface)',
+          secondary: 'var(--color-secondary-surface)',
+          input: 'var(--color-input-surface)',
+          overlay: 'var(--color-overlay)',
           logoCard: 'var(--color-logo-card-surface)',
           logoCardBorder: 'var(--color-logo-card-border)',
           header: 'var(--color-header-bg)',
@@ -49,12 +53,48 @@ export default {
           heading: 'var(--color-heading-text)',
           body: 'var(--color-body-text)',
           muted: 'var(--color-muted-text)',
+          secondaryForeground: 'var(--color-secondary-foreground)',
           border: 'var(--color-border)',
+          inputBorder: 'var(--color-input-border)',
+          // Legacy brand pink — footer / ThemeToggle / ScrollToTop accent
           accent: 'var(--color-brand-accent)',
+          accentHover: 'var(--color-brand-accent-hover)',
+          accentActive: 'var(--color-brand-accent-active)',
+          accentDecorative: 'var(--color-accent-decorative)',
+          accentDecorativeForeground: 'var(--color-accent-decorative-foreground)',
+          // Footer chrome (always-dark)
+          footerBorder: 'var(--color-footer-border)',
+          footerMuted: 'var(--color-footer-muted)',
+          footerMutedSoft: 'var(--color-footer-muted-soft)',
+          footerHeading: 'var(--color-footer-heading)',
+          footerElevated: 'var(--color-footer-elevated)',
+          footerIconSurface: 'var(--color-footer-icon-surface)',
+          footerDivider: 'var(--color-footer-divider)',
+          footerHover: 'var(--color-footer-hover)',
+          action: {
+            primary: 'var(--color-action-primary)',
+            primaryHover: 'var(--color-action-primary-hover)',
+            primaryActive: 'var(--color-action-primary-active)',
+            primaryForeground: 'var(--color-action-primary-foreground)',
+            primaryBorder: 'var(--color-action-primary-border)',
+            primaryBorderHover: 'var(--color-action-primary-border-hover)',
+          },
+          destructive: 'var(--color-destructive)',
+          destructiveForeground: 'var(--color-destructive-foreground)',
+          success: 'var(--color-success)',
+          warning: 'var(--color-warning)',
           hover: 'var(--color-hover)',
           focus: 'var(--color-focus)',
           toggle: 'var(--color-toggle-bg)',
           toggleActive: 'var(--color-toggle-active)',
+          navActive: 'var(--color-nav-active-bg)',
+          navActiveFg: 'var(--color-nav-active-fg)',
+          navActiveIcon: 'var(--color-nav-active-icon-bg)',
+          navActiveIconFg: 'var(--color-nav-active-icon-fg)',
+          glass: 'var(--color-glass-bg)',
+          glassBorder: 'var(--color-glass-border)',
+          glassStrong: 'var(--color-glass-strong-bg)',
+          glassStrongBorder: 'var(--color-glass-strong-border)',
         },
 
         // Primary — premium indigo
@@ -102,25 +142,28 @@ export default {
           950: '#09090b',
         },
 
-        // ── Semantic surface tokens (now CSS-var driven for dark mode) ─
+        // ── Semantic surface tokens (CSS-var driven) ─
         surface: {
-          page:  'var(--color-page-bg)',
-          card:  'var(--color-card-surface)',
+          page: 'var(--color-page-bg)',
+          card: 'var(--color-card-surface)',
           muted: 'var(--color-section-bg)',
-          // Form fields / recessed controls (distinct from elevated cards)
+          elevated: 'var(--color-elevated-surface)',
+          secondary: 'var(--color-secondary-surface)',
           input: 'var(--color-input-surface)',
+          overlay: 'var(--color-overlay)',
         },
 
-        // ── Ink (text) tokens (CSS-var driven for dark mode) ──────────
+        // ── Ink (text) tokens (CSS-var driven) ──────────
         ink: {
-          primary:   'var(--color-heading-text)',
+          primary: 'var(--color-heading-text)',
           secondary: 'var(--color-body-text)',
-          muted:     'var(--color-muted-text)',
+          muted: 'var(--color-muted-text)',
+          secondaryForeground: 'var(--color-secondary-foreground)',
         },
 
         // ── Brand Custom Colors ───────────────────────────────
         brand: {
-          pink: '#FF2E74',
+          pink: 'var(--color-brand-accent)',
           orange: '#FF7E40',
           green: '#96E012',
           blue: '#2B83FC',
@@ -128,19 +171,35 @@ export default {
         },
       },
 
-      // ── Background Colors (semantic — CSS-var driven) ─────────────────────
-      backgroundColor: {
-        page: 'var(--color-page-bg)',
-        surface: 'var(--color-section-bg)',
-        elevated: 'var(--color-card-surface)',
-        panel: 'var(--color-card-surface)',
-      },
-
       // ── Border Colors ──────────────────────────────────────────────────────
       borderColor: {
         theme: 'var(--color-border)',
         subtle: 'var(--color-border-subtle)',
         strong: 'var(--color-border-strong)',
+        input: 'var(--color-input-border)',
+        // Footer chrome borders (always-dark)
+        'theme-footerBorder': 'var(--color-footer-border)',
+        'theme-footerDivider': 'var(--color-footer-divider)',
+      },
+
+      // ── Background Colors (semantic — CSS-var driven) ─────────────────────
+      backgroundColor: {
+        page: 'var(--color-page-bg)',
+        surface: 'var(--color-section-bg)',
+        elevated: 'var(--color-elevated-surface)',
+        panel: 'var(--color-card-surface)',
+        overlay: 'var(--color-overlay)',
+        // Footer chrome surfaces
+        'theme-footerElevated': 'var(--color-footer-elevated)',
+        'theme-footerIconSurface': 'var(--color-footer-icon-surface)',
+        'theme-footerHover': 'var(--color-footer-hover)',
+      },
+
+      // ── Ring Colors (focus + feedback) ───────────────────────────────────────
+      ringColor: {
+        theme: 'var(--color-focus-ring)',
+        focus: 'var(--color-focus-ring)',
+        destructive: 'var(--color-destructive)',
       },
 
       // ── Gradients ──────────────────────────────────────────────────────────

@@ -24,10 +24,10 @@ function GradientBackground({
     hero: 'bg-gradient-hero dark:bg-none dark:bg-theme-page',
 
     // Solid page surface
-    dark: 'bg-white dark:bg-theme-page',
+    dark: 'bg-theme-page',
 
     // Subtle surface gradient; solid theme section in dark mode
-    subtle: 'bg-gradient-to-b from-neutral-50 to-white dark:bg-none dark:bg-theme-section',
+    subtle: 'bg-gradient-to-b from-theme-secondary to-theme-page dark:bg-none dark:bg-theme-section',
 
     // Accent gradient — gold/amber (use sparingly)
     accent: 'bg-gradient-accent',

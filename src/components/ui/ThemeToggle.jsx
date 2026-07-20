@@ -57,7 +57,7 @@ export default function ThemeToggle() {
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label={`Change color theme. Current theme is ${getThemeLabel(theme)}`}
-        className="flex items-center justify-center w-11 h-11 rounded-xl border border-theme-border bg-theme-toggle hover:bg-theme-hover focus-ring transition-all duration-200"
+        className="flex items-center justify-center w-11 h-11 rounded-xl border border-theme-border bg-theme-toggle text-theme-heading hover:bg-theme-hover focus-ring transition-all duration-200"
       >
         {getThemeIcon(theme)}
       </button>

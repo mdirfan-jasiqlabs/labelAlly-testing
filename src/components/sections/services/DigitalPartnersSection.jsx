@@ -24,7 +24,7 @@ function DigitalPartnersSection() {
     <section
       role="region"
       aria-labelledby="digital-partners-heading"
-      className="relative w-full overflow-hidden bg-surface-page dark:bg-theme-section section-spacing border-t border-neutral-100 dark:border-theme-border/50 transition-colors duration-250"
+      className="relative w-full overflow-hidden bg-surface-page dark:bg-theme-section section-spacing border-t border-theme-border dark:border-theme-border/50 transition-colors duration-250"
     >
       <Container size="2xl" className="relative z-10">
         {/* ── Centered Heading Group ── */}

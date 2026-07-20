@@ -19,7 +19,7 @@ function AboutIntroSection() {
     <section
       role="region"
       aria-label="LabelAlly Introduction and Services"
-      className="section-spacing bg-white dark:bg-theme-section transition-colors duration-250"
+      className="section-spacing bg-surface-page dark:bg-theme-section transition-colors duration-250"
     >
       <Container size="2xl">
         <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-start justify-between min-w-0">
@@ -35,14 +35,14 @@ function AboutIntroSection() {
 
             {/* Main Heading */}
             {heading && (
-              <h2 className="font-heading font-black tracking-tight leading-[1.1] text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-neutral-900 dark:text-theme-heading mb-5 md:mb-6 text-balance">
+              <h2 className="font-heading font-black tracking-tight leading-[1.1] text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-ink-primary dark:text-theme-heading mb-5 md:mb-6 text-balance">
                 {heading}
               </h2>
             )}
 
             {/* Introductory Paragraphs */}
             {enabledParagraphs.length > 0 && (
-              <div className="flex flex-col gap-4 sm:gap-5 w-full text-[0.95rem] sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body lg:max-w-xl">
+              <div className="flex flex-col gap-4 sm:gap-5 w-full text-[0.95rem] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body lg:max-w-xl">
                 {enabledParagraphs.map((para) => (
                   <p key={para.id}>{para.text}</p>
                 ))}
@@ -50,7 +50,7 @@ function AboutIntroSection() {
             )}
 
             {/* First Divider */}
-            <hr className="w-full border-t border-neutral-200/60 dark:border-theme-border/40 my-6 md:my-8" />
+            <hr className="w-full border-t border-theme-border/60 dark:border-theme-border/40 my-6 md:my-8" />
 
             {/* What We Do block */}
             {whatWeDo && whatWeDo.enabled && (
@@ -62,7 +62,7 @@ function AboutIntroSection() {
             )}
 
             {/* Second Divider */}
-            <hr className="w-full border-t border-neutral-200/60 dark:border-theme-border/40 my-5 md:my-6" />
+            <hr className="w-full border-t border-theme-border/60 dark:border-theme-border/40 my-5 md:my-6" />
 
             {/* Why Choose Us block */}
             {whyChooseUs && whyChooseUs.enabled && (

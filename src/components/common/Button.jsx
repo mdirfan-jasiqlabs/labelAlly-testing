@@ -42,7 +42,6 @@ function Button({
     'motion-reduce:hover:scale-100 motion-reduce:active:scale-100',
     'focus-visible:outline-none',
     'focus-visible:ring-2',
-    'focus-visible:ring-orange-500',
     'focus-visible:ring-offset-2',
     'focus-visible:ring-offset-[var(--color-page-bg)]',
     'select-none',
@@ -64,26 +63,26 @@ function Button({
 
     // Filled secondary — neutral light
     secondary: [
-      'bg-neutral-100 hover:bg-neutral-200 active:bg-neutral-300',
-      'dark:bg-theme-card dark:hover:bg-theme-hover dark:active:bg-theme-border/40',
-      'text-neutral-800 dark:text-theme-heading',
-      'border-neutral-200 hover:border-neutral-300 dark:border-theme-border dark:hover:border-theme-border',
+      'bg-theme-secondary hover:bg-theme-hover active:bg-theme-elevated',
+      'text-theme-heading',
+      'border-theme-border hover:border-strong',
+      'focus-visible:ring-theme-focus',
     ].join(' '),
 
     // Outlined — transparent with orange border
     outline: [
-      'bg-transparent hover:bg-orange-50/60',
-      'dark:hover:bg-orange-500/10',
-      'text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300',
-      'border-orange-500 hover:border-orange-600 dark:border-orange-400 dark:hover:border-orange-300',
+      'bg-transparent hover:bg-theme-hover',
+      'text-orange-600 hover:text-orange-700',
+      'border-orange-500 hover:border-orange-600',
+      'focus-visible:ring-orange-500',
     ].join(' '),
 
     // Ghost — no border, no background
     ghost: [
-      'bg-transparent hover:bg-neutral-100 active:bg-neutral-200',
-      'dark:hover:bg-theme-hover dark:active:bg-theme-border/30',
-      'text-neutral-600 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
+      'bg-transparent hover:bg-theme-hover active:bg-theme-elevated',
+      'text-theme-muted hover:text-theme-heading',
       'border-transparent',
+      'focus-visible:ring-theme-focus',
     ].join(' '),
   };
 

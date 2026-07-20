@@ -13,117 +13,233 @@
 @tailwind utilities;
 
 /* ─── CSS Custom Properties (Design Tokens) ──────────────── */
+/*
+ * Canonical semantic theme system — runtime source of truth.
+ * Tailwind `theme-*`, `surface-*`, and `ink-*` utilities map here.
+ * Legacy aliases (--color-bg-*, --color-text-*) are retained for compatibility.
+ */
 :root {
-  /* Design Tokens */
-  --color-primary-50:  #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  --color-primary-950: #1e1b4b;
-
-  /* Accent Colors */
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
-  --color-accent-950: #451a03;
-
-  /* Theme-specific Colors - Light Mode default */
+  /* ── Surfaces ─────────────────────────────────────────── */
   --color-page-bg: #FCFCFF;
   --color-section-bg: #FFFFFF;
   --color-card-surface: #FFFFFF;
-  --color-logo-card-surface: #FFFFFF;
-  --color-logo-card-border: #e2e8f0;
-  --color-header-bg: rgba(252, 252, 255, 0.95);
-  --color-footer-bg: #09090b;
+  --color-elevated-surface: #FFFFFF;
+  --color-secondary-surface: #F8FAFC;
+  --color-input-surface: #F4F6FB;
+  --color-overlay: rgba(15, 23, 42, 0.45);
+
+  /* ── Foreground ─────────────────────────────────────────── */
   --color-heading-text: #11143E;
   --color-body-text: #555B70;
   --color-muted-text: #7B8092;
-  --color-border: #e2e8f0;
-  --color-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -6px rgba(15, 23, 42, 0.05);
+  --color-secondary-foreground: #64748B;
+
+  /* ── Borders ────────────────────────────────────────────── */
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
+  --color-border-strong: #CBD5E1;
+  --color-input-border: #E2E8F0;
+
+  /* ── Primary actions (Services Page orange — Tailwind orange-500/600/700) ── */
+  --color-action-primary: #F97316;
+  --color-action-primary-hover: #EA580C;
+  --color-action-primary-active: #C2410C;
+  --color-action-primary-foreground: #FFFFFF;
+  --color-action-primary-border: #F97316;
+  --color-action-primary-border-hover: #EA580C;
+
+  /* ── Decorative accent (amber — headings/highlights, not primary CTAs) ── */
+  --color-accent-decorative: #F59E0B;
+  --color-accent-decorative-foreground: #78350F;
+
+  /* ── Legacy brand pink (footer accents; maps to theme.accent) ── */
   --color-brand-accent: #FF2E74;
+  --color-brand-accent-hover: #E02668;
+  --color-brand-accent-active: #C41F5A;
+  --color-brand-accent-glow: rgba(255, 46, 116, 0.2);
+
+  /* ── Focus ──────────────────────────────────────────────── */
+  --color-focus: #6366F1;
+  --color-focus-ring: var(--color-focus);
+
+  /* ── Nav active (mobile menu / shared nav highlight) ─────── */
+  --color-nav-active-bg: #EEF2FF;
+  --color-nav-active-fg: #4338CA;
+  --color-nav-active-icon-bg: #E0E7FF;
+  --color-nav-active-icon-fg: #4F46E5;
+
+  /* ── Glass morphism surfaces ────────────────────────────── */
+  --color-glass-bg: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(226, 232, 240, 0.6);
+  --color-glass-strong-bg: rgba(255, 255, 255, 0.85);
+  --color-glass-strong-border: rgba(226, 232, 240, 0.8);
+
+  /* ── Feedback ───────────────────────────────────────────── */
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --color-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -6px rgba(15, 23, 42, 0.05);
+
+  /* ── Chrome / specialty surfaces ─────────────────────────── */
+  --color-logo-card-surface: #FFFFFF;
+  --color-logo-card-border: #E2E8F0;
+  --color-header-bg: rgba(252, 252, 255, 0.95);
+  /* Footer chrome — always-dark (theme-independent) */
+  --color-footer-bg: #080B11;
+  --color-footer-border: #18181b;
+  --color-footer-muted: #a1a1aa;
+  --color-footer-muted-soft: #71717a;
+  --color-footer-heading: #ffffff;
+  --color-footer-elevated: rgba(24, 24, 27, 0.3);
+  --color-footer-icon-surface: rgba(24, 24, 27, 0.4);
+  --color-footer-divider: #27272a;
+  --color-footer-hover: rgba(255, 255, 255, 0.01);
   --color-hover: rgba(244, 244, 245, 0.6);
-  --color-focus: #6366f1;
-  --color-toggle-bg: #f4f4f5;
-  --color-toggle-active: #ffffff;
+  --color-toggle-bg: #F4F4F5;
+  --color-toggle-active: #FFFFFF;
 
-  /* Background Layers */
-  --color-bg-primary:   var(--color-page-bg);
+  /* ── Compatibility aliases (legacy — retained) ───────────── */
+  --color-bg-primary: var(--color-page-bg);
   --color-bg-secondary: var(--color-section-bg);
-  --color-bg-tertiary:  #f4f4f5;
-  --color-bg-elevated:  #e4e4e7;
-
-  /* Text */
-  --color-text-primary:   var(--color-heading-text);
+  --color-bg-tertiary: #F4F4F5;
+  --color-bg-elevated: var(--color-elevated-surface);
+  --color-text-primary: var(--color-heading-text);
   --color-text-secondary: var(--color-body-text);
-  --color-text-muted:     var(--color-muted-text);
-
-  /* Borders */
+  --color-text-muted: var(--color-muted-text);
   --color-border-default: var(--color-border);
-  --color-border-subtle:  #f1f5f9;
-  --color-border-strong:  #cbd5e1;
 
-  /* Form controls — recessed vs card surface in both themes */
-  --color-input-surface: #F4F6FB;
+  /* ── Static palette references (Tailwind primary/accent scales) ── */
+  --color-primary-50:  #EEF2FF;
+  --color-primary-100: #E0E7FF;
+  --color-primary-200: #C7D2FE;
+  --color-primary-300: #A5B4FC;
+  --color-primary-400: #818CF8;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5;
+  --color-primary-700: #4338CA;
+  --color-primary-800: #3730A3;
+  --color-primary-900: #312E81;
+  --color-primary-950: #1E1B4B;
 
-  /* Gradients */
+  --color-accent-400: #FBBF24;
+  --color-accent-500: #F59E0B;
+  --color-accent-600: #D97706;
+  --color-accent-950: #451A03;
+
+  /* ── Gradients ──────────────────────────────────────────── */
   --gradient-hero:    linear-gradient(135deg, #eef2ff 0%, #ffffff 50%, #fffbeb 100%);
   --gradient-accent:  linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   --gradient-text:    linear-gradient(135deg, #4f46e5 0%, #d97706 100%);
 
-  /* Typography */
+  /* ── Typography ─────────────────────────────────────────── */
   --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Transitions */
+  /* ── Transitions ────────────────────────────────────────── */
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
   --transition-slow:   400ms ease;
 
-  /* Layout */
+  /* ── Layout (non-color) ─────────────────────────────────── */
   --header-height: 4.5rem;
   --container-max: 1400px;
 
-  /* Scrollbar */
+  /* ── Scrollbar ──────────────────────────────────────────── */
   --scrollbar-width: 8px;
-  --scrollbar-thumb: #cbd5e1;
-  --scrollbar-track: #f8fafc;
+  --scrollbar-thumb: #CBD5E1;
+  --scrollbar-track: #F8FAFC;
 }
 
 :root.dark,
 [data-theme="dark"] {
-  /* Theme-specific Colors - Premium Dark Mode */
+  /* ── Surfaces ─────────────────────────────────────────── */
   --color-page-bg: #0B0F19;
   --color-section-bg: #0F172A;
   --color-card-surface: #1E293B;
-  --color-logo-card-surface: #F8FAFC;
-  --color-logo-card-border: #E2E8F0;
-  --color-header-bg: rgba(11, 15, 25, 0.9);
-  --color-footer-bg: #080A10;
+  --color-elevated-surface: #243044;
+  --color-secondary-surface: #131825;
+  --color-input-surface: #111827;
+  --color-overlay: rgba(2, 6, 23, 0.72);
+
+  /* ── Foreground ─────────────────────────────────────────── */
   --color-heading-text: #F8FAFC;
   --color-body-text: #CBD5E1;
   --color-muted-text: #94A3B8;
+  --color-secondary-foreground: #64748B;
+
+  /* ── Borders ────────────────────────────────────────────── */
   --color-border: #334155;
-  --color-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5), 0 4px 12px -6px rgba(0, 0, 0, 0.3);
-  --color-brand-accent: #FF2E74;
-  --color-hover: rgba(51, 65, 85, 0.5);
-  --color-focus: #818cf8;
-  --color-toggle-bg: #1e293b;
-  --color-toggle-active: #0f172a;
-
-  /* Form controls — darker recessed fields inside elevated cards */
-  --color-input-surface: #0F172A;
-  --color-border-subtle: #1e293b;
+  --color-border-subtle: #1E293B;
   --color-border-strong: #475569;
+  --color-input-border: #334155;
 
-  /* Custom overrides for scrollbar and backgrounds in dark */
+  /* ── Primary actions (same approved orange in dark mode) ── */
+  --color-action-primary: #F97316;
+  --color-action-primary-hover: #EA580C;
+  --color-action-primary-active: #C2410C;
+  --color-action-primary-foreground: #FFFFFF;
+  --color-action-primary-border: #F97316;
+  --color-action-primary-border-hover: #EA580C;
+
+  /* ── Decorative accent ──────────────────────────────────── */
+  --color-accent-decorative: #FBBF24;
+  --color-accent-decorative-foreground: #FDE68A;
+
+  /* ── Legacy brand pink ──────────────────────────────────── */
+  --color-brand-accent: #FF2E74;
+  --color-brand-accent-hover: #E02668;
+  --color-brand-accent-active: #C41F5A;
+  --color-brand-accent-glow: rgba(255, 46, 116, 0.2);
+
+  /* ── Focus ──────────────────────────────────────────────── */
+  --color-focus: #818CF8;
+  --color-focus-ring: var(--color-focus);
+
+  /* ── Nav active (mobile menu / shared nav highlight) ─────── */
+  --color-nav-active-bg: rgba(49, 46, 129, 0.3);
+  --color-nav-active-fg: #A5B4FC;
+  --color-nav-active-icon-bg: rgba(49, 46, 129, 0.4);
+  --color-nav-active-icon-fg: #A5B4FC;
+
+  /* ── Glass morphism surfaces ────────────────────────────── */
+  --color-glass-bg: rgba(15, 23, 42, 0.72);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-strong-bg: rgba(30, 41, 59, 0.88);
+  --color-glass-strong-border: rgba(255, 255, 255, 0.14);
+
+  /* ── Feedback ───────────────────────────────────────────── */
+  --color-destructive: #F87171;
+  --color-destructive-foreground: #FFFFFF;
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --color-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5), 0 4px 12px -6px rgba(0, 0, 0, 0.3);
+
+  /* ── Chrome / specialty surfaces ─────────────────────────── */
+  --color-logo-card-surface: #F8FAFC;
+  --color-logo-card-border: #E2E8F0;
+  --color-header-bg: rgba(11, 15, 25, 0.9);
+  /* Footer chrome — always-dark (same values as light; footer does not flip) */
+  --color-footer-bg: #080B11;
+  --color-footer-border: #18181b;
+  --color-footer-muted: #a1a1aa;
+  --color-footer-muted-soft: #71717a;
+  --color-footer-heading: #ffffff;
+  --color-footer-elevated: rgba(24, 24, 27, 0.3);
+  --color-footer-icon-surface: rgba(24, 24, 27, 0.4);
+  --color-footer-divider: #27272a;
+  --color-footer-hover: rgba(255, 255, 255, 0.01);
+  --color-hover: rgba(51, 65, 85, 0.5);
+  --color-toggle-bg: #1E293B;
+  --color-toggle-active: #0F172A;
+
+  /* ── Scrollbar ──────────────────────────────────────────── */
   --scrollbar-thumb: #475569;
-  --scrollbar-track: #0f172a;
+  --scrollbar-track: #0F172A;
 }
 
 /* ─── Base Layer Overrides ────────────────────────────────── */
@@ -208,29 +324,17 @@
 @layer components {
   /* ── Glass Morphism ──────────────────────────────────────── */
   .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(226, 232, 240, 0.6);
+    border: 1px solid var(--color-glass-border);
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--color-glass-strong-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-  }
-
-  :root.dark .glass,
-  [data-theme='dark'] .glass {
-    background: rgba(15, 23, 42, 0.72);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  :root.dark .glass-strong,
-  [data-theme='dark'] .glass-strong {
-    background: rgba(30, 41, 59, 0.88);
-    border-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid var(--color-glass-strong-border);
   }
 
   /* ── Gradient Border ─────────────────────────────────────── */
@@ -296,7 +400,7 @@
     border-radius: theme('borderRadius.control');
     border-width: 1px;
     border-style: solid;
-    border-color: var(--color-border);
+    border-color: var(--color-input-border);
     background-color: var(--color-input-surface);
     color: var(--color-heading-text);
     font-size: 0.875rem;
@@ -311,12 +415,12 @@
   }
 
   .form-control:hover {
-    border-color: #d4d4d8;
+    border-color: var(--color-border-strong);
   }
 
   :root.dark .form-control:hover,
   [data-theme="dark"] .form-control:hover {
-    border-color: #64748b;
+    border-color: var(--color-border-strong);
   }
 
   .form-control-input {
@@ -332,16 +436,16 @@
   }
 
   .form-control-invalid {
-    border-color: #f87171;
+    border-color: var(--color-destructive);
   }
 
   :root.dark .form-control-invalid,
   [data-theme="dark"] .form-control-invalid {
-    border-color: #ef4444;
+    border-color: var(--color-destructive);
   }
 
   .form-control-invalid:focus-visible {
-    --tw-ring-color: #ef4444;
+    --tw-ring-color: var(--color-destructive);
   }
 
   @media (prefers-reduced-motion: reduce) {

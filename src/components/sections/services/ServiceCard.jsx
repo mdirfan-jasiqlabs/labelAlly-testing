@@ -46,7 +46,7 @@ function ServiceCard({ service }) {
   const accent = ACCENT_STYLES[service.accent] ?? ACCENT_STYLES.rose;
 
   return (
-    <article className="group h-full flex flex-col xs:flex-row items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-theme-card border border-neutral-200/80 dark:border-theme-border/50 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-card-hover motion-reduce:hover:translate-y-0 motion-reduce:transition-none">
+    <article className="group h-full flex flex-col xs:flex-row items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-surface-card dark:bg-theme-card border border-theme-border/80 dark:border-theme-border/50 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-card-hover motion-reduce:hover:translate-y-0 motion-reduce:transition-none">
       {/* Icon Surface */}
       <div
         aria-hidden="true"
@@ -68,7 +68,7 @@ function ServiceCard({ service }) {
 
       {/* Content */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
-        <h3 className="font-heading font-bold text-lg sm:text-xl text-neutral-900 dark:text-theme-heading leading-snug">
+        <h3 className="font-heading font-bold text-lg sm:text-xl text-ink-primary dark:text-theme-heading leading-snug">
           {service.title}
         </h3>
 
@@ -78,7 +78,7 @@ function ServiceCard({ service }) {
           className={['w-10 h-0.5 rounded-full', accent.line].join(' ')}
         />
 
-        <p className="text-sm sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body">
+        <p className="text-sm sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body">
           {service.description}
         </p>
       </div>

@@ -18,7 +18,7 @@ function AboutImageGallery() {
       {enabledImages.slice(0, 4).map((image) => (
         <div
           key={image.id}
-          className="relative overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] border border-neutral-100 dark:border-theme-border/30 bg-neutral-50 dark:bg-theme-card shadow-[0_8px_24px_rgba(25,24,70,0.02)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(25,24,70,0.05)] aspect-[4/5] sm:aspect-[1.1]"
+          className="relative overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] border border-theme-border dark:border-theme-border/30 bg-surface-muted dark:bg-theme-card shadow-[0_8px_24px_rgba(25,24,70,0.02)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(25,24,70,0.05)] aspect-[4/5] sm:aspect-[1.1]"
         >
           <img
             src={image.src}

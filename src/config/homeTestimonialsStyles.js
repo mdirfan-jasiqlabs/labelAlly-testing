@@ -2,8 +2,8 @@
 export const homeTestimonialsStyles = {
   section: [
     'relative section-spacing overflow-hidden outline-none',
-    'bg-surface-page dark:bg-neutral-950',
-    'border-t border-neutral-100 dark:border-theme-border/50',
+    'bg-surface-page',
+    'border-t border-theme-border/50',
   ].join(' '),
 
   background: {
@@ -30,8 +30,8 @@ export const homeTestimonialsStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white uppercase tracking-wider select-none',
-    'bg-orange-500 shadow-sm mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground uppercase tracking-wider select-none',
+    'bg-theme-action-primary shadow-sm mb-6',
   ].join(' '),
 
   heading: [
@@ -81,7 +81,7 @@ export const homeTestimonialsStyles = {
     'absolute inset-0 bg-gradient-to-tr from-brand-pink via-brand-orange to-brand-green shadow-sm',
 
   portraitInner:
-    'absolute inset-[6px] bg-white dark:bg-neutral-900 overflow-hidden ring-1 ring-black/5 dark:ring-white/15',
+    'absolute inset-[6px] bg-theme-card overflow-hidden ring-1 ring-theme-border/50',
 
   portraitImage: [
     'w-full h-full object-cover object-[center_18%]',
@@ -104,35 +104,35 @@ export const homeTestimonialsStyles = {
     'text-orange-500/40 dark:text-orange-400/35 mb-5 lg:-ml-1 transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
 
   blockquote: [
-    'font-heading text-neutral-800 dark:text-theme-body',
+    'font-heading text-ink-primary dark:text-theme-body',
     'text-base md:text-[1.18rem] font-medium leading-relaxed italic',
     'mb-6 max-w-xl',
   ].join(' '),
 
   nameBadge: [
-    'inline-block bg-orange-500 text-white font-bold text-[0.85rem]',
+    'inline-block bg-theme-action-primary text-theme-action-primaryForeground font-bold text-[0.85rem]',
     'px-5 py-2 rounded-sm select-none mb-1 tracking-wide shadow-sm',
   ].join(' '),
 
   role:
-    'not-italic text-xs font-bold text-neutral-500 dark:text-theme-muted tracking-wider uppercase',
+    'not-italic text-xs font-bold text-ink-muted dark:text-theme-muted tracking-wider uppercase',
 
   controlsRow:
     'flex flex-row items-center gap-5 mt-8 w-full justify-between select-none',
 
   navButton: [
     'w-10 h-10 rounded-full flex items-center justify-center',
-    'border border-neutral-300 dark:border-theme-border/70',
-    'bg-white dark:bg-neutral-900/80',
-    'text-neutral-500 dark:text-theme-muted',
-    'hover:border-orange-500/40 dark:hover:border-orange-400/30',
-    'hover:text-orange-500 dark:hover:text-orange-400',
-    'hover:bg-neutral-50 dark:hover:bg-neutral-800/80',
+    'border border-theme-border',
+    'bg-theme-card',
+    'text-ink-muted dark:text-theme-muted',
+    'hover:border-theme-action-primary/40',
+    'hover:text-theme-action-primary',
+    'hover:bg-theme-hover',
     'shadow-sm hover:shadow-card-hover',
     'transition-all duration-200 active:scale-95',
     'hover:-translate-y-0.5 motion-reduce:hover:translate-y-0',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
-    'focus-visible:ring-offset-2 focus-visible:ring-offset-surface-page dark:focus-visible:ring-offset-neutral-950',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+    'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
   ].join(' '),
 
   navGroup: 'flex items-center gap-3 order-2 sm:order-1',
@@ -141,16 +141,16 @@ export const homeTestimonialsStyles = {
 
   dot: [
     'w-3.5 h-3.5 rounded-full border transition-all duration-300',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
-    'focus-visible:ring-offset-2 focus-visible:ring-offset-surface-page dark:focus-visible:ring-offset-neutral-950',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+    'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
   ].join(' '),
 
-  dotActive: 'bg-orange-500 border-orange-500 scale-110 shadow-sm',
+  dotActive: 'bg-theme-action-primary border-theme-action-primary scale-110 shadow-sm',
   dotIdle: [
-    'bg-white dark:bg-neutral-900/80',
-    'border-neutral-300 dark:border-theme-border/70',
-    'hover:border-orange-400/40 dark:hover:border-orange-400/30',
-    'hover:bg-neutral-50 dark:hover:bg-neutral-800/60',
+    'bg-theme-card',
+    'border-theme-border',
+    'hover:border-theme-action-primary/40',
+    'hover:bg-theme-hover',
   ].join(' '),
 };
 

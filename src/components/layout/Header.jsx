@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, Phone, ArrowRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import BrandLogo from '../common/BrandLogo';
 import navData from '../../data/navigation.json';
 import ThemeToggle from '../ui/ThemeToggle';
 
@@ -69,13 +70,8 @@ function Header() {
               aria-label={navData.logo.ariaLabel}
               className="flex items-center shrink-0 focus-ring rounded-md group"
             >
-              <img
-                src="/logo.jpeg"
-                alt="LabelAlly Entertainment Logo"
-                width={1536}
-                height={1024}
+              <BrandLogo
                 loading="eager"
-                decoding="async"
                 className={[
                   'object-contain transition-all duration-300',
                   scrolled
@@ -106,8 +102,8 @@ function Header() {
                           'focus-ring',
                           'group',
                           isActive
-                            ? 'text-neutral-900 dark:text-theme-heading'
-                            : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50 dark:text-theme-muted dark:hover:text-theme-heading dark:hover:bg-theme-hover',
+                            ? 'text-theme-heading'
+                            : 'text-theme-muted hover:text-theme-heading hover:bg-theme-hover',
                         ].join(' ')
                       }
                     >
@@ -120,7 +116,7 @@ function Header() {
                             aria-hidden="true"
                             className={[
                               'absolute bottom-0 left-1/2 -translate-x-1/2',
-                              'h-[2px] rounded-full bg-accent-500',
+                              'h-[2px] rounded-full bg-theme-accentDecorative',
                               'transition-all duration-300 ease-out',
                               isActive ? 'w-4/5 opacity-100' : 'w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-40',
                             ].join(' ')}
@@ -146,9 +142,9 @@ function Header() {
                   'hidden lg:inline-flex items-center gap-2',
                   'h-11 px-4',
                   'rounded-full',
-                  'border border-neutral-200 hover:border-primary-300 dark:border-theme-border dark:hover:border-primary-400',
-                  'text-xs font-semibold text-neutral-700 hover:text-primary-600 dark:text-theme-body dark:hover:text-primary-300',
-                  'bg-white hover:bg-primary-50 dark:bg-theme-card dark:hover:bg-theme-hover',
+                  'border border-theme-border hover:border-strong',
+                  'text-xs font-semibold text-theme-body hover:text-theme-heading',
+                  'bg-theme-card hover:bg-theme-hover',
                   'transition-all duration-200',
                   'focus-ring',
                   'whitespace-nowrap',
@@ -167,11 +163,11 @@ function Header() {
                   'hidden lg:inline-flex items-center gap-2',
                   'h-11 px-5',
                   'rounded-lg',
-                  'bg-primary-600 hover:bg-primary-700',
-                  'text-xs font-semibold text-white',
-                  'border border-primary-600 hover:border-primary-700',
+                  'bg-theme-action-primary hover:bg-theme-action-primaryHover active:bg-theme-action-primaryActive',
+                  'text-xs font-semibold text-theme-action-primaryForeground',
+                  'border border-theme-action-primaryBorder hover:border-theme-action-primaryBorderHover',
                   'transition-all duration-200',
-                  'hover:shadow-[0_4px_14px_rgba(79,70,229,0.35)]',
+                  'hover:shadow-sm',
                   'active:scale-[0.98]',
                   'focus-ring',
                   'whitespace-nowrap',
@@ -189,9 +185,9 @@ function Header() {
                   'lg:hidden',
                   'flex items-center justify-center',
                   'w-11 h-11 rounded-full',
-                  'border border-neutral-200 dark:border-theme-border',
-                  'bg-white text-neutral-700 dark:bg-theme-card dark:text-theme-body',
-                  'hover:border-primary-300 hover:text-primary-600 hover:bg-primary-50 dark:hover:border-primary-400 dark:hover:text-primary-300 dark:hover:bg-theme-hover',
+                  'border border-theme-border hover:border-strong',
+                  'bg-theme-card text-theme-body',
+                  'hover:text-theme-heading hover:bg-theme-hover',
                   'transition-all duration-200',
                   'focus-ring',
                 ].join(' ')}
@@ -210,9 +206,9 @@ function Header() {
                   'lg:hidden',
                   'flex items-center justify-center',
                   'w-11 h-11 rounded-lg',
-                  'text-neutral-600 hover:text-neutral-900 dark:text-theme-muted dark:hover:text-theme-heading',
-                  'hover:bg-neutral-100 dark:hover:bg-theme-hover',
-                  'border border-transparent hover:border-neutral-200 dark:hover:border-theme-border',
+                  'text-theme-muted hover:text-theme-heading',
+                  'hover:bg-theme-hover',
+                  'border border-transparent hover:border-theme-border',
                   'transition-all duration-200',
                   'focus-ring',
                 ].join(' ')}

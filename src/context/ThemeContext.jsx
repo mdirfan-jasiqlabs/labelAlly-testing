@@ -1,75 +1,58 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  applyThemeToDocument,
+  persistThemePreference,
+  readSystemPrefersDark,
+  readThemePreference,
+  resolveIsDark,
+} from '../lib/themeMode';
 
 const ThemeContext = createContext(undefined);
 
 export function ThemeProvider({ children }) {
-  // Theme state: 'light' | 'dark' | 'system'
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'system';
-  });
+  const [theme, setTheme] = useState(readThemePreference);
+  const [systemPrefersDark, setSystemPrefersDark] = useState(readSystemPrefersDark);
+
+  const isDark = resolveIsDark(theme, systemPrefersDark);
 
   useEffect(() => {
-    const root = document.documentElement;
+    applyThemeToDocument(isDark);
+    persistThemePreference(theme);
+  }, [theme, isDark]);
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const applyTheme = () => {
-      let isDark = false;
-
-      if (theme === 'dark') {
-        isDark = true;
-      } else if (theme === 'system') {
-        isDark = mediaQuery.matches;
-      }
-
-      if (isDark) {
-        root.classList.add('dark');
-        root.setAttribute('data-theme', 'dark');
-        root.style.colorScheme = 'dark';
-      } else {
-        root.classList.remove('dark');
-        root.setAttribute('data-theme', 'light');
-        root.style.colorScheme = 'light';
-      }
+    const handleSystemThemeChange = (event) => {
+      setSystemPrefersDark(event.matches);
     };
 
-    // Apply theme changes
-    applyTheme();
+    // Sync in case preference changed between boot script and hydration.
+    setSystemPrefersDark(mediaQuery.matches);
 
-    // Persist setting
-    if (theme === 'system') {
-      localStorage.removeItem('theme');
-    } else {
-      localStorage.setItem('theme', theme);
-    }
-
-    // Add listener for system preference change
-    const handleChange = () => {
-      if (theme === 'system') {
-        applyTheme();
-      }
-    };
-
-    // Cross-browser matchMedia listener support
     if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleChange);
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
     } else {
-      mediaQuery.addListener(handleChange);
+      mediaQuery.addListener(handleSystemThemeChange);
     }
 
     return () => {
       if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleChange);
+        mediaQuery.removeEventListener('change', handleSystemThemeChange);
       } else {
-        mediaQuery.removeListener(handleChange);
+        mediaQuery.removeListener(handleSystemThemeChange);
       }
     };
-  }, [theme]);
+  }, []);
 
-  const value = {
-    theme,
-    setTheme,
-    isDark: theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  };
+  const value = useMemo(
+    () => ({
+      theme,
+      setTheme,
+      isDark,
+    }),
+    [theme, isDark],
+  );
 
   return (
     <ThemeContext.Provider value={value}>

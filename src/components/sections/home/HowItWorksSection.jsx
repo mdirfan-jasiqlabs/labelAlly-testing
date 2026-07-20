@@ -27,7 +27,7 @@ function HowItWorksSection() {
     <section
       role="region"
       aria-labelledby="process-heading"
-      className="relative w-full overflow-hidden bg-theme-page dark:bg-neutral-950 section-spacing"
+      className="relative w-full overflow-hidden bg-theme-page section-spacing"
     >
       {/* Background radial — hero-aligned dark mode */}
       <div
@@ -123,7 +123,7 @@ function HowItWorksSection() {
                     {!isLast ? (
                       <div
                         aria-hidden="true"
-                        className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-neutral-200 dark:bg-theme-border pointer-events-none"
+                        className="absolute left-5 top-10 bottom-[-40px] w-[2px] bg-theme-border pointer-events-none"
                       />
                     ) : null}
 
@@ -132,12 +132,12 @@ function HowItWorksSection() {
                       className={[
                         'relative z-10 flex items-center justify-center shrink-0',
                         'w-10 h-10 rounded-full',
-                        'bg-orange-500 text-white',
+                        'bg-theme-action-primary text-theme-action-primaryForeground',
                         'font-heading font-extrabold text-sm',
-                        'border border-orange-500',
+                        'border border-theme-action-primaryBorder',
                         'shadow-sm',
                         'transition-all duration-300',
-                        'group-hover:bg-orange-600 group-hover:border-orange-600',
+                        'group-hover:bg-theme-action-primaryHover group-hover:border-theme-action-primaryBorderHover',
                         'group-hover:scale-105 motion-reduce:group-hover:scale-100',
                         'group-hover:shadow-card-hover',
                       ].join(' ')}

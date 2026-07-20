@@ -5,7 +5,7 @@
 
 export const heroClasses = {
   sectionClass:
-    'relative w-full overflow-hidden bg-slate-50 dark:bg-neutral-950',
+    'relative w-full overflow-hidden bg-theme-secondary',
 
   containerClass:
     'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
@@ -31,13 +31,13 @@ export const heroClasses = {
     'bg-[#FFE8D6] dark:bg-brand-orange/20',
     'px-3.5 py-1.5',
     'text-[13px] font-semibold',
-    'text-[#E85D04] dark:text-orange-300',
+    'text-theme-action-primary dark:text-orange-300',
   ].join(' '),
 
-  badgeIconClass: 'shrink-0 text-[#E85D04] dark:text-orange-300',
+  badgeIconClass: 'shrink-0 text-theme-action-primary dark:text-orange-300',
 
   headingClass: [
-    'font-heading font-extrabold tracking-tight text-slate-950 dark:text-white',
+    'font-heading font-extrabold tracking-tight text-ink-primary dark:text-theme-heading',
     'text-[2.25rem] leading-[1.12]',
     'xs:text-[2.5rem]',
     'sm:text-[3rem] sm:leading-[1.1]',
@@ -62,7 +62,7 @@ export const heroClasses = {
   },
 
   descriptionClass:
-    'max-w-[34rem] text-[15px] sm:text-base leading-[1.7] text-slate-600 dark:text-neutral-400',
+    'max-w-[34rem] text-[15px] sm:text-base leading-[1.7] text-ink-secondary dark:text-theme-body',
 
   buttonRowClass:
     'mt-7 sm:mt-8 flex w-full flex-col sm:flex-row items-stretch sm:items-center gap-3',
@@ -74,8 +74,7 @@ export const heroClasses = {
       'text-sm font-semibold whitespace-nowrap',
       'transition-all duration-300 ease-smooth',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-      'focus-visible:ring-orange-500 focus-visible:ring-offset-slate-50',
-      'dark:focus-visible:ring-offset-neutral-950',
+      'focus-visible:ring-orange-500 focus-visible:ring-offset-theme-page',
       'disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed',
       'active:scale-[0.98]',
       'w-full sm:w-auto',
@@ -86,11 +85,11 @@ export const heroClasses = {
       'hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(244,63,94,0.5)]',
     ].join(' '),
     secondary: [
-      'bg-white dark:bg-neutral-900 text-slate-800 dark:text-neutral-100',
-      'border border-slate-200 dark:border-neutral-700',
+      'bg-theme-card text-ink-primary dark:text-theme-heading',
+      'border border-theme-border',
       'shadow-sm',
-      'hover:bg-slate-50 dark:hover:bg-neutral-800',
-      'hover:border-slate-300 dark:hover:border-neutral-600',
+      'hover:bg-theme-hover',
+      'hover:border-theme-border',
     ].join(' '),
   },
 
@@ -111,7 +110,7 @@ export const heroClasses = {
       blue:
         'flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300 transition-transform duration-300 group-hover:scale-105',
     },
-    title: 'text-[12px] sm:text-[13px] font-semibold text-slate-700 dark:text-neutral-300 leading-snug',
+    title: 'text-[12px] sm:text-[13px] font-semibold text-ink-secondary dark:text-theme-body leading-snug',
   },
 
   galleryClass: {
@@ -123,7 +122,7 @@ export const heroClasses = {
       'overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]',
       'shadow-[0_24px_60px_-20px_rgba(15,23,42,0.28)]',
       'dark:shadow-[0_24px_60px_-16px_rgba(0,0,0,0.55)]',
-      'ring-1 ring-black/5 dark:ring-white/10',
+      'ring-1 ring-black/5 dark:ring-theme-border',
       'transition-transform duration-300 ease-smooth',
       'motion-safe:animate-hero-float',
     ].join(' '),
@@ -133,8 +132,8 @@ export const heroClasses = {
         'absolute top-[0%] right-[0%] z-20',
         'w-[34%] min-w-0 max-w-[168px] aspect-[5/4]',
         'overflow-hidden rounded-2xl',
-        'bg-white dark:bg-neutral-900',
-        'ring-4 ring-white dark:ring-neutral-950',
+        'bg-theme-card',
+        'ring-4 ring-theme-page',
         'shadow-[0_16px_40px_-12px_rgba(15,23,42,0.3)]',
         'transition-transform duration-300 ease-smooth hover:scale-[1.03]',
         'motion-safe:animate-hero-float-delayed',
@@ -143,8 +142,8 @@ export const heroClasses = {
         'absolute bottom-[8%] left-[0%] z-20',
         'w-[32%] min-w-0 max-w-[156px] aspect-square',
         'overflow-hidden rounded-2xl',
-        'bg-white dark:bg-neutral-900',
-        'ring-4 ring-white dark:ring-neutral-950',
+        'bg-theme-card',
+        'ring-4 ring-theme-page',
         'shadow-[0_16px_40px_-12px_rgba(15,23,42,0.3)]',
         'transition-transform duration-300 ease-smooth hover:scale-[1.03]',
         'motion-safe:animate-hero-float',
@@ -160,15 +159,15 @@ export const heroClasses = {
 
   cardClass: [
     'rounded-2xl',
-    'border border-slate-100 dark:border-white/10',
-    'bg-white dark:bg-neutral-900',
+    'border border-theme-border dark:border-theme-border',
+    'bg-theme-card',
     'shadow-[0_18px_40px_-16px_rgba(15,23,42,0.22)]',
     'p-4',
     'transition-transform duration-300 ease-smooth hover:-translate-y-1',
   ].join(' '),
 
   platformClass: {
-    title: 'text-[12px] font-semibold text-slate-500 dark:text-neutral-400 mb-3',
+    title: 'text-[12px] font-semibold text-ink-muted dark:text-theme-muted mb-3',
     logoRow: 'flex flex-wrap items-center gap-2.5',
     logo: 'h-6 w-auto max-w-[78px] object-contain',
     footer:

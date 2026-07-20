@@ -1,9 +1,17 @@
 /**
- * LabelAlly Entertainment — Central Theme Configuration
+ * LabelAlly Entertainment — Theme Documentation & Design Reference
  *
- * This file is the single source of truth for all visual design tokens.
- * Never hardcode colors, fonts, spacing, or other design values in components.
- * Always import from this file.
+ * IMPORTANT: Runtime theme colors are driven by CSS custom properties in
+ * `src/styles/globals.css`. Tailwind semantic utilities (`theme-*`, `surface-*`,
+ * `ink-*`) map to those variables. Do not treat this file as a second runtime
+ * source of truth.
+ *
+ * Primary action color (Services Page button): Tailwind `orange-500/600/700`
+ * → CSS vars `--color-action-primary*` in globals.css.
+ *
+ * Decorative accent (headings/highlights): amber `accent-*` scale / `--color-accent-decorative`.
+ *
+ * Legacy brand pink: `--color-brand-accent` (#FF2E74) — footer accents only.
  */
 
 export const theme = {
@@ -16,7 +24,40 @@ export const theme = {
   },
 
   // ─────────────────────────────────────────────
-  // COLORS
+  // SEMANTIC TOKENS (documentation — runtime values in globals.css)
+  // ─────────────────────────────────────────────
+  semantic: {
+    light: {
+      page: '#FCFCFF',
+      section: '#FFFFFF',
+      card: '#FFFFFF',
+      elevated: '#FFFFFF',
+      heading: '#11143E',
+      body: '#555B70',
+      muted: '#7B8092',
+      border: '#E2E8F0',
+      inputSurface: '#F4F6FB',
+      actionPrimary: '#F97316',
+      accentDecorative: '#F59E0B',
+      brandPink: '#FF2E74',
+      focus: '#6366F1',
+    },
+    dark: {
+      page: '#0B0F19',
+      section: '#0F172A',
+      card: '#1E293B',
+      elevated: '#243044',
+      heading: '#F8FAFC',
+      body: '#CBD5E1',
+      muted: '#94A3B8',
+      border: '#334155',
+      inputSurface: '#111827',
+      focus: '#818CF8',
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  // COLORS (static scales — Tailwind primary/accent/neutral)
   // ─────────────────────────────────────────────
   colors: {
     // Primary palette — deep midnight navy

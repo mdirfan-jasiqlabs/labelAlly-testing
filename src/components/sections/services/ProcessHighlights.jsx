@@ -38,7 +38,7 @@ function ProcessHighlights() {
   const enabledHighlights = process.highlights.filter((item) => item.enabled);
 
   return (
-    <div className="bg-white dark:bg-theme-card rounded-2xl md:rounded-3xl border border-neutral-200/80 dark:border-theme-border/50 shadow-sm p-6 md:p-8">
+    <div className="bg-surface-card dark:bg-theme-card rounded-2xl md:rounded-3xl border border-theme-border/80 dark:border-theme-border/50 shadow-sm p-6 md:p-8">
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 list-none p-0 m-0">
         {enabledHighlights.map((highlight, index) => {
           const IconComponent = ICON_MAP[highlight.icon];
@@ -50,10 +50,10 @@ function ProcessHighlights() {
               className={[
                 'flex flex-col items-center text-center gap-4',
                 index < enabledHighlights.length - 1 && index < 3
-                  ? 'lg:border-r lg:border-neutral-200/60 dark:lg:border-theme-border/40'
+                  ? 'lg:border-r lg:border-theme-border/60 dark:lg:border-theme-border/40'
                   : '',
                 index < enabledHighlights.length - 2 && index < 2
-                  ? 'sm:border-r sm:border-neutral-200/60 dark:sm:border-theme-border/40'
+                  ? 'sm:border-r sm:border-theme-border/60 dark:sm:border-theme-border/40'
                   : '',
               ].filter(Boolean).join(' ')}
             >
@@ -77,7 +77,7 @@ function ProcessHighlights() {
               </div>
 
               {/* Title */}
-              <h4 className="font-heading font-bold text-base sm:text-lg text-neutral-900 dark:text-theme-heading leading-snug">
+              <h4 className="font-heading font-bold text-base sm:text-lg text-ink-primary dark:text-theme-heading leading-snug">
                 {highlight.title}
               </h4>
             </li>

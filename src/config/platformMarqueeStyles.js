@@ -53,11 +53,11 @@ export const platformMarqueeStyles = {
   ].join(' '),
   more: [
     'inline-flex items-center justify-center h-8 px-3 rounded-full',
-    'border border-neutral-200/80 dark:border-theme-border/50',
+    'border border-theme-border/80 dark:border-theme-border/50',
     'text-[11px] sm:text-xs font-semibold',
-    'text-neutral-500 dark:text-theme-muted',
-    'hover:text-neutral-900 dark:hover:text-theme-heading',
-    'hover:border-neutral-300 dark:hover:border-theme-border',
+    'text-ink-muted dark:text-theme-muted',
+    'hover:text-ink-primary dark:hover:text-theme-heading',
+    'hover:border-strong dark:hover:border-theme-border',
     'transition-colors duration-250 whitespace-nowrap focus-ring',
   ].join(' '),
 };

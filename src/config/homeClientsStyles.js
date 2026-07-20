@@ -2,8 +2,8 @@
 export const homeClientsStyles = {
   section: [
     'relative section-spacing overflow-hidden',
-    'bg-theme-page dark:bg-neutral-950',
-    'border-t border-neutral-100 dark:border-theme-border/50',
+    'bg-theme-page',
+    'border-t border-theme-border/50',
   ].join(' '),
 
   background: {
@@ -33,8 +33,8 @@ export const homeClientsStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white uppercase tracking-wider select-none',
-    'bg-orange-500 shadow-sm mb-5 sm:mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground uppercase tracking-wider select-none',
+    'bg-theme-action-primary shadow-sm mb-5 sm:mb-6',
   ].join(' '),
 
   heading: [
@@ -52,14 +52,14 @@ export const homeClientsStyles = {
     'rounded-xl sm:rounded-2xl',
     'aspect-[1.55] sm:aspect-[1.5]',
     'p-4 sm:p-5 md:p-6',
-    'bg-white dark:bg-neutral-900/85',
-    'border border-neutral-200/70 dark:border-theme-border/60',
+    'bg-theme-logoCard',
+    'border border-theme-logoCardBorder',
     'shadow-sm dark:shadow-theme',
-    'ring-1 ring-transparent dark:ring-orange-500/10',
+    'ring-1 ring-transparent dark:ring-theme-action-primary/10',
     'transition-all duration-300 ease-out',
     'hover:-translate-y-0.5 hover:shadow-card-hover',
-    'hover:border-orange-500/35 dark:hover:border-orange-400/30',
-    'dark:hover:ring-orange-400/20',
+    'hover:border-theme-action-primary/35',
+    'dark:hover:ring-theme-action-primary/20',
     'motion-reduce:hover:translate-y-0',
   ].join(' '),
 

@@ -13,21 +13,21 @@ function PageLoader() {
       role="status"
       aria-live="polite"
       aria-label="Loading page"
-      className="flex flex-col items-center justify-center min-h-[50vh] w-full bg-white dark:bg-theme-page px-4"
+      className="flex flex-col items-center justify-center min-h-[50vh] w-full bg-theme-page px-4"
     >
       <div className="flex flex-col items-center gap-4 text-center">
         {/* Soft Brand Accent Glow / Spinner */}
         <div className="relative flex items-center justify-center">
-          <div aria-hidden="true" className="absolute w-12 h-12 rounded-full bg-primary-500/10 blur-xl animate-pulse-slow" />
+          <div aria-hidden="true" className="absolute w-12 h-12 rounded-full bg-theme-action-primary/10 blur-xl animate-pulse-slow" />
           <Loader2
             size={36}
             aria-hidden="true"
-            className="text-primary-500 animate-spin motion-reduce:animate-none shrink-0"
+            className="text-theme-action-primary animate-spin motion-reduce:animate-none shrink-0"
           />
         </div>
         
         {/* Loading text */}
-        <span className="text-sm font-medium font-heading text-neutral-600 dark:text-theme-body tracking-wide select-none">
+        <span className="text-sm font-medium font-heading text-theme-body tracking-wide select-none">
           Loading...
         </span>
         

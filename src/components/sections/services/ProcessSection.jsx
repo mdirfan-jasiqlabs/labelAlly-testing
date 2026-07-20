@@ -16,7 +16,7 @@ function ProcessSection() {
     <section
       role="region"
       aria-labelledby="process-heading"
-      className="relative section-spacing bg-neutral-50/60 dark:bg-theme-section overflow-hidden"
+      className="relative section-spacing bg-surface-muted dark:bg-theme-section overflow-hidden"
     >
       {/* Decorative background elements */}
       <div

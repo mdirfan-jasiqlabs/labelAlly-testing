@@ -4,7 +4,7 @@ import { homeHeroStyles } from './homeHeroStyles';
 export const homeAboutStyles = {
   section: [
     'relative w-full overflow-hidden',
-    'bg-theme-page dark:bg-neutral-950',
+    'bg-theme-page',
     'section-spacing',
   ].join(' '),
 
@@ -41,8 +41,8 @@ export const homeAboutStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white',
-    'bg-orange-500 shadow-sm mb-5 sm:mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground',
+    'bg-theme-action-primary shadow-sm mb-5 sm:mb-6',
   ].join(' '),
 
   heading: [
@@ -61,7 +61,7 @@ export const homeAboutStyles = {
   checklist: 'flex flex-col gap-3.5 sm:gap-4 max-w-md',
   checklistItem:
     'flex items-start gap-3.5 text-[0.92rem] sm:text-[0.95rem] font-medium text-ink-secondary dark:text-theme-body leading-relaxed',
-  checklistIcon: 'shrink-0 mt-0.5 flex items-center justify-center text-orange-500 dark:text-orange-400',
+  checklistIcon: 'shrink-0 mt-0.5 flex items-center justify-center text-theme-action-primary',
 
   carousel: [
     'flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth',
@@ -73,12 +73,12 @@ export const homeAboutStyles = {
     'group flex flex-col items-center text-center',
     'p-6 sm:p-8 rounded-2xl sm:rounded-[1.75rem]',
     'border border-theme-border/60 dark:border-theme-border/70',
-    'bg-theme-card dark:bg-neutral-900/75',
+    'bg-theme-card dark:bg-theme-card/75',
     'shadow-theme dark:shadow-theme',
     'ring-1 ring-transparent dark:ring-violet-400/10',
     'transition-all duration-300 ease-out',
-    'hover:-translate-y-1 hover:border-orange-500/40 dark:hover:border-orange-400/35',
-    'hover:shadow-card-hover dark:hover:ring-orange-400/15',
+    'hover:-translate-y-1 hover:border-theme-action-primary/40',
+    'hover:shadow-card-hover dark:hover:ring-theme-action-primary/15',
     'motion-reduce:hover:translate-y-0 motion-reduce:transition-none',
     'snap-start shrink-0',
     'w-full md:w-[calc(50%-12px)] min-h-[300px] sm:min-h-[340px]',
@@ -94,18 +94,18 @@ export const homeAboutStyles = {
   dots: 'flex items-center justify-center gap-2 mt-3',
   dot: [
     'h-2 rounded-full transition-all duration-300',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500',
-    'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page dark:focus-visible:ring-offset-neutral-950',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+    'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
   ].join(' '),
-  dotActive: 'bg-orange-500 w-5',
+  dotActive: 'bg-theme-action-primary w-5',
   dotIdle:
-    'bg-neutral-200 dark:bg-neutral-700 w-2 hover:bg-orange-300/60 dark:hover:bg-orange-400/50',
+    'bg-theme-border dark:bg-theme-border w-2 hover:bg-theme-action-primary/60',
 
   statsWrap: 'mt-12 md:mt-16 lg:mt-20',
   statsShell: [
     'rounded-2xl sm:rounded-3xl',
     'border border-theme-border/60 dark:border-theme-border/70',
-    'bg-theme-card dark:bg-neutral-900/70',
+    'bg-theme-card dark:bg-theme-card/70',
     'shadow-theme dark:shadow-theme',
     'ring-1 ring-transparent dark:ring-violet-400/10',
     'px-6 py-8 sm:px-8 md:py-10',
@@ -120,9 +120,9 @@ export const homeAboutStyles = {
   statValue:
     'font-heading font-black text-2xl sm:text-3xl text-ink-primary dark:text-theme-heading leading-none mb-2',
   statLabel:
-    'text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400',
+    'text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider text-theme-action-primary',
 
-  /** Bottom wave — seamless into How It Works (also neutral-950 in dark) */
+  /** Bottom wave — seamless into How It Works (theme-page in both modes) */
   wave: 'absolute bottom-0 left-0 right-0 h-10 w-full pointer-events-none select-none overflow-hidden',
-  waveFill: 'w-full h-full object-cover text-theme-page dark:text-neutral-950',
+  waveFill: 'w-full h-full object-cover text-theme-page dark:text-theme-page',
 };

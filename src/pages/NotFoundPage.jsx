@@ -46,13 +46,13 @@ function NotFoundPage() {
             {/* Heading */}
             <h1
               id="not-found-heading"
-              className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-neutral-900 dark:text-theme-heading mb-4 tracking-tight text-center"
+              className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-ink-primary dark:text-theme-heading mb-4 tracking-tight text-center"
             >
               {notFoundData.heading}
             </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-neutral-600 dark:text-theme-body max-w-md leading-relaxed mb-8 text-center px-1">
+            <p className="text-sm sm:text-base text-ink-secondary dark:text-theme-body max-w-md leading-relaxed mb-8 text-center px-1">
               {notFoundData.description}
             </p>
 

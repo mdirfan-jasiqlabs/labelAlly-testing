@@ -44,8 +44,8 @@ function TeamValueCard({ value }) {
       className={[
         'group h-full flex flex-col',
         'rounded-2xl md:rounded-3xl',
-        'bg-white dark:bg-theme-card',
-        'border border-neutral-200/70 dark:border-theme-border/50',
+        'bg-surface-card dark:bg-theme-card',
+        'border border-theme-border/70 dark:border-theme-border/50',
         'shadow-sm dark:shadow-theme',
         'p-5 sm:p-6',
         'transition-all duration-300 ease-out',
@@ -73,7 +73,7 @@ function TeamValueCard({ value }) {
         )}
       </div>
 
-      <h4 className="font-heading font-bold text-base sm:text-lg text-neutral-900 dark:text-theme-heading leading-snug mb-2.5">
+      <h4 className="font-heading font-bold text-base sm:text-lg text-ink-primary dark:text-theme-heading leading-snug mb-2.5">
         {value.title}
       </h4>
 
@@ -82,7 +82,7 @@ function TeamValueCard({ value }) {
         className={['w-10 h-0.5 rounded-full mb-3', accent.line].join(' ')}
       />
 
-      <p className="text-[0.88rem] sm:text-sm leading-relaxed text-neutral-600 dark:text-theme-body flex-1">
+      <p className="text-[0.88rem] sm:text-sm leading-relaxed text-ink-secondary dark:text-theme-body flex-1">
         {value.description}
       </p>
     </article>

@@ -28,3 +28,10 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Temporary QA artifacts (Chrome profiles, screenshots, test output)
+.qa-chrome-profile/
+.qa-chrome-profile-*/
+qa-screenshots/
+playwright-report/
+test-results/

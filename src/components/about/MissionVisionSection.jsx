@@ -19,7 +19,7 @@ function MissionVisionSection() {
     <section
       role="region"
       aria-labelledby="mission-vision-heading"
-      className="relative w-full overflow-hidden bg-neutral-50/60 dark:bg-theme-section section-spacing transition-colors duration-250"
+      className="relative w-full overflow-hidden bg-surface-muted dark:bg-theme-section section-spacing transition-colors duration-250"
     >
       <AboutDecorations decorations={decorations} />
 
@@ -45,7 +45,7 @@ function MissionVisionSection() {
           {heading && (
             <h2
               id="mission-vision-heading"
-              className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-neutral-900 dark:text-theme-heading max-w-3xl"
+              className="font-heading font-black tracking-tight leading-[1.15] text-2xl xs:text-3xl sm:text-4xl md:text-[2.65rem] lg:text-5xl text-ink-primary dark:text-theme-heading max-w-3xl"
             >
               {heading}
             </h2>

@@ -67,7 +67,7 @@ export const placementClasses = {
 
 export const artistsLabelsOnboardingStyles = {
   section: {
-    base: 'relative w-full overflow-hidden bg-white dark:bg-neutral-950 pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-12',
+    base: 'relative w-full overflow-hidden bg-theme-page pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-12',
     container: 'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
     header:
       'relative z-10 w-full max-w-3xl mx-auto flex flex-col items-center text-center',
@@ -78,18 +78,18 @@ export const artistsLabelsOnboardingStyles = {
   badge: {
     wrapper:
       'inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1.5 dark:border-orange-400/30 dark:bg-orange-500/15',
-    icon: 'shrink-0 text-orange-600 dark:text-orange-300',
+    icon: 'shrink-0 text-theme-action-primary dark:text-orange-300',
     label:
-      'text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-300',
+      'text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-theme-action-primary dark:text-orange-300',
   },
 
   heading: {
     title:
-      'mt-5 sm:mt-6 font-heading font-extrabold tracking-tight text-slate-900 dark:text-white text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]',
+      'mt-5 sm:mt-6 font-heading font-extrabold tracking-tight text-ink-primary dark:text-theme-heading text-[1.85rem] leading-[1.2] sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]',
     highlighted:
       'bg-gradient-to-r from-orange-500 via-rose-500 to-fuchsia-500 bg-clip-text text-transparent',
     description:
-      'mt-5 sm:mt-6 max-w-[46rem] text-[15px] sm:text-base leading-relaxed text-slate-600 dark:text-neutral-300',
+      'mt-5 sm:mt-6 max-w-[46rem] text-[15px] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body',
   },
 
   process: {
@@ -106,8 +106,8 @@ export const artistsLabelsOnboardingStyles = {
     card: [
       'group relative z-10 flex h-full w-full flex-col',
       'rounded-2xl sm:rounded-[1.35rem]',
-      'border border-slate-200 dark:border-white/15',
-      'bg-white dark:bg-neutral-900',
+      'border border-theme-border dark:border-theme-border',
+      'bg-theme-card',
       'shadow-[0_12px_32px_-12px_rgba(15,23,42,0.14)]',
       'dark:shadow-[0_16px_40px_-12px_rgba(0,0,0,0.65)]',
       'px-5 pt-6 pb-5 sm:px-6 sm:pt-7 sm:pb-6',
@@ -123,59 +123,59 @@ export const artistsLabelsOnboardingStyles = {
       'inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-[11px] font-bold tracking-wide shrink-0',
     titleRow: 'flex items-center gap-2.5',
     title:
-      'font-heading text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white',
+      'font-heading text-base sm:text-lg font-bold tracking-tight text-ink-primary dark:text-theme-heading',
     description:
-      'mt-2.5 text-sm leading-relaxed text-slate-600 dark:text-neutral-300 flex-1',
+      'mt-2.5 text-sm leading-relaxed text-ink-secondary dark:text-theme-body flex-1',
     accentLine: 'mt-5 h-1.5 w-14 rounded-full',
     horizontalConnector:
       'relative z-20 flex w-full items-center justify-center self-center',
     horizontalDash:
-      'h-0 flex-1 border-t-2 border-dashed border-slate-300 dark:border-white/25',
+      'h-0 flex-1 border-t-2 border-dashed border-theme-border dark:border-theme-border',
     connectorPath:
-      'fill-none stroke-slate-300 dark:stroke-white/25',
+      'fill-none stroke-theme-border dark:stroke-theme-border',
     connectorArrow: [
       'relative z-10 mx-0 flex h-9 w-9 shrink-0 items-center justify-center rounded-full',
-      'border border-slate-200 bg-white shadow-md',
-      'dark:border-white/20 dark:bg-neutral-900 dark:shadow-black/40',
+      'border border-theme-border bg-theme-card shadow-md',
+      'dark:border-theme-border dark:bg-theme-card dark:shadow-black/40',
     ].join(' '),
     connectorArrowIcon: 'h-4 w-4',
     rowTurn: 'relative z-0 -mt-1 -mb-1 h-14 xl:h-16 w-full pointer-events-none',
     rowTurnSvg: 'absolute inset-0 h-full w-full overflow-visible',
     mobileConnector: 'flex flex-col items-center py-3',
     mobileLine:
-      'h-7 w-px border-l-2 border-dashed border-slate-300 dark:border-white/25',
+      'h-7 w-px border-l-2 border-dashed border-theme-border dark:border-theme-border',
   },
 
   cta: {
     wrapper: [
       'grid grid-cols-1 lg:grid-cols-2',
       'overflow-hidden rounded-2xl sm:rounded-3xl',
-      'border border-slate-200 dark:border-white/15',
-      'bg-[#F6F0E8] dark:bg-neutral-900',
+      'border border-theme-border dark:border-theme-border',
+      'bg-[#F6F0E8] dark:bg-theme-card',
       'shadow-[0_18px_48px_-20px_rgba(15,23,42,0.18)]',
       'dark:shadow-[0_18px_48px_-16px_rgba(0,0,0,0.6)]',
     ].join(' '),
     content:
       'flex flex-col justify-center px-5 py-7 sm:px-8 sm:py-9 lg:px-9 xl:px-10 order-1',
     eyebrow:
-      'inline-flex items-center justify-center gap-2.5 self-center lg:self-start text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-orange-600 dark:text-orange-400',
+      'inline-flex items-center justify-center gap-2.5 self-center lg:self-start text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-theme-action-primary dark:text-orange-400',
     eyebrowLine: 'h-px w-6 bg-orange-400/80 dark:bg-orange-400/50',
     heading:
-      'mt-4 font-heading font-extrabold tracking-tight text-slate-900 dark:text-white text-[1.5rem] leading-[1.2] sm:text-3xl lg:text-[1.9rem]',
+      'mt-4 font-heading font-extrabold tracking-tight text-ink-primary dark:text-theme-heading text-[1.5rem] leading-[1.2] sm:text-3xl lg:text-[1.9rem]',
     highlightedLimitless:
       'bg-gradient-to-r from-orange-500 to-rose-500 bg-clip-text text-transparent',
     highlightedPossibilities:
       'bg-gradient-to-r from-rose-500 to-fuchsia-500 bg-clip-text text-transparent',
     description:
-      'mt-4 max-w-xl text-sm sm:text-[15px] leading-relaxed text-slate-600 dark:text-neutral-300',
+      'mt-4 max-w-xl text-sm sm:text-[15px] leading-relaxed text-ink-secondary dark:text-theme-body',
     highlightGrid:
-      'mt-6 grid grid-cols-2 xl:grid-cols-4 gap-y-3 gap-x-2 xl:gap-0 xl:divide-x xl:divide-slate-300/70 dark:xl:divide-white/15 border-y border-slate-300/60 dark:border-white/15 py-4',
+      'mt-6 grid grid-cols-2 xl:grid-cols-4 gap-y-3 gap-x-2 xl:gap-0 xl:divide-x xl:divide-theme-border/70 dark:xl:divide-theme-border border-y border-theme-border/60 dark:border-theme-border py-4',
     highlightItem:
       'flex items-center gap-2.5 xl:px-3 first:xl:pl-0 last:xl:pr-0',
     highlightIcon:
       'flex h-9 w-9 shrink-0 items-center justify-center rounded-full',
     highlightLabel:
-      'text-[11px] sm:text-xs font-semibold leading-snug text-slate-700 dark:text-neutral-200',
+      'text-[11px] sm:text-xs font-semibold leading-snug text-ink-secondary dark:text-theme-body',
     buttons: 'mt-6 flex flex-col sm:flex-row gap-3',
     primaryButton: [
       'group inline-flex items-center justify-center gap-2',
@@ -184,17 +184,17 @@ export const artistsLabelsOnboardingStyles = {
       'shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
       'transition-all duration-300 ease-out',
       'hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(244,63,94,0.5)]',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F0E8] dark:focus-visible:ring-offset-neutral-900',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F0E8] dark:focus-visible:ring-offset-theme-card',
       'active:scale-[0.98] motion-reduce:hover:translate-y-0',
     ].join(' '),
     secondaryButton: [
       'group inline-flex items-center justify-center gap-2',
       'h-12 px-6 rounded-xl w-full sm:w-auto',
-      'bg-white dark:bg-neutral-950 text-slate-900 dark:text-white text-sm font-semibold',
-      'border border-slate-900/80 dark:border-white/40',
+      'bg-theme-card dark:bg-theme-page text-ink-primary dark:text-theme-heading text-sm font-semibold',
+      'border border-ink-primary/80 dark:border-theme-border',
       'transition-all duration-300 ease-out',
-      'hover:bg-slate-50 dark:hover:bg-neutral-800',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F0E8] dark:focus-visible:ring-offset-neutral-900',
+      'hover:bg-theme-hover dark:hover:bg-theme-hover',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F0E8] dark:focus-visible:ring-offset-theme-card',
       'active:scale-[0.98]',
     ].join(' '),
     buttonIcon:

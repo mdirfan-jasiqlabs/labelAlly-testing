@@ -11,14 +11,15 @@ function Badge({ children, variant = 'primary', className = '', ...props }) {
   const variantMap = {
     // Filled primary — indigo/violet tint with subtle text
     primary: [
-      'bg-primary-50 text-primary-700 dark:bg-primary-950/40 dark:text-primary-300',
+      'bg-primary-50 text-primary-700',
+      'dark:bg-primary-950/40 dark:text-primary-300',
       'border border-primary-100 dark:border-primary-800/50',
     ].join(' '),
 
     // Filled secondary — neutral light
     secondary: [
-      'bg-neutral-100 text-neutral-600 dark:bg-theme-hover dark:text-theme-muted',
-      'border border-neutral-200 dark:border-theme-border',
+      'bg-theme-secondary text-theme-muted',
+      'border border-theme-border',
     ].join(' '),
 
     // Outline — transparent with accent border

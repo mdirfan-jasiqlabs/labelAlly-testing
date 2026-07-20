@@ -31,7 +31,7 @@ function ContactFormSection() {
       {/* Soft wash — light mode only (avoids white haze in dark mode) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-56 sm:h-64 bg-gradient-to-b from-neutral-100/70 via-surface-page to-transparent dark:hidden"
+        className="pointer-events-none absolute inset-x-0 top-0 h-56 sm:h-64 bg-gradient-to-b from-surface-muted/70 via-surface-page to-transparent dark:hidden"
       />
 
       <div

@@ -35,7 +35,7 @@ function ProcessImage() {
       />
 
       {/* Main image with organic shape */}
-      <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-white dark:bg-theme-card shadow-lg border border-neutral-200/80 dark:border-theme-border/50">
+      <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-surface-card dark:bg-theme-card shadow-lg border border-theme-border/80 dark:border-theme-border/50">
         <img
           src={src}
           alt={alt}

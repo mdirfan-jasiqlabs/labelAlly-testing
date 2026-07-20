@@ -4,9 +4,8 @@ import { homeHeroStyles } from './homeHeroStyles';
 export const homeWhatWeDoStyles = {
   section: [
     'relative w-full overflow-hidden',
-    'bg-gradient-to-b from-neutral-50/70 to-neutral-100/45',
-    'dark:bg-neutral-950 dark:from-transparent dark:to-transparent',
-    'section-spacing border-t border-neutral-100 dark:border-theme-border/50',
+    'bg-theme-page',
+    'section-spacing border-t border-theme-border/50',
   ].join(' '),
 
   background: {
@@ -34,14 +33,14 @@ export const homeWhatWeDoStyles = {
 
   badge: [
     'inline-flex items-center px-4 py-1.5 rounded-lg',
-    'text-xs font-bold text-white uppercase tracking-wider select-none',
-    'bg-orange-500 shadow-sm mb-6',
+    'text-xs font-bold text-theme-action-primaryForeground uppercase tracking-wider select-none',
+    'bg-theme-action-primary shadow-sm mb-6',
   ].join(' '),
 
   heading: [
     'font-heading font-black tracking-tight leading-[1.12]',
     'text-[2rem] sm:text-[2.8rem] md:text-[3.6rem] lg:text-[3.8rem]',
-    'text-neutral-900 dark:text-theme-heading mb-4',
+    'text-ink-primary dark:text-theme-heading mb-4',
   ].join(' '),
 
   headingAccent: homeHeroStyles.content.accent,
@@ -50,25 +49,25 @@ export const homeWhatWeDoStyles = {
 
   description: [
     'text-sm sm:text-[0.92rem] sm:text-base leading-relaxed',
-    'text-neutral-600 dark:text-theme-body mb-8',
+    'text-ink-secondary dark:text-theme-body mb-8',
     'max-w-full sm:max-w-[540px]',
   ].join(' '),
 
   featuresGrid: 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 mb-10 w-full',
   featureItem: 'flex items-center gap-2.5',
-  featureBullet: 'w-3.5 h-[2px] bg-orange-500 dark:bg-orange-400 shrink-0 rounded-full',
+  featureBullet: 'w-3.5 h-[2px] bg-theme-action-primary shrink-0 rounded-full',
   featureTitle:
-    'text-[13px] sm:text-[14px] font-bold text-neutral-800 dark:text-theme-heading tracking-wide select-none',
+    'text-[13px] sm:text-[14px] font-bold text-ink-primary dark:text-theme-heading tracking-wide select-none',
 
   masonryCol: 'flex-1 flex flex-col gap-4 sm:gap-6',
   masonryColLeft: 'pt-6 lg:pt-8',
   imageFrame: [
     'overflow-hidden rounded-3xl shadow-sm',
-    'border border-neutral-200/40 dark:border-theme-border/60',
-    'bg-neutral-100 dark:bg-neutral-900/75',
+    'border border-theme-border/40 dark:border-theme-border/60',
+    'bg-theme-secondary dark:bg-theme-card/75',
     'ring-1 ring-transparent dark:ring-violet-400/10',
     'transition-all duration-300 ease-out',
-    'hover:-translate-y-0.5 hover:border-orange-500/30 dark:hover:border-orange-400/25',
+    'hover:-translate-y-0.5 hover:border-theme-action-primary/30',
     'hover:shadow-card-hover motion-reduce:hover:translate-y-0',
   ].join(' '),
   image: [

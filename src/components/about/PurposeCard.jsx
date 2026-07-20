@@ -20,8 +20,8 @@ function PurposeCard({ card }) {
       className={[
         'relative w-full',
         'rounded-2xl md:rounded-3xl',
-        'bg-neutral-50/80 dark:bg-theme-card',
-        'border border-neutral-200/70 dark:border-theme-border/50',
+        'bg-surface-muted dark:bg-theme-card',
+        'border border-theme-border/70 dark:border-theme-border/50',
         'shadow-sm dark:shadow-theme',
         'transition-colors duration-250',
       ].join(' ')}
@@ -52,13 +52,13 @@ function PurposeCard({ card }) {
         {/* ── Horizontal Divider (mobile) ── */}
         <div
           aria-hidden="true"
-          className="sm:hidden w-full h-px my-1 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
+          className="sm:hidden w-full h-px my-1 bg-theme-border/80 dark:bg-theme-border/50 shrink-0"
         />
 
         {/* ── Vertical Divider (desktop) ── */}
         <div
           aria-hidden="true"
-          className="hidden sm:block w-px self-stretch mx-5 md:mx-7 lg:mx-8 min-h-16 bg-neutral-200/80 dark:bg-theme-border/50 shrink-0"
+          className="hidden sm:block w-px self-stretch mx-5 md:mx-7 lg:mx-8 min-h-16 bg-theme-border/80 dark:bg-theme-border/50 shrink-0"
         />
 
         {/* ── Content Area ── */}
@@ -77,11 +77,11 @@ function PurposeCard({ card }) {
           </span>
 
           {enabledContent.length > 0 && (
-            <p className="text-[0.92rem] sm:text-base leading-relaxed text-neutral-600 dark:text-theme-body">
+            <p className="text-[0.92rem] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body">
               {enabledContent.map((segment) => (
                 <span
                   key={segment.id}
-                  className={segment.emphasis ? 'font-semibold text-neutral-800 dark:text-theme-heading' : ''}
+                  className={segment.emphasis ? 'font-semibold text-ink-primary dark:text-theme-heading' : ''}
                 >
                   {segment.text}
                 </span>

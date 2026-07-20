@@ -5,7 +5,7 @@ import { ArrowUp } from 'lucide-react';
  * ScrollToTopButton — Reusable floating circular scroll-to-top button.
  *
  * Appears only after the user has scrolled down a certain threshold (e.g. 300px).
- * Styled with a premium brand pink background and smooth bounce/hover effects.
+ * Uses brand accent (#FF2E74) via semantic theme tokens.
  */
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -43,9 +43,9 @@ function ScrollToTopButton() {
         'sm:bottom-8 sm:right-8',
         'flex items-center justify-center',
         'w-12 h-12 rounded-full',
-        'bg-pink-600 hover:bg-pink-700 active:bg-pink-800',
+        'bg-theme-accent hover:bg-theme-accentHover active:bg-theme-accentActive',
         'text-white',
-        'shadow-lg shadow-pink-500/20 hover:shadow-pink-500/30',
+        'shadow-lg shadow-[0_8px_24px_-4px_var(--color-brand-accent-glow)] hover:shadow-[0_8px_28px_-2px_var(--color-brand-accent-glow)]',
         'transition-all duration-300 ease-out hover:scale-110 active:scale-95',
         'focus-ring outline-none border-none',
         'animate-fade-in',

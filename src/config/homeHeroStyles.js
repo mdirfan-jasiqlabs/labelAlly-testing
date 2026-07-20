@@ -7,7 +7,7 @@ export const homeHeroStyles = {
   section: {
     base: [
       'relative w-full overflow-hidden',
-      'bg-theme-page dark:bg-neutral-950',
+      'bg-theme-page',
     ].join(' '),
     container:
       'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 sm:pt-8 lg:pt-6 pb-6 sm:pb-8',
@@ -75,7 +75,7 @@ export const homeHeroStyles = {
       'text-sm font-semibold whitespace-nowrap',
       'transition-all duration-300 ease-out',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-      'focus-visible:ring-orange-500 focus-visible:ring-offset-[var(--color-page-bg)]',
+      'focus-visible:ring-theme-action-primary focus-visible:ring-offset-[var(--color-page-bg)]',
       'active:scale-[0.98] motion-reduce:active:scale-100',
       'w-full sm:w-auto',
     ].join(' '),
