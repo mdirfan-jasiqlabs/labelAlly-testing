@@ -307,6 +307,18 @@ export default {
           '0%': { transform: 'translate3d(0, 0, 0)' },
           '100%': { transform: 'translate3d(-50%, 0, 0)' },
         },
+        'wave-flow': {
+          '0%': { transform: 'translateX(-3%)' },
+          '100%': { transform: 'translateX(3%)' },
+        },
+        'spectrum-pulse': {
+          '0%, 100%': { opacity: '0.35', transform: 'scaleY(0.55)' },
+          '50%': { opacity: '0.7', transform: 'scaleY(1)' },
+        },
+        'node-float': {
+          '0%, 100%': { transform: 'translate3d(0, 0, 0)', opacity: '0.45' },
+          '50%': { transform: 'translate3d(0, -8px, 0)', opacity: '0.85' },
+        },
       },
       animation: {
         'hero-float': 'hero-float 5s ease-in-out infinite',
@@ -319,7 +331,11 @@ export default {
         'hero-glow-pulse': 'hero-glow-pulse 3.8s ease-in-out infinite',
         'hero-ring-spin': 'hero-ring-spin 22s linear infinite',
         'hero-orb-drift': 'hero-orb-drift 8s ease-in-out infinite',
-        'platform-marquee': 'platform-marquee 30s linear infinite',
+        'platform-marquee': 'platform-marquee 32s linear infinite',
+        'wave-flow': 'wave-flow 14s ease-in-out infinite alternate',
+        'wave-flow-delayed': 'wave-flow 18s ease-in-out 1.5s infinite alternate-reverse',
+        'spectrum-pulse': 'spectrum-pulse 2.4s ease-in-out infinite',
+        'node-float': 'node-float 6s ease-in-out infinite',
       },
 
       transitionDuration: {

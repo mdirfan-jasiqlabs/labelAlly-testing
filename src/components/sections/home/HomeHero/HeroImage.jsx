@@ -1,5 +1,7 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import { getHomeHeroIcon } from './homeHeroIcons';
 import { homeHeroStyles as styles } from '../../../../config/homeHeroStyles';
+import { homeHeroMotion as motionConfig } from '../../../../config/homeHeroMotion';
 
 /** Equalizer bar count — denser music-player visualizer */
 const WAVE_BAR_COUNT = 42;
@@ -15,14 +17,29 @@ const EQ_ANIMATIONS = [
  * Hero artwork — soft purple disc, animated equalizer, artist photo.
  */
 function HeroImage({ image }) {
+  const reduceMotion = useReducedMotion();
+
   if (!image?.src) return null;
 
   const MusicIcon = getHomeHeroIcon('music');
   const { image: s } = styles;
+  const stageVariants = reduceMotion
+    ? motionConfig.imageStageReduced
+    : motionConfig.imageStage;
 
   return (
     <div className={s.col}>
-      <div className={s.stage}>
+      <motion.div
+        className={s.stage}
+        variants={stageVariants}
+        initial="hidden"
+        animate="visible"
+        whileHover={
+          reduceMotion
+            ? undefined
+            : { y: -4, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }
+        }
+      >
         <div className={s.glowSoft} aria-hidden="true" />
         <div className={s.glowAccent} aria-hidden="true" />
         <div className={s.glow} aria-hidden="true" />
@@ -50,7 +67,14 @@ function HeroImage({ image }) {
           <MusicIcon className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2} />
         </div>
 
-        <div className={s.figure}>
+        <motion.div
+          className={s.figure}
+          whileHover={
+            reduceMotion
+              ? undefined
+              : { scale: 1.02, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }
+          }
+        >
           <img
             src={image.src}
             alt={image.alt}
@@ -61,8 +85,8 @@ function HeroImage({ image }) {
             decoding="async"
             className={s.img}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

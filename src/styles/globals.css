@@ -582,7 +582,11 @@
   .animate-hero-glow-pulse,
   .animate-hero-ring-spin,
   .animate-hero-orb-drift,
-  .animate-platform-marquee {
+  .animate-platform-marquee,
+  .animate-wave-flow,
+  .animate-wave-flow-delayed,
+  .animate-spectrum-pulse,
+  .animate-node-float {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
