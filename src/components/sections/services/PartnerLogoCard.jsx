@@ -4,10 +4,14 @@
  */
 
 const LOGO_SIZE_STYLES = {
-  compact: 'max-h-logo-compact max-w-logo-compact',
-  standard: 'max-h-logo-standard max-w-logo-standard',
-  wide: 'max-h-logo-wide max-w-logo-wide',
-  extraWide: 'max-h-logo-wide max-w-logo-extra-wide',
+  compact:
+    'max-h-logo-compact md:max-h-[3.75rem] lg:max-h-[4.25rem] max-w-logo-compact md:max-w-[8rem] lg:max-w-[9rem]',
+  standard:
+    'max-h-logo-standard md:max-h-[4.75rem] lg:max-h-[5.5rem] max-w-logo-standard md:max-w-[11rem] lg:max-w-[12rem]',
+  wide:
+    'max-h-logo-wide md:max-h-[4rem] lg:max-h-[4.75rem] max-w-logo-wide md:max-w-[13rem] lg:max-w-[14rem]',
+  extraWide:
+    'max-h-logo-wide md:max-h-[4rem] lg:max-h-[4.75rem] max-w-logo-extra-wide md:max-w-[15rem] lg:max-w-[16rem]',
 };
 
 function PartnerLogoCard({ partner }) {
@@ -19,13 +23,13 @@ function PartnerLogoCard({ partner }) {
     <article
       className={[
         'group h-full',
-        'min-h-partner-card sm:min-h-partner-card-md md:min-h-partner-card-lg',
+        'min-h-partner-card sm:min-h-partner-card-md md:min-h-[10rem] lg:min-h-[11.5rem]',
         'flex items-center justify-center',
         'rounded-2xl',
         'bg-theme-logoCard',
         'border border-theme-logoCardBorder',
         'shadow-sm dark:shadow-theme',
-        'px-5 py-6 sm:px-6 sm:py-7 md:px-8 md:py-8',
+        'px-5 py-6 sm:px-6 sm:py-7 md:px-8 md:py-9 lg:px-10 lg:py-11',
         'transition-all duration-300 ease-out',
         'motion-reduce:transition-none',
         'hover:-translate-y-0.5 hover:shadow-card',
