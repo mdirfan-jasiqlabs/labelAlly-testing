@@ -1,11 +1,6 @@
 export const aboutIntroData = {
   enabled: true,
 
-  pageBanner: {
-    title: "About Us",
-    enabled: true
-  },
-
   label: "About Us",
 
   heading: "LabelAlly Entertainment",

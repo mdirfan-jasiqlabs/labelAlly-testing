@@ -1,4 +1,3 @@
-import AboutPageBanner     from '../components/about/AboutPageBanner';
 import AboutIntroSection   from '../components/about/AboutIntroSection';
 import MissionVisionSection from '../components/about/MissionVisionSection';
 import TeamSection          from '../components/about/TeamSection';
@@ -19,7 +18,6 @@ function AboutPage() {
         description="Learn about LabelAlly Entertainment and our approach to supporting artists, labels, and content owners with digital distribution, rights management, and revenue growth."
         canonical="https://label-ally-testing.vercel.app/about"
       />
-      <AboutPageBanner />
       <AboutIntroSection />
       <MissionVisionSection />
       <TeamSection />

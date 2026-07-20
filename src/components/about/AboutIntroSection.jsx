@@ -35,9 +35,9 @@ function AboutIntroSection() {
 
             {/* Main Heading */}
             {heading && (
-              <h2 className="font-heading font-black tracking-tight leading-[1.1] text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-ink-primary dark:text-theme-heading mb-5 md:mb-6 text-balance">
+              <h1 className="font-heading font-black tracking-tight leading-[1.1] text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-ink-primary dark:text-theme-heading mb-5 md:mb-6 text-balance">
                 {heading}
-              </h2>
+              </h1>
             )}
 
             {/* Introductory Paragraphs */}
