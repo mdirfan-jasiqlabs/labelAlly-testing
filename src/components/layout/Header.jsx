@@ -84,9 +84,9 @@ function Header() {
             {/* ── Desktop Navigation (center) ──────────────────── */}
             <nav
               aria-label="Main navigation"
-              className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2"
+              className="hidden xl:flex xl:flex-1 items-center justify-center min-w-0"
             >
-              <ul role="list" className="flex items-center gap-0.5">
+              <ul role="list" className="flex items-center gap-1 2xl:gap-2">
                 {navData.links.map((item) => (
                   <li key={item.id}>
                     <NavLink
@@ -95,8 +95,9 @@ function Header() {
                       className={({ isActive }) =>
                         [
                           'relative flex flex-col items-center',
-                          'px-2.5 xl:px-4 py-2',
+                          'px-3 2xl:px-4 py-2',
                           'text-[0.8125rem] font-medium',
+                          'whitespace-nowrap',
                           'rounded-lg',
                           'transition-all duration-200',
                           'focus-ring',
@@ -130,7 +131,7 @@ function Header() {
             </nav>
 
             {/* ── Right Side: Phone + CTA ───────────────────────── */}
-            <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 xl:gap-3 2xl:gap-4 shrink-0">
               {/* Theme Toggle */}
               <ThemeToggle />
 
@@ -139,7 +140,7 @@ function Header() {
                 href={navData.phone.href}
                 aria-label={navData.phone.ariaLabel}
                 className={[
-                  'hidden lg:inline-flex items-center gap-2',
+                  'hidden xl:inline-flex items-center gap-2',
                   'h-11 px-4',
                   'rounded-full',
                   'border border-theme-border hover:border-strong',
@@ -160,7 +161,7 @@ function Header() {
                 to={navData.cta.href}
                 aria-label={navData.cta.ariaLabel}
                 className={[
-                  'hidden lg:inline-flex items-center gap-2',
+                  'hidden xl:inline-flex items-center gap-2',
                   'h-11 px-5',
                   'rounded-lg',
                   'bg-theme-action-primary hover:bg-theme-action-primaryHover active:bg-theme-action-primaryActive',
@@ -177,12 +178,12 @@ function Header() {
                 <ArrowRight size={13} aria-hidden="true" strokeWidth={2.5} />
               </Link>
 
-              {/* Mobile / Tablet: Phone icon button */}
+              {/* Mobile / Tablet / Laptop: Phone icon button */}
               <a
                 href={navData.phone.href}
                 aria-label={navData.phone.ariaLabel}
                 className={[
-                  'lg:hidden',
+                  'xl:hidden',
                   'flex items-center justify-center',
                   'w-11 h-11 rounded-full',
                   'border border-theme-border hover:border-strong',
@@ -203,7 +204,7 @@ function Header() {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 className={[
-                  'lg:hidden',
+                  'xl:hidden',
                   'flex items-center justify-center',
                   'w-11 h-11 rounded-lg',
                   'text-theme-muted hover:text-theme-heading',
