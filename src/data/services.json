@@ -1,10 +1,19 @@
 {
   "hero": {
     "enabled": true,
-    "pageTitle": "Service",
-    "badge": "Our Service",
-    "title": "At LabelAlly Entertainment,",
-    "description": "We empower creators, businesses, and brands with end-to-end digital, media, and technology solutions. From music distribution to business growth strategies, we provide everything you need to succeed in the digital world."
+    "eyebrow": "OUR SERVICES",
+    "title": "Complete Digital Music Services for Artists and Labels",
+    "highlightedText": "Artists and Labels",
+    "description": "From music distribution and rights management to YouTube CMS, Content ID, OTT distribution, and revenue optimization — everything your catalog needs, managed end to end.",
+    "primaryCta": {
+      "label": "Get Started",
+      "href": "/contact",
+      "ariaLabel": "Get started — contact LabelAlly Entertainment"
+    },
+    "secondaryCta": {
+      "label": "Talk to Our Team",
+      "ariaLabel": "Talk to our team on WhatsApp"
+    }
   },
   "list": {
     "heading": "Professional Capabilities",
