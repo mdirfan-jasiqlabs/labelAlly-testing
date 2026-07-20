@@ -150,28 +150,6 @@ export const heroClasses = {
       ].join(' '),
     },
     floatImage: 'h-full w-full object-cover',
-    cardAnchor: [
-      'absolute bottom-[0%] right-[0%] z-30',
-      'w-[56%] min-w-0 max-w-[250px]',
-      'motion-safe:animate-hero-float-delayed',
-    ].join(' '),
-  },
-
-  cardClass: [
-    'rounded-2xl',
-    'border border-theme-border dark:border-theme-border',
-    'bg-theme-card',
-    'shadow-[0_18px_40px_-16px_rgba(15,23,42,0.22)]',
-    'p-4',
-    'transition-transform duration-300 ease-smooth hover:-translate-y-1',
-  ].join(' '),
-
-  platformClass: {
-    title: 'text-[12px] font-semibold text-ink-muted dark:text-theme-muted mb-3',
-    logoRow: 'flex flex-wrap items-center gap-2.5',
-    logo: 'h-6 w-auto max-w-[78px] object-contain',
-    footer:
-      'mt-3.5 flex items-center gap-1.5 text-[12px] font-semibold text-emerald-600 dark:text-emerald-400',
   },
 
   trustClass: {

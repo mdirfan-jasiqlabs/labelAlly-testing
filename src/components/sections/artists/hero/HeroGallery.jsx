@@ -1,14 +1,12 @@
-import PlatformCard from './PlatformCard';
 import { heroClasses } from './heroClasses';
 
 /**
- * Right-column visual collage: main image, floating photos, platform card.
+ * Right-column visual collage: main image + floating photos.
  */
-function HeroGallery({ gallery, floatingCards = [] }) {
+function HeroGallery({ gallery }) {
   if (!gallery?.main) return null;
 
   const { galleryClass, imageClass } = heroClasses;
-  const platformCard = floatingCards.find((card) => card.type === 'platforms');
 
   return (
     <div className={galleryClass.root}>
@@ -44,12 +42,6 @@ function HeroGallery({ gallery, floatingCards = [] }) {
             </div>
           );
         })}
-
-        {platformCard ? (
-          <div className={galleryClass.cardAnchor}>
-            <PlatformCard card={platformCard} />
-          </div>
-        ) : null}
       </div>
     </div>
   );

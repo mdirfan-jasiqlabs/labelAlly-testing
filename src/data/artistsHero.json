@@ -126,43 +126,6 @@
       "tone": "blue"
     }
   ],
-  "floatingCards": [
-    {
-      "footer": {
-        "icon": "Globe",
-        "text": "150+ Platforms"
-      },
-      "id": "platform-availability",
-      "platforms": [
-        {
-          "alt": "Spotify",
-          "id": "spotify",
-          "logo": "/images/platforms/spotify.svg",
-          "name": "Spotify"
-        },
-        {
-          "alt": "Apple Music",
-          "id": "apple-music",
-          "logo": "/images/platforms/apple-music.svg",
-          "name": "Apple Music"
-        },
-        {
-          "alt": "Amazon Music",
-          "id": "amazon-music",
-          "logo": "/images/platforms/amazon-music.svg",
-          "name": "Amazon Music"
-        },
-        {
-          "alt": "YouTube Music",
-          "id": "youtube",
-          "logo": "/images/platforms/youtube.svg",
-          "name": "YouTube Music"
-        }
-      ],
-      "title": "Music Available On",
-      "type": "platforms"
-    }
-  ],
   "gallery": {
     "floating": [
       {

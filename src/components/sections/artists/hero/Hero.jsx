@@ -33,10 +33,7 @@ function Hero() {
           </div>
 
           <div className={heroClasses.galleryColClass}>
-            <HeroGallery
-              gallery={data.gallery}
-              floatingCards={data.floatingCards}
-            />
+            <HeroGallery gallery={data.gallery} />
           </div>
         </div>
 
