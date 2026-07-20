@@ -214,7 +214,7 @@ function Header() {
                   'focus-ring',
                 ].join(' ')}
               >
-                <Menu size={18} aria-hidden="true" strokeWidth={2} />
+                <Menu size={22} aria-hidden="true" strokeWidth={2.2} />
               </button>
             </div>
 

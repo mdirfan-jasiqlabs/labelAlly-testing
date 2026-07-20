@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Container from '../../common/Container';
+import AnimatedCounter from '../../common/AnimatedCounter';
 import homeData from '../../../data/home.json';
 import { homeAboutStyles as styles } from '../../../config/homeAboutStyles';
 import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
@@ -181,8 +182,34 @@ function AboutSectionBackground() {
 function AboutSection() {
   const { about } = homeData;
   const scrollContainerRef = useRef(null);
+  const statsRef = useRef(null);
   const [activeStep, setActiveStep] = useState(0);
+  const [statsInView, setStatsInView] = useState(false);
   const reduceMotion = useReducedMotion();
+
+  /* Trigger the count-up once ~35% of the stats block is visible. */
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return undefined;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setStatsInView(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setStatsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
   const mediaVariants = reduceMotion ? motionConfig.mediaReduced : motionConfig.media;
@@ -380,6 +407,7 @@ function AboutSection() {
 
         {about.stats?.length > 0 ? (
           <motion.div
+            ref={statsRef}
             className={styles.statsWrap}
             variants={motionConfig.container}
             initial="hidden"
@@ -410,7 +438,14 @@ function AboutSection() {
                           <StatIcon />
                         </div>
                       ) : null}
-                      <p className={styles.statValue}>{stat.value}</p>
+                      <p className={styles.statValue}>
+                        <AnimatedCounter
+                          value={stat.value}
+                          start={statsInView}
+                          duration={2000}
+                          reduceMotion={reduceMotion}
+                        />
+                      </p>
                       <p className={styles.statLabel}>{stat.label}</p>
                     </motion.div>
                   );
