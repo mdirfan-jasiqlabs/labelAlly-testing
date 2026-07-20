@@ -203,37 +203,8 @@ export const homeHeroStyles = {
   },
 
   platforms: {
-    root: 'relative z-10 mt-4 sm:mt-5 lg:mt-4',
-    shell: [
-      'rounded-2xl sm:rounded-3xl',
-      'border border-neutral-200/80 dark:border-white/10',
-      'bg-white dark:bg-neutral-900/85',
-      'shadow-platform-strip',
-      'px-4 py-4 sm:px-6 sm:py-5',
-    ].join(' '),
-    heading: [
-      'text-center text-[0.7rem] sm:text-xs font-bold',
-      'tracking-[0.16em] uppercase',
-      'text-accent-500',
-      'mb-4 sm:mb-5 select-none',
-    ].join(' '),
-    highlight: 'text-accent-500',
-    logosWrap:
-      'overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
-    logos:
-      'flex lg:grid lg:grid-cols-8 items-center justify-items-center gap-4 sm:gap-5 min-w-max lg:min-w-0 px-1',
-    item: 'flex items-center justify-center py-1 shrink-0',
-    logo: 'h-6 w-auto max-w-[110px] object-contain transition-transform duration-200 hover:scale-105',
-    more: [
-      'inline-flex items-center justify-center h-8 px-3 rounded-full',
-      'border border-neutral-200 dark:border-white/15',
-      'text-[11px] sm:text-xs font-semibold',
-      'text-neutral-500 dark:text-neutral-400',
-      'hover:text-neutral-900 dark:hover:text-white',
-      'hover:border-neutral-300 dark:hover:border-white/25',
-      'hover:bg-neutral-50 dark:hover:bg-neutral-800',
-      'transition-colors duration-250 whitespace-nowrap focus-ring',
-    ].join(' '),
+    // Kept for backwards compatibility — live styles live in platformMarqueeStyles.js
+    root: 'relative z-10 mt-3 sm:mt-4 lg:mt-3',
   },
 
   decorations: {

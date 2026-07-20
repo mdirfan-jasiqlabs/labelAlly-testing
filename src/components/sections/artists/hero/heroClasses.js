@@ -176,32 +176,7 @@ export const heroClasses = {
   },
 
   trustClass: {
-    root: 'relative z-10 pb-12 sm:pb-14 lg:pb-16',
-    shell: [
-      'rounded-2xl sm:rounded-[1.75rem]',
-      'border border-slate-200/80 dark:border-neutral-800',
-      'bg-white dark:bg-neutral-900/80',
-      'shadow-[0_8px_30px_-12px_rgba(15,23,42,0.1)]',
-      'px-5 py-6 sm:px-8 sm:py-7 lg:px-10',
-    ].join(' '),
-    layout: 'flex flex-col items-center gap-5 sm:gap-6',
-    copy:
-      'text-center text-sm sm:text-[15px] font-semibold text-slate-800 dark:text-neutral-200',
-    highlight: 'text-orange-500',
-    logosRow:
-      'w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6',
-    logosWrap:
-      'flex-1 w-full overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
-    logos:
-      'flex items-center justify-center gap-7 sm:gap-9 min-w-max px-1 py-1 mx-auto',
-    logo: 'h-7 sm:h-8 w-auto max-w-[120px] object-contain transition-transform duration-300 hover:scale-105',
-    divider:
-      'hidden sm:block h-8 w-px shrink-0 bg-slate-200 dark:bg-neutral-700',
-    statWrap:
-      'flex items-baseline justify-center gap-1.5 shrink-0',
-    statValue:
-      'font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-rose-500',
-    statLabel: 'text-sm font-semibold text-slate-600 dark:text-neutral-400',
+    root: 'relative z-10 w-full pb-10 sm:pb-12 lg:pb-14',
   },
 
   backgroundClass: {

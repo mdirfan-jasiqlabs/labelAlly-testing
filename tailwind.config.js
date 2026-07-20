@@ -303,6 +303,10 @@ export default {
           '33%': { transform: 'translate(-50%, -50%) translate(18px, -14px)' },
           '66%': { transform: 'translate(-50%, -50%) translate(-12px, 10px)' },
         },
+        'platform-marquee': {
+          '0%': { transform: 'translate3d(0, 0, 0)' },
+          '100%': { transform: 'translate3d(-50%, 0, 0)' },
+        },
       },
       animation: {
         'hero-float': 'hero-float 5s ease-in-out infinite',
@@ -315,6 +319,7 @@ export default {
         'hero-glow-pulse': 'hero-glow-pulse 3.8s ease-in-out infinite',
         'hero-ring-spin': 'hero-ring-spin 22s linear infinite',
         'hero-orb-drift': 'hero-orb-drift 8s ease-in-out infinite',
+        'platform-marquee': 'platform-marquee 30s linear infinite',
       },
 
       transitionDuration: {
