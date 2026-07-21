@@ -170,6 +170,18 @@ export default {
           blue: '#2B83FC',
           indigo: '#4F46E5',
         },
+
+        // ── WhatsApp brand (used by WhatsAppCTA section) ───────
+        // `DEFAULT`/`strong` are for the decorative logo/glow (exempt from contrast).
+        // `button`/`buttonHover` are darkened so white button text meets WCAG AA (~5:1).
+        whatsapp: {
+          light: '#4ADE80',
+          DEFAULT: '#25D366',
+          strong: '#12B152',
+          button: '#15803D',
+          buttonHover: '#116B31',
+          bubble: '#DCF8C6',
+        },
       },
 
       // ── Border Colors ──────────────────────────────────────────────────────

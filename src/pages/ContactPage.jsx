@@ -1,5 +1,6 @@
 import ContactIntroSection from '../components/sections/contact/ContactIntroSection';
 import ContactFormSection  from '../components/sections/contact/ContactFormSection';
+import WhatsAppCTA         from '../components/sections/contact/WhatsAppCTA';
 import SEO                 from '../components/common/SEO';
 
 /**
@@ -19,6 +20,7 @@ function ContactPage() {
       />
       <ContactIntroSection />
       <ContactFormSection />
+      <WhatsAppCTA />
     </main>
   );
 }

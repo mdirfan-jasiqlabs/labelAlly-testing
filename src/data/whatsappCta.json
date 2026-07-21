@@ -1,0 +1,67 @@
+{
+  "enabled": true,
+  "sectionAriaLabel": "Chat with LabelAlly Entertainment on WhatsApp",
+  "eyebrow": {
+    "icon": "headphones",
+    "text": "We're Here to Help"
+  },
+  "heading": {
+    "lineOnePrefix": "Let's Bring Your",
+    "highlight": "Music",
+    "lineTwo": "to More Listeners."
+  },
+  "description": "Have a question or need guidance about our services? Our team is ready to help you on WhatsApp. Get quick answers and expert support.",
+  "features": [
+    {
+      "id": "fast-replies",
+      "icon": "zap",
+      "title": "Fast Replies",
+      "text": "Usually within 15 minutes"
+    },
+    {
+      "id": "expert-guidance",
+      "icon": "messages",
+      "title": "Expert Guidance",
+      "text": "Get help from our specialists"
+    },
+    {
+      "id": "private-secure",
+      "icon": "shield",
+      "title": "Private & Secure",
+      "text": "100% private conversation"
+    }
+  ],
+  "assurance": {
+    "icon": "lock",
+    "text": "No forms. No waiting. Just ",
+    "highlight": "real conversations."
+  },
+  "card": {
+    "status": {
+      "label": "Team Online",
+      "sub": "We're available to chat!"
+    },
+    "replyBadge": {
+      "icon": "clock",
+      "prefix": "Usually replies",
+      "highlight": "within 15 minutes"
+    },
+    "title": "Chat with us on WhatsApp",
+    "preview": {
+      "avatar": "LA",
+      "name": "LabelAlly Team",
+      "time": "now",
+      "message": "Hello! 👋 How can we help you today?"
+    },
+    "button": {
+      "label": "Start a Conversation"
+    },
+    "privacy": {
+      "icon": "lock",
+      "text": "Your conversation is private and secure."
+    }
+  },
+  "trust": {
+    "text": "Trusted by Artists, Labels & Creators"
+  }
+}
