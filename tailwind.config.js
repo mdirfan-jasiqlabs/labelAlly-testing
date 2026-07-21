@@ -23,9 +23,10 @@ export default {
     extend: {
       // ── Font Families ──────────────────────────────────────────────────────
       fontFamily: {
-        heading: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['Outfit', 'Outfit Fallback', 'Inter', 'system-ui', 'sans-serif'],
         body: [
           'Inter',
+          'Inter Fallback',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',

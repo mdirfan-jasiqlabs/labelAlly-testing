@@ -163,8 +163,8 @@ export const theme = {
   typography: {
     // Font families — keep in sync with tailwind.config.js + globals.css
     fontFamily: {
-      heading: "'Outfit', 'Inter', system-ui, sans-serif",
-      body: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      heading: "'Outfit', 'Outfit Fallback', 'Inter', system-ui, sans-serif",
+      body: "'Inter', 'Inter Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       mono: "'JetBrains Mono', 'Fira Code', monospace",
     },
 

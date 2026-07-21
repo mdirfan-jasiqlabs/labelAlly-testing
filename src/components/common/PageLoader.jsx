@@ -13,7 +13,7 @@ function PageLoader() {
       role="status"
       aria-live="polite"
       aria-label="Loading page"
-      className="flex flex-col items-center justify-center min-h-[50vh] w-full bg-theme-page px-4"
+      className="flex flex-col items-center justify-center min-h-screen w-full bg-theme-page px-4"
     >
       <div className="flex flex-col items-center gap-4 text-center">
         {/* Soft Brand Accent Glow / Spinner */}
