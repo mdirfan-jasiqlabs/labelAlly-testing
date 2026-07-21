@@ -373,9 +373,15 @@
       0 0 0 4px var(--color-focus);
   }
 
-  /* Selection */
+  /* Selection — brand orange (action-primary) for light + dark */
   ::selection {
-    @apply bg-primary-600 text-white;
+    background-color: var(--color-action-primary);
+    color: var(--color-action-primary-foreground);
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-action-primary);
+    color: var(--color-action-primary-foreground);
   }
 }
 
