@@ -3,6 +3,9 @@ import { ArrowRight } from 'lucide-react';
 import Container from './Container';
 import Button from './Button';
 import HeroDecorations from './HeroDecorations';
+import WhatsAppIcon from './WhatsAppIcon';
+import { MotionSection } from '../motion';
+import { getWhatsAppOutlineButtonClassName } from '../../config/whatsappOutlineButtonStyles';
 
 /**
  * PageHero — Reusable, data-driven inner-page hero.
@@ -51,11 +54,41 @@ function renderTitle(title, highlightedText) {
 function HeroCTA({ cta, variant }) {
   if (!cta?.label || !cta?.href) return null;
 
+  // Secondary WhatsApp CTA — match Home hero amber outline style
+  if (variant === 'secondary') {
+    const className = getWhatsAppOutlineButtonClassName();
+    const content = (
+      <>
+        <WhatsAppIcon size={16} />
+        <span>{cta.label}</span>
+      </>
+    );
+
+    if (cta.external) {
+      return (
+        <a
+          href={cta.href}
+          aria-label={cta.ariaLabel || undefined}
+          className={className}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={cta.href} aria-label={cta.ariaLabel || undefined} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
   const shared = {
-    variant,
+    variant: 'primary',
     'aria-label': cta.ariaLabel || undefined,
-    rightIcon:
-      variant === 'primary' ? <ArrowRight size={16} aria-hidden="true" /> : undefined,
+    rightIcon: <ArrowRight size={16} aria-hidden="true" />,
   };
 
   if (cta.external) {
@@ -108,10 +141,9 @@ function PageHero({
       {decorations ? <HeroDecorations /> : null}
 
       <Container className="relative z-10">
-        <div
+        <MotionSection
           className={[
             'flex flex-col items-start text-left',
-            'motion-safe:animate-fade-up',
             variant === 'stacked' ? 'lg:max-w-xl xl:max-w-2xl' : '',
           ].filter(Boolean).join(' ')}
         >
@@ -146,7 +178,7 @@ function PageHero({
           ) : null}
 
           {hasSupport ? <div className="mt-8 w-full">{support}</div> : null}
-        </div>
+        </MotionSection>
       </Container>
 
       {showWave ? (

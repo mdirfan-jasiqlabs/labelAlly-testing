@@ -3,11 +3,15 @@ import MobileConnector from './MobileConnector';
 import ProcessCard from './ProcessCard';
 import RowTurnConnector from './RowTurnConnector';
 import { artistsLabelsOnboardingStyles as styles } from '../../../../config/artistsLabelsOnboardingStyles';
+import { MotionSection, MotionStagger, MotionItem } from '../../../motion';
 
 /**
  * Five-step onboarding flow.
  * Desktop: top row 01–03 with gap connectors, U-turn, bottom row 04–05.
  * Mobile: vertical stack. DOM order stays 01 → 05.
+ *
+ * Desktop uses a single section reveal (connectors must stay layout-stable).
+ * Mobile uses step stagger.
  */
 function ProcessFlow({ steps = [] }) {
   if (!steps.length) return null;
@@ -16,8 +20,7 @@ function ProcessFlow({ steps = [] }) {
 
   return (
     <div className={styles.process.stage}>
-      {/* Desktop layout */}
-      <div className={styles.process.desktopOnly}>
+      <MotionSection className={styles.process.desktopOnly}>
         <div className={styles.process.topRow}>
           <div className={styles.process.cardSlot}>
             <ProcessCard step={step1} />
@@ -45,19 +48,18 @@ function ProcessFlow({ steps = [] }) {
             </div>
           </div>
         </div>
-      </div>
+      </MotionSection>
 
-      {/* Mobile layout — single ordered list for a11y */}
-      <ol className={styles.process.mobileList}>
+      <MotionStagger as="ol" className={styles.process.mobileList} stagger={0.08}>
         {steps.map((step, index) => (
-          <li key={step.id} className={styles.process.listItem}>
+          <MotionItem key={step.id} as="li" className={styles.process.listItem}>
             <ProcessCard step={step} />
             {index < steps.length - 1 ? (
               <MobileConnector theme={step.theme} />
             ) : null}
-          </li>
+          </MotionItem>
         ))}
-      </ol>
+      </MotionStagger>
     </div>
   );
 }

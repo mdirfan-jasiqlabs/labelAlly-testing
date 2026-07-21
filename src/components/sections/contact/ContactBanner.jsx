@@ -1,5 +1,6 @@
 import Container from '../../common/Container';
 import contactData from '../../../data/contact.json';
+import { MotionSection } from '../../motion';
 
 /**
  * ContactBanner — Premium Contact page hero with decorations and soft wave edge.
@@ -74,23 +75,25 @@ function ContactBanner() {
       </div>
 
       <Container className="relative z-10 flex flex-col items-center text-center">
-        <h1
-          id="contact-page-title"
-          className="font-heading font-black tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-ink-primary dark:text-theme-heading leading-tight text-balance px-2"
-        >
-          {banner.title}
-        </h1>
+        <MotionSection className="flex flex-col items-center text-center w-full">
+          <h1
+            id="contact-page-title"
+            className="font-heading font-black tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-ink-primary dark:text-theme-heading leading-tight text-balance px-2"
+          >
+            {banner.title}
+          </h1>
 
-        <div
-          aria-hidden="true"
-          className="brand-underline mt-5 md:mt-6"
-        />
+          <div
+            aria-hidden="true"
+            className="brand-underline mt-5 md:mt-6"
+          />
 
-        {banner.supportingText && (
-          <p className="mt-5 md:mt-6 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-ink-secondary dark:text-theme-body max-w-2xl leading-relaxed px-2">
-            {banner.supportingText}
-          </p>
-        )}
+          {banner.supportingText && (
+            <p className="mt-5 md:mt-6 text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-ink-secondary dark:text-theme-body max-w-2xl leading-relaxed px-2">
+              {banner.supportingText}
+            </p>
+          )}
+        </MotionSection>
       </Container>
 
       {/* Soft curved lower edge — stays behind overlapping cards */}

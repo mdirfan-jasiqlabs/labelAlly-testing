@@ -4,6 +4,7 @@ import BackgroundDecorations from './BackgroundDecorations';
 import WhoWeWorkWithHeader from './WhoWeWorkWithHeader';
 import AudienceGrid from './AudienceGrid';
 import TrustMessage from './TrustMessage';
+import { MotionItem } from '../../../motion';
 
 /**
  * Who We Work With — Artists & Labels audience segmentation section.
@@ -20,16 +21,20 @@ function WhoWeWorkWith() {
 
       <div className={styles.section.container}>
         <div className={styles.section.content}>
-          <WhoWeWorkWithHeader
-            badge={data.badge}
-            heading={data.heading}
-            accentBars={data.accentBars}
-            description={data.description}
-          />
+          <MotionItem standalone>
+            <WhoWeWorkWithHeader
+              badge={data.badge}
+              heading={data.heading}
+              accentBars={data.accentBars}
+              description={data.description}
+            />
+          </MotionItem>
 
           <AudienceGrid audiences={data.audiences} />
 
-          <TrustMessage trustMessage={data.trustMessage} />
+          <MotionItem standalone>
+            <TrustMessage trustMessage={data.trustMessage} />
+          </MotionItem>
         </div>
       </div>
     </section>

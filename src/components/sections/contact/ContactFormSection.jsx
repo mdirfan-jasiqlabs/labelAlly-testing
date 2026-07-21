@@ -5,6 +5,7 @@ import {
   contactFormSectionData,
   getPanelContactMethods,
 } from '../../../data/contactData';
+import { MotionItem, MotionStagger } from '../../motion';
 
 /**
  * ContactFormSection — Heading + info panel + form.
@@ -28,7 +29,6 @@ function ContactFormSection() {
         'transition-colors duration-250 motion-reduce:transition-none',
       ].join(' ')}
     >
-      {/* Soft wash — light mode only (avoids white haze in dark mode) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-56 sm:h-64 bg-gradient-to-b from-surface-muted/70 via-surface-page to-transparent dark:hidden"
@@ -65,7 +65,11 @@ function ContactFormSection() {
 
       <Container size="2xl" className="relative z-10">
         {heading?.enabled !== false && (
-          <header className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-1">
+          <MotionItem
+            standalone
+            as="header"
+            className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-1"
+          >
             {heading.badge && (
               <span
                 className={[
@@ -97,17 +101,20 @@ function ContactFormSection() {
                 {heading.description}
               </p>
             )}
-          </header>
+          </MotionItem>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 xl:gap-8 items-stretch">
-          <div className="lg:col-span-4 min-w-0 order-2 lg:order-1">
+        <MotionStagger
+          className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 xl:gap-8 items-stretch"
+          stagger={0.1}
+        >
+          <MotionItem className="lg:col-span-4 min-w-0 order-2 lg:order-1">
             <ContactInfoPanel infoPanel={infoPanel} channels={panelChannels} />
-          </div>
-          <div className="lg:col-span-8 min-w-0 order-1 lg:order-2">
+          </MotionItem>
+          <MotionItem className="lg:col-span-8 min-w-0 order-1 lg:order-2">
             <ContactFormCard formConfig={form} />
-          </div>
-        </div>
+          </MotionItem>
+        </MotionStagger>
       </Container>
     </section>
   );

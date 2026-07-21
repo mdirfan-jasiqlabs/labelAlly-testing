@@ -1,5 +1,6 @@
 import AudienceCard from './AudienceCard';
 import { artistsLabelsWhoWeWorkWithStyles as styles } from '../../../../config/artistsLabelsWhoWeWorkWithStyles';
+import { MotionStagger, MotionItem } from '../../../motion';
 
 /**
  * Responsive grid of audience cards.
@@ -8,11 +9,13 @@ function AudienceGrid({ audiences = [] }) {
   if (!audiences.length) return null;
 
   return (
-    <div className={styles.grid.wrapper}>
+    <MotionStagger className={styles.grid.wrapper} stagger={0.08}>
       {audiences.map((audience) => (
-        <AudienceCard key={audience.id} audience={audience} />
+        <MotionItem key={audience.id}>
+          <AudienceCard audience={audience} />
+        </MotionItem>
       ))}
-    </div>
+    </MotionStagger>
   );
 }
 

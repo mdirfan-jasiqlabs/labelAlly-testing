@@ -2,6 +2,7 @@ import Container from '../../common/Container';
 import PartnerLogoCard from './PartnerLogoCard';
 import servicesData from '../../../data/services.json';
 import platformsData from '../../../data/platformsSection.json';
+import { MotionItem, MotionStagger } from '../../motion';
 
 /**
  * DigitalPartnersSection — Centered partners heading with premium logo-card grid.
@@ -27,8 +28,10 @@ function DigitalPartnersSection() {
       className="relative w-full overflow-hidden bg-surface-page dark:bg-theme-section section-spacing border-t border-theme-border dark:border-theme-border/50 transition-colors duration-250"
     >
       <Container size="2xl" className="relative z-10">
-        {/* ── Centered Heading Group ── */}
-        <div className="flex flex-col items-center text-center section-heading-stack">
+        <MotionItem
+          standalone
+          className="flex flex-col items-center text-center section-heading-stack"
+        >
           {badge?.enabled && badge.text && (
             <span className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-accent-500 dark:bg-accent-600 mb-5 md:mb-6 shadow-sm select-none">
               {badge.text}
@@ -54,16 +57,19 @@ function DigitalPartnersSection() {
               {description}
             </p>
           )}
-        </div>
+        </MotionItem>
 
-        {/* ── Partner Logo Grid ── */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0 max-w-5xl mx-auto">
+        <MotionStagger
+          as="ul"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0 max-w-5xl mx-auto"
+          stagger={0.06}
+        >
           {enabledPartners.map((partner) => (
-            <li key={partner.id} className="h-full min-w-0">
+            <MotionItem key={partner.id} as="li" className="h-full min-w-0">
               <PartnerLogoCard partner={partner} />
-            </li>
+            </MotionItem>
           ))}
-        </ul>
+        </MotionStagger>
       </Container>
     </section>
   );

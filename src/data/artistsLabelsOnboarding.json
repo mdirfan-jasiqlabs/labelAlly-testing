@@ -138,7 +138,7 @@
         "id": "talk-to-team",
         "label": "Talk to Our Team",
         "href": "https://wa.me/918709002433",
-        "icon": "messageCircle",
+        "icon": "whatsapp",
         "variant": "secondary",
         "external": true,
         "ariaLabel": "Talk to the LabelAlly team on WhatsApp"

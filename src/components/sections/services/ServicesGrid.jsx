@@ -3,6 +3,7 @@ import Container from '../../common/Container';
 import ServiceCard from './ServiceCard';
 import ServicesControls from './ServicesControls';
 import servicesData from '../../../data/services.json';
+import { MotionStagger, MotionItem } from '../../motion';
 
 /**
  * ServicesGrid — Service cards with batch Show More / Show Less controls.
@@ -53,13 +54,17 @@ function ServicesGrid() {
       </h2>
 
       <Container>
-        <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 list-none p-0 m-0">
+        <MotionStagger
+          as="ul"
+          className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 list-none p-0 m-0"
+          stagger={0.08}
+        >
           {visibleServices.map((service) => (
-            <li key={service.id} className="h-full min-w-0">
+            <MotionItem key={service.id} as="li" className="h-full min-w-0">
               <ServiceCard service={service} />
-            </li>
+            </MotionItem>
           ))}
-        </ul>
+        </MotionStagger>
 
         {showControls && (
           <ServicesControls

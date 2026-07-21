@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import Container from '../../common/Container';
 import Button from '../../common/Button';
 import servicesData from '../../../data/services.json';
+import { MotionSection } from '../../motion';
 
 /**
  * ServicesCta — Final call-to-action block on the Services page.
@@ -21,7 +22,7 @@ function ServicesCta() {
       className="relative w-full overflow-hidden bg-surface-muted dark:bg-theme-section section-spacing border-t border-theme-border/40 dark:border-theme-border/50 transition-colors duration-250"
     >
       <Container size="2xl" className="relative z-10">
-        <div
+        <MotionSection
           className={[
             'mx-auto max-w-3xl',
             'flex flex-col items-center text-center',
@@ -64,7 +65,7 @@ function ServicesCta() {
               {cta.primaryCta.label}
             </Button>
           </div>
-        </div>
+        </MotionSection>
       </Container>
     </section>
   );

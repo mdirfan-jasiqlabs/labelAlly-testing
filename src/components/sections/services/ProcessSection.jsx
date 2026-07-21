@@ -3,6 +3,7 @@ import ProcessImage from './ProcessImage';
 import ProcessTimeline from './ProcessTimeline';
 import ProcessHighlights from './ProcessHighlights';
 import servicesData from '../../../data/services.json';
+import { MotionItem } from '../../motion';
 
 /**
  * ProcessSection — How It Works section with organic image and vertical timeline.
@@ -18,7 +19,6 @@ function ProcessSection() {
       aria-labelledby="process-heading"
       className="relative section-spacing bg-surface-muted dark:bg-theme-section overflow-hidden"
     >
-      {/* Decorative background elements */}
       <div
         aria-hidden="true"
         className="absolute left-[5%] top-[10%] w-32 h-32 opacity-[0.12] dark:opacity-[0.06] hidden lg:block pointer-events-none"
@@ -37,23 +37,23 @@ function ProcessSection() {
       />
 
       <Container size="2xl" className="relative z-10">
-        {/* Main two-column layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-          {/* Left: Organic Image */}
-          <div className="w-full lg:w-[48%] flex justify-center lg:justify-start">
+          <MotionItem
+            standalone
+            variant="scale"
+            className="w-full lg:w-[48%] flex justify-center lg:justify-start"
+          >
             <ProcessImage />
-          </div>
+          </MotionItem>
 
-          {/* Right: Process Timeline */}
           <div className="w-full lg:w-[52%]">
             <ProcessTimeline />
           </div>
         </div>
 
-        {/* Bottom: Highlights Strip */}
-        <div className="mt-16 lg:mt-20">
+        <MotionItem standalone className="mt-16 lg:mt-20">
           <ProcessHighlights />
-        </div>
+        </MotionItem>
       </Container>
     </section>
   );

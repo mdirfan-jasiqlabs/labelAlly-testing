@@ -3,6 +3,7 @@ import OfficeCard from './OfficeCard';
 import ContactHelpStrip from './ContactHelpStrip';
 import contactData from '../../../data/contact.json';
 import footerData from '../../../data/footer.json';
+import { MotionStagger, MotionItem } from '../../motion';
 
 /**
  * OfficeCardsSection — Three-office grid + contact help strip.
@@ -53,7 +54,9 @@ function OfficeCardsSection() {
         </h2>
 
         {showOffices && (
-          <ul
+          <MotionStagger
+            as="ul"
+            stagger={0.08}
             className={[
               'grid list-none p-0 m-0 items-stretch',
               'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
@@ -69,8 +72,9 @@ function OfficeCardsSection() {
                 officeCount > 1;
 
               return (
-                <li
+                <MotionItem
                   key={office.id}
+                  as="li"
                   className={[
                     'h-full min-w-0 flex',
                     isOddLastOnTablet
@@ -81,16 +85,19 @@ function OfficeCardsSection() {
                   <div className="w-full">
                     <OfficeCard office={office} />
                   </div>
-                </li>
+                </MotionItem>
               );
             })}
-          </ul>
+          </MotionStagger>
         )}
 
         {showHelpStrip && (
-          <div className={showOffices ? 'mt-8 sm:mt-10 md:mt-12' : 'pt-8'}>
+          <MotionItem
+            standalone
+            className={showOffices ? 'mt-8 sm:mt-10 md:mt-12' : 'pt-8'}
+          >
             <ContactHelpStrip helpStrip={helpStrip} whatsappUrl={whatsappUrl} />
-          </div>
+          </MotionItem>
         )}
       </Container>
     </section>

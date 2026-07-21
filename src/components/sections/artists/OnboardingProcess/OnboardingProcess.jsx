@@ -4,6 +4,7 @@ import BackgroundDecorations from './BackgroundDecorations';
 import OnboardingHeader from './OnboardingHeader';
 import ProcessFlow from './ProcessFlow';
 import OnboardingCTA from './OnboardingCTA';
+import { MotionItem, MotionSection } from '../../../motion';
 
 /**
  * Onboarding Process + CTA — Artists & Labels journey section.
@@ -19,19 +20,21 @@ function OnboardingProcess() {
       <BackgroundDecorations />
 
       <div className={styles.section.container}>
-        <OnboardingHeader
-          badge={data.badge}
-          heading={data.heading}
-          description={data.description}
-        />
+        <MotionItem standalone>
+          <OnboardingHeader
+            badge={data.badge}
+            heading={data.heading}
+            description={data.description}
+          />
+        </MotionItem>
 
         <div className={styles.section.processWrapper}>
           <ProcessFlow steps={data.steps} />
         </div>
 
-        <div className={styles.section.ctaWrapper}>
+        <MotionSection className={styles.section.ctaWrapper}>
           <OnboardingCTA cta={data.cta} />
-        </div>
+        </MotionSection>
       </div>
     </section>
   );

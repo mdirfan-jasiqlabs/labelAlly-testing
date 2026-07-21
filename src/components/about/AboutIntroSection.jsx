@@ -2,6 +2,7 @@ import Container from '../common/Container';
 import AboutInfoGroup from './AboutInfoGroup';
 import AboutImageGallery from './AboutImageGallery';
 import { aboutIntroData } from '../../data/aboutData';
+import { MotionSection, MotionStagger, MotionItem } from '../motion';
 
 /**
  * AboutIntroSection — Main layout containing Left (Content + Info blocks)
@@ -25,7 +26,7 @@ function AboutIntroSection() {
         <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-start justify-between min-w-0">
           
           {/* ── Left Column: Company Info and Services (approx 50%) ── */}
-          <div className="w-full lg:w-[50%] min-w-0 flex flex-col items-start text-left shrink-0 order-1">
+          <MotionSection className="w-full lg:w-[50%] min-w-0 flex flex-col items-start text-left shrink-0 order-1">
             {/* Small Badge / Label */}
             {label && (
               <span className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-pink-600 mb-5 md:mb-6 shadow-sm select-none">
@@ -40,7 +41,7 @@ function AboutIntroSection() {
               </h1>
             )}
 
-            {/* Introductory Paragraphs */}
+            {/* Introductory Paragraphs — static (not per-paragraph motion) */}
             {enabledParagraphs.length > 0 && (
               <div className="flex flex-col gap-4 sm:gap-5 w-full text-[0.95rem] sm:text-base leading-relaxed text-ink-secondary dark:text-theme-body lg:max-w-xl">
                 {enabledParagraphs.map((para) => (
@@ -52,27 +53,33 @@ function AboutIntroSection() {
             {/* First Divider */}
             <hr className="w-full border-t border-theme-border/60 dark:border-theme-border/40 my-6 md:my-8" />
 
-            {/* What We Do block */}
-            {whatWeDo && whatWeDo.enabled && (
-              <AboutInfoGroup
-                title={whatWeDo.title}
-                icon={whatWeDo.icon}
-                items={whatWeDo.items}
-              />
-            )}
+            <MotionStagger className="w-full flex flex-col" stagger={0.08}>
+              {/* What We Do block */}
+              {whatWeDo && whatWeDo.enabled && (
+                <MotionItem>
+                  <AboutInfoGroup
+                    title={whatWeDo.title}
+                    icon={whatWeDo.icon}
+                    items={whatWeDo.items}
+                  />
+                </MotionItem>
+              )}
 
-            {/* Second Divider */}
-            <hr className="w-full border-t border-theme-border/60 dark:border-theme-border/40 my-5 md:my-6" />
+              {/* Second Divider */}
+              <hr className="w-full border-t border-theme-border/60 dark:border-theme-border/40 my-5 md:my-6" />
 
-            {/* Why Choose Us block */}
-            {whyChooseUs && whyChooseUs.enabled && (
-              <AboutInfoGroup
-                title={whyChooseUs.title}
-                icon={whyChooseUs.icon}
-                items={whyChooseUs.items}
-              />
-            )}
-          </div>
+              {/* Why Choose Us block */}
+              {whyChooseUs && whyChooseUs.enabled && (
+                <MotionItem>
+                  <AboutInfoGroup
+                    title={whyChooseUs.title}
+                    icon={whyChooseUs.icon}
+                    items={whyChooseUs.items}
+                  />
+                </MotionItem>
+              )}
+            </MotionStagger>
+          </MotionSection>
 
           {/* ── Right Column: 2x2 Image Gallery (approx 50%) ── */}
           <div className="w-full lg:w-[48%] min-w-0 flex justify-center lg:justify-end items-start lg:sticky lg:top-24 order-2">

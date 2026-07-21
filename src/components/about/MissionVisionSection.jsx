@@ -2,6 +2,7 @@ import Container from '../common/Container';
 import PurposeCard from './PurposeCard';
 import AboutDecorations from './AboutDecorations';
 import { missionVisionData } from '../../data/aboutData';
+import { MotionItem, MotionStagger } from '../motion';
 
 /**
  * MissionVisionSection — Centered heading with stacked Mission and Vision cards.
@@ -25,7 +26,10 @@ function MissionVisionSection() {
 
       <Container size="2xl" className="relative z-10">
         {/* ── Heading Group ── */}
-        <div className="flex flex-col items-center text-center section-heading-stack">
+        <MotionItem
+          standalone
+          className="flex flex-col items-center text-center section-heading-stack"
+        >
           {eyebrow?.enabled && eyebrow.text && (
             <div className="flex items-center gap-3 mb-5 md:mb-6">
               <span
@@ -55,14 +59,19 @@ function MissionVisionSection() {
             aria-hidden="true"
             className="h-1 w-20 bg-gradient-to-r from-amber-400 via-pink-500 to-teal-400 rounded-full mt-5 md:mt-6"
           />
-        </div>
+        </MotionItem>
 
         {/* ── Mission & Vision Cards ── */}
-        <div className="flex flex-col gap-5 md:gap-6 lg:gap-7 max-w-5xl mx-auto">
+        <MotionStagger
+          className="flex flex-col gap-5 md:gap-6 lg:gap-7 max-w-5xl mx-auto"
+          stagger={0.1}
+        >
           {enabledCards.map((card) => (
-            <PurposeCard key={card.id} card={card} />
+            <MotionItem key={card.id}>
+              <PurposeCard card={card} />
+            </MotionItem>
           ))}
-        </div>
+        </MotionStagger>
       </Container>
     </section>
   );

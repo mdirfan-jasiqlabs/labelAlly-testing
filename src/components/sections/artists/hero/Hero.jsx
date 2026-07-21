@@ -4,6 +4,7 @@ import HeroGallery from './HeroGallery';
 import TrustSection from './TrustSection';
 import heroData from '../../../../data/artistsHero.json';
 import { heroClasses } from './heroClasses';
+import { MotionSection, MotionItem } from '../../../motion';
 
 /**
  * Premium Artists & Labels Hero — JSON-driven; layout matches reference.
@@ -21,7 +22,7 @@ function Hero() {
 
       <div className={heroClasses.containerClass}>
         <div className={heroClasses.layoutClass}>
-          <div className={heroClasses.contentColClass}>
+          <MotionSection className={heroClasses.contentColClass}>
             <HeroContent
               badge={data.badge}
               heading={data.heading}
@@ -30,14 +31,16 @@ function Hero() {
               buttons={data.buttons}
               features={data.features}
             />
-          </div>
+          </MotionSection>
 
-          <div className={heroClasses.galleryColClass}>
+          <MotionItem standalone variant="scale" className={heroClasses.galleryColClass}>
             <HeroGallery gallery={data.gallery} />
-          </div>
+          </MotionItem>
         </div>
 
-        <TrustSection trustSection={data.trustSection} />
+        <MotionItem standalone>
+          <TrustSection trustSection={data.trustSection} />
+        </MotionItem>
       </div>
     </section>
   );

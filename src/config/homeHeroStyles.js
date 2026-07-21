@@ -2,6 +2,7 @@
  * Configurable Tailwind class maps for the homepage Hero.
  * Compact reference layout: tight left stack + side image, no stretched row gaps.
  */
+import { whatsappOutlineButtonClasses } from './whatsappOutlineButtonStyles';
 
 export const homeHeroStyles = {
   section: {
@@ -68,27 +69,9 @@ export const homeHeroStyles = {
       'gap-3',
       'isolate',
     ].join(' '),
-    base: [
-      'group inline-flex items-center justify-center gap-2.5',
-      'relative z-30',
-      'h-11 sm:h-12 px-5 sm:px-6 rounded-lg',
-      'text-sm font-semibold whitespace-nowrap',
-      'transition-all duration-300 ease-out',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-      'focus-visible:ring-theme-action-primary focus-visible:ring-offset-[var(--color-page-bg)]',
-      'active:scale-[0.98] motion-reduce:active:scale-100',
-      'w-full sm:w-auto',
-    ].join(' '),
-    secondary: [
-      'bg-theme-page',
-      'text-accent-600 dark:text-accent-400',
-      'border border-accent-400/80 dark:border-accent-500/45',
-      'hover:bg-accent-50/90 dark:hover:bg-accent-500/10',
-      'hover:border-accent-500 dark:hover:border-accent-400/70',
-      'hover:-translate-y-0.5 hover:shadow-sm',
-      'dark:hover:text-accent-300',
-      'motion-reduce:hover:translate-y-0',
-    ].join(' '),
+    // Shared with Services / Artists WhatsApp outline CTAs
+    base: whatsappOutlineButtonClasses.base,
+    secondary: whatsappOutlineButtonClasses.surface,
   },
 
   features: {

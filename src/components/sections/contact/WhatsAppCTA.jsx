@@ -14,6 +14,7 @@ import {
 import Container from '../../common/Container';
 import defaultContent from '../../../data/whatsappCta.json';
 import footerData from '../../../data/footer.json';
+import { MotionStagger, MotionItem } from '../../motion';
 
 /**
  * WhatsAppCTA — Secondary conversion section for the Contact page.
@@ -76,15 +77,7 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
 
   const { eyebrow, heading, description, features = [], assurance, card, trust } = content;
 
-  const fadeIn = reduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 24 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, amount: 0.2 },
-        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-      };
-
+  // Lightweight decorative floats only (not scroll-reveal). Reduced-motion: static.
   const float = reduceMotion
     ? {}
     : {
@@ -110,8 +103,7 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
       ].join(' ')}
     >
       <Container size="2xl" className="relative">
-        <motion.div
-          {...fadeIn}
+        <div
           className={[
             'relative',
             'rounded-[1.75rem] sm:rounded-[2rem]',
@@ -134,9 +126,12 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
             <div className="w-full h-full bg-dot-grid" />
           </div>
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-14 items-center">
+          <MotionStagger
+            className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-14 items-center"
+            stagger={0.1}
+          >
             {/* ─── Left: Message + features ─── */}
-            <div className="flex flex-col items-start text-left min-w-0">
+            <MotionItem className="flex flex-col items-start text-left min-w-0">
               {eyebrow && (
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 dark:bg-pink-950/30 border border-pink-100/70 dark:border-pink-900/40">
                   <Icon name={eyebrow.icon} className="w-3.5 h-3.5 text-pink-600 dark:text-pink-400" />
@@ -216,10 +211,10 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
                   </span>
                 </div>
               )}
-            </div>
+            </MotionItem>
 
             {/* ─── Right: WhatsApp card (primary visual focus) ─── */}
-            <div className="relative overflow-visible pt-4 pr-3 sm:pt-6 sm:pr-5 pb-4 sm:pb-5">
+            <MotionItem className="relative overflow-visible pt-4 pr-3 sm:pt-6 sm:pr-5 pb-4 sm:pb-5">
               {/* Floating chat bubble (top-right) — solid green so it never washes out */}
               <motion.div
                 {...float}
@@ -354,12 +349,15 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
                   {card.privacy.text}
                 </p>
               </div>
-            </div>
-          </div>
+            </MotionItem>
+          </MotionStagger>
 
           {/* ─── Trust bar ─── */}
           {trust?.text && (
-            <div className="relative mt-8 sm:mt-10 pt-6 border-t border-theme-border/60 dark:border-white/10">
+            <MotionItem
+              standalone
+              className="relative mt-8 sm:mt-10 pt-6 border-t border-theme-border/60 dark:border-white/10"
+            >
               <div className="flex items-center justify-center gap-3">
                 <TrustDots />
                 <span className="text-xs sm:text-sm font-semibold text-ink-secondary dark:text-slate-300 text-center">
@@ -367,9 +365,9 @@ function WhatsAppCTA({ content = defaultContent, whatsappUrl }) {
                 </span>
                 <TrustDots reversed />
               </div>
-            </div>
+            </MotionItem>
           )}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import BenefitRow from './BenefitRow';
 import { artistsLabelsWhatYouGetStyles as styles } from '../../../../config/artistsLabelsWhatYouGetStyles';
+import { MotionStagger, MotionItem } from '../../../motion';
 
 /**
  * Stacked list of alternating benefit rows.
@@ -8,11 +9,13 @@ function BenefitList({ items = [] }) {
   if (!items.length) return null;
 
   return (
-    <div className={styles.list.wrapper}>
+    <MotionStagger className={styles.list.wrapper} stagger={0.1}>
       {items.map((item) => (
-        <BenefitRow key={item.id} item={item} />
+        <MotionItem key={item.id}>
+          <BenefitRow item={item} />
+        </MotionItem>
       ))}
-    </div>
+    </MotionStagger>
   );
 }
 

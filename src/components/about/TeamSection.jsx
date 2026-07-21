@@ -2,6 +2,7 @@ import Container from '../common/Container';
 import AboutDecorations from './AboutDecorations';
 import TeamValueCard from './TeamValueCard';
 import { teamSectionData } from '../../data/aboutData';
+import { MotionItem, MotionStagger, MotionSection } from '../motion';
 
 /**
  * TeamSection — Creative Team value section with centered heading and four cards.
@@ -26,7 +27,10 @@ function TeamSection() {
 
       <Container size="2xl" className="relative z-10">
         {/* ── Centered Heading Group ── */}
-        <div className="flex flex-col items-center text-center section-heading-stack">
+        <MotionItem
+          standalone
+          className="flex flex-col items-center text-center section-heading-stack"
+        >
           {badge?.enabled && badge.text && (
             <span className="inline-flex items-center px-4 py-1.5 rounded-lg text-xs font-bold text-white bg-accent-500 dark:bg-accent-600 mb-5 md:mb-6 shadow-sm select-none">
               {badge.text}
@@ -46,10 +50,10 @@ function TeamSection() {
             aria-hidden="true"
             className="h-1 w-20 bg-gradient-to-r from-amber-400 via-pink-500 to-teal-400 rounded-full mt-5 md:mt-6"
           />
-        </div>
+        </MotionItem>
 
-        {/* ── Introductory Paragraphs ── */}
-        <div className="max-w-5xl mx-auto w-full">
+        {/* ── Introductory Paragraphs (one unit — not per-paragraph) ── */}
+        <MotionSection className="max-w-5xl mx-auto w-full">
           {enabledParagraphs.length > 0 && (
             <div className="flex flex-col gap-5 md:gap-6 text-left section-heading-stack">
               {enabledParagraphs.map((paragraph) => {
@@ -85,16 +89,20 @@ function TeamSection() {
               />
             </div>
           )}
-        </div>
+        </MotionSection>
 
         {/* ── Value Cards Grid ── */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 list-none p-0 m-0">
+        <MotionStagger
+          as="ul"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 list-none p-0 m-0"
+          stagger={0.08}
+        >
           {enabledValues.map((value) => (
-            <li key={value.id} className="h-full">
+            <MotionItem key={value.id} as="li" className="h-full">
               <TeamValueCard value={value} />
-            </li>
+            </MotionItem>
           ))}
-        </ul>
+        </MotionStagger>
       </Container>
     </section>
   );

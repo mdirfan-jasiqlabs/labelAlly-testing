@@ -4,6 +4,7 @@ import BackgroundDecorations from './BackgroundDecorations';
 import WhatYouGetHeader from './WhatYouGetHeader';
 import BenefitList from './BenefitList';
 import WhatYouGetCTA from './WhatYouGetCTA';
+import { MotionItem, MotionSection } from '../../../motion';
 
 /**
  * What You Get — Artists & Labels value rows + CTA.
@@ -20,16 +21,20 @@ function WhatYouGet() {
 
       <div className={styles.section.container}>
         <div className={styles.section.content}>
-          <WhatYouGetHeader
-            badge={data.badge}
-            heading={data.heading}
-            accentBars={data.accentBars}
-            description={data.description}
-          />
+          <MotionItem standalone>
+            <WhatYouGetHeader
+              badge={data.badge}
+              heading={data.heading}
+              accentBars={data.accentBars}
+              description={data.description}
+            />
+          </MotionItem>
 
           <BenefitList items={data.items} />
 
-          <WhatYouGetCTA cta={data.cta} />
+          <MotionSection>
+            <WhatYouGetCTA cta={data.cta} />
+          </MotionSection>
         </div>
       </div>
     </section>

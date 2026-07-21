@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { getHeroIcon } from './heroIcons';
+import { WhatsAppIcon } from '../../../common/WhatsAppIcon';
 import { heroClasses } from './heroClasses';
 
 /**
  * Primary / secondary CTA row. Renders only from buttons JSON.
+ * Secondary WhatsApp CTA matches Home hero amber outline style.
  */
 function HeroButtons({ buttons = [] }) {
   if (!buttons.length) return null;
@@ -13,7 +15,15 @@ function HeroButtons({ buttons = [] }) {
   return (
     <div className={buttonRowClass} role="group" aria-label="Hero call to action">
       {buttons.map((button) => {
-        const Icon = getHeroIcon(button.icon);
+        const isWhatsApp =
+          button.variant === 'secondary' ||
+          button.icon === 'whatsapp' ||
+          button.icon === 'MessageCircle';
+
+        const Icon = isWhatsApp && button.variant === 'secondary'
+          ? WhatsAppIcon
+          : getHeroIcon(button.icon);
+
         const variantClass =
           buttonClass[button.variant] ?? buttonClass.secondary;
         const className = [buttonClass.base, variantClass].join(' ');

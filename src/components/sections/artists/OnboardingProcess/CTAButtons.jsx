@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { getOnboardingIcon } from './onboardingIcons';
+import { WhatsAppIcon } from '../../../common/WhatsAppIcon';
 import { artistsLabelsOnboardingStyles as styles } from '../../../../config/artistsLabelsOnboardingStyles';
 
 /**
  * Primary / secondary CTA button row.
+ * Secondary WhatsApp CTA matches Home hero amber outline style.
  */
 function CTAButtons({ buttons = [] }) {
   if (!buttons.length) return null;
@@ -11,19 +13,19 @@ function CTAButtons({ buttons = [] }) {
   return (
     <div className={styles.cta.buttons}>
       {buttons.map((button) => {
-        const Icon = getOnboardingIcon(button.icon);
-        const className =
-          button.variant === 'primary'
-            ? styles.cta.primaryButton
-            : styles.cta.secondaryButton;
+        const isSecondary = button.variant === 'secondary';
+        const Icon = isSecondary ? WhatsAppIcon : getOnboardingIcon(button.icon);
+        const className = isSecondary
+          ? styles.cta.secondaryButton
+          : styles.cta.primaryButton;
 
         const content = (
           <>
-            {button.variant === 'secondary' ? (
-              <Icon size={16} strokeWidth={2.25} aria-hidden="true" />
+            {isSecondary ? (
+              <Icon size={16} aria-hidden="true" />
             ) : null}
             <span>{button.label}</span>
-            {button.variant === 'primary' ? (
+            {!isSecondary ? (
               <Icon
                 size={16}
                 strokeWidth={2.5}
