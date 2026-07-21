@@ -7,6 +7,10 @@ import { MotionStagger, MotionItem } from '../../motion';
 
 /**
  * ServicesGrid — Service cards with batch Show More / Show Less controls.
+ *
+ * Motion note: only the first visible batch uses scroll-reveal MotionItems.
+ * Cards revealed via Show More render as plain <li> so they are not stuck at
+ * opacity 0 after the parent stagger has already completed.
  */
 function ServicesGrid() {
   const { list } = servicesData;
@@ -59,11 +63,22 @@ function ServicesGrid() {
           className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 list-none p-0 m-0"
           stagger={0.08}
         >
-          {visibleServices.map((service) => (
-            <MotionItem key={service.id} as="li" className="h-full min-w-0">
-              <ServiceCard service={service} />
-            </MotionItem>
-          ))}
+          {visibleServices.map((service, index) => {
+            // First batch: scroll-reveal. Later batches (Show More): plain li — always visible.
+            if (index >= batchSize) {
+              return (
+                <li key={service.id} className="h-full min-w-0">
+                  <ServiceCard service={service} />
+                </li>
+              );
+            }
+
+            return (
+              <MotionItem key={service.id} as="li" className="h-full min-w-0">
+                <ServiceCard service={service} />
+              </MotionItem>
+            );
+          })}
         </MotionStagger>
 
         {showControls && (
