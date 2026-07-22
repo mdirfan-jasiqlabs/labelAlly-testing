@@ -89,37 +89,37 @@
   ],
   "cta": {
     "eyebrow": {
-      "label": "Ready to Get Started?",
+      "label": "Ready to Partner With LabelAlly?",
       "icon": "spark"
     },
     "heading": {
-      "firstLine": "Your Music. Global Audience.",
-      "secondLinePrefix": "Limitless",
-      "highlightedText": "Possibilities."
+      "firstLine": "Manage. Protect. Monetize.",
+      "secondLinePrefix": "Your",
+      "highlightedText": "YouTube Presence."
     },
-    "description": "Join independent artists and labels who trust LabelAlly to release, protect, and grow their music careers.",
+    "description": "LabelAlly partners with creators, artists, labels, and content owners to manage, protect, monetize, and grow on YouTube, with additional distribution support when your catalog needs it.",
     "highlights": [
       {
         "id": "dedicated-onboarding",
-        "label": "Dedicated Onboarding",
+        "label": "Dedicated Creator Support",
         "icon": "shieldCheck",
         "theme": "orange"
       },
       {
         "id": "transparent-reporting",
-        "label": "Transparent Reporting",
+        "label": "Rights & Content Protection",
         "icon": "fileChart",
         "theme": "purple"
       },
       {
         "id": "multi-platform-support",
-        "label": "Multi-Platform Support",
+        "label": "Transparent Performance Reports",
         "icon": "users",
         "theme": "green"
       },
       {
         "id": "creator-first-assistance",
-        "label": "Creator-First Assistance",
+        "label": "Long-Term Growth Partnership",
         "icon": "headphones",
         "theme": "pink"
       }
@@ -127,12 +127,12 @@
     "buttons": [
       {
         "id": "start-journey",
-        "label": "Start Your Journey",
+        "label": "Grow With LabelAlly",
         "href": "/contact",
         "icon": "arrowRight",
         "variant": "primary",
         "external": false,
-        "ariaLabel": "Start your journey with LabelAlly"
+        "ariaLabel": "Grow with LabelAlly Entertainment"
       },
       {
         "id": "talk-to-team",
