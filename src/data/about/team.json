@@ -1,0 +1,73 @@
+{
+  "enabled": true,
+  "eyebrow": "People Behind LabelAlly",
+  "title": "Our Team",
+  "description": "Meet the passionate professionals working behind the scenes to help artists, labels, and creators grow.",
+  "controls": {
+    "batchSize": 3,
+    "showMoreLabel": "Show More",
+    "showLessLabel": "Show Less"
+  },
+  "members": [
+    {
+      "id": "placeholder-1",
+      "name": "Team Member Placeholder",
+      "role": "Role pending",
+      "description": "Temporary development content — replace with the real team member’s details.",
+      "image": "/images/about/about-1.png",
+      "imageAlt": "Team member portrait placeholder",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/labelally-team-1",
+        "instagram": "https://www.instagram.com/labelally",
+        "email": "work@somplexnetwork.com"
+      }
+    },
+    {
+      "id": "placeholder-2",
+      "name": "Team Member Placeholder",
+      "role": "Role pending",
+      "description": "Temporary development content — replace with the real team member’s details.",
+      "image": "/images/about/about-2.png",
+      "imageAlt": "Team member portrait placeholder",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/labelally-team-2",
+        "instagram": "https://www.instagram.com/labelally",
+        "email": "info@somplexnetwork.com"
+      }
+    },
+    {
+      "id": "placeholder-3",
+      "name": "Team Member Placeholder",
+      "role": "Role pending",
+      "description": "Temporary development content — replace with the real team member’s details.",
+      "image": "/images/about/about-3.png",
+      "imageAlt": "Team member portrait placeholder",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/labelally-team-3",
+        "instagram": "https://www.instagram.com/labelally",
+        "email": "work@somplexnetwork.com"
+      }
+    },
+    {
+      "id": "placeholder-4",
+      "name": "Team Member Placeholder",
+      "role": "Role pending",
+      "description": "Temporary development content — replace with the real team member’s details.",
+      "image": "/images/about/about-4.png",
+      "imageAlt": "Team member portrait placeholder",
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/labelally-team-4",
+        "instagram": "https://www.instagram.com/labelally",
+        "email": "info@somplexnetwork.com"
+      }
+    }
+  ],
+  "cta": {
+    "enabled": true,
+    "title": "Want to Work With Us?",
+    "description": "Let’s create something amazing together.",
+    "buttonLabel": "Get in Touch",
+    "buttonLink": "/contact",
+    "buttonAriaLabel": "Get in touch with LabelAlly Entertainment"
+  }
+}

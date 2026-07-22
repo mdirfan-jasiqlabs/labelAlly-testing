@@ -1,14 +1,14 @@
 import AboutIntroSection   from '../components/about/AboutIntroSection';
 import MissionVisionSection from '../components/about/MissionVisionSection';
 import TeamSection          from '../components/about/TeamSection';
+import OurTeamSection       from '../components/about/OurTeamSection';
 import TestimonialsSection  from '../components/sections/home/TestimonialsSection';
 import SEO               from '../components/common/SEO';
 
 /**
  * AboutPage — Route: /about
  *
- * Renders the full About page layout.
- * Content is sourced from src/data/aboutData.js.
+ * Order: Intro → Mission/Vision → Creative Team → Our Team → Testimonials
  */
 function AboutPage() {
   return (
@@ -21,6 +21,7 @@ function AboutPage() {
       <AboutIntroSection />
       <MissionVisionSection />
       <TeamSection />
+      <OurTeamSection />
       <TestimonialsSection />
     </main>
   );
