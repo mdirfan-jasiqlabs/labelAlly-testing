@@ -19,7 +19,7 @@
     ],
     "suffix": "& Content Owners."
   },
-  "description": "Whether you’re an independent creator, a growing artist, or an established label, we provide the platform, technology, and support to help you grow with confidence.",
+  "description": "Whether you are a YouTube creator, independent artist, record label, content owner, or rights holder, we provide the platform, expertise, and support to grow your channel, protect your content, and optimize revenue across the YouTube ecosystem.",
   "accentBars": [
     {
       "id": "orange-bar",
@@ -42,7 +42,7 @@
     {
       "id": "independent-artists",
       "title": "Independent Artists",
-      "description": "For singers, musicians, composers, and independent creators preparing to release and grow their music.",
+      "description": "For singers, musicians, and creators building a YouTube presence — grow your channel, protect your original content, and manage rights and monetization, with music distribution available when you need it.",
       "image": "/images/artists-labels/independent-artist.webp",
       "imageAlt": "Independent artist recording and composing music in a professional studio",
       "imageWidth": 800,
@@ -50,15 +50,15 @@
       "icon": "artistMusic",
       "theme": "orange",
       "features": [
-        "Distribute across supported platforms",
-        "Protect and manage your content rights",
-        "Receive professional release support"
+        "YouTube channel growth and content strategy support",
+        "Content protection, rights management, and monetization guidance",
+        "Music distribution available as an optional supporting service"
       ]
     },
     {
       "id": "record-labels",
       "title": "Record Labels",
-      "description": "For labels managing multiple artists, releases, channels, and music catalogues.",
+      "description": "For labels managing multiple YouTube channels, content libraries, and creator rosters — streamline rights management, Content ID, and channel operations across your catalogue.",
       "image": "/images/artists-labels/record-label-team.jpg",
       "imageAlt": "Record label team reviewing music releases and catalogue strategy",
       "imageWidth": 800,
@@ -66,15 +66,15 @@
       "icon": "team",
       "theme": "pink",
       "features": [
-        "Manage multiple releases efficiently",
-        "Access clear reporting and support",
-        "Organize catalogue and channel workflows"
+        "Multi-channel YouTube management and creator support",
+        "Content ID, rights management, and library protection at scale",
+        "Revenue reporting and catalogue distribution where needed"
       ]
     },
     {
       "id": "content-owners-creators",
       "title": "Content Owners & Creators",
-      "description": "For rights holders and digital creators seeking protection, monetization, and platform management.",
+      "description": "For rights holders and digital creators who need Content ID, copyright protection, and hands-on support to monetize and grow across YouTube.",
       "image": "/images/artists-labels/content-owner-creator.webp",
       "imageAlt": "Digital content creator recording vocals in a professional studio",
       "imageWidth": 800,
@@ -82,9 +82,9 @@
       "icon": "rightsProtection",
       "theme": "purple",
       "features": [
-        "Content ID and rights-management support",
-        "Monetization across eligible platforms",
-        "Ongoing operational assistance"
+        "Content ID and copyright protection across your library",
+        "Rights management and YouTube monetization support",
+        "Revenue optimization and ongoing creator growth assistance"
       ]
     }
   ],

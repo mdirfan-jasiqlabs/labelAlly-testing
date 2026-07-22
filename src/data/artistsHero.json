@@ -99,7 +99,7 @@
       }
     ]
   },
-  "description": "Everything you need to release, manage, and grow your music career or label — with global distribution, rights protection, and dedicated support at every step.",
+  "description": "LabelAlly helps creators, artists, labels, and content owners manage, protect, monetize, and grow their YouTube presence — with channel management, Content ID, rights protection, and revenue optimization, plus music distribution as part of a complete service offering.",
   "features": [
     {
       "icon": "ShieldCheck",
@@ -160,7 +160,7 @@
         "segments": [
           {
             "gradient": false,
-            "text": "Distribute. Protect."
+            "text": "Grow. Protect."
           }
         ]
       },
@@ -169,7 +169,7 @@
         "segments": [
           {
             "gradient": true,
-            "text": "Grow Your Music."
+            "text": "Monetize on YouTube."
           }
         ]
       }

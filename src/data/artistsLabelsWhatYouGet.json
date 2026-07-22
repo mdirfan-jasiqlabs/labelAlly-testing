@@ -8,10 +8,10 @@
     "id": "artists-labels-what-you-get-title",
     "firstLine": "Everything You Need",
     "secondLinePrefix": "to",
-    "highlightedText": "Grow",
-    "secondLineSuffix": "with LabelAlly."
+    "highlightedText": "Manage & Grow",
+    "secondLineSuffix": "on YouTube."
   },
-  "description": "From distribution and rights protection to channel management and revenue optimization — we give you the tools, technology, and support to take your music further.",
+  "description": "LabelAlly brings together YouTube channel management, rights protection, monetization, creator support, and music distribution in one complete solution for creators, artists, labels, and content owners.",
   "accentBars": [
     {
       "id": "orange",
@@ -33,8 +33,8 @@
   "items": [
     {
       "id": "global-distribution",
-      "title": "Global Distribution",
-      "description": "Release your music on leading streaming platforms and stores worldwide.",
+      "title": "YouTube Channel Management",
+      "description": "Manage and optimize your YouTube channel with a structured publishing workflow and hands-on operational support.",
       "icon": "globe",
       "theme": "orange",
       "imagePosition": "left",
@@ -43,15 +43,15 @@
       "imageWidth": 720,
       "imageHeight": 480,
       "features": [
-        "Leading global streaming platforms",
-        "Wider reach for your music",
-        "Reliable and timely delivery"
+        "Channel setup and ongoing management",
+        "Organized video publishing workflows",
+        "Channel optimization for a stronger presence"
       ]
     },
     {
       "id": "rights-management",
       "title": "Protect & Manage Your Rights",
-      "description": "Protect your original content and earn what you deserve.",
+      "description": "Protect your ownership with stronger Content ID coverage, copyright support, and practical rights management.",
       "icon": "shieldCheck",
       "theme": "green",
       "imagePosition": "right",
@@ -60,15 +60,15 @@
       "imageWidth": 720,
       "imageHeight": 480,
       "features": [
-        "Content ID across platforms",
-        "Detect and prevent misuse",
-        "You stay in control"
+        "Content ID setup and claim management",
+        "Copyright protection for original works",
+        "Rights tracking to help safeguard ownership"
       ]
     },
     {
       "id": "channel-growth",
-      "title": "Grow Your Channels",
-      "description": "We manage and grow your YouTube channels for maximum impact.",
+      "title": "YouTube Growth Strategy",
+      "description": "Build a stronger YouTube presence with audience growth planning, SEO improvements, and ongoing performance guidance.",
       "icon": "video",
       "theme": "purple",
       "imagePosition": "left",
@@ -77,15 +77,15 @@
       "imageWidth": 720,
       "imageHeight": 480,
       "features": [
-        "Channel optimization",
-        "Audience growth strategies",
-        "Regular performance reports"
+        "Audience growth and channel positioning",
+        "YouTube SEO and metadata optimization",
+        "Performance monitoring and creator strategy"
       ]
     },
     {
       "id": "revenue-optimization",
       "title": "Maximize Your Revenue",
-      "description": "Maximize your earnings with smart tracking and performance insights.",
+      "description": "Improve earnings visibility with YouTube monetization support, revenue optimization, and clear performance insights.",
       "icon": "chart",
       "theme": "yellow",
       "imagePosition": "right",
@@ -94,15 +94,15 @@
       "imageWidth": 720,
       "imageHeight": 480,
       "features": [
-        "Transparent reporting",
-        "Real-time revenue tracking",
-        "Data-driven optimization"
+        "YouTube monetization support",
+        "Revenue optimization and earnings visibility",
+        "Performance analytics for better decisions"
       ]
     },
     {
       "id": "promotion-growth",
-      "title": "Promote & Grow",
-      "description": "Get the right exposure and grow your fanbase.",
+      "title": "Creator Success & Support",
+      "description": "Work with a team that supports long-term creator growth through planning, guidance, and consistent operational help.",
       "icon": "headphones",
       "theme": "pink",
       "imagePosition": "left",
@@ -111,21 +111,21 @@
       "imageWidth": 720,
       "imageHeight": 480,
       "features": [
-        "Strategic promotion guidance",
-        "Playlist pitching support",
-        "Long-term growth strategies"
+        "Dedicated creator support",
+        "Growth consultation and strategic planning",
+        "Long-term partnership for sustainable progress"
       ]
     }
   ],
   "cta": {
     "icon": "star",
-    "title": "A complete ecosystem to release, protect, manage, and grow your music career.",
-    "description": "Technology. Transparency. Trust.",
+    "title": "A complete ecosystem to help creators, artists, labels, and content owners manage, protect, monetize, and grow on YouTube.",
+    "description": "Professional support, transparent processes, rights protection, and a long-term creator partnership.",
     "button": {
-      "label": "Start Your Journey",
+      "label": "Grow With LabelAlly",
       "href": "/contact",
       "icon": "arrowRight",
-      "ariaLabel": "Start your journey with LabelAlly Entertainment"
+      "ariaLabel": "Grow with LabelAlly Entertainment"
     }
   }
 }
