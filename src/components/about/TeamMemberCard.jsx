@@ -9,63 +9,6 @@ const TEAM_IMAGE_FALLBACKS = [
   '/images/about/about-4.png',
 ];
 
-const LinkedinIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const InstagramIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
-const SOCIAL_DEFINITIONS = [
-  {
-    key: 'linkedin',
-    label: (name) => `${name} on LinkedIn`,
-    Icon: LinkedinIcon,
-    external: true,
-  },
-  {
-    key: 'instagram',
-    label: (name) => `${name} on Instagram`,
-    Icon: InstagramIcon,
-    external: true,
-  },
-  {
-    key: 'email',
-    label: (name) => `Email ${name}`,
-    Icon: Mail,
-    external: false,
-  },
-];
-
-function getSocialItems(socialLinks = {}, memberName = 'Team member') {
-  return SOCIAL_DEFINITIONS.map(({ key, label, Icon, external }) => {
-    const raw = socialLinks[key]?.trim() ?? '';
-    let href = null;
-
-    if (raw) {
-      href = key === 'email' ? `mailto:${raw.replace(/^mailto:/i, '')}` : raw;
-    }
-
-    return {
-      key,
-      href,
-      label: label(memberName),
-      Icon,
-      external,
-      enabled: Boolean(href),
-    };
-  });
-}
-
 function getInitials(name = '') {
   const parts = name.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return '?';
@@ -91,36 +34,28 @@ function resolveMemberImage(member) {
   return TEAM_IMAGE_FALLBACKS[hash % TEAM_IMAGE_FALLBACKS.length];
 }
 
-const socialButtonBase = [
-  'inline-flex items-center justify-center',
-  'h-8 w-8 rounded-full',
-  'border',
-  'transition-colors duration-200',
-  'focus-visible:outline-none',
-  'focus-visible:ring-2 focus-visible:ring-theme-action-primary',
-  'focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-page-bg)]',
-].join(' ');
-
 /**
  * TeamMemberCard — Premium centered SaaS profile card.
  */
-function TeamMemberCard({ member }) {
+function TeamMemberCard({ member, contactButton }) {
   const [imageFailed, setImageFailed] = useState(false);
 
   if (!member?.name) return null;
 
-  const {
-    name,
-    role,
-    description,
-    imageAlt,
-    socialLinks,
-  } = member;
+  const { name, role, description, imageAlt } = member;
 
   const imageSrc = resolveMemberImage(member);
-  const socialItems = getSocialItems(socialLinks, name);
   const hasImage = Boolean(imageSrc) && !imageFailed;
   const altText = imageAlt?.trim() || `${name}${role ? `, ${role}` : ''}`;
+
+  const contactEmail = contactButton?.email?.trim() || '';
+  const contactLabel = contactButton?.label?.trim() || 'Contact';
+  const contactHref = contactEmail
+    ? `mailto:${contactEmail.replace(/^mailto:/i, '')}`
+    : '';
+  const contactAria =
+    contactButton?.ariaLabel?.trim() ||
+    (contactEmail ? `Contact LabelAlly at ${contactEmail}` : contactLabel);
 
   return (
     <article
@@ -140,7 +75,6 @@ function TeamMemberCard({ member }) {
         'motion-reduce:hover:translate-y-0',
       ].join(' ')}
     >
-      {/* Larger circular profile with face-safe crop */}
       <div
         className={[
           'relative shrink-0',
@@ -204,47 +138,33 @@ function TeamMemberCard({ member }) {
           </p>
         )}
 
-        {/* Social row pinned to bottom — keeps equal card height */}
-        <ul className="mt-auto pt-5 flex items-center justify-center gap-2.5 list-none p-0 m-0 shrink-0">
-          {socialItems.map(({ key, href, label, Icon, external, enabled }) => (
-            <li key={key}>
-              {enabled ? (
-                <a
-                  href={href}
-                  aria-label={label}
-                  {...(external
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
-                    : {})}
-                  className={[
-                    socialButtonBase,
-                    'text-ink-secondary dark:text-theme-body',
-                    'bg-surface-secondary dark:bg-theme-elevated',
-                    'border-theme-border/70 dark:border-theme-border/60',
-                    'hover:text-theme-action-primary dark:hover:text-orange-300',
-                    'hover:border-theme-action-primary/35 dark:hover:border-orange-400/40',
-                    'hover:bg-theme-action-primary/5 dark:hover:bg-theme-action-primary/10',
-                  ].join(' ')}
-                >
-                  <Icon className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-              ) : (
-                <span
-                  aria-hidden="true"
-                  title="Coming soon"
-                  className={[
-                    socialButtonBase,
-                    'text-ink-muted/55 dark:text-theme-muted/55',
-                    'bg-surface-secondary/80 dark:bg-theme-elevated/60',
-                    'border-theme-border/50 dark:border-theme-border/40',
-                    'cursor-default',
-                  ].join(' ')}
-                >
-                  <Icon className="h-3.5 w-3.5" aria-hidden="true" />
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
+        {contactHref && (
+          <div className="mt-auto pt-5 w-full flex justify-center shrink-0">
+            <a
+              href={contactHref}
+              aria-label={contactAria}
+              className={[
+                'inline-flex items-center justify-center gap-2',
+                'h-10 px-5 rounded-xl',
+                'text-sm font-semibold',
+                'text-theme-action-primaryForeground',
+                'bg-theme-action-primary',
+                'shadow-sm',
+                'transition-all duration-300 ease-out',
+                'hover:-translate-y-0.5 hover:shadow-md',
+                'focus-visible:outline-none',
+                'focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+                'focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-page-bg)]',
+                'active:scale-[0.98]',
+                'motion-reduce:hover:translate-y-0',
+                'motion-reduce:active:scale-100',
+              ].join(' ')}
+            >
+              <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>{contactLabel}</span>
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );

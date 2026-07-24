@@ -23,7 +23,14 @@ export async function sendContactForm(data) {
 
     // Handle standard server failures
     if (!response.ok) {
-      const error = new Error('Server error occurred');
+      let serverMessage = 'Server error occurred';
+      try {
+        const errorBody = await response.json();
+        if (errorBody?.message) serverMessage = errorBody.message;
+      } catch {
+        // keep default message
+      }
+      const error = new Error(serverMessage);
       error.status = response.status;
       throw error;
     }

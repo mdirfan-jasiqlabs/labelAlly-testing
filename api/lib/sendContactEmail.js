@@ -16,7 +16,7 @@ export async function sendContactEmail({
   const provider = process.env.EMAIL_PROVIDER || '';
   const apiKey = process.env.EMAIL_API_KEY || '';
   const emailTo = process.env.CONTACT_EMAIL_TO || '';
-  const emailFrom = process.env.CONTACT_EMAIL_FROM || 'onboarding@labelally.com';
+  const emailFrom = process.env.CONTACT_EMAIL_FROM || 'business@labelally.in';
 
   // If no credentials or configuration are set, return a config error
   if (!apiKey || !emailTo) {
@@ -104,7 +104,16 @@ This enquiry was submitted via the contact form on the LabelAlly Entertainment w
 
     if (!response.ok) {
       const resText = await response.text();
-      throw new Error(`Resend API Failure: Status ${response.status} - ${resText}`);
+      const err = new Error(`Resend API Failure: Status ${response.status} - ${resText}`);
+      // Help distinguish unverified-from / domain issues from generic 500s
+      if (
+        response.status === 403 ||
+        response.status === 422 ||
+        /domain|not verified|from/i.test(resText)
+      ) {
+        err.code = 'EMAIL_FROM_UNVERIFIED';
+      }
+      throw err;
     }
 
     return { success: true };

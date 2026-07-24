@@ -132,6 +132,14 @@ export default async function handler(req, res) {
       });
     }
 
+    if (err.code === 'EMAIL_FROM_UNVERIFIED') {
+      console.error(`[${timestamp}] Email FROM address not verified with provider: ${err.message}`);
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now. Email sender is not verified.',
+      });
+    }
+
     // Catch all other server/provider runtime failures
     console.error(`[${timestamp}] Submission error:`, err.message);
     return res.status(500).json({

@@ -8,54 +8,39 @@
     "showMoreLabel": "Show More",
     "showLessLabel": "Show Less"
   },
+  "contactButton": {
+    "label": "Contact",
+    "email": "business@labelally.in",
+    "ariaLabel": "Contact LabelAlly at business@labelally.in"
+  },
   "members": [
     {
       "id": "raj-aryan",
       "name": "Raj Aryan",
       "role": "Executive Director – Business Development",
       "image": "/images/about/team/raj-aryan.webp",
-      "imageAlt": "Raj Aryan, Executive Director – Business Development",
-      "socialLinks": {
-        "linkedin": "https://linkedin.com",
-        "instagram": "https://instagram.com",
-        "email": "work@somplexnetwork.com"
-      }
+      "imageAlt": "Raj Aryan, Executive Director – Business Development"
     },
     {
       "id": "gc-sourav",
       "name": "GC Sourav",
       "role": "Director – Commercial Partnerships",
       "image": "/images/about/team/gc-sourav.webp",
-      "imageAlt": "GC Sourav, Director – Commercial Partnerships",
-      "socialLinks": {
-        "linkedin": "https://linkedin.com",
-        "instagram": "https://instagram.com",
-        "email": "info@somplexnetwork.com"
-      }
+      "imageAlt": "GC Sourav, Director – Commercial Partnerships"
     },
     {
       "id": "simran-sharma",
       "name": "Simran Sharma",
       "role": "Social Media & Performance Marketing Manager",
       "image": "/images/about/team/simran-sharma.webp",
-      "imageAlt": "Simran Sharma, Social Media & Performance Marketing Manager",
-      "socialLinks": {
-        "linkedin": "https://linkedin.com",
-        "instagram": "https://instagram.com",
-        "email": "work@somplexnetwork.com"
-      }
+      "imageAlt": "Simran Sharma, Social Media & Performance Marketing Manager"
     },
     {
       "id": "hemant-raj",
       "name": "Hemant Raj",
       "role": "Channel Operations Executive",
       "image": "/images/about/team/hemant-raj.webp",
-      "imageAlt": "Hemant Raj, Channel Operations Executive",
-      "socialLinks": {
-        "linkedin": "https://linkedin.com",
-        "instagram": "https://instagram.com",
-        "email": "info@somplexnetwork.com"
-      }
+      "imageAlt": "Hemant Raj, Channel Operations Executive"
     }
   ],
   "cta": {

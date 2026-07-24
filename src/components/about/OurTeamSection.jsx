@@ -17,7 +17,7 @@ import { MotionItem, MotionStagger } from '../motion';
 function OurTeamSection() {
   if (!teamData?.enabled) return null;
 
-  const { eyebrow, title, description, members = [], cta, controls } = teamData;
+  const { eyebrow, title, description, members = [], cta, controls, contactButton } = teamData;
   const enabledMembers = members.filter((member) => member?.id && member?.name);
   const sectionRef = useRef(null);
   const batchSize = controls?.batchSize ?? 3;
@@ -101,14 +101,14 @@ function OurTeamSection() {
                   standalone
                   className="h-full min-w-0"
                 >
-                  <TeamMemberCard member={member} />
+                  <TeamMemberCard member={member} contactButton={contactButton} />
                 </MotionItem>
               );
             }
 
             return (
               <MotionItem key={member.id} as="li" className="h-full min-w-0">
-                <TeamMemberCard member={member} />
+                <TeamMemberCard member={member} contactButton={contactButton} />
               </MotionItem>
             );
           })}

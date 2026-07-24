@@ -24,7 +24,7 @@ export const company = {
 // CONTACT
 // ─────────────────────────────────────────────
 export const contact = {
-  email:        '',
+  email:        'business@labelally.in',
   phone:        '',
   address:      '',
   city:         '',
