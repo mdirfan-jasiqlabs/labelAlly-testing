@@ -44,6 +44,14 @@ export const onboardingThemeClasses = {
     accent: 'bg-pink-500',
     arrow: 'text-pink-500 dark:text-pink-300',
   },
+  yellow: {
+    icon:
+      'bg-amber-100 text-amber-600 dark:bg-amber-500/20 dark:text-amber-300',
+    number:
+      'border-amber-300 bg-amber-50 text-amber-600 dark:border-amber-400/40 dark:bg-amber-500/15 dark:text-amber-300',
+    accent: 'bg-amber-500',
+    arrow: 'text-amber-500 dark:text-amber-300',
+  },
 };
 
 export const ctaHighlightThemeClasses = {
@@ -61,8 +69,9 @@ export const placementClasses = {
   'top-left': 'lg:col-span-3 lg:col-start-1 lg:row-start-1',
   'top-center': 'lg:col-span-3 lg:col-start-5 lg:row-start-1',
   'top-right': 'lg:col-span-3 lg:col-start-9 lg:row-start-1',
-  'bottom-left': 'lg:col-span-3 lg:col-start-3 lg:row-start-2',
-  'bottom-right': 'lg:col-span-3 lg:col-start-7 lg:row-start-2',
+  'bottom-left': 'lg:col-span-3 lg:col-start-1 lg:row-start-2',
+  'bottom-center': 'lg:col-span-3 lg:col-start-5 lg:row-start-2',
+  'bottom-right': 'lg:col-span-3 lg:col-start-9 lg:row-start-2',
 };
 
 export const artistsLabelsOnboardingStyles = {
@@ -97,9 +106,8 @@ export const artistsLabelsOnboardingStyles = {
     desktopOnly: 'hidden lg:block',
     topRow:
       'grid grid-cols-[1fr_3rem_1fr_3rem_1fr] xl:grid-cols-[1fr_3.5rem_1fr_3.5rem_1fr] items-center',
-    bottomRow: 'flex justify-center',
-    bottomInner:
-      'grid w-full max-w-[calc((100%-6rem)*2/3+3rem)] xl:max-w-[calc((100%-7rem)*2/3+3.5rem)] grid-cols-[1fr_3rem_1fr] xl:grid-cols-[1fr_3.5rem_1fr] items-center',
+    bottomRow:
+      'grid grid-cols-[1fr_3rem_1fr_3rem_1fr] xl:grid-cols-[1fr_3.5rem_1fr_3.5rem_1fr] items-center',
     cardSlot: 'min-w-0 h-full',
     mobileList: 'flex lg:hidden flex-col list-none m-0 p-0',
     listItem: 'flex flex-col items-stretch w-full',
@@ -125,7 +133,7 @@ export const artistsLabelsOnboardingStyles = {
     title:
       'font-heading text-base sm:text-lg font-bold tracking-tight text-ink-primary dark:text-theme-heading',
     description:
-      'mt-2.5 text-sm leading-relaxed text-ink-secondary dark:text-theme-body flex-1',
+      'mt-2.5 text-sm leading-relaxed text-ink-secondary dark:text-theme-body flex-1 break-words',
     accentLine: 'mt-5 h-1.5 w-14 rounded-full',
     horizontalConnector:
       'relative z-20 flex w-full items-center justify-center self-center',

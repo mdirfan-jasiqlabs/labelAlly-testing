@@ -12,79 +12,95 @@
   "description": "We’ve designed a smooth onboarding experience to get your music live on global platforms — quickly and hassle-free.",
   "steps": [
     {
-      "id": "submit-your-music",
+      "id": "submit-your-channel",
       "number": "01",
-      "title": "Submit Your Music",
-      "description": "Share your tracks and release details with us through our easy form.",
-      "icon": "fileUpload",
+      "title": "Submit Your Channel",
+      "description": "Share your YouTube channel details by emailing us at business@labelally.in. We accept Music and Entertainment channels for review.",
+      "icon": "mail",
       "theme": "orange",
       "placement": "top-left"
     },
     {
-      "id": "review-verification",
+      "id": "initial-review",
       "number": "02",
-      "title": "Review & Verification",
-      "description": "Our team reviews your submission and verifies your content for quality and compliance.",
-      "icon": "fileCheck",
+      "title": "Initial Review",
+      "description": "Our team reviews your channel for policy compliance, content quality, monetization status, and overall eligibility.",
+      "icon": "search",
       "theme": "purple",
       "placement": "top-center"
     },
     {
-      "id": "distribution-setup",
+      "id": "manager-access",
       "number": "03",
-      "title": "Distribution Setup",
-      "description": "We prepare your release for global distribution and metadata optimization.",
-      "icon": "music",
+      "title": "Manager Access",
+      "description": "Provide Manager Access to our team so we can perform a detailed audit of your channel, settings, and monetization readiness.",
+      "icon": "user",
       "theme": "blue",
       "placement": "top-right"
     },
     {
-      "id": "go-live-globally",
+      "id": "cms-rollup-review",
       "number": "04",
-      "title": "Go Live Globally",
-      "description": "Your music goes live on 150+ platforms and stores worldwide.",
-      "icon": "globe",
+      "title": "CMS Rollup Review",
+      "description": "Once your channel meets all eligibility requirements, we submit it for CMS Rollup approval.",
+      "icon": "cloudUpload",
       "theme": "green",
       "placement": "bottom-left"
     },
     {
-      "id": "track-grow",
+      "id": "cms-integration",
       "number": "05",
-      "title": "Track & Grow",
-      "description": "Monitor performance, earnings, and grow your fanbase with insights.",
-      "icon": "chartGrowth",
+      "title": "CMS Integration",
+      "description": "After approval, your channel is successfully connected to our YouTube CMS for professional management.",
+      "icon": "shieldCheck",
       "theme": "pink",
+      "placement": "bottom-center"
+    },
+    {
+      "id": "rights-management-growth",
+      "number": "06",
+      "title": "Rights Management & Growth",
+      "description": "Our team manages Content ID, Copyright Protection, Rights Management, Claim Handling, Analytics, and Revenue Optimization to help grow your channel.",
+      "icon": "trophy",
+      "theme": "yellow",
       "placement": "bottom-right"
     }
   ],
   "connectors": [
     {
       "id": "connector-1",
-      "from": "submit-your-music",
-      "to": "review-verification",
+      "from": "submit-your-channel",
+      "to": "initial-review",
       "direction": "right",
       "theme": "orange"
     },
     {
       "id": "connector-2",
-      "from": "review-verification",
-      "to": "distribution-setup",
+      "from": "initial-review",
+      "to": "manager-access",
       "direction": "right",
       "theme": "purple"
     },
     {
       "id": "connector-3",
-      "from": "distribution-setup",
-      "to": "go-live-globally",
+      "from": "manager-access",
+      "to": "cms-rollup-review",
       "direction": "loop-down-left",
       "theme": "blue"
     },
     {
       "id": "connector-4",
-      "from": "go-live-globally",
-      "to": "track-grow",
+      "from": "cms-rollup-review",
+      "to": "cms-integration",
       "direction": "right",
       "theme": "green"
+    },
+    {
+      "id": "connector-5",
+      "from": "cms-integration",
+      "to": "rights-management-growth",
+      "direction": "right",
+      "theme": "pink"
     }
   ],
   "cta": {

@@ -6,9 +6,9 @@ import { artistsLabelsOnboardingStyles as styles } from '../../../../config/arti
 import { MotionSection, MotionStagger, MotionItem } from '../../../motion';
 
 /**
- * Five-step onboarding flow.
- * Desktop: top row 01–03 with gap connectors, U-turn, bottom row 04–05.
- * Mobile: vertical stack. DOM order stays 01 → 05.
+ * Six-step onboarding flow.
+ * Desktop: top row 01–03 with gap connectors, U-turn, bottom row 04–06.
+ * Mobile: vertical stack. DOM order stays 01 → 06.
  *
  * Desktop uses a single section reveal (connectors must stay layout-stable).
  * Mobile uses step stagger.
@@ -16,7 +16,7 @@ import { MotionSection, MotionStagger, MotionItem } from '../../../motion';
 function ProcessFlow({ steps = [] }) {
   if (!steps.length) return null;
 
-  const [step1, step2, step3, step4, step5] = steps;
+  const [step1, step2, step3, step4, step5, step6] = steps;
 
   return (
     <div className={styles.process.stage}>
@@ -38,14 +38,16 @@ function ProcessFlow({ steps = [] }) {
         <RowTurnConnector />
 
         <div className={styles.process.bottomRow}>
-          <div className={styles.process.bottomInner}>
-            <div className={styles.process.cardSlot}>
-              <ProcessCard step={step4} />
-            </div>
-            <HorizontalConnector theme={step4.theme} />
-            <div className={styles.process.cardSlot}>
-              <ProcessCard step={step5} />
-            </div>
+          <div className={styles.process.cardSlot}>
+            <ProcessCard step={step4} />
+          </div>
+          <HorizontalConnector theme={step4.theme} />
+          <div className={styles.process.cardSlot}>
+            <ProcessCard step={step5} />
+          </div>
+          <HorizontalConnector theme={step5.theme} />
+          <div className={styles.process.cardSlot}>
+            <ProcessCard step={step6} />
           </div>
         </div>
       </MotionSection>

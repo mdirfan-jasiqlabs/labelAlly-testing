@@ -21,7 +21,7 @@ function RowTurnConnector() {
           d="M 1085 0
              C 1175 0, 1190 25, 1190 40
              C 1190 62, 1155 80, 1060 80
-             H 220"
+             H 115"
         />
       </svg>
     </div>
