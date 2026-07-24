@@ -123,7 +123,7 @@ export const artistsLabelsWhatYouGetStyles = {
     imageClipRight:
       'lg:[clip-path:polygon(8%_0,100%_0,100%_100%,8%_100%,0_50%)]',
     image:
-      'h-full w-full object-cover object-center transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
+      'h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
     details: 'flex w-full items-start gap-3.5 sm:gap-4',
     iconWrapper:
       'flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl border transition-transform duration-300 ease-out group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0',

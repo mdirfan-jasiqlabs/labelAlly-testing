@@ -17,7 +17,7 @@ function AudienceIcon({ icon, theme }) {
       className={`${styles.grid.iconBadge} ${themeClasses.iconBadge}`}
       aria-hidden="true"
     >
-      <Icon className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={2} />
+      <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2} />
     </div>
   );
 }

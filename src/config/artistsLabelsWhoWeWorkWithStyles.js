@@ -66,53 +66,54 @@ export const artistsLabelsWhoWeWorkWithStyles = {
 
   grid: {
     wrapper:
-      'mt-10 sm:mt-12 lg:mt-14 w-full grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8',
+      'mt-8 sm:mt-10 lg:mt-12 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-5',
     card: [
       'group relative flex h-full flex-col',
-      'rounded-2xl sm:rounded-3xl',
+      'rounded-xl sm:rounded-2xl',
       'border border-theme-border/90 dark:border-theme-border',
       'bg-theme-card dark:bg-theme-card/80',
-      'shadow-[0_12px_40px_-20px_rgba(15,23,42,0.18)]',
-      'dark:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.55)]',
+      'shadow-[0_10px_32px_-18px_rgba(15,23,42,0.16)]',
+      'dark:shadow-[0_12px_32px_-18px_rgba(0,0,0,0.5)]',
       'transition-all duration-300 ease-out',
-      'hover:-translate-y-1',
-      'hover:shadow-[0_22px_50px_-22px_rgba(15,23,42,0.28)]',
-      'dark:hover:shadow-[0_22px_50px_-18px_rgba(0,0,0,0.7)]',
+      'hover:-translate-y-0.5',
+      'hover:shadow-[0_18px_40px_-20px_rgba(15,23,42,0.24)]',
+      'dark:hover:shadow-[0_18px_40px_-16px_rgba(0,0,0,0.65)]',
       'lg:last:col-span-1 lg:last:max-w-none',
     ].join(' '),
-    imageWrapper: 'relative w-full overflow-hidden aspect-[5/3.4] rounded-t-2xl sm:rounded-t-3xl',
+    imageWrapper:
+      'relative w-full overflow-hidden aspect-[4/3] rounded-t-xl sm:rounded-t-2xl bg-theme-secondary',
     image:
-      'h-full w-full object-cover object-center transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100',
+      'h-full w-full object-cover object-[center_18%] transition-transform duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100',
     iconBadge: [
       'absolute left-1/2 z-20',
-      '-bottom-9 sm:-bottom-10',
+      '-bottom-7 sm:-bottom-8',
       '-translate-x-1/2',
       'flex items-center justify-center',
-      'h-[72px] w-[72px] sm:h-[84px] sm:w-[84px] lg:h-[88px] lg:w-[88px]',
+      'h-14 w-14 sm:h-16 sm:w-16',
       'rounded-full border-2',
       'bg-theme-card',
-      'shadow-[0_10px_28px_-10px_rgba(15,23,42,0.35)]',
+      'shadow-[0_8px_22px_-10px_rgba(15,23,42,0.35)]',
       'transition-transform duration-300 ease-out',
       'group-hover:-translate-y-0.5',
       'motion-reduce:group-hover:translate-y-0',
     ].join(' '),
     cardContent:
-      'flex flex-1 flex-col px-5 sm:px-6 pt-14 sm:pt-16 pb-6 sm:pb-7 text-center',
+      'flex flex-1 flex-col px-4 sm:px-5 pt-11 sm:pt-12 pb-5 sm:pb-6 text-center',
     title:
-      'font-heading text-xl sm:text-[1.4rem] font-bold tracking-tight text-ink-primary dark:text-theme-heading',
+      'font-heading text-lg sm:text-xl font-bold tracking-tight text-ink-primary dark:text-theme-heading',
     description:
-      'mt-3 text-sm sm:text-[15px] leading-relaxed text-ink-secondary dark:text-theme-body min-h-[4.5rem]',
-    divider: 'mt-5 mb-5 border-t border-theme-border dark:border-theme-border',
-    featureList: 'mt-auto flex flex-col gap-3 text-left',
-    featureItem: 'flex items-start gap-3',
+      'mt-2.5 text-[13px] sm:text-sm leading-relaxed text-ink-secondary dark:text-theme-body',
+    divider: 'mt-4 mb-4 border-t border-theme-border dark:border-theme-border',
+    featureList: 'mt-auto flex flex-col gap-2.5 text-left',
+    featureItem: 'flex items-start gap-2.5',
     featureIcon:
-      'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border',
-    featureText: 'text-sm leading-snug text-ink-secondary dark:text-theme-body',
+      'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border',
+    featureText: 'text-[13px] sm:text-sm leading-snug text-ink-secondary dark:text-theme-body',
   },
 
   trust: {
     wrapper:
-      'mt-10 sm:mt-12 lg:mt-14 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 text-center',
+      'mt-8 sm:mt-10 lg:mt-12 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 text-center',
     icon: 'shrink-0 text-orange-500 dark:text-orange-400',
     text: 'text-sm sm:text-[15px] font-medium text-ink-muted dark:text-theme-muted',
   },
