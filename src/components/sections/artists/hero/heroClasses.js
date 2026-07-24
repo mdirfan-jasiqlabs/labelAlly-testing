@@ -129,7 +129,7 @@ export const heroClasses = {
       'transition-transform duration-300 ease-smooth',
       'motion-safe:animate-hero-float',
     ].join(' '),
-    mainImage: 'h-full w-full object-cover object-center',
+    mainImage: 'h-full w-full object-cover object-top',
     float: {
       'top-right': [
         'absolute top-[0%] right-[0%] z-20',
@@ -152,7 +152,7 @@ export const heroClasses = {
         'motion-safe:animate-hero-float',
       ].join(' '),
     },
-    floatImage: 'h-full w-full object-cover',
+    floatImage: 'h-full w-full object-cover object-top',
   },
 
   trustClass: {

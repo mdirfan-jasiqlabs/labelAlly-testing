@@ -239,9 +239,9 @@
     "artists": [
       {
         "id": 1,
-        "name": "Pooja Garimal",
-        "role": "Content Creator",
-        "image": "/artists/artist-1.webp",
+        "name": "Tuntun Yadav",
+        "role": "Bhojpuri Singer / Actor",
+        "image": "/artists/managed/tuntun-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -252,22 +252,9 @@
       },
       {
         "id": 2,
-        "name": "Tuntun Yadav",
-        "role": "Singer / Actor",
-        "image": "/artists/artist-2.webp",
-        "featured": false,
-        "imageClass": "",
-        "socials": {
-          "instagram": "https://instagram.com",
-          "youtube": "https://youtube.com",
-          "spotify": "https://spotify.com"
-        }
-      },
-      {
-        "id": 3,
         "name": "Khushi Kakkar",
-        "role": "Singer / Actress",
-        "image": "/artists/artist-3.webp",
+        "role": "Maghi Singer / Actress",
+        "image": "/artists/managed/khushi-kakkar.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -277,12 +264,25 @@
         }
       },
       {
-        "id": 4,
+        "id": 3,
         "name": "Shweta Sargam",
-        "role": "Singer / Actress",
-        "image": "/artists/artist-4.webp",
+        "role": "Maghi Singer / Actress",
+        "image": "/artists/managed/shweta-sargam.webp",
         "featured": false,
-        "imageClass": "scale-x-[-1] hue-rotate-[90deg]",
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Pawan Singh",
+        "role": "Bhojpuri Singer",
+        "image": "/artists/managed/pawan-singh.webp",
+        "featured": false,
+        "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
@@ -291,11 +291,11 @@
       },
       {
         "id": 5,
-        "name": "Ankus Raja",
-        "role": "Singer",
-        "image": "/artists/artist-5.webp",
+        "name": "Ashish Yadav",
+        "role": "Maghi Singer / Actor",
+        "image": "/artists/managed/ashish-yadav.webp",
         "featured": false,
-        "imageClass": "scale-x-[-1] hue-rotate-[180deg]",
+        "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
@@ -390,10 +390,10 @@
       }
     ],
     "images": {
-      "topLeft":     { "src": "/artists/artist-1.webp",   "alt": "Creators collaborating around a work desk" },
-      "topRight":    { "src": "/process-team.jpg",         "alt": "Team discussion around a table" },
-      "bottomLeft":  { "src": "/hero-artist.png",          "alt": "Music artist performing with a guitar" },
-      "bottomRight": { "src": "/artists/artist-2.webp",   "alt": "Creative workspace with digital equipment" }
+      "topLeft":     { "src": "/artists/managed/khesari-lal-yadav.webp", "alt": "Khesari Lal Yadav — Bhojpuri singer and actor" },
+      "topRight":    { "src": "/process-team.jpg",                       "alt": "Team discussion around a table" },
+      "bottomLeft":  { "src": "/artists/managed/utkarsh-saxena.webp",    "alt": "Utkarsh Saxena — Bollywood singer" },
+      "bottomRight": { "src": "/artists/managed/jass-manak.webp",        "alt": "Jass Manak — Punjabi singer" }
     }
   },
   "finalCta": {

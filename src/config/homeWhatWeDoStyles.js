@@ -71,9 +71,9 @@ export const homeWhatWeDoStyles = {
     'hover:shadow-card-hover motion-reduce:hover:translate-y-0',
   ].join(' '),
   image: [
-    'w-full h-full object-cover select-none pointer-events-none',
+    'w-full h-full object-cover object-top select-none pointer-events-none',
     'transition-transform duration-500 ease-out',
-    'motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
+    'motion-safe:group-hover:scale-[1.02] motion-reduce:group-hover:scale-100',
   ].join(' '),
 
   imageHeights: {

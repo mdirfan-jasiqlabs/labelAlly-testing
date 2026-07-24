@@ -104,9 +104,9 @@ export const homeArtistsStyles = {
     'relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-theme-secondary',
 
   image: [
-    'w-full h-full object-cover object-[center_20%]',
+    'w-full h-full object-cover object-top',
     'select-none transition-transform duration-700 ease-out',
-    'motion-safe:group-hover:scale-105 motion-reduce:group-hover:scale-100',
+    'motion-safe:group-hover:scale-[1.02] motion-reduce:group-hover:scale-100',
   ].join(' '),
 
   cardBody: 'flex-1 flex flex-col items-center text-center p-6 pb-8',

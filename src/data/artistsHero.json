@@ -137,18 +137,18 @@
         "width": 220
       },
       {
-        "alt": "Artist listening with headphones in creative session",
+        "alt": "Khushi Kakkar — Maghi singer and actress",
         "height": 240,
         "id": "float-bottom-left",
         "position": "bottom-left",
-        "src": "/artists/artist-3.webp",
+        "src": "/artists/managed/khushi-kakkar.webp",
         "width": 180
       }
     ],
     "main": {
-      "alt": "Music artist performing under stage lights",
+      "alt": "Pawan Singh — Bhojpuri singer",
       "height": 720,
-      "src": "/artists/artist-1.webp",
+      "src": "/artists/managed/pawan-singh.webp",
       "width": 640
     }
   },

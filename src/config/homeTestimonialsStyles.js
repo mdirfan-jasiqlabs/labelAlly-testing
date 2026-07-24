@@ -84,7 +84,7 @@ export const homeTestimonialsStyles = {
     'absolute inset-[6px] bg-theme-card overflow-hidden ring-1 ring-theme-border/50',
 
   portraitImage: [
-    'w-full h-full object-cover object-[center_18%]',
+    'w-full h-full object-cover object-[center_15%]',
     'transition-transform duration-500 ease-out',
     'motion-safe:group-hover:scale-[1.02] motion-reduce:group-hover:scale-100',
     'dark:brightness-105 dark:contrast-[1.03]',
