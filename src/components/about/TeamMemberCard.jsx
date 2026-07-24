@@ -93,7 +93,7 @@ function resolveMemberImage(member) {
 
 const socialButtonBase = [
   'inline-flex items-center justify-center',
-  'h-9 w-9 rounded-md',
+  'h-8 w-8 rounded-full',
   'border',
   'transition-colors duration-200',
   'focus-visible:outline-none',
@@ -102,7 +102,7 @@ const socialButtonBase = [
 ].join(' ');
 
 /**
- * TeamMemberCard — SaaS-style team card with theme-aware contrast.
+ * TeamMemberCard — Premium centered SaaS profile card.
  */
 function TeamMemberCard({ member }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -125,66 +125,87 @@ function TeamMemberCard({ member }) {
   return (
     <article
       className={[
-        'group relative h-full flex flex-col overflow-hidden',
-        'rounded-2xl',
-        'bg-surface-card dark:bg-theme-card',
-        'border border-theme-border/80 dark:border-theme-border/60',
+        'group relative h-full flex flex-col items-center',
+        'rounded-2xl sm:rounded-[1.35rem]',
+        'px-5 pt-7 pb-6 sm:px-6 sm:pt-8 sm:pb-7',
+        'bg-surface-card/95 dark:bg-theme-card/80',
+        'backdrop-blur-sm',
+        'border border-theme-border/70 dark:border-theme-border/50',
         'shadow-sm dark:shadow-theme',
         'transition-all duration-300 ease-out',
         'motion-reduce:transition-none',
-        'hover:-translate-y-1 hover:shadow-card-hover',
-        'hover:border-theme-action-primary/20 dark:hover:border-theme-action-primary/35',
+        'hover:-translate-y-1',
+        'hover:shadow-card-hover',
+        'hover:border-theme-action-primary/25 dark:hover:border-theme-action-primary/40',
         'motion-reduce:hover:translate-y-0',
       ].join(' ')}
     >
-      <div className="relative aspect-[3/2] w-full shrink-0 overflow-hidden bg-surface-secondary dark:bg-theme-elevated">
+      {/* Larger circular profile with face-safe crop */}
+      <div
+        className={[
+          'relative shrink-0',
+          'h-36 w-36 sm:h-40 sm:w-40',
+          'rounded-full overflow-hidden',
+          'ring-[2.5px] ring-theme-action-primary/85 dark:ring-orange-400/85',
+          'ring-offset-[3px] ring-offset-surface-card dark:ring-offset-theme-card',
+          'bg-surface-secondary dark:bg-theme-elevated',
+          'shadow-sm',
+        ].join(' ')}
+      >
         {hasImage ? (
           <img
             src={imageSrc}
             alt={altText}
-            width={480}
-            height={320}
+            width={160}
+            height={160}
             loading="lazy"
             decoding="async"
             onError={() => setImageFailed(true)}
             className={[
-              'h-full w-full object-cover object-center',
+              'h-full w-full object-cover object-[center_12%] scale-[1.08]',
+              'origin-center',
               'transition-transform duration-500 ease-out',
               'motion-reduce:transition-none',
-              'group-hover:scale-[1.04]',
-              'motion-reduce:group-hover:scale-100',
+              'group-hover:scale-[1.12]',
+              'motion-reduce:group-hover:scale-[1.08]',
             ].join(' ')}
           />
         ) : (
           <div
             aria-hidden="true"
-            className="flex h-full w-full items-center justify-center bg-surface-secondary dark:bg-theme-elevated"
+            className="flex h-full w-full items-center justify-center"
           >
-            <span className="font-heading text-4xl font-bold tracking-tight text-ink-muted dark:text-theme-muted select-none">
+            <span className="font-heading text-3xl font-bold tracking-tight text-ink-muted dark:text-theme-muted select-none">
               {getInitials(name)}
             </span>
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6 sm:p-7 lg:p-8 text-left">
+      <div className="mt-5 sm:mt-6 flex flex-1 w-full flex-col items-center text-center min-w-0">
         <h3 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-ink-primary dark:text-theme-heading leading-snug">
           {name}
         </h3>
 
+        <span
+          aria-hidden="true"
+          className="mt-3 h-0.5 w-10 rounded-full bg-theme-action-primary dark:bg-orange-400"
+        />
+
         {role && (
-          <p className="mt-1.5 text-sm font-semibold text-theme-action-primary dark:text-orange-300">
+          <p className="mt-3 text-sm font-medium leading-snug text-theme-action-primary dark:text-orange-300 break-words max-w-[18rem] min-h-[2.75rem]">
             {role}
           </p>
         )}
 
         {description && (
-          <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-secondary dark:text-theme-body line-clamp-3 min-h-[4.5rem]">
+          <p className="mt-3 text-sm leading-relaxed text-ink-secondary dark:text-theme-body max-w-xs">
             {description}
           </p>
         )}
 
-        <ul className="mt-6 flex items-center gap-2.5 list-none p-0 m-0">
+        {/* Social row pinned to bottom — keeps equal card height */}
+        <ul className="mt-auto pt-5 flex items-center justify-center gap-2.5 list-none p-0 m-0 shrink-0">
           {socialItems.map(({ key, href, label, Icon, external, enabled }) => (
             <li key={key}>
               {enabled ? (
@@ -204,20 +225,21 @@ function TeamMemberCard({ member }) {
                     'hover:bg-theme-action-primary/5 dark:hover:bg-theme-action-primary/10',
                   ].join(' ')}
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
               ) : (
                 <span
                   aria-hidden="true"
+                  title="Coming soon"
                   className={[
                     socialButtonBase,
-                    'text-ink-muted/50 dark:text-theme-muted/50',
+                    'text-ink-muted/55 dark:text-theme-muted/55',
                     'bg-surface-secondary/80 dark:bg-theme-elevated/60',
                     'border-theme-border/50 dark:border-theme-border/40',
                     'cursor-default',
                   ].join(' ')}
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
               )}
             </li>

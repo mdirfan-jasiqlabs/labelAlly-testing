@@ -10,54 +10,50 @@
   },
   "members": [
     {
-      "id": "placeholder-1",
-      "name": "Team Member Placeholder",
-      "role": "Role pending",
-      "description": "Temporary development content — replace with the real team member’s details.",
-      "image": "/images/about/about-1.png",
-      "imageAlt": "Team member portrait placeholder",
+      "id": "raj-aryan",
+      "name": "Raj Aryan",
+      "role": "Executive Director – Business Development",
+      "image": "/images/about/team/raj-aryan.webp",
+      "imageAlt": "Raj Aryan, Executive Director – Business Development",
       "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/labelally-team-1",
-        "instagram": "https://www.instagram.com/labelally",
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com",
         "email": "work@somplexnetwork.com"
       }
     },
     {
-      "id": "placeholder-2",
-      "name": "Team Member Placeholder",
-      "role": "Role pending",
-      "description": "Temporary development content — replace with the real team member’s details.",
-      "image": "/images/about/about-2.png",
-      "imageAlt": "Team member portrait placeholder",
+      "id": "gc-sourav",
+      "name": "GC Sourav",
+      "role": "Director – Commercial Partnerships",
+      "image": "/images/about/team/gc-sourav.webp",
+      "imageAlt": "GC Sourav, Director – Commercial Partnerships",
       "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/labelally-team-2",
-        "instagram": "https://www.instagram.com/labelally",
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com",
         "email": "info@somplexnetwork.com"
       }
     },
     {
-      "id": "placeholder-3",
-      "name": "Team Member Placeholder",
-      "role": "Role pending",
-      "description": "Temporary development content — replace with the real team member’s details.",
-      "image": "/images/about/about-3.png",
-      "imageAlt": "Team member portrait placeholder",
+      "id": "simran-sharma",
+      "name": "Simran Sharma",
+      "role": "Social Media & Performance Marketing Manager",
+      "image": "/images/about/team/simran-sharma.webp",
+      "imageAlt": "Simran Sharma, Social Media & Performance Marketing Manager",
       "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/labelally-team-3",
-        "instagram": "https://www.instagram.com/labelally",
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com",
         "email": "work@somplexnetwork.com"
       }
     },
     {
-      "id": "placeholder-4",
-      "name": "Team Member Placeholder",
-      "role": "Role pending",
-      "description": "Temporary development content — replace with the real team member’s details.",
-      "image": "/images/about/about-4.png",
-      "imageAlt": "Team member portrait placeholder",
+      "id": "hemant-raj",
+      "name": "Hemant Raj",
+      "role": "Channel Operations Executive",
+      "image": "/images/about/team/hemant-raj.webp",
+      "imageAlt": "Hemant Raj, Channel Operations Executive",
       "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/labelally-team-4",
-        "instagram": "https://www.instagram.com/labelally",
+        "linkedin": "https://linkedin.com",
+        "instagram": "https://instagram.com",
         "email": "info@somplexnetwork.com"
       }
     }
