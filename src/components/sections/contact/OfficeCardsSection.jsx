@@ -6,7 +6,7 @@ import footerData from '../../../data/footer.json';
 import { MotionStagger, MotionItem } from '../../motion';
 
 /**
- * OfficeCardsSection — Three-office grid + contact help strip.
+ * OfficeCardsSection — Office location card(s) + contact help strip.
  */
 function OfficeCardsSection() {
   const { offices, helpStrip } = contactData;
@@ -18,6 +18,7 @@ function OfficeCardsSection() {
   if (!showOffices && !showHelpStrip) return null;
 
   const officeCount = enabledOffices.length;
+  const isSingleOffice = officeCount === 1;
 
   const whatsappUrl =
     footerData?.contact?.whatsapp?.enabled !== false
@@ -50,7 +51,7 @@ function OfficeCardsSection() {
 
       <Container size="2xl" className="relative z-10">
         <h2 id="office-locations-heading" className="sr-only">
-          Office locations
+          Office location
         </h2>
 
         {showOffices && (
@@ -59,14 +60,16 @@ function OfficeCardsSection() {
             stagger={0.08}
             className={[
               'grid list-none p-0 m-0 items-stretch',
-              'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+              isSingleOffice
+                ? 'grid-cols-1 max-w-md mx-auto'
+                : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl xl:max-w-6xl mx-auto',
               'gap-5 sm:gap-6 lg:gap-8',
               'contact-cards-pull',
-              'max-w-5xl xl:max-w-6xl mx-auto',
             ].join(' ')}
           >
             {enabledOffices.map((office, index) => {
               const isOddLastOnTablet =
+                !isSingleOffice &&
                 officeCount % 2 === 1 &&
                 index === officeCount - 1 &&
                 officeCount > 1;

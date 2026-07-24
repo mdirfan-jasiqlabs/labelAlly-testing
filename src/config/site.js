@@ -16,8 +16,8 @@ export const company = {
   description:
     'LabelAlly Entertainment is a full-service music industry partner providing distribution, marketing, sync licensing, and artist development services.',
   founded:    '',
-  location:   '',
-  country:    '',
+  location:   'Deoghar, Jharkhand',
+  country:    'India',
 };
 
 // ─────────────────────────────────────────────
@@ -26,11 +26,11 @@ export const company = {
 export const contact = {
   email:        'business@labelally.in',
   phone:        '',
-  address:      '',
-  city:         '',
-  state:        '',
-  zip:          '',
-  country:      '',
+  address:      'Thari Dulampur, Deoghar, Jharkhand, 814112',
+  city:         'Deoghar',
+  state:        'Jharkhand',
+  zip:          '814112',
+  country:      'India',
   businessHours:'',
 };
 
