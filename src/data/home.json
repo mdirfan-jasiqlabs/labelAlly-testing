@@ -349,28 +349,44 @@
     },
     "features": [
       {
-        "id": "yt-management",
-        "title": "YouTube Channel Management"
+        "id": "yt-channel-management-growth",
+        "title": "YouTube Channel Management & Growth"
       },
       {
-        "id": "social-promotion",
-        "title": "Social Media & Digital Promotion"
+        "id": "yt-cms-content-id",
+        "title": "YouTube CMS & Content ID Management"
       },
       {
-        "id": "music-distribution",
-        "title": "Music & Audio Distribution"
+        "id": "digital-rights-management",
+        "title": "Digital Rights Management (DRM)"
       },
       {
-        "id": "ott-distribution",
-        "title": "OTT & Video Platform Distribution"
+        "id": "copyright-protection",
+        "title": "Copyright Protection & Rights Enforcement"
       },
       {
-        "id": "artist-branding",
-        "title": "Artist Management & Branding"
+        "id": "global-music-distribution",
+        "title": "Global Music Distribution"
       },
       {
-        "id": "analytics-monetization",
-        "title": "Analytics, Reporting & Monetization"
+        "id": "content-monetization",
+        "title": "Content Monetization & Revenue Optimization"
+      },
+      {
+        "id": "catalog-asset-management",
+        "title": "Catalog & Asset Management"
+      },
+      {
+        "id": "artist-creator-label-management",
+        "title": "Artist, Creator & Label Management"
+      },
+      {
+        "id": "digital-marketing-audience",
+        "title": "Digital Marketing & Audience Development"
+      },
+      {
+        "id": "analytics-reporting-bi",
+        "title": "Analytics, Reporting & Business Intelligence"
       }
     ],
     "images": {

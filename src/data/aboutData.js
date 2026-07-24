@@ -30,27 +30,52 @@ export const aboutIntroData = {
     items: [
       {
         id: "wwd-1",
-        text: "Music & Video Distribution",
+        text: "YouTube Channel Management & Growth",
         enabled: true
       },
       {
         id: "wwd-2",
-        text: "Artist & Label Management",
+        text: "YouTube CMS & Content ID Management",
         enabled: true
       },
       {
         id: "wwd-3",
-        text: "Digital Marketing & Promotions",
+        text: "Digital Rights Management (DRM)",
         enabled: true
       },
       {
         id: "wwd-4",
-        text: "Content Monetization & Reporting",
+        text: "Copyright Protection & Rights Enforcement",
         enabled: true
       },
       {
         id: "wwd-5",
-        text: "Business Investments & Corporate Services",
+        text: "Global Music Distribution",
+        enabled: true
+      },
+      {
+        id: "wwd-6",
+        text: "Content Monetization & Revenue Optimization",
+        enabled: true
+      },
+      {
+        id: "wwd-7",
+        text: "Catalog & Asset Management",
+        enabled: true
+      },
+      {
+        id: "wwd-8",
+        text: "Artist, Creator & Label Management",
+        enabled: true
+      },
+      {
+        id: "wwd-9",
+        text: "Digital Marketing & Audience Development",
+        enabled: true
+      },
+      {
+        id: "wwd-10",
+        text: "Analytics, Reporting & Business Intelligence",
         enabled: true
       }
     ]

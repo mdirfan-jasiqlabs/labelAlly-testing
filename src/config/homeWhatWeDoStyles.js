@@ -54,10 +54,10 @@ export const homeWhatWeDoStyles = {
   ].join(' '),
 
   featuresGrid: 'grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 mb-10 w-full',
-  featureItem: 'flex items-center gap-2.5',
-  featureBullet: 'w-3.5 h-[2px] bg-theme-action-primary shrink-0 rounded-full',
+  featureItem: 'flex items-start gap-2.5 min-w-0',
+  featureBullet: 'w-3.5 h-[2px] bg-theme-action-primary shrink-0 rounded-full mt-[0.65em]',
   featureTitle:
-    'text-[13px] sm:text-[14px] font-bold text-ink-primary dark:text-theme-heading tracking-wide select-none',
+    'text-[13px] sm:text-[14px] font-bold text-ink-primary dark:text-theme-heading tracking-wide select-none break-words min-w-0',
 
   masonryCol: 'flex-1 flex flex-col gap-4 sm:gap-6',
   masonryColLeft: 'pt-6 lg:pt-8',
