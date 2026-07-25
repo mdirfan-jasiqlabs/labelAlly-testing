@@ -51,59 +51,89 @@ export const homeArtistsStyles = {
   brandDivider: 'flex items-center gap-1.5 w-20 h-1 mt-7 origin-center',
 
   filter: {
-    // self-stretch + min-w-0: parent is flex items-center; without this
-    // the track grows to content width and never becomes scrollable.
+    // Mobile: full-bleed swipe row. md+: normal in-flow centered pills.
     container: [
-      'w-full min-w-0 max-w-full self-stretch',
-      'mb-2 md:mb-4',
+      'relative w-full min-w-0 max-w-full self-stretch',
+      'mb-3 sm:mb-4 md:mb-4',
+      'max-md:-mx-4 max-md:w-[calc(100%+2rem)]',
+      'sm:max-md:-mx-6 sm:max-md:w-[calc(100%+3rem)]',
       'bg-transparent',
     ].join(' '),
     scrollTrack: [
-      'flex flex-nowrap items-center gap-3 sm:gap-4',
+      'flex flex-nowrap items-center',
+      'gap-2.5 sm:gap-3 md:gap-4',
       'w-full min-w-0 max-w-full',
       'overflow-x-auto overflow-y-hidden',
       'overscroll-x-contain',
-      'scrollbar-hide',
       'snap-x snap-mandatory',
       'touch-pan-x',
       '[-webkit-overflow-scrolling:touch]',
       '[-ms-overflow-style:none] [scrollbar-width:none]',
       '[&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar]:bg-transparent',
-      // Edge padding so first/last pills are reachable on mobile
-      'px-1 py-1 sm:px-0',
-      'md:justify-center',
+      'px-4 sm:px-6 md:px-0 py-1.5 md:py-1',
+      'scroll-px-4 sm:scroll-px-6 md:scroll-px-0',
+      'md:justify-center md:overflow-x-visible',
     ].join(' '),
+
+    // Mobile default = square icon cards; md+ restores horizontal pills.
     pill: [
-      'group relative shrink-0 grow-0 snap-center',
-      'inline-flex items-center justify-center gap-2',
-      'h-11 xs:h-12 sm:h-[50px] px-3.5 xs:px-4 sm:px-5',
-      'rounded-full',
-      'text-[13px] sm:text-sm font-semibold whitespace-nowrap select-none',
+      'group relative shrink-0 grow-0 snap-start',
+      'inline-flex flex-col items-center justify-center gap-1',
+      'h-[4.75rem] w-[4.75rem] sm:h-20 sm:w-20',
+      'rounded-[1.05rem] sm:rounded-[1.15rem]',
+      'text-[11px] font-semibold whitespace-nowrap select-none',
       'transition-all duration-[250ms] ease-out',
       'focus-visible:outline-none',
       'focus-visible:ring-2 focus-visible:ring-theme-action-primary',
       'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
+      // Tablet / desktop — original pill chrome
+      'md:h-[50px] md:w-auto md:flex-row md:gap-2',
+      'md:rounded-full md:px-5',
+      'md:text-sm',
     ].join(' '),
     pillActive: [
-      'bg-theme-action-primary text-theme-action-primaryForeground',
-      'border border-theme-action-primary',
-      'shadow-[0_10px_24px_-10px_rgba(249,115,22,0.75)]',
-      'dark:shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
-      'translate-y-0',
+      // Mobile active: orange gradient + glow
+      'bg-gradient-to-br from-orange-500 to-orange-600',
+      'text-white',
+      'border border-orange-400/80',
+      'shadow-[0_10px_22px_-8px_rgba(249,115,22,0.7)]',
+      'dark:shadow-[0_12px_26px_-8px_rgba(249,115,22,0.55)]',
+      // Desktop active: solid brand pill
+      'md:[background-image:none] md:bg-theme-action-primary',
+      'md:text-theme-action-primaryForeground',
+      'md:border-theme-action-primary',
+      'md:shadow-[0_10px_24px_-10px_rgba(249,115,22,0.75)]',
+      'dark:md:shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
     ].join(' '),
     pillIdle: [
-      'bg-transparent',
-      'border border-theme-border/80 dark:border-white/25',
-      'text-ink-primary dark:text-white',
-      'hover:border-theme-action-primary',
-      'hover:text-theme-action-primary',
-      'hover:bg-theme-action-primary/10',
-      'dark:hover:bg-orange-500/10',
-      'hover:-translate-y-0.5',
-      'motion-reduce:hover:translate-y-0',
+      // Mobile idle: dark surface card
+      'bg-theme-card dark:bg-theme-card/90',
+      'border border-theme-border/70 dark:border-white/15',
+      'text-ink-muted dark:text-white/70',
+      'active:border-theme-action-primary',
+      'active:bg-theme-action-primary/10',
+      // Desktop idle: transparent outlined pill
+      'md:bg-transparent',
+      'md:border-theme-border/80 dark:md:border-white/25',
+      'md:text-ink-primary dark:md:text-white',
+      'md:hover:border-theme-action-primary',
+      'md:hover:text-theme-action-primary',
+      'md:hover:bg-theme-action-primary/10',
+      'dark:md:hover:bg-orange-500/10',
+      'md:hover:-translate-y-0.5',
+      'motion-reduce:md:hover:translate-y-0',
     ].join(' '),
-    pillIcon: 'h-4 w-4 shrink-0',
-    pillLabel: 'leading-none',
+    pillIcon: [
+      'h-5 w-5 shrink-0 text-white',
+      'md:h-4 md:w-4 md:text-current',
+    ].join(' '),
+    pillLabelMobile: [
+      'leading-none md:hidden',
+      'max-w-[4.25rem] truncate text-center',
+    ].join(' '),
+    pillLabelDesktop: [
+      'hidden md:inline leading-none',
+    ].join(' '),
   },
 
   carouselWrap: [

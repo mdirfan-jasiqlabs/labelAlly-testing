@@ -1,20 +1,38 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { User, Mic, Music, Disc, Headphones } from 'lucide-react';
+import {
+  User,
+  Mic2,
+  Music2,
+  Disc,
+  Headphones,
+  Guitar,
+} from 'lucide-react';
 import artistsCategories from '../../../data/artistsCategories.json';
 import { homeArtistsStyles as styles } from '../../../config/homeArtistsStyles';
 
+/** Map JSON icon keys → Lucide (Mic/Music resolve to Mic2/Music2). */
 const ICON_MAP = {
   User,
-  Mic,
-  Music,
+  Mic: Mic2,
+  Mic2,
+  Music: Music2,
+  Music2,
   Disc,
   Headphones,
+  Guitar,
 };
 
+/** Short mobile label from full JSON label — does not mutate JSON. */
+function getShortLabel(label = '') {
+  const first = label.trim().split(/\s+/)[0];
+  return first || label;
+}
+
 /**
- * Featured Artists category filter — JSON-driven pills.
- * Mobile: single-row horizontal scroll. Desktop: centered row.
+ * Featured Artists category filter.
+ * Mobile (≤768px): compact square icon cards.
+ * Tablet/Desktop: existing horizontal pills.
  */
 function ArtistsCategoryFilter({
   categories = artistsCategories,
@@ -66,11 +84,13 @@ function ArtistsCategoryFilter({
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
+          touchAction: 'pan-x',
         }}
       >
         {list.map((category, index) => {
           const Icon = ICON_MAP[category.icon] ?? User;
           const isActive = category.id === activeCategoryId;
+          const shortLabel = getShortLabel(category.label);
 
           return (
             <motion.button
@@ -78,6 +98,7 @@ function ArtistsCategoryFilter({
               type="button"
               role="tab"
               data-category-id={category.id}
+              aria-label={category.label}
               aria-selected={isActive}
               aria-controls="featured-artists-slider"
               tabIndex={isActive ? 0 : -1}
@@ -92,7 +113,7 @@ function ArtistsCategoryFilter({
                   ? undefined
                   : { y: -2, transition: { duration: 0.2 } }
               }
-              whileTap={reduceMotion ? undefined : { scale: 0.97 }}
+              whileTap={reduceMotion ? undefined : { scale: 0.96 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
             >
               <Icon
@@ -100,7 +121,10 @@ function ArtistsCategoryFilter({
                 strokeWidth={isActive ? 2.25 : 2}
                 aria-hidden="true"
               />
-              <span className={styles.filter.pillLabel}>{category.label}</span>
+              <span className={styles.filter.pillLabelMobile} aria-hidden="true">
+                {shortLabel}
+              </span>
+              <span className={styles.filter.pillLabelDesktop}>{category.label}</span>
             </motion.button>
           );
         })}
