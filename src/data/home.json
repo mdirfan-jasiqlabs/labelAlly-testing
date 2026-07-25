@@ -296,7 +296,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center center"
+        "imagePosition": "center 22%"
       },
       {
         "id": "bhojpuri-pramod-premi-yadav",
@@ -356,7 +356,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center center"
+        "imagePosition": "center 12%"
       },
       {
         "id": "khortha-bhai-ji",
@@ -476,7 +476,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center center"
+        "imagePosition": "center 15%"
       },
       {
         "id": "maghi-shristi-bharti",
@@ -551,7 +551,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center center"
+        "imagePosition": "center 15%"
       },
       {
         "id": "punjabi-jass-manak",
@@ -596,7 +596,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center center"
+        "imagePosition": "center 38%"
       }
     ]
   },
