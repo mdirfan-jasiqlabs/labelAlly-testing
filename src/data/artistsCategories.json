@@ -1,0 +1,27 @@
+[
+  {
+    "id": "bhojpuri",
+    "label": "Bhojpuri Artist",
+    "icon": "User"
+  },
+  {
+    "id": "bollywood",
+    "label": "Bollywood Singer",
+    "icon": "Mic"
+  },
+  {
+    "id": "khortha",
+    "label": "Khortha Artist",
+    "icon": "Music"
+  },
+  {
+    "id": "maghi",
+    "label": "Maghi Artist",
+    "icon": "Disc"
+  },
+  {
+    "id": "punjabi",
+    "label": "Punjabi Singer",
+    "icon": "Headphones"
+  }
+]

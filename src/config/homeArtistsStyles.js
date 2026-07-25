@@ -50,38 +50,107 @@ export const homeArtistsStyles = {
 
   brandDivider: 'flex items-center gap-1.5 w-20 h-1 mt-7 origin-center',
 
-  carouselWrap: 'relative w-full px-4 md:px-12 mt-4',
+  filter: {
+    // self-stretch + min-w-0: parent is flex items-center; without this
+    // the track grows to content width and never becomes scrollable.
+    container: [
+      'w-full min-w-0 max-w-full self-stretch',
+      'mb-2 md:mb-4',
+      'bg-transparent',
+    ].join(' '),
+    scrollTrack: [
+      'flex flex-nowrap items-center gap-3 sm:gap-4',
+      'w-full min-w-0 max-w-full',
+      'overflow-x-auto overflow-y-hidden',
+      'overscroll-x-contain',
+      'scrollbar-hide',
+      'snap-x snap-mandatory',
+      'touch-pan-x',
+      '[-webkit-overflow-scrolling:touch]',
+      '[-ms-overflow-style:none] [scrollbar-width:none]',
+      '[&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar]:bg-transparent',
+      // Edge padding so first/last pills are reachable on mobile
+      'px-1 py-1 sm:px-0',
+      'md:justify-center',
+    ].join(' '),
+    pill: [
+      'group relative shrink-0 grow-0 snap-center',
+      'inline-flex items-center justify-center gap-2',
+      'h-11 xs:h-12 sm:h-[50px] px-3.5 xs:px-4 sm:px-5',
+      'rounded-full',
+      'text-[13px] sm:text-sm font-semibold whitespace-nowrap select-none',
+      'transition-all duration-[250ms] ease-out',
+      'focus-visible:outline-none',
+      'focus-visible:ring-2 focus-visible:ring-theme-action-primary',
+      'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
+    ].join(' '),
+    pillActive: [
+      'bg-theme-action-primary text-theme-action-primaryForeground',
+      'border border-theme-action-primary',
+      'shadow-[0_10px_24px_-10px_rgba(249,115,22,0.75)]',
+      'dark:shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
+      'translate-y-0',
+    ].join(' '),
+    pillIdle: [
+      'bg-transparent',
+      'border border-theme-border/80 dark:border-white/25',
+      'text-ink-primary dark:text-white',
+      'hover:border-theme-action-primary',
+      'hover:text-theme-action-primary',
+      'hover:bg-theme-action-primary/10',
+      'dark:hover:bg-orange-500/10',
+      'hover:-translate-y-0.5',
+      'motion-reduce:hover:translate-y-0',
+    ].join(' '),
+    pillIcon: 'h-4 w-4 shrink-0',
+    pillLabel: 'leading-none',
+  },
+
+  carouselWrap: [
+    'relative w-full min-w-0 max-w-full self-stretch overflow-visible',
+    'px-0 sm:px-1 md:px-12 mt-2 sm:mt-4',
+    // Keep the 3-card desktop row compact (not full-bleed oversized)
+    'md:mx-auto md:max-w-5xl xl:max-w-6xl',
+  ].join(' '),
 
   navButton: [
-    'absolute top-1/2 -translate-y-1/2 z-20',
+    'absolute top-1/2 -translate-y-1/2 z-30',
     'w-11 h-11 rounded-full',
-    'bg-theme-card',
+    'bg-theme-card dark:bg-theme-card',
     'border border-theme-border/80',
-    'shadow-sm hover:shadow-md',
+    'shadow-md hover:shadow-lg',
     'text-ink-muted dark:text-theme-muted',
     'hover:text-theme-action-primary',
     'hover:bg-theme-hover',
     'hover:border-theme-action-primary/30',
     'active:scale-95 transition-all duration-200',
     'hidden md:flex items-center justify-center',
+    'pointer-events-auto',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary',
     'focus-visible:ring-offset-2 focus-visible:ring-offset-theme-page',
   ].join(' '),
 
-  navButtonLeft: 'left-2 md:-left-4 lg:-left-6',
-  navButtonRight: 'right-2 md:-right-4 lg:-right-6',
+  navButtonLeft: 'left-0 md:-left-3 lg:-left-5',
+  navButtonRight: 'right-0 md:-right-3 lg:-right-5',
 
   scrollTrack: [
-    'flex gap-5 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory',
-    'py-6 px-1 md:px-2 rounded-3xl',
+    'flex gap-4 sm:gap-5 md:gap-5 lg:gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory',
+    'w-full min-w-0 max-w-full overscroll-x-contain touch-pan-x',
+    '[-webkit-overflow-scrolling:touch]',
+    'py-4 sm:py-5 md:py-4 px-0 md:px-1 rounded-3xl',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary/40',
   ].join(' '),
 
-  slide:
-    'snap-start shrink-0 w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]',
+  // Mobile: one full-width card. Tablet: 2. Desktop: exactly 3 equal compact cards.
+  slide: [
+    'snap-start shrink-0 grow-0',
+    'min-w-full w-full max-w-full',
+    'md:min-w-0 md:w-[calc((100%-20px)/2)]',
+    'lg:w-[calc((100%-48px)/3)]',
+  ].join(' '),
 
   card: [
-    'group relative overflow-hidden flex flex-col h-full',
+    'group relative overflow-hidden flex flex-col h-full w-full max-w-full min-w-0',
     'bg-theme-card dark:bg-theme-card/75',
     'border border-theme-border/50 dark:border-theme-border/60',
     'rounded-2xl shadow-sm',
@@ -100,20 +169,27 @@ export const homeArtistsStyles = {
     'flex items-center gap-1 select-none animate-pulse-slow',
   ].join(' '),
 
-  imageWrap:
-    'relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-theme-secondary',
-
-  image: [
-    'w-full h-full object-cover object-top',
-    'select-none transition-transform duration-700 ease-out',
-    'motion-safe:group-hover:scale-[1.02] motion-reduce:group-hover:scale-100',
+  // Pre-cropped 4:3 assets fill edge-to-edge; optional JSON imagePosition overrides focal point.
+  imageWrap: [
+    'relative w-full shrink-0 overflow-hidden rounded-t-2xl',
+    'aspect-[4/3]',
+    'bg-theme-secondary',
   ].join(' '),
 
-  cardBody: 'flex-1 flex flex-col items-center text-center p-6 pb-8',
+  image: [
+    'absolute inset-0 block h-full w-full',
+    'object-cover',
+    'select-none',
+  ].join(' '),
+
+  cardBody: [
+    'flex flex-col items-center justify-center text-center',
+    'min-h-[5.75rem] px-4 py-4 sm:px-5 sm:py-5',
+  ].join(' '),
   artistName:
     'font-heading text-base font-bold text-ink-primary dark:text-theme-heading leading-snug',
-  artistRole: 'text-xs text-ink-muted dark:text-theme-muted font-medium mt-0.5',
-  accentLine: 'w-6 h-[2px] bg-theme-action-primary/35 my-3.5 rounded-full',
+  artistRole: 'text-xs text-ink-muted dark:text-theme-muted font-medium',
+  accentLine: 'w-6 h-[2px] bg-theme-action-primary/35 my-2.5 rounded-full shrink-0',
 
   socialLink: [
     'text-ink-muted dark:text-theme-muted transition-colors',

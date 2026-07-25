@@ -236,71 +236,382 @@
       "lineTwo": "Of Our Label"
     },
     "description": "Meet the standout artists driving our label forward — the voices, faces, and talents shaping the future of music.",
+    "defaultCategory": "bhojpuri",
     "artists": [
       {
-        "id": 1,
-        "name": "Tuntun Yadav",
-        "role": "Bhojpuri Singer / Actor",
-        "image": "/artists/managed/tuntun-yadav.webp",
+        "id": "bhojpuri-akshara-singh",
+        "categoryId": "bhojpuri",
+        "name": "Akshara Singh",
+        "role": "Bhojpuri Artist",
+        "image": "/artists/managed/card/akshara-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
-        }
+        },
+        "imagePosition": "center center"
       },
       {
-        "id": 2,
-        "name": "Khushi Kakkar",
-        "role": "Maghi Singer / Actress",
-        "image": "/artists/managed/khushi-kakkar.webp",
+        "id": "bhojpuri-antra-singh-priyanka",
+        "categoryId": "bhojpuri",
+        "name": "Antra Singh Priyanka",
+        "role": "Bhojpuri Artist",
+        "image": "/artists/managed/card/antra-singh-priyanka.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center 20%"
+      },
+      {
+        "id": "bhojpuri-khesari-lal-yadav",
+        "categoryId": "bhojpuri",
+        "name": "Khesari Lal Yadav",
+        "role": "Bhojpuri Singer / Actor",
+        "image": "/artists/managed/card/khesari-lal-yadav.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
-        }
+        },
+        "imagePosition": "center 22%"
       },
       {
-        "id": 3,
-        "name": "Shweta Sargam",
-        "role": "Maghi Singer / Actress",
-        "image": "/artists/managed/shweta-sargam.webp",
-        "featured": false,
-        "imageClass": "",
-        "socials": {
-          "instagram": "https://instagram.com",
-          "youtube": "https://youtube.com",
-          "spotify": "https://spotify.com"
-        }
-      },
-      {
-        "id": 4,
+        "id": "bhojpuri-pawan-singh",
+        "categoryId": "bhojpuri",
         "name": "Pawan Singh",
         "role": "Bhojpuri Singer",
-        "image": "/artists/managed/pawan-singh.webp",
+        "image": "/artists/managed/card/pawan-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
-        }
+        },
+        "imagePosition": "center center"
       },
       {
-        "id": 5,
-        "name": "Ashish Yadav",
-        "role": "Maghi Singer / Actor",
-        "image": "/artists/managed/ashish-yadav.webp",
+        "id": "bhojpuri-pramod-premi-yadav",
+        "categoryId": "bhojpuri",
+        "name": "Pramod Premi Yadav",
+        "role": "Bhojpuri Artist",
+        "image": "/artists/managed/card/pramod-premi-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
           "instagram": "https://instagram.com",
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
-        }
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "bhojpuri-samar-singh",
+        "categoryId": "bhojpuri",
+        "name": "Samar Singh",
+        "role": "Bhojpuri Artist",
+        "image": "/artists/managed/card/samar-singh.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "bhojpuri-tuntun-yadav",
+        "categoryId": "bhojpuri",
+        "name": "Tuntun Yadav",
+        "role": "Bhojpuri Singer / Actor",
+        "image": "/artists/managed/card/tuntun-yadav.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "bollywood-utkarsh-saxena",
+        "categoryId": "bollywood",
+        "name": "Utkarsh Saxena",
+        "role": "Bollywood Singer",
+        "image": "/artists/managed/card/utkarsh-saxena.webp",
+        "featured": true,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "khortha-bhai-ji",
+        "categoryId": "khortha",
+        "name": "Bhai Ji",
+        "role": "Khortha Artist",
+        "image": "/artists/managed/card/bhai-ji.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "khortha-raj-bhai",
+        "categoryId": "khortha",
+        "name": "Raj Bhai",
+        "role": "Khortha Artist",
+        "image": "/artists/managed/card/raj-bhai.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "khortha-satish-das",
+        "categoryId": "khortha",
+        "name": "Satish Das",
+        "role": "Khortha Artist",
+        "image": "/artists/managed/card/satish-das.webp",
+        "featured": true,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "khortha-vivek-raj",
+        "categoryId": "khortha",
+        "name": "Vivek Raj",
+        "role": "Khortha Artist",
+        "image": "/artists/managed/card/vivek-raj.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "maghi-ashish-yadav",
+        "categoryId": "maghi",
+        "name": "Ashish Yadav",
+        "role": "Maghi Singer / Actor",
+        "image": "/artists/managed/card/ashish-yadav.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center 35%"
+      },
+      {
+        "id": "maghi-khushi-kakkar",
+        "categoryId": "maghi",
+        "name": "Khushi Kakkar",
+        "role": "Maghi Singer / Actress",
+        "image": "/artists/managed/card/khushi-kakkar.webp",
+        "featured": true,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center 30%"
+      },
+      {
+        "id": "maghi-prabhakar-yadav",
+        "categoryId": "maghi",
+        "name": "Prabhakar Yadav",
+        "role": "Maghi Artist",
+        "image": "/artists/managed/card/prabhakar-yadav.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center 25%"
+      },
+      {
+        "id": "maghi-raushan-rohi",
+        "categoryId": "maghi",
+        "name": "Raushan Rohi",
+        "role": "Maghi Artist",
+        "image": "/artists/managed/card/raushan-rohi.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "maghi-shivani",
+        "categoryId": "maghi",
+        "name": "Shivani",
+        "role": "Maghi Artist",
+        "image": "/artists/managed/card/shivani.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "maghi-shristi-bharti",
+        "categoryId": "maghi",
+        "name": "Shristi Bharti",
+        "role": "Maghi Artist",
+        "image": "/artists/managed/card/shristi-bharti.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "maghi-shweta-sargam",
+        "categoryId": "maghi",
+        "name": "Shweta Sargam",
+        "role": "Maghi Singer / Actress",
+        "image": "/artists/managed/card/shweta-sargam.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "maghi-sonam-yadav",
+        "categoryId": "maghi",
+        "name": "Sonam Yadav",
+        "role": "Maghi Artist",
+        "image": "/artists/managed/card/sonam-yadav.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "punjabi-aman-grewal",
+        "categoryId": "punjabi",
+        "name": "Aman Grewal",
+        "role": "Punjabi Singer",
+        "image": "/artists/managed/card/aman-grewal.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "punjabi-chet-singh",
+        "categoryId": "punjabi",
+        "name": "Chet Singh",
+        "role": "Punjabi Singer",
+        "image": "/artists/managed/card/chet-singh.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "punjabi-jass-manak",
+        "categoryId": "punjabi",
+        "name": "Jass Manak",
+        "role": "Punjabi Singer",
+        "image": "/artists/managed/card/jass-manak.webp",
+        "featured": true,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "punjabi-kanwar-singh-grewal",
+        "categoryId": "punjabi",
+        "name": "Kanwar Singh Grewal",
+        "role": "Punjabi Singer",
+        "image": "/artists/managed/card/kanwar-singh-grewal.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "punjabi-sanddy-mundra",
+        "categoryId": "punjabi",
+        "name": "Sanddy Mundra",
+        "role": "Punjabi Singer",
+        "image": "/artists/managed/card/sanddy-mundra.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center 20%"
       }
     ]
   },
@@ -390,10 +701,22 @@
       }
     ],
     "images": {
-      "topLeft":     { "src": "/artists/managed/khesari-lal-yadav.webp", "alt": "Khesari Lal Yadav — Bhojpuri singer and actor" },
-      "topRight":    { "src": "/process-team.jpg",                       "alt": "Team discussion around a table" },
-      "bottomLeft":  { "src": "/artists/managed/utkarsh-saxena.webp",    "alt": "Utkarsh Saxena — Bollywood singer" },
-      "bottomRight": { "src": "/artists/managed/jass-manak.webp",        "alt": "Jass Manak — Punjabi singer" }
+      "topLeft": {
+        "src": "/artists/managed/khesari-lal-yadav.webp",
+        "alt": "Khesari Lal Yadav — Bhojpuri singer and actor"
+      },
+      "topRight": {
+        "src": "/process-team.jpg",
+        "alt": "Team discussion around a table"
+      },
+      "bottomLeft": {
+        "src": "/artists/managed/utkarsh-saxena.webp",
+        "alt": "Utkarsh Saxena — Bollywood singer"
+      },
+      "bottomRight": {
+        "src": "/artists/managed/jass-manak.webp",
+        "alt": "Jass Manak — Punjabi singer"
+      }
     }
   },
   "finalCta": {

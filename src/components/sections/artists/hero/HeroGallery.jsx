@@ -38,6 +38,11 @@ function HeroGallery({ gallery }) {
                 loading="lazy"
                 decoding="async"
                 className={`${galleryClass.floatImage} ${imageClass}`}
+                style={
+                  item.objectPosition
+                    ? { objectPosition: item.objectPosition }
+                    : undefined
+                }
               />
             </div>
           );

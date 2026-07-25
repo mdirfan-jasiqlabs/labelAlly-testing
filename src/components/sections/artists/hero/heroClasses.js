@@ -5,7 +5,7 @@
 
 export const heroClasses = {
   sectionClass:
-    'relative w-full overflow-hidden bg-theme-secondary',
+    'relative w-full overflow-x-clip overflow-y-visible bg-theme-secondary',
 
   containerClass:
     'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10',
@@ -20,7 +20,7 @@ export const heroClasses = {
 
   contentColClass: 'lg:col-span-6 xl:col-span-6 relative z-10',
 
-  galleryColClass: 'lg:col-span-6 xl:col-span-6 relative z-10',
+  galleryColClass: 'lg:col-span-6 xl:col-span-6 relative z-10 overflow-visible',
 
   contentClass:
     'relative z-10 flex flex-col items-start text-left gap-0 motion-safe:animate-fade-up',
@@ -117,9 +117,10 @@ export const heroClasses = {
   },
 
   galleryClass: {
-    root: 'relative z-10 w-full',
+    root: 'relative z-10 w-full overflow-visible',
+    // overflow-visible so floating cards (and their rings/shadows) are not clipped
     stage:
-      'relative mx-auto w-full max-w-[480px] lg:max-w-[520px] xl:max-w-[560px] aspect-[4/5] sm:aspect-[5/6] overflow-hidden',
+      'relative mx-auto w-full max-w-[480px] lg:max-w-[520px] xl:max-w-[560px] aspect-[4/5] sm:aspect-[5/6] overflow-visible',
     mainWrap: [
       'absolute left-[8%] right-[10%] top-[6%] bottom-[14%]',
       'overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]',

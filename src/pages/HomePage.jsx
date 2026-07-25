@@ -5,14 +5,12 @@ import ServicesSection     from '../components/sections/home/ServicesSection';
 import HowItWorksSection   from '../components/sections/home/HowItWorksSection';
 import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import WhatWeDoSection     from '../components/sections/home/WhatWeDoSection';
-import ClientsSection      from '../components/sections/home/ClientsSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import SEO                 from '../components/common/SEO';
 
 /**
  * HomePage — Route: /
  *
- * Phase 5 Complete: Renders all homepage sections in sequence.
  * Section order:
  * 1. HeroSection
  * 2. PlatformStrip
@@ -20,9 +18,8 @@ import SEO                 from '../components/common/SEO';
  * 4. HowItWorksSection
  * 5. ArtistsSection
  * 6. WhatWeDoSection
- * 7. ClientsSection
- * 8. ServicesSection
- * 9. TestimonialsSection
+ * 7. ServicesSection
+ * 8. TestimonialsSection
  */
 function HomePage() {
   return (
@@ -39,7 +36,6 @@ function HomePage() {
       <HowItWorksSection />
       <ArtistsSection />
       <WhatWeDoSection />
-      <ClientsSection />
       <ServicesSection />
       <TestimonialsSection />
     </main>

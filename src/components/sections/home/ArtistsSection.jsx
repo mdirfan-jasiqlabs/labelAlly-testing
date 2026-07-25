@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, Music, Mic2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Music, Mic2 } from 'lucide-react';
 import Container from '../../common/Container';
 import homeData from '../../../data/home.json';
+import artistsCategories from '../../../data/artistsCategories.json';
 import { homeArtistsStyles as styles } from '../../../config/homeArtistsStyles';
 import { homeSectionsMotion as motionConfig } from '../../../config/homeSectionsMotion';
+import ArtistsCategoryFilter from './ArtistsCategoryFilter';
 
 const SPECTRUM_BAR_COUNT = 10;
 
@@ -63,28 +65,6 @@ function ArtistsSectionBackground() {
   );
 }
 
-// Self-contained high-fidelity SVGs for social platforms
-const InstagramIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
-const YoutubeIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" />
-  </svg>
-);
-
-const SpotifyIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.894-.982-.336.076-.67-.135-.746-.472-.076-.336.135-.67.472-.746 3.856-.88 7.15-.502 9.822 1.135.295.18.387.565.206.86zm1.224-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.075-1.183-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.666-1.112 8.247-.57 11.34 1.33.367.227.487.708.261 1.075zm.106-2.833C14.383 8.8 8.44 8.603 5.004 9.645c-.53.16-1.09-.14-1.25-.67-.16-.53.14-1.09.67-1.25 3.963-1.202 10.523-.973 14.593 1.444.477.283.633.9.35 1.377-.283.478-.9.633-1.377.35z"/>
-  </svg>
-);
-
 // Easing function for custom smooth animation scroll transition
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
 
@@ -126,6 +106,9 @@ function ArtistsSection() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [activeCategoryId, setActiveCategoryId] = useState(
+    featuredArtists?.defaultCategory || artistsCategories[0]?.id || 'bhojpuri'
+  );
 
   const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
   const lineVariants = reduceMotion ? motionConfig.lineReduced : motionConfig.line;
@@ -142,25 +125,39 @@ function ArtistsSection() {
   const isAnimatingRef = useRef(false);
   const scrollTimeoutRef = useRef(null);
 
-  const artists = featuredArtists?.artists || [];
+  const artists = useMemo(() => {
+    const source = featuredArtists?.artists || [];
+    return source.filter((artist) => artist.categoryId === activeCategoryId);
+  }, [featuredArtists, activeCategoryId]);
 
-  // Seamless Circular Infinite Loop cloned items setup
-  // We clone 3 cards at the start (preclones) and 3 cards at the end (postclones)
-  const preClones = artists.slice(-3);
-  const postClones = artists.slice(0, 3);
+  const useLoop = artists.length >= 3;
+  const cloneCount = useLoop ? 3 : 0;
+
+  // Seamless Circular Infinite Loop cloned items setup (only when enough cards)
+  const preClones = useLoop ? artists.slice(-cloneCount) : [];
+  const postClones = useLoop ? artists.slice(0, cloneCount) : [];
   const displayArtists = [...preClones, ...artists, ...postClones];
 
-  // Initialize scrolltrack positions mapping to original index 0 (actual node index 3)
+  // Initialize / reset scroll when category changes
   useEffect(() => {
     if (!featuredArtists) return;
-    if (scrollRef.current) {
+    setActiveIndex(0);
+    isAnimatingRef.current = false;
+
+    requestAnimationFrame(() => {
+      if (!scrollRef.current) return;
       const children = scrollRef.current.childNodes;
-      const initialCard = children[3];
+      const initialCard = children[cloneCount];
       if (initialCard) {
+        const originalSnapType = scrollRef.current.style.scrollSnapType;
+        scrollRef.current.style.scrollSnapType = 'none';
+        scrollRef.current.style.scrollBehavior = 'auto';
         scrollRef.current.scrollLeft = initialCard.offsetLeft;
+        const _ = scrollRef.current.offsetHeight;
+        scrollRef.current.style.scrollSnapType = originalSnapType;
       }
-    }
-  }, [featuredArtists]);
+    });
+  }, [featuredArtists, activeCategoryId, cloneCount, artists.length]);
 
   // Intersection Observer for viewport scroll entrance animation and autoplay trigger
   useEffect(() => {
@@ -226,10 +223,12 @@ function ArtistsSection() {
         
         // Loop boundary logical checks
         let finalIndex = targetActualIndex;
-        if (targetActualIndex < 3) {
-          finalIndex = targetActualIndex + artists.length;
-        } else if (targetActualIndex >= artists.length + 3) {
-          finalIndex = targetActualIndex - artists.length;
+        if (useLoop) {
+          if (targetActualIndex < cloneCount) {
+            finalIndex = targetActualIndex + artists.length;
+          } else if (targetActualIndex >= artists.length + cloneCount) {
+            finalIndex = targetActualIndex - artists.length;
+          }
         }
 
         if (finalIndex !== targetActualIndex) {
@@ -239,14 +238,14 @@ function ArtistsSection() {
           }
         }
 
-        setActiveIndex(finalIndex - 3);
+        setActiveIndex(Math.max(0, finalIndex - cloneCount));
       });
     }
   };
 
   // Autoplay Logic - advance right on configurable interval (snappy 450ms smooth transition)
   useEffect(() => {
-    if (!featuredArtists) return;
+    if (!featuredArtists || artists.length <= 1) return;
     const shouldPlay =
       isIntersecting &&
       isTabVisible &&
@@ -258,14 +257,14 @@ function ArtistsSection() {
     if (!shouldPlay) return;
 
     const interval = setInterval(() => {
-      const targetActualIndex = activeIndex + 3 + 1;
+      const targetActualIndex = activeIndex + cloneCount + 1;
       if (scrollToIndexRef.current) {
         scrollToIndexRef.current(targetActualIndex, 450);
       }
     }, featuredArtists.autoplaySpeed || 2000);
 
     return () => clearInterval(interval);
-  }, [isIntersecting, isTabVisible, prefersReducedMotion, isHovered, isFocused, activeIndex, featuredArtists]);
+  }, [isIntersecting, isTabVisible, prefersReducedMotion, isHovered, isFocused, activeIndex, featuredArtists, artists.length, cloneCount]);
 
   if (!featuredArtists) return null;
 
@@ -278,7 +277,7 @@ function ArtistsSection() {
     const children = scrollRef.current.childNodes;
 
     // Calculate real-time closest active index
-    let closestIndex = 3;
+    let closestIndex = cloneCount;
     let minDistance = Infinity;
 
     children.forEach((child, index) => {
@@ -291,11 +290,15 @@ function ArtistsSection() {
     });
 
     // Map closest index to active pagination dot index (logical index)
-    let logicalIndex = closestIndex - 3;
-    if (logicalIndex < 0) {
-      logicalIndex = artists.length + logicalIndex;
-    } else if (logicalIndex >= artists.length) {
-      logicalIndex = logicalIndex - artists.length;
+    let logicalIndex = closestIndex - cloneCount;
+    if (useLoop) {
+      if (logicalIndex < 0) {
+        logicalIndex = artists.length + logicalIndex;
+      } else if (logicalIndex >= artists.length) {
+        logicalIndex = logicalIndex - artists.length;
+      }
+    } else {
+      logicalIndex = Math.min(Math.max(logicalIndex, 0), Math.max(artists.length - 1, 0));
     }
 
     setActiveIndex(logicalIndex);
@@ -305,11 +308,13 @@ function ArtistsSection() {
       clearTimeout(scrollTimeoutRef.current);
     }
 
+    if (!useLoop) return;
+
     scrollTimeoutRef.current = setTimeout(() => {
       if (!scrollRef.current || isAnimatingRef.current) return;
 
       const currentScrollLeft = scrollRef.current.scrollLeft;
-      let finalClosest = 3;
+      let finalClosest = cloneCount;
       let finalMinDist = Infinity;
 
       children.forEach((child, index) => {
@@ -322,14 +327,14 @@ function ArtistsSection() {
       });
 
       // Silently snap to original equivalent position if user settles on clones
-      if (finalClosest < 3) {
+      if (finalClosest < cloneCount) {
         // Left preclone -> equivalent original node index
         const originalIndex = finalClosest + artists.length;
         const originalCard = children[originalIndex];
         if (originalCard) {
           silentReset(originalCard.offsetLeft);
         }
-      } else if (finalClosest >= artists.length + 3) {
+      } else if (finalClosest >= artists.length + cloneCount) {
         // Right postclone -> equivalent original node index
         const originalIndex = finalClosest - artists.length;
         const originalCard = children[originalIndex];
@@ -355,16 +360,16 @@ function ArtistsSection() {
 
   // Click arrow navigation debounced/locked (snappy 450ms transition)
   const handlePrev = () => {
-    if (isAnimatingRef.current) return;
-    const targetIndex = activeIndex + 3 - 1;
+    if (isAnimatingRef.current || artists.length <= 1) return;
+    const targetIndex = activeIndex + cloneCount - 1;
     if (scrollToIndexRef.current) {
       scrollToIndexRef.current(targetIndex, 450);
     }
   };
 
   const handleNext = () => {
-    if (isAnimatingRef.current) return;
-    const targetIndex = activeIndex + 3 + 1;
+    if (isAnimatingRef.current || artists.length <= 1) return;
+    const targetIndex = activeIndex + cloneCount + 1;
     if (scrollToIndexRef.current) {
       scrollToIndexRef.current(targetIndex, 450);
     }
@@ -374,7 +379,7 @@ function ArtistsSection() {
   const handleDotClick = (logicalIndex) => {
     if (isAnimatingRef.current) return;
     if (scrollToIndexRef.current) {
-      scrollToIndexRef.current(logicalIndex + 3, 450);
+      scrollToIndexRef.current(logicalIndex + cloneCount, 450);
     }
   };
 
@@ -397,10 +402,10 @@ function ArtistsSection() {
     >
       <ArtistsSectionBackground />
 
-      <Container size="xl" className="relative z-10 flex flex-col items-center">
+      <Container size="xl" className="relative z-10 flex w-full min-w-0 flex-col items-stretch md:items-center">
 
         <motion.div
-          className={styles.header}
+          className={`${styles.header} self-center`}
           variants={motionConfig.container}
           initial="hidden"
           whileInView="visible"
@@ -437,6 +442,12 @@ function ArtistsSection() {
           </motion.div>
         </motion.div>
 
+        <ArtistsCategoryFilter
+          categories={artistsCategories}
+          activeCategoryId={activeCategoryId}
+          onChange={setActiveCategoryId}
+        />
+
         <div
           className={styles.carouselWrap}
           onMouseEnter={() => setIsHovered(true)}
@@ -455,6 +466,8 @@ function ArtistsSection() {
 
           <div
             ref={scrollRef}
+            id="featured-artists-slider"
+            role="tabpanel"
             onScroll={handleScroll}
             onKeyDown={handleKeyDown}
             onFocus={() => setIsFocused(true)}
@@ -465,8 +478,7 @@ function ArtistsSection() {
             style={{ scrollbarWidth: 'none', touchAction: 'pan-x' }}
           >
             {displayArtists.map((artist, index) => {
-              const socials = artist.socials || {};
-              const isClone = index < 3 || index >= artists.length + 3;
+              const isClone = useLoop && (index < cloneCount || index >= artists.length + cloneCount);
 
               return (
                 <motion.div
@@ -478,81 +490,28 @@ function ArtistsSection() {
                   initial={isClone ? false : 'hidden'}
                   whileInView={isClone ? undefined : 'visible'}
                   viewport={motionConfig.viewport}
-                  transition={isClone ? undefined : { delay: (index - 3) * 0.08 }}
+                  transition={isClone ? undefined : { delay: Math.max(0, index - cloneCount) * 0.08 }}
                 >
                   <div className={styles.card}>
-
-                    {artist.featured && (
-                      <div className={styles.featuredBadge}>
-                        <Star size={8} className="fill-current" />
-                        <span>Featured</span>
-                      </div>
-                    )}
-
                     <div className={styles.imageWrap}>
                       <img
                         src={artist.image}
                         alt={`${artist.name} - ${artist.role}`}
                         loading="lazy"
                         decoding="async"
-                        width="340"
-                        height="255"
+                        width="400"
+                        height="300"
                         className={[styles.image, artist.imageClass || ''].filter(Boolean).join(' ')}
+                        style={{
+                          objectPosition: artist.imagePosition || 'center center',
+                        }}
                       />
                     </div>
 
                     <div className={styles.cardBody}>
                       <h3 className={styles.artistName}>{artist.name}</h3>
-                      <p className={styles.artistRole}>{artist.role}</p>
-
                       <div className={styles.accentLine} aria-hidden="true" />
-
-                      <div className="flex gap-4.5">
-                        <a
-                          href={socials.instagram || '#'}
-                          target={isClone ? undefined : '_blank'}
-                          rel="noopener noreferrer"
-                          tabIndex={isClone ? -1 : 0}
-                          aria-label={`Visit ${artist.name}'s Instagram`}
-                          className={[
-                            styles.socialLink,
-                            'hover:text-brand-pink focus:text-brand-pink',
-                            socials.instagram ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
-                          ].join(' ')}
-                        >
-                          <InstagramIcon className="w-5.5 h-5.5" />
-                        </a>
-
-                        <a
-                          href={socials.youtube || '#'}
-                          target={isClone ? undefined : '_blank'}
-                          rel="noopener noreferrer"
-                          tabIndex={isClone ? -1 : 0}
-                          aria-label={`Visit ${artist.name}'s YouTube channel`}
-                          className={[
-                            styles.socialLink,
-                            'hover:text-red-600 focus:text-red-600',
-                            socials.youtube ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
-                          ].join(' ')}
-                        >
-                          <YoutubeIcon className="w-5.5 h-5.5" />
-                        </a>
-
-                        <a
-                          href={socials.spotify || '#'}
-                          target={isClone ? undefined : '_blank'}
-                          rel="noopener noreferrer"
-                          tabIndex={isClone ? -1 : 0}
-                          aria-label={`Listen to ${artist.name} on Spotify`}
-                          className={[
-                            styles.socialLink,
-                            'hover:text-emerald-500 focus:text-emerald-500',
-                            socials.spotify ? '' : 'opacity-30 cursor-not-allowed pointer-events-none',
-                          ].join(' ')}
-                        >
-                          <SpotifyIcon className="w-5.5 h-5.5" />
-                        </a>
-                      </div>
+                      <p className={styles.artistRole}>{artist.role}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -570,7 +529,7 @@ function ArtistsSection() {
         </div>
 
         <motion.div
-          className={styles.dotsWrap}
+          className={`${styles.dotsWrap} self-center`}
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"

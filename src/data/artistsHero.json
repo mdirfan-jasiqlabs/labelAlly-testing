@@ -129,19 +129,21 @@
   "gallery": {
     "floating": [
       {
-        "alt": "Producer working in a music studio",
+        "alt": "Aman Grewal — Punjabi singer",
         "height": 220,
         "id": "float-top-right",
+        "objectPosition": "center 18%",
         "position": "top-right",
-        "src": "/images/about/about-2.png",
+        "src": "/artists/managed/aman-grewal.webp",
         "width": 220
       },
       {
-        "alt": "Khushi Kakkar — Maghi singer and actress",
+        "alt": "Jass Manak — Punjabi singer",
         "height": 240,
         "id": "float-bottom-left",
+        "objectPosition": "center 20%",
         "position": "bottom-left",
-        "src": "/artists/managed/khushi-kakkar.webp",
+        "src": "/artists/managed/jass-manak.webp",
         "width": 180
       }
     ],
