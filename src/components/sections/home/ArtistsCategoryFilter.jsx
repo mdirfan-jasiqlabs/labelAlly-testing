@@ -95,7 +95,6 @@ function ArtistsCategoryFilter({
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
-          touchAction: 'pan-x',
         }}
       >
         {list.map((category, index) => {

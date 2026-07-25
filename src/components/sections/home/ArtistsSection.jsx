@@ -475,7 +475,7 @@ function ArtistsSection() {
             tabIndex={0}
             aria-label="Featured artists slider"
             className={styles.scrollTrack}
-            style={{ scrollbarWidth: 'none', touchAction: 'pan-x' }}
+            style={{ scrollbarWidth: 'none' }}
           >
             {displayArtists.map((artist, index) => {
               const isClone = useLoop && (index < cloneCount || index >= artists.length + cloneCount);

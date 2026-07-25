@@ -66,7 +66,8 @@ export const homeArtistsStyles = {
       'overflow-x-auto overflow-y-hidden',
       'overscroll-x-contain',
       'snap-x snap-mandatory',
-      'touch-pan-x',
+      // Allow vertical page scroll + horizontal swipe (pan-x alone traps touch)
+      '[touch-action:pan-x_pan-y]',
       '[-webkit-overflow-scrolling:touch]',
       '[-ms-overflow-style:none] [scrollbar-width:none]',
       '[&::-webkit-scrollbar]:h-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar]:bg-transparent',
@@ -165,7 +166,9 @@ export const homeArtistsStyles = {
 
   scrollTrack: [
     'flex gap-4 sm:gap-5 md:gap-5 lg:gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory',
-    'w-full min-w-0 max-w-full overscroll-x-contain touch-pan-x',
+    'w-full min-w-0 max-w-full overscroll-x-contain',
+    // pan-x alone blocks finger scroll-down on mobile; keep both axes
+    '[touch-action:pan-x_pan-y]',
     '[-webkit-overflow-scrolling:touch]',
     'py-4 sm:py-5 md:py-4 px-0 md:px-1 rounded-3xl',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-action-primary/40',
