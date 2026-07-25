@@ -12,10 +12,10 @@
   "socials": {
     "heading": "Follow Us",
     "items": [
-      { "id": "facebook", "label": "Facebook", "href": "https://facebook.com", "icon": "Facebook", "enabled": true },
-      { "id": "instagram", "label": "Instagram", "href": "https://instagram.com", "icon": "Instagram", "enabled": true },
-      { "id": "youtube", "label": "YouTube", "href": "https://youtube.com", "icon": "Youtube", "enabled": true },
-      { "id": "linkedin", "label": "LinkedIn", "href": "https://linkedin.com", "icon": "Linkedin", "enabled": true },
+      { "id": "facebook", "label": "Facebook", "href": "https://www.facebook.com/profile.php?id=61592167809072&rdid", "icon": "Facebook", "enabled": true },
+      { "id": "instagram", "label": "Instagram", "href": "https://www.instagram.com/labelallyentertainment", "icon": "Instagram", "enabled": true },
+      { "id": "youtube", "label": "YouTube", "href": "https://www.youtube.com/channel/UCVYhRFVq8_r5svDNCzS8rWQ", "icon": "Youtube", "enabled": true },
+      { "id": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/company/142890624", "icon": "Linkedin", "enabled": true },
       { "id": "whatsapp", "label": "WhatsApp", "href": "https://wa.me/919334931823", "icon": "WhatsApp", "enabled": true }
     ]
   },
