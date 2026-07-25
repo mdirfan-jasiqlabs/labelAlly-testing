@@ -41,19 +41,30 @@ function ArtistsCategoryFilter({
 }) {
   const reduceMotion = useReducedMotion();
   const trackRef = useRef(null);
+  const hasMountedRef = useRef(false);
   const list = Array.isArray(categories) ? categories : [];
 
+  // Keep the active pill visible in the horizontal track only.
+  // Never use element.scrollIntoView — it can scroll the whole page to Featured Artists on load.
   useEffect(() => {
     if (!activeCategoryId || !trackRef.current) return;
-    const activeEl = trackRef.current.querySelector(
-      `[data-category-id="${activeCategoryId}"]`
-    );
+
+    // Skip first mount so homepage stays at the hero
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    const track = trackRef.current;
+    const activeEl = track.querySelector(`[data-category-id="${activeCategoryId}"]`);
     if (!activeEl) return;
 
-    activeEl.scrollIntoView({
+    const targetLeft =
+      activeEl.offsetLeft - (track.clientWidth - activeEl.offsetWidth) / 2;
+
+    track.scrollTo({
+      left: Math.max(0, targetLeft),
       behavior: reduceMotion ? 'auto' : 'smooth',
-      inline: 'center',
-      block: 'nearest',
     });
   }, [activeCategoryId, reduceMotion]);
 
