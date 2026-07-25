@@ -42,17 +42,16 @@ export const platformMarqueeStyles = {
   sequenceDuplicate: 'flex list-none m-0 p-0 items-center shrink-0 motion-reduce:hidden',
   item: [
     'flex items-center justify-center shrink-0',
+    'h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12',
     'px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12',
-    'py-1 lg:py-1.5',
   ].join(' '),
   logo: [
-    'h-5 sm:h-6 md:h-8 lg:h-10 xl:h-12 w-auto',
-    'max-w-[5.5rem] sm:max-w-[6.5rem] md:max-w-[9rem] lg:max-w-[11rem] xl:max-w-[13rem]',
+    'block h-full w-auto max-h-full',
     'object-contain object-center',
     'select-none pointer-events-none',
   ].join(' '),
   more: [
-    'inline-flex items-center justify-center h-8 lg:h-10 px-3 lg:px-4 rounded-full',
+    'inline-flex items-center justify-center h-full px-3 lg:px-4 rounded-full',
     'border border-theme-border/80 dark:border-theme-border/50',
     'text-[11px] sm:text-xs lg:text-sm font-semibold',
     'text-ink-muted dark:text-theme-muted',

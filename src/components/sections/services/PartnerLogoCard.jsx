@@ -1,23 +1,13 @@
 /**
  * PartnerLogoCard — Premium surface card for a single platform logo.
- * Size variants use a static Tailwind class map for production-safe builds.
+ * All logos share one optical size so icons + wordmarks align evenly.
  */
 
-const LOGO_SIZE_STYLES = {
-  compact:
-    'max-h-logo-compact md:max-h-[3.75rem] lg:max-h-[4.25rem] max-w-logo-compact md:max-w-[8rem] lg:max-w-[9rem]',
-  standard:
-    'max-h-logo-standard md:max-h-[4.75rem] lg:max-h-[5.5rem] max-w-logo-standard md:max-w-[11rem] lg:max-w-[12rem]',
-  wide:
-    'max-h-logo-wide md:max-h-[4rem] lg:max-h-[4.75rem] max-w-logo-wide md:max-w-[13rem] lg:max-w-[14rem]',
-  extraWide:
-    'max-h-logo-wide md:max-h-[4rem] lg:max-h-[4.75rem] max-w-logo-extra-wide md:max-w-[15rem] lg:max-w-[16rem]',
-};
+const LOGO_SIZE_CLASS =
+  'h-10 sm:h-11 md:h-12 lg:h-14 w-auto max-w-[11rem] sm:max-w-[12rem] md:max-w-[13rem] lg:max-w-[14rem]';
 
 function PartnerLogoCard({ partner }) {
   if (!partner?.enabled) return null;
-
-  const sizeClass = LOGO_SIZE_STYLES[partner.size] ?? LOGO_SIZE_STYLES.standard;
 
   return (
     <article
@@ -44,8 +34,8 @@ function PartnerLogoCard({ partner }) {
         loading="lazy"
         decoding="async"
         className={[
-          'w-auto object-contain select-none pointer-events-none',
-          sizeClass,
+          'object-contain object-center select-none pointer-events-none',
+          LOGO_SIZE_CLASS,
         ].join(' ')}
       />
     </article>

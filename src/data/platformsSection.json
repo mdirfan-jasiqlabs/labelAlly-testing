@@ -1,97 +1,97 @@
-{
-  "enabled": true,
-  "heading": "We Distribute On",
-  "highlightText": "All Major Platforms",
-  "moreLabel": "+ more platforms",
-  "moreHref": "/services",
-  "platforms": [
-    {
-      "id": "spotify",
-      "name": "Spotify",
-      "logo": "/images/platforms/spotify.svg",
-      "alt": "Spotify Music Logo",
-      "size": "wide",
-      "width": 160,
-      "height": 48,
-      "order": 1,
-      "enabled": true
-    },
-    {
-      "id": "apple-music",
-      "name": "Apple Music",
-      "logo": "/images/platforms/apple-music.png",
-      "alt": "Apple Music Logo",
-      "size": "wide",
-      "width": 160,
-      "height": 48,
-      "order": 2,
-      "enabled": true
-    },
-    {
-      "id": "youtube",
-      "name": "YouTube",
-      "logo": "/images/platforms/youtube.svg",
-      "alt": "YouTube Music Logo",
-      "size": "standard",
-      "width": 140,
-      "height": 48,
-      "order": 3,
-      "enabled": true
-    },
-    {
-      "id": "facebook",
-      "name": "Facebook",
-      "logo": "/images/platforms/facebook.svg",
-      "alt": "Facebook Logo",
-      "size": "wide",
-      "width": 160,
-      "height": 48,
-      "order": 4,
-      "enabled": true
-    },
-    {
-      "id": "amazon-music",
-      "name": "Amazon Music",
-      "logo": "/images/platforms/amazon-music.png",
-      "alt": "Amazon Music Logo",
-      "size": "extraWide",
-      "width": 180,
-      "height": 48,
-      "order": 5,
-      "enabled": true
-    },
-    {
-      "id": "resso",
-      "name": "Resso",
-      "logo": "/images/platforms/resso.svg",
-      "alt": "Resso Music Logo",
-      "size": "standard",
-      "width": 140,
-      "height": 48,
-      "order": 6,
-      "enabled": true
-    },
-    {
-      "id": "jiosaavn",
-      "name": "JioSaavn",
-      "logo": "/images/platforms/jiosaavn.png",
-      "alt": "JioSaavn Music Logo",
-      "size": "wide",
-      "width": 160,
-      "height": 48,
-      "order": 7,
-      "enabled": true
-    },
-    {
-      "id": "hungama",
-      "name": "Hungama",
-      "logo": "/images/platforms/hungama.svg",
-      "alt": "Hungama Music Logo",
-      "size": "wide",
-      "width": 160,
-      "height": 48,
-      "order": 8,
-      "enabled": true
-    }
-  ]
-}
+{
+  "enabled": true,
+  "heading": "We Distribute On",
+  "highlightText": "All Major Platforms",
+  "moreLabel": "+ more platforms",
+  "moreHref": "/services",
+  "platforms": [
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "logo": "/images/platforms/spotify.svg",
+      "alt": "Spotify Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "apple-music",
+      "name": "Apple Music",
+      "logo": "/images/platforms/apple-music.png",
+      "alt": "Apple Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "logo": "/images/platforms/youtube.svg",
+      "alt": "YouTube Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "logo": "/images/platforms/facebook.svg",
+      "alt": "Facebook Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 4,
+      "enabled": true
+    },
+    {
+      "id": "amazon-music",
+      "name": "Amazon Music",
+      "logo": "/images/platforms/amazon-music.png",
+      "alt": "Amazon Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 5,
+      "enabled": true
+    },
+    {
+      "id": "resso",
+      "name": "Resso",
+      "logo": "/images/platforms/resso.svg",
+      "alt": "Resso Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 6,
+      "enabled": true
+    },
+    {
+      "id": "jiosaavn",
+      "name": "JioSaavn",
+      "logo": "/images/platforms/jiosaavn.png",
+      "alt": "JioSaavn Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 7,
+      "enabled": true
+    },
+    {
+      "id": "hungama",
+      "name": "Hungama",
+      "logo": "/images/platforms/hungama.svg",
+      "alt": "Hungama Music Logo",
+      "size": "standard",
+      "width": 160,
+      "height": 48,
+      "order": 8,
+      "enabled": true
+    }
+  ]
+}
