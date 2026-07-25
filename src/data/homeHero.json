@@ -80,7 +80,7 @@
       {
         "id": "apple-music",
         "name": "Apple Music",
-        "logo": "/images/platforms/apple-music.svg",
+        "logo": "/images/platforms/apple-music.png",
         "alt": "Apple Music Logo"
       },
       {
@@ -98,7 +98,7 @@
       {
         "id": "amazon-music",
         "name": "Amazon Music",
-        "logo": "/images/platforms/amazon-music.svg",
+        "logo": "/images/platforms/amazon-music.png",
         "alt": "Amazon Music Logo"
       },
       {
@@ -110,7 +110,7 @@
       {
         "id": "jiosaavn",
         "name": "JioSaavn",
-        "logo": "/images/platforms/jiosaavn.svg",
+        "logo": "/images/platforms/jiosaavn.png",
         "alt": "JioSaavn Music Logo"
       },
       {

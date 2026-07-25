@@ -13,7 +13,7 @@ const DARK_WORDMARK_IDS = new Set([
 ]);
 
 function getDarkLogoSrc(logoSrc) {
-  return logoSrc.replace(/\.svg$/i, '-dark.svg');
+  return logoSrc.replace(/(\.[a-z0-9]+)$/i, '-dark$1');
 }
 
 /**
