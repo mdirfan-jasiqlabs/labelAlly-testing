@@ -266,7 +266,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center 20%"
+        "imagePosition": "center center"
       },
       {
         "id": "bhojpuri-khesari-lal-yadav",
@@ -281,7 +281,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center 22%"
+        "imagePosition": "center center"
       },
       {
         "id": "bhojpuri-pawan-singh",
@@ -419,21 +419,6 @@
         "imagePosition": "center center"
       },
       {
-        "id": "maghi-ashish-yadav",
-        "categoryId": "maghi",
-        "name": "Ashish Yadav",
-        "role": "Maghi Singer / Actor",
-        "image": "/artists/managed/card/ashish-yadav.webp",
-        "featured": false,
-        "imageClass": "",
-        "socials": {
-          "instagram": "https://instagram.com",
-          "youtube": "https://youtube.com",
-          "spotify": "https://spotify.com"
-        },
-        "imagePosition": "center 35%"
-      },
-      {
         "id": "maghi-khushi-kakkar",
         "categoryId": "maghi",
         "name": "Khushi Kakkar",
@@ -446,7 +431,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center 30%"
+        "imagePosition": "center center"
       },
       {
         "id": "maghi-prabhakar-yadav",
@@ -461,7 +446,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center 25%"
+        "imagePosition": "center center"
       },
       {
         "id": "maghi-raushan-rohi",
@@ -611,7 +596,7 @@
           "youtube": "https://youtube.com",
           "spotify": "https://spotify.com"
         },
-        "imagePosition": "center 20%"
+        "imagePosition": "center center"
       }
     ]
   },
