@@ -1,18 +1,21 @@
 import {
   Check,
-  Music2,
+  Disc3,
+  Mic2,
   ShieldCheck,
   Users,
-  UsersRound,
 } from 'lucide-react';
 
 const iconMap = {
   users: Users,
-  artistMusic: Music2,
-  team: UsersRound,
+  mic2: Mic2,
+  disc3: Disc3,
+  shieldCheck: ShieldCheck,
   rightsProtection: ShieldCheck,
   check: Check,
-  shieldCheck: ShieldCheck,
+  // legacy keys
+  artistMusic: Mic2,
+  team: Disc3,
 };
 
 /**

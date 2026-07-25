@@ -5,7 +5,7 @@ import {
 } from '../../../../config/artistsLabelsWhoWeWorkWithStyles';
 
 /**
- * Circular theme icon that overlaps the card image and body.
+ * Centered circular accent icon for an audience card.
  */
 function AudienceIcon({ icon, theme }) {
   const Icon = getWhoWeWorkWithIcon(icon);
@@ -14,10 +14,10 @@ function AudienceIcon({ icon, theme }) {
 
   return (
     <div
-      className={`${styles.grid.iconBadge} ${themeClasses.iconBadge}`}
+      className={`${styles.grid.iconBadge} ${themeClasses.iconBadge} ${themeClasses.iconGlow}`}
       aria-hidden="true"
     >
-      <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2} />
+      <Icon className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.75} />
     </div>
   );
 }

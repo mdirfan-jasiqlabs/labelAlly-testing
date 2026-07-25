@@ -6,21 +6,27 @@
 export const audienceThemeClasses = {
   orange: {
     iconBadge:
-      'border-orange-200 bg-orange-50 text-orange-600 dark:border-orange-400/25 dark:bg-orange-500/10 dark:text-orange-300',
+      'border-orange-400/50 bg-orange-500/10 text-orange-500 dark:border-orange-400/40 dark:bg-orange-500/10 dark:text-orange-400',
+    iconGlow:
+      'shadow-[0_0_24px_-4px_rgba(249,115,22,0.45)] dark:shadow-[0_0_28px_-4px_rgba(251,146,60,0.35)]',
     check:
       'border-orange-400 text-orange-600 dark:border-orange-400 dark:text-orange-300',
     glow: 'group-hover:shadow-orange-500/10',
   },
   pink: {
     iconBadge:
-      'border-pink-200 bg-pink-50 text-pink-600 dark:border-pink-400/25 dark:bg-pink-500/10 dark:text-pink-300',
+      'border-pink-400/50 bg-pink-500/10 text-pink-500 dark:border-pink-400/40 dark:bg-pink-500/10 dark:text-pink-400',
+    iconGlow:
+      'shadow-[0_0_24px_-4px_rgba(236,72,153,0.45)] dark:shadow-[0_0_28px_-4px_rgba(244,114,182,0.35)]',
     check:
       'border-pink-400 text-pink-600 dark:border-pink-400 dark:text-pink-300',
     glow: 'group-hover:shadow-pink-500/10',
   },
   purple: {
     iconBadge:
-      'border-purple-200 bg-purple-50 text-purple-600 dark:border-purple-400/25 dark:bg-purple-500/10 dark:text-purple-300',
+      'border-violet-400/50 bg-violet-500/10 text-violet-500 dark:border-violet-400/40 dark:bg-violet-500/10 dark:text-violet-300',
+    iconGlow:
+      'shadow-[0_0_24px_-4px_rgba(139,92,246,0.45)] dark:shadow-[0_0_28px_-4px_rgba(167,139,250,0.35)]',
     check:
       'border-purple-400 text-purple-600 dark:border-purple-400 dark:text-purple-300',
     glow: 'group-hover:shadow-purple-500/10',
@@ -66,7 +72,7 @@ export const artistsLabelsWhoWeWorkWithStyles = {
 
   grid: {
     wrapper:
-      'mt-8 sm:mt-10 lg:mt-12 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-5',
+      'mt-8 sm:mt-10 lg:mt-12 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6',
     card: [
       'group relative flex h-full flex-col',
       'rounded-xl sm:rounded-2xl',
@@ -80,31 +86,23 @@ export const artistsLabelsWhoWeWorkWithStyles = {
       'dark:hover:shadow-[0_18px_40px_-16px_rgba(0,0,0,0.65)]',
       'lg:last:col-span-1 lg:last:max-w-none',
     ].join(' '),
-    imageWrapper:
-      'relative w-full overflow-hidden aspect-[4/3] rounded-t-xl sm:rounded-t-2xl bg-theme-secondary',
-    image:
-      'h-full w-full object-cover object-[center_18%] transition-transform duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100',
     iconBadge: [
-      'absolute left-1/2 z-20',
-      '-bottom-7 sm:-bottom-8',
-      '-translate-x-1/2',
+      'mx-auto mb-5 sm:mb-6',
       'flex items-center justify-center',
-      'h-14 w-14 sm:h-16 sm:w-16',
-      'rounded-full border-2',
-      'bg-theme-card',
-      'shadow-[0_8px_22px_-10px_rgba(15,23,42,0.35)]',
+      'h-[4.25rem] w-[4.25rem] sm:h-[4.75rem] sm:w-[4.75rem]',
+      'rounded-full border',
       'transition-transform duration-300 ease-out',
       'group-hover:-translate-y-0.5',
       'motion-reduce:group-hover:translate-y-0',
     ].join(' '),
     cardContent:
-      'flex flex-1 flex-col px-4 sm:px-5 pt-11 sm:pt-12 pb-5 sm:pb-6 text-center',
+      'flex flex-1 flex-col px-5 sm:px-6 pt-7 sm:pt-8 pb-6 sm:pb-7 text-center',
     title:
       'font-heading text-lg sm:text-xl font-bold tracking-tight text-ink-primary dark:text-theme-heading',
     description:
-      'mt-2.5 text-[13px] sm:text-sm leading-relaxed text-ink-secondary dark:text-theme-body',
-    divider: 'mt-4 mb-4 border-t border-theme-border dark:border-theme-border',
-    featureList: 'mt-auto flex flex-col gap-2.5 text-left',
+      'mt-3 text-[13px] sm:text-sm leading-relaxed text-ink-secondary dark:text-theme-body',
+    divider: 'mt-5 mb-5 border-t border-theme-border dark:border-theme-border',
+    featureList: 'mt-auto mx-auto flex w-fit max-w-full flex-col gap-2.5 text-left',
     featureItem: 'flex items-start gap-2.5',
     featureIcon:
       'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border',
