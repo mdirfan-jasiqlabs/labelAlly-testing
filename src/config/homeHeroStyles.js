@@ -27,11 +27,20 @@ export const homeHeroStyles = {
       'lg:items-start lg:text-left',
       'gap-0',
     ].join(' '),
-    mobileImage: 'relative z-0 w-full flex justify-center my-3 sm:my-4 lg:hidden pointer-events-none',
-    badge:
-      'inline-flex items-center gap-2 text-[0.7rem] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink-secondary dark:text-theme-body',
+    mobileImage:
+      'relative z-0 w-full flex justify-center my-4 sm:my-5 lg:hidden pointer-events-none px-1',
+    badge: [
+      'inline-flex items-center justify-center gap-1.5 sm:gap-2',
+      'max-w-full rounded-full',
+      'px-3 py-1.5 sm:px-3.5 sm:py-1.5',
+      'bg-accent-100/90 dark:bg-accent-500/15',
+      'text-[0.68rem] xs:text-[0.72rem] sm:text-[0.8125rem]',
+      'font-semibold leading-snug tracking-wide sm:tracking-[0.04em]',
+      'text-accent-700 dark:text-accent-300',
+      'text-balance text-center lg:text-left',
+    ].join(' '),
     badgeInteractive:
-      'transition-colors duration-300 hover:text-ink-primary dark:hover:text-theme-heading',
+      'transition-colors duration-300 hover:bg-accent-100 dark:hover:bg-accent-500/25',
     badgeIcon: 'text-accent-500 dark:text-accent-400 shrink-0',
     heading: [
       'mt-3 sm:mt-4 font-heading font-black tracking-tight',
@@ -121,8 +130,8 @@ export const homeHeroStyles = {
     ].join(' '),
     stage: [
       'relative w-full mx-auto overflow-visible',
-      'max-w-[340px] sm:max-w-[380px]',
-      'lg:max-w-[480px] xl:max-w-[520px]',
+      'max-w-[min(100%,400px)] xs:max-w-[420px] sm:max-w-[440px]',
+      'md:max-w-[460px] lg:max-w-[500px] xl:max-w-[540px]',
       'aspect-square',
     ].join(' '),
     glow: [
@@ -184,16 +193,17 @@ export const homeHeroStyles = {
     figure: [
       'absolute inset-0 z-10',
       'flex items-center justify-center',
-      'scale-[1.05] sm:scale-[1.1] lg:scale-[1.22] xl:scale-[1.28]',
+      'scale-[1.18] xs:scale-[1.2] sm:scale-[1.16] md:scale-[1.18]',
+      'lg:scale-[1.22] xl:scale-[1.28]',
     ].join(' '),
     img: [
       'block h-full w-auto max-h-[100%]',
       'object-contain object-center select-none',
       'drop-shadow-[0_20px_40px_rgba(79,70,229,0.18)]',
       'dark:drop-shadow-[0_20px_44px_rgba(0,0,0,0.45)]',
-      'ring-1 ring-violet-200/30 dark:ring-violet-400/15 rounded-2xl',
-      '[mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]',
-      '[-webkit-mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]',
+      // Soft feather into purple disc — face/neck stay sharp; lower hand/guitar dissolve
+      '[mask-image:linear-gradient(to_bottom,black_0%,black_74%,rgba(0,0,0,0.92)_82%,rgba(0,0,0,0.55)_90%,rgba(0,0,0,0.18)_96%,transparent_100%)]',
+      '[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_74%,rgba(0,0,0,0.92)_82%,rgba(0,0,0,0.55)_90%,rgba(0,0,0,0.18)_96%,transparent_100%)]',
     ].join(' '),
   },
 

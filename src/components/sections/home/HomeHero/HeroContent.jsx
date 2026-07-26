@@ -28,14 +28,17 @@ function HeroContent({ badge, heading, description, buttons, features, image }) 
         <motion.div
           variants={itemVariants}
           className={[content.badge, content.badgeInteractive].filter(Boolean).join(' ')}
+          role="status"
         >
-          <BadgeIcon
-            size={14}
-            className={content.badgeIcon}
-            fill="currentColor"
-            aria-hidden="true"
-          />
-          <span>{badge.label}</span>
+          {BadgeIcon ? (
+            <BadgeIcon
+              size={14}
+              strokeWidth={2.25}
+              className={content.badgeIcon}
+              aria-hidden="true"
+            />
+          ) : null}
+          <span className="min-w-0">{badge.label}</span>
         </motion.div>
       ) : null}
 
