@@ -18,7 +18,7 @@
       "ariaLabel": "Chat with LabelAlly Entertainment on WhatsApp"
     },
     "image": {
-      "src": "/hero-artist.png",
+      "src": "/images/home/hero-artist.png",
       "alt": "Independent music artist performing with a guitar"
     },
     "highlights": [
@@ -164,7 +164,7 @@
       "lineTwo": "With Your Digital Success"
     },
     "image": {
-      "src": "/process-team.jpg",
+      "src": "/images/home/process-team.jpg",
       "alt": "Creative team discussing a digital growth strategy"
     },
     "steps": [
@@ -243,7 +243,7 @@
         "categoryId": "bhojpuri",
         "name": "Akshara Singh",
         "role": "Bhojpuri Artist",
-        "image": "/artists/managed/card/akshara-singh.webp",
+        "image": "/images/artists/cards/akshara-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -258,7 +258,7 @@
         "categoryId": "bhojpuri",
         "name": "Antra Singh Priyanka",
         "role": "Bhojpuri Artist",
-        "image": "/artists/managed/card/antra-singh-priyanka.webp",
+        "image": "/images/artists/cards/antra-singh-priyanka.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -273,7 +273,7 @@
         "categoryId": "bhojpuri",
         "name": "Khesari Lal Yadav",
         "role": "Bhojpuri Singer / Actor",
-        "image": "/artists/managed/card/khesari-lal-yadav.webp",
+        "image": "/images/artists/cards/khesari-lal-yadav.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -288,7 +288,7 @@
         "categoryId": "bhojpuri",
         "name": "Pawan Singh",
         "role": "Bhojpuri Singer",
-        "image": "/artists/managed/card/pawan-singh.webp",
+        "image": "/images/artists/cards/pawan-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -303,7 +303,7 @@
         "categoryId": "bhojpuri",
         "name": "Pramod Premi Yadav",
         "role": "Bhojpuri Artist",
-        "image": "/artists/managed/card/pramod-premi-yadav.webp",
+        "image": "/images/artists/cards/pramod-premi-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -318,7 +318,7 @@
         "categoryId": "bhojpuri",
         "name": "Samar Singh",
         "role": "Bhojpuri Artist",
-        "image": "/artists/managed/card/samar-singh.webp",
+        "image": "/images/artists/cards/samar-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -333,7 +333,7 @@
         "categoryId": "bhojpuri",
         "name": "Tuntun Yadav",
         "role": "Bhojpuri Singer / Actor",
-        "image": "/artists/managed/card/tuntun-yadav.webp",
+        "image": "/images/artists/cards/tuntun-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -348,7 +348,7 @@
         "categoryId": "bollywood",
         "name": "Utkarsh Saxena",
         "role": "Bollywood Singer",
-        "image": "/artists/managed/card/utkarsh-saxena.webp",
+        "image": "/images/artists/cards/utkarsh-saxena.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -363,7 +363,7 @@
         "categoryId": "khortha",
         "name": "Bhai Ji",
         "role": "Khortha Artist",
-        "image": "/artists/managed/card/bhai-ji.webp",
+        "image": "/images/artists/cards/bhai-ji.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -378,7 +378,7 @@
         "categoryId": "khortha",
         "name": "Raj Bhai",
         "role": "Khortha Artist",
-        "image": "/artists/managed/card/raj-bhai.webp",
+        "image": "/images/artists/cards/raj-bhai.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -393,7 +393,7 @@
         "categoryId": "khortha",
         "name": "Satish Das",
         "role": "Khortha Artist",
-        "image": "/artists/managed/card/satish-das.webp",
+        "image": "/images/artists/cards/satish-das.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -408,7 +408,7 @@
         "categoryId": "khortha",
         "name": "Vivek Raj",
         "role": "Khortha Artist",
-        "image": "/artists/managed/card/vivek-raj.webp",
+        "image": "/images/artists/cards/vivek-raj.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -423,7 +423,7 @@
         "categoryId": "maghi",
         "name": "Khushi Kakkar",
         "role": "Maghi Singer / Actress",
-        "image": "/artists/managed/card/khushi-kakkar.webp",
+        "image": "/images/artists/cards/khushi-kakkar.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -438,7 +438,7 @@
         "categoryId": "maghi",
         "name": "Prabhakar Yadav",
         "role": "Maghi Artist",
-        "image": "/artists/managed/card/prabhakar-yadav.webp",
+        "image": "/images/artists/cards/prabhakar-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -453,7 +453,7 @@
         "categoryId": "maghi",
         "name": "Raushan Rohi",
         "role": "Maghi Artist",
-        "image": "/artists/managed/card/raushan-rohi.webp",
+        "image": "/images/artists/cards/raushan-rohi.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -468,7 +468,7 @@
         "categoryId": "maghi",
         "name": "Shivani",
         "role": "Maghi Artist",
-        "image": "/artists/managed/card/shivani.webp",
+        "image": "/images/artists/cards/shivani.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -483,7 +483,7 @@
         "categoryId": "maghi",
         "name": "Shristi Bharti",
         "role": "Maghi Artist",
-        "image": "/artists/managed/card/shristi-bharti.webp",
+        "image": "/images/artists/cards/shristi-bharti.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -498,7 +498,7 @@
         "categoryId": "maghi",
         "name": "Shweta Sargam",
         "role": "Maghi Singer / Actress",
-        "image": "/artists/managed/card/shweta-sargam.webp",
+        "image": "/images/artists/cards/shweta-sargam.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -513,7 +513,7 @@
         "categoryId": "maghi",
         "name": "Sonam Yadav",
         "role": "Maghi Artist",
-        "image": "/artists/managed/card/sonam-yadav.webp",
+        "image": "/images/artists/cards/sonam-yadav.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -528,7 +528,7 @@
         "categoryId": "punjabi",
         "name": "Aman Grewal",
         "role": "Punjabi Singer",
-        "image": "/artists/managed/card/aman-grewal.webp",
+        "image": "/images/artists/cards/aman-grewal.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -543,7 +543,7 @@
         "categoryId": "punjabi",
         "name": "Chet Singh",
         "role": "Punjabi Singer",
-        "image": "/artists/managed/card/chet-singh.webp",
+        "image": "/images/artists/cards/chet-singh.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -558,7 +558,7 @@
         "categoryId": "punjabi",
         "name": "Jass Manak",
         "role": "Punjabi Singer",
-        "image": "/artists/managed/card/jass-manak.webp",
+        "image": "/images/artists/cards/jass-manak.webp",
         "featured": true,
         "imageClass": "",
         "socials": {
@@ -573,7 +573,7 @@
         "categoryId": "punjabi",
         "name": "Kanwar Singh Grewal",
         "role": "Punjabi Singer",
-        "image": "/artists/managed/card/kanwar-singh-grewal.webp",
+        "image": "/images/artists/cards/kanwar-singh-grewal.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -588,7 +588,7 @@
         "categoryId": "punjabi",
         "name": "Sanddy Mundra",
         "role": "Punjabi Singer",
-        "image": "/artists/managed/card/sanddy-mundra.webp",
+        "image": "/images/artists/cards/sanddy-mundra.webp",
         "featured": false,
         "imageClass": "",
         "socials": {
@@ -687,19 +687,19 @@
     ],
     "images": {
       "topLeft": {
-        "src": "/artists/managed/pawan-singh.webp",
+        "src": "/images/artists/portraits/pawan-singh.webp",
         "alt": "Pawan Singh — Bhojpuri singer and actor"
       },
       "topRight": {
-        "src": "/artists/managed/akshara-singh.webp",
+        "src": "/images/artists/portraits/akshara-singh.webp",
         "alt": "Akshara Singh — Bhojpuri singer and actress"
       },
       "bottomLeft": {
-        "src": "/artists/managed/utkarsh-saxena.webp",
+        "src": "/images/artists/portraits/utkarsh-saxena.webp",
         "alt": "Utkarsh Saxena — Bollywood singer"
       },
       "bottomRight": {
-        "src": "/artists/managed/jass-manak.webp",
+        "src": "/images/artists/portraits/jass-manak.webp",
         "alt": "Jass Manak — Punjabi singer"
       }
     }

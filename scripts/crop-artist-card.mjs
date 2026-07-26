@@ -19,9 +19,9 @@ const WIDTH = 900;
 const HEIGHT = 675;
 const TARGET_RATIO = WIDTH / HEIGHT;
 
-const SRC = path.resolve('public/artists/managed', `${slug}.webp`);
-const OUT = path.resolve('public/artists/managed/card', `${slug}.webp`);
-const TMP = path.resolve('public/artists/managed/card', `_${slug}.tmp.webp`);
+const SRC = path.resolve('public/images/artists/portraits', `${slug}.webp`);
+const OUT = path.resolve('public/images/artists/cards', `${slug}.webp`);
+const TMP = path.resolve('public/images/artists/cards', `_${slug}.tmp.webp`);
 
 if (!fs.existsSync(SRC)) {
   console.error('Missing source:', SRC);

@@ -126,7 +126,6 @@ async function main() {
   for (const asset of [
     '/brand/logo.png',
     '/brand/logo-on-dark.png',
-    '/brand/og-image.png',
     '/default-og.png',
     '/favicon.svg',
     '/favicon.png',

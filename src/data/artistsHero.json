@@ -134,7 +134,7 @@
         "id": "float-top-right",
         "objectPosition": "center 18%",
         "position": "top-right",
-        "src": "/artists/managed/aman-grewal.webp",
+        "src": "/images/artists/portraits/aman-grewal.webp",
         "width": 220
       },
       {
@@ -143,14 +143,14 @@
         "id": "float-bottom-left",
         "objectPosition": "center 20%",
         "position": "bottom-left",
-        "src": "/artists/managed/jass-manak.webp",
+        "src": "/images/artists/portraits/jass-manak.webp",
         "width": 180
       }
     ],
     "main": {
       "alt": "Pawan Singh — Bhojpuri singer",
       "height": 720,
-      "src": "/artists/managed/pawan-singh.webp",
+      "src": "/images/artists/portraits/pawan-singh.webp",
       "width": 640
     }
   },
