@@ -177,14 +177,17 @@ export const artistsLabelsOnboardingStyles = {
       'bg-gradient-to-r from-rose-500 to-fuchsia-500 bg-clip-text text-transparent',
     description:
       'mt-4 max-w-xl text-sm sm:text-[15px] leading-relaxed text-ink-secondary dark:text-theme-body',
-    highlightGrid:
-      'mt-6 grid grid-cols-2 xl:grid-cols-4 gap-y-3 gap-x-2 xl:gap-0 xl:divide-x xl:divide-theme-border/70 dark:xl:divide-theme-border border-y border-theme-border/60 dark:border-theme-border py-4',
-    highlightItem:
-      'flex items-center gap-2.5 xl:px-3 first:xl:pl-0 last:xl:pr-0',
+    // Stay 2×2 inside the half-width CTA column — 4-across overflows into dividers.
+    highlightGrid: [
+      'mt-6 grid grid-cols-1 sm:grid-cols-2',
+      'gap-x-4 gap-y-3 sm:gap-x-5',
+      'border-y border-theme-border/60 dark:border-theme-border py-4',
+    ].join(' '),
+    highlightItem: 'flex min-w-0 items-start gap-2.5 sm:items-center',
     highlightIcon:
       'flex h-9 w-9 shrink-0 items-center justify-center rounded-full',
     highlightLabel:
-      'text-[11px] sm:text-xs font-semibold leading-snug text-ink-secondary dark:text-theme-body',
+      'min-w-0 text-[11px] sm:text-xs font-semibold leading-snug text-ink-secondary dark:text-theme-body',
     buttons: 'mt-6 flex flex-col sm:flex-row gap-3',
     primaryButton: [
       'group inline-flex items-center justify-center gap-2',

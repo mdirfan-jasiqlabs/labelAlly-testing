@@ -85,7 +85,7 @@ export const artistsLabelsWhatYouGetStyles = {
 
   row: {
     base: [
-      'group relative grid grid-cols-1 lg:grid-cols-12',
+      'group relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12',
       'overflow-hidden rounded-2xl sm:rounded-3xl',
       'border border-theme-border/80 dark:border-theme-border',
       'shadow-[0_10px_32px_-18px_rgba(15,23,42,0.18)]',
@@ -97,33 +97,54 @@ export const artistsLabelsWhatYouGetStyles = {
     ].join(' '),
     leftImageLayout: '',
     rightImageLayout: '',
-    imageCell:
-      'relative order-1 lg:col-span-4 min-h-[200px] sm:min-h-[220px] lg:min-h-[240px]',
-    imageCellLeft: 'lg:order-1',
-    imageCellRight: 'lg:order-3',
+    // Mobile: aspect-ratio banner. Tablet (md): stretch beside content.
+    // Desktop (lg+): equal 12-col thirds with approved min height.
+    imageCell: [
+      'relative order-1 min-w-0 overflow-hidden',
+      'aspect-[4/3] sm:aspect-[16/10]',
+      'md:aspect-auto md:min-h-0',
+      'lg:col-span-4 lg:min-h-[240px]',
+    ].join(' '),
+    imageCellLeft:
+      'md:col-start-1 md:row-start-1 md:row-span-2 lg:col-start-auto lg:row-start-auto lg:row-span-1 lg:order-1',
+    imageCellRight:
+      'md:col-start-2 md:row-start-1 md:row-span-2 lg:col-start-auto lg:row-start-auto lg:row-span-1 lg:order-3',
     detailsCell: [
-      'order-2 lg:col-span-4',
+      'order-2 min-w-0 lg:col-span-4',
       'flex items-center',
-      'px-5 py-5 sm:px-6 sm:py-6 lg:px-5 xl:px-6',
+      'px-5 py-5 sm:px-6 sm:py-6 md:px-5 md:py-5 lg:px-5 xl:px-6',
       'lg:border-r lg:border-theme-border/80 dark:lg:border-theme-border',
     ].join(' '),
-    detailsCellLeft: 'lg:order-2',
-    detailsCellRight: 'lg:order-2 lg:border-r-0 lg:border-l lg:border-theme-border/80 dark:lg:border-theme-border',
+    detailsCellLeft:
+      'md:col-start-2 md:row-start-1 lg:col-start-auto lg:row-start-auto lg:order-2',
+    detailsCellRight: [
+      'md:col-start-1 md:row-start-1',
+      'lg:col-start-auto lg:row-start-auto lg:order-2',
+      'lg:border-r-0 lg:border-l lg:border-theme-border/80 dark:lg:border-theme-border',
+    ].join(' '),
     featuresCell: [
-      'order-3 lg:col-span-4',
+      'order-3 min-w-0 lg:col-span-4',
       'flex items-center',
-      'px-5 pb-5 sm:px-6 sm:pb-6 lg:px-5 xl:px-7 lg:py-6',
+      'px-5 pt-5 pb-5 sm:px-6 sm:pt-6 sm:pb-6 md:px-5 md:pt-4 md:pb-5 lg:px-5 xl:px-7 lg:py-6',
       'border-t border-theme-border/80 dark:border-theme-border lg:border-t-0',
     ].join(' '),
-    featuresCellLeft: 'lg:order-3',
-    featuresCellRight: 'lg:order-1',
+    featuresCellLeft:
+      'md:col-start-2 md:row-start-2 lg:col-start-auto lg:row-start-auto lg:order-3',
+    featuresCellRight:
+      'md:col-start-1 md:row-start-2 lg:col-start-auto lg:row-start-auto lg:order-1',
     imageWrapper: 'absolute inset-0 h-full w-full',
     imageClipLeft:
       'lg:[clip-path:polygon(0_0,92%_0,100%_50%,92%_100%,0_100%)]',
     imageClipRight:
       'lg:[clip-path:polygon(8%_0,100%_0,100%_100%,8%_100%,0_50%)]',
     image:
-      'h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
+      'h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
+    imageObjectPositionDefault: 'object-top',
+    imageObjectPositions: {
+      top: 'object-top',
+      center: 'object-center',
+      bottom: 'object-bottom',
+    },
     details: 'flex w-full items-start gap-3.5 sm:gap-4',
     iconWrapper:
       'flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl border transition-transform duration-300 ease-out group-hover:-translate-y-0.5 motion-reduce:group-hover:translate-y-0',

@@ -7,9 +7,10 @@ import {
 } from '../../../../config/artistsLabelsWhatYouGetStyles';
 
 /**
- * One alternating horizontal benefit row.
- * DOM stays image → details → features for accessibility;
- * CSS order creates left/right image layouts on desktop.
+ * One alternating benefit row.
+ * DOM stays image → details → features for accessibility.
+ * Tablet (md): 2-col with image beside stacked details/features.
+ * Desktop (lg+): CSS order creates left/right image layouts.
  */
 function BenefitRow({ item }) {
   if (!item) return null;

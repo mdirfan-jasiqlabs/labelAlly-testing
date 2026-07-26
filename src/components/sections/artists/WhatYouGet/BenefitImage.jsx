@@ -13,6 +13,10 @@ function BenefitImage({ item }) {
     ? styles.row.imageClipLeft
     : styles.row.imageClipRight;
 
+  const objectPositionClass =
+    styles.row.imageObjectPositions[item.imageObjectPosition] ||
+    styles.row.imageObjectPositionDefault;
+
   return (
     <div className={styles.row.imageWrapper}>
       <img
@@ -22,7 +26,7 @@ function BenefitImage({ item }) {
         height={item.imageHeight}
         loading="lazy"
         decoding="async"
-        className={`${styles.row.image} ${clipClass}`}
+        className={`${styles.row.image} ${clipClass} ${objectPositionClass}`}
       />
     </div>
   );
