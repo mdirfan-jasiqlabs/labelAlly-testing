@@ -118,13 +118,8 @@ function ArtistsCategoryFilter({
                 styles.filter.pill,
                 isActive ? styles.filter.pillActive : styles.filter.pillIdle,
               ].join(' ')}
-              whileHover={
-                reduceMotion || isActive
-                  ? undefined
-                  : { y: -2, transition: { duration: 0.2 } }
-              }
-              whileTap={reduceMotion ? undefined : { scale: 0.96 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
+              whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
             >
               <Icon
                 className={styles.filter.pillIcon}

@@ -93,24 +93,16 @@ export const homeArtistsStyles = {
       'md:text-sm',
     ].join(' '),
     pillActive: [
-      // Mobile active: orange gradient + glow
-      'bg-gradient-to-br from-orange-500 to-orange-600',
-      'text-white',
-      'border border-orange-400/80',
-      'shadow-[0_10px_22px_-8px_rgba(249,115,22,0.7)]',
-      'dark:shadow-[0_12px_26px_-8px_rgba(249,115,22,0.55)]',
-      // Desktop active: solid brand pill
-      'md:[background-image:none] md:bg-theme-action-primary',
-      'md:text-theme-action-primaryForeground',
-      'md:border-theme-action-primary',
-      'md:shadow-[0_10px_24px_-10px_rgba(249,115,22,0.75)]',
-      'dark:md:shadow-[0_12px_28px_-10px_rgba(249,115,22,0.55)]',
+      'bg-theme-action-primary',
+      'text-theme-action-primaryForeground',
+      'border border-theme-action-primary',
+      'shadow-none',
     ].join(' '),
     pillIdle: [
-      // Mobile idle: dark surface card
       'bg-theme-card dark:bg-theme-card/90',
       'border border-theme-border/70 dark:border-white/15',
       'text-ink-muted dark:text-white/70',
+      'shadow-none',
       'active:border-theme-action-primary',
       'active:bg-theme-action-primary/10',
       // Desktop idle: transparent outlined pill
@@ -121,12 +113,11 @@ export const homeArtistsStyles = {
       'md:hover:text-theme-action-primary',
       'md:hover:bg-theme-action-primary/10',
       'dark:md:hover:bg-orange-500/10',
-      'md:hover:-translate-y-0.5',
-      'motion-reduce:md:hover:translate-y-0',
     ].join(' '),
+    // Inherit pill text color so idle icons stay visible in light mode.
     pillIcon: [
-      'h-5 w-5 shrink-0 text-white',
-      'md:h-4 md:w-4 md:text-current',
+      'h-5 w-5 shrink-0 text-current',
+      'md:h-4 md:w-4',
     ].join(' '),
     pillLabelMobile: [
       'leading-none md:hidden',
