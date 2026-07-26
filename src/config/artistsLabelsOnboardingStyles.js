@@ -147,8 +147,9 @@ export const artistsLabelsOnboardingStyles = {
       'dark:border-theme-border dark:bg-theme-card dark:shadow-black/40',
     ].join(' '),
     connectorArrowIcon: 'h-4 w-4',
-    rowTurn: 'relative z-0 -mt-1 -mb-1 h-14 xl:h-16 w-full pointer-events-none',
-    rowTurnSvg: 'absolute inset-0 h-full w-full overflow-visible',
+    rowTurn:
+      'relative z-0 h-14 xl:h-16 w-full overflow-hidden pointer-events-none',
+    rowTurnSvg: 'absolute inset-0 h-full w-full',
     mobileConnector: 'flex flex-col items-center py-3',
     mobileLine:
       'h-7 w-px border-l-2 border-dashed border-theme-border dark:border-theme-border',

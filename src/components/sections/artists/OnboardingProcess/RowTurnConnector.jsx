@@ -1,7 +1,9 @@
 import { artistsLabelsOnboardingStyles as styles } from '../../../../config/artistsLabelsOnboardingStyles';
 
 /**
- * U-turn dashed path from step 03 down and across into step 04.
+ * Inter-row turn: 03 ↓ → left → ↓ 04.
+ * Starts under 03 (top of gutter), ends above 04 (bottom of gutter).
+ * Must not rise on the left — that would attach to 01.
  */
 function RowTurnConnector() {
   return (
@@ -18,10 +20,12 @@ function RowTurnConnector() {
           strokeDasharray="6 9"
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M 1085 0
-             C 1175 0, 1190 25, 1190 40
-             C 1190 62, 1155 80, 1060 80
-             H 115"
+          d="M 1016 0
+             L 1016 28
+             C 1016 48, 996 52, 976 52
+             H 224
+             C 204 52, 184 52, 184 60
+             L 184 80"
         />
       </svg>
     </div>
