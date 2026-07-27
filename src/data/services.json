@@ -101,7 +101,7 @@
   "process": {
     "enabled": true,
     "image": {
-      "src": "/images/about/about-1.png",
+      "src": "/images/about/about-1.webp",
       "alt": "LabelAlly team collaborating on music distribution and creator services",
       "width": 900,
       "height": 1000

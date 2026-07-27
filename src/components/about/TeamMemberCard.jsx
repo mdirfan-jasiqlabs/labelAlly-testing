@@ -3,10 +3,10 @@ import { Mail } from 'lucide-react';
 
 /** Existing project portraits used when JSON image is empty (dev placeholders). */
 const TEAM_IMAGE_FALLBACKS = [
-  '/images/about/about-1.png',
-  '/images/about/about-2.png',
-  '/images/about/about-3.png',
-  '/images/about/about-4.png',
+  '/images/about/about-1.webp',
+  '/images/about/about-2.webp',
+  '/images/about/about-3.webp',
+  '/images/about/about-4.webp',
 ];
 
 function getInitials(name = '') {

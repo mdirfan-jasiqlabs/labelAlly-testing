@@ -112,34 +112,34 @@ export const aboutIntroData = {
   images: [
     {
       id: "about-img-1",
-      src: "/images/about/about-1.png",
-      alt: "LabelAlly team members collaborating on a laptop at a table in a modern corporate office",
-      width: 600,
-      height: 480,
+      src: "/images/about/about-1.webp",
+      alt: "Professional music studio setup for artist production and digital distribution",
+      width: 900,
+      height: 720,
       enabled: true
     },
     {
       id: "about-img-2",
-      src: "/images/about/about-2.png",
-      alt: "LabelAlly creative team sitting together in a discussion in a workspace",
-      width: 600,
-      height: 480,
+      src: "/images/about/about-2.webp",
+      alt: "Professional studio microphone used for music creators and content production",
+      width: 900,
+      height: 720,
       enabled: true
     },
     {
       id: "about-img-3",
-      src: "/images/about/about-3.png",
-      alt: "Team members hands pointing at analytics and charts on a paper on the desk",
-      width: 600,
-      height: 480,
+      src: "/images/about/about-3.webp",
+      alt: "Analytics dashboard showing audience growth, engagement, and performance insights",
+      width: 900,
+      height: 720,
       enabled: true
     },
     {
       id: "about-img-4",
-      src: "/images/about/about-4.png",
-      alt: "Designer/Developer at an office desk working on branding assets and audio waveform analytics on a monitor",
-      width: 600,
-      height: 480,
+      src: "/images/about/about-4.webp",
+      alt: "Studio headphones representing LabelAlly music distribution and listening experience",
+      width: 900,
+      height: 720,
       enabled: true
     }
   ]
