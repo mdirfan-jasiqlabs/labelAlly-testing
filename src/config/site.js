@@ -54,7 +54,7 @@ export const seo = {
   defaultTitle:       'LabelAlly Entertainment',
   titleTemplate:      '%s | LabelAlly Entertainment',
   defaultDescription: 'LabelAlly Entertainment — a full-service music industry partner for artists, labels, and brands.',
-  siteUrl:            'https://label-ally-testing.vercel.app',
+  siteUrl:            'https://www.labelally.in',
   ogImage:            '/default-og.png',
   twitterHandle:      '',
 };

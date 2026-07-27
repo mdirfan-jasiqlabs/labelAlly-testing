@@ -13,9 +13,9 @@ function ArtistsLabelsPartnersPage() {
   return (
     <main aria-label="Artists & Record Labels LabelAlly Entertainment">
       <SEO
-        title="Solutions for Artists & Record Labels | LabelAlly Entertainment"
+        title="Solutions for Artists & Record Labels"
         description="Discover how LabelAlly Entertainment helps independent artists, record labels, and content owners distribute music, protect rights, and maximize revenue."
-        canonical="https://label-ally-testing.vercel.app/artists-labels-partners"
+        canonical="/artists-labels-partners"
       />
       <ArtistsHero />
       <WhoWeWorkWith />

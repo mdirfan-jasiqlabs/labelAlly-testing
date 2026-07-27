@@ -10,9 +10,9 @@ function TermsPage() {
   return (
     <>
       <SEO
-        title="Terms and Conditions | LabelAlly Entertainment"
+        title="Terms and Conditions"
         description="Review the terms and conditions governing the use of the LabelAlly Entertainment website and its services."
-        canonical="https://label-ally-testing.vercel.app/terms-and-conditions"
+        canonical="/terms-and-conditions"
       />
       <LegalPageLayout
         title={termsData.title}

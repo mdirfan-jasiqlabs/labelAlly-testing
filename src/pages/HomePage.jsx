@@ -25,9 +25,8 @@ function HomePage() {
   return (
     <main aria-label="LabelAlly Entertainment homepage">
       <SEO
-        title=""
         description="Grow your music business with professional music distribution, YouTube channel management, content rights management, Content ID, OTT distribution, and revenue optimization services."
-        canonical="https://label-ally-testing.vercel.app/"
+        canonical="/"
         type="website"
       />
       <HeroSection />

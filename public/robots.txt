@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://label-ally-testing.vercel.app/sitemap.xml
+Sitemap: https://www.labelally.in/sitemap.xml

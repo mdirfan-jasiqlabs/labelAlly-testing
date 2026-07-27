@@ -13,9 +13,9 @@ function ContactPage() {
   return (
     <main aria-label="Contact LabelAlly Entertainment">
       <SEO
-        title="Contact LabelAlly Entertainment | Start Your Enquiry"
+        title="Contact | Start Your Enquiry"
         description="Contact LabelAlly Entertainment to discuss music distribution, YouTube management, content rights, OTT distribution, and revenue optimization services."
-        canonical="https://label-ally-testing.vercel.app/contact"
+        canonical="/contact"
       />
       <ContactFormSection />
       <WhatsAppCTA />

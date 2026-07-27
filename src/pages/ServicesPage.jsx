@@ -15,9 +15,9 @@ function ServicesPage() {
   return (
     <main aria-label="LabelAlly Entertainment Services">
       <SEO
-        title="Music Distribution & Rights Management Services | LabelAlly"
+        title="Music Distribution & Rights Management Services"
         description="Explore LabelAlly Entertainment services, including music distribution, YouTube management, Content ID, rights management, OTT distribution, and revenue optimization."
-        canonical="https://label-ally-testing.vercel.app/services"
+        canonical="/services"
       />
       <ServicesHero />
       <ServicesGrid />

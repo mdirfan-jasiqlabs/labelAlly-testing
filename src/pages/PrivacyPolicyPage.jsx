@@ -10,9 +10,9 @@ function PrivacyPolicyPage() {
   return (
     <>
       <SEO
-        title="Privacy Policy | LabelAlly Entertainment"
+        title="Privacy Policy"
         description="Read the LabelAlly Entertainment Privacy Policy to understand how information submitted through our website is collected, used, and protected."
-        canonical="https://label-ally-testing.vercel.app/privacy-policy"
+        canonical="/privacy-policy"
       />
       <LegalPageLayout
         title={privacyData.title}
