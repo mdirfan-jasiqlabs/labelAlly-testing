@@ -21,7 +21,8 @@ function BrandLogo({
   alt = 'LabelAlly Entertainment Logo',
 }) {
   const lightSrc = '/brand/logo.png';
-  const darkSrc = '/brand/logo-on-dark.png';
+  // Cache-bust after regenerating solid white ink for dark surfaces
+  const darkSrc = '/brand/logo-on-dark.png?v=2';
 
   if (variant === 'light') {
     return (
