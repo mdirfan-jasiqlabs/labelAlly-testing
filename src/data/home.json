@@ -76,30 +76,47 @@
         "description": "We leverage our extensive network of 150+ platforms across 80+ countries to maximize your global presence and revenue."
       }
     ],
-    "stats": [
+    "stats": []
+  },
+  "contentProduction": {
+    "heading": {
+      "prefix": "CONTENT",
+      "accent": "PRODUCTION"
+    },
+    "tagline": "Creating Engaging Content. Connecting Global Audiences.",
+    "description": "We produce original, high-quality content across diverse genres and formats. From creative development to final delivery, we craft content that entertains, informs, and inspires audiences worldwide.",
+    "items": [
       {
-        "id": "projects",
-        "icon": "ProjectDone",
-        "value": "2304",
-        "label": "Project Done"
+        "id": "music",
+        "title": "Music",
+        "description": "Original music production, artist releases, and soundtrack-ready content built for global platforms.",
+        "icon": "Music2",
+        "image": "/images/home/content-production/music.webp",
+        "alt": "Recording studio microphone and mixing console for music production"
       },
       {
-        "id": "clients",
-        "icon": "SatisfyClient",
-        "value": "3585",
-        "label": "Satisfy Client"
+        "id": "entertainment",
+        "title": "Entertainment",
+        "description": "Diverse entertainment formats including variety, talk shows, challenge series, and more.",
+        "icon": "Clapperboard",
+        "image": "/images/home/content-production/entertainment.webp",
+        "alt": "Film clapperboard on an entertainment production set"
       },
       {
-        "id": "awards",
-        "icon": "Awards",
-        "value": "1365",
-        "label": "Awards"
+        "id": "kids-family",
+        "title": "Kids & Family",
+        "description": "Safe, educational, and entertaining content for children and families worldwide.",
+        "icon": "Baby",
+        "image": "/images/home/content-production/kids-family.webp",
+        "alt": "Colorful kids and family content props with books and toys"
       },
       {
-        "id": "happy-clients",
-        "icon": "HappyClient",
-        "value": "4328",
-        "label": "Happy Client"
+        "id": "micro-drama",
+        "title": "Micro Drama",
+        "description": "Vertical short-form dramas designed for mobile audiences and global platforms.",
+        "icon": "Smartphone",
+        "image": "/images/home/content-production/micro-drama.webp",
+        "alt": "Smartphone filming vertical micro drama content"
       }
     ]
   },
