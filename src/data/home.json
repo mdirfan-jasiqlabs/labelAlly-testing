@@ -436,6 +436,21 @@
         "imagePosition": "center center"
       },
       {
+        "id": "maghi-ashish-yadav",
+        "categoryId": "maghi",
+        "name": "Ashish Yadav",
+        "role": "Maghi Artist",
+        "image": "/images/artists/cards/ashish-yadav.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
         "id": "maghi-khushi-kakkar",
         "categoryId": "maghi",
         "name": "Khushi Kakkar",
