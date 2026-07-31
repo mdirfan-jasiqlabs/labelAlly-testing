@@ -434,6 +434,21 @@
         "imagePosition": "center center"
       },
       {
+        "id": "maghi-nitish-aryan",
+        "categoryId": "maghi",
+        "name": "Nitish Aryan",
+        "role": "Maghi Artist",
+        "image": "/images/artists/cards/nitish-aryan.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
         "id": "maghi-prabhakar-yadav",
         "categoryId": "maghi",
         "name": "Prabhakar Yadav",
@@ -464,10 +479,25 @@
         "imagePosition": "center center"
       },
       {
-        "id": "maghi-shivani",
+        "id": "maghi-rocky-mountain",
         "categoryId": "maghi",
-        "name": "Shivani",
+        "name": "Rocky Mountain",
         "role": "Maghi Artist",
+        "image": "/images/artists/cards/rocky-mountain.webp",
+        "featured": false,
+        "imageClass": "",
+        "socials": {
+          "instagram": "https://instagram.com",
+          "youtube": "https://youtube.com",
+          "spotify": "https://spotify.com"
+        },
+        "imagePosition": "center center"
+      },
+      {
+        "id": "bhojpuri-shivani",
+        "categoryId": "bhojpuri",
+        "name": "Shivani",
+        "role": "Bhojpuri Artist",
         "image": "/images/artists/cards/shivani.webp",
         "featured": false,
         "imageClass": "",
