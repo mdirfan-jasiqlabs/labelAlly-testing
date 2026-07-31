@@ -7,28 +7,28 @@
     {
       "id": "aashish-yadav",
       "name": "Ashish Yadav",
-      "role": "Singer/Actor",
+      "role": "Maghi Artist",
       "quote": "Working with your company has been one of the best experiences of my career. From video marketing to music distribution and social media promotion, everything was handled professionally and it made a real difference for me. The recognition I have today as a singer owes a lot to your team’s support. Thank you from the heart!",
       "image": "/images/testimonials/aashish-yadav.webp",
-      "alt": "Ashish Yadav Singer and Actor Testimonial Portrait",
+      "alt": "Ashish Yadav Maghi Artist Testimonial Portrait",
       "enabled": true
     },
     {
       "id": "khushi-kakkar",
       "name": "Khushi Kakkar",
-      "role": "Singer/Actress",
+      "role": "Maghi Artist",
       "quote": "As an artist, your company gave me the chance to present my talent on the right platforms. Video production, music releases, and social media promotion were all managed professionally, and that gave me fresh confidence. Working with your team is something I am proud of. Thank you from the bottom of my heart!",
       "image": "/images/testimonials/khushi-kakkar.webp",
-      "alt": "Khushi Kakkar Singer and Actress Testimonial Portrait",
+      "alt": "Khushi Kakkar Maghi Artist Testimonial Portrait",
       "enabled": true
     },
     {
-      "id": "amit-parimal",
-      "name": "Amit Parimal",
-      "role": "Actor",
+      "id": "jass-manak",
+      "name": "Jass Manak",
+      "role": "Punjabi Singer",
       "quote": "I have worked with several digital platforms, but the way your company promoted my content showed up clearly in my followers and views. The team’s creative thinking, branding sense, and professional approach deserve real appreciation. As a digital creator, your contribution to my growth has been invaluable.",
       "image": "/images/artists/portraits/jass-manak.webp",
-      "alt": "Amit Parimal Actor Testimonial Portrait",
+      "alt": "Jass Manak Punjabi Singer Testimonial Portrait",
       "enabled": true
     }
   ]
