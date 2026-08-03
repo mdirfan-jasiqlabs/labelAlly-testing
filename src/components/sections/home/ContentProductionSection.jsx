@@ -25,7 +25,7 @@ function ContentProductionBackground() {
 }
 
 /**
- * ContentProductionSection — Homepage genres/formats grid.
+ * ContentProductionSection — Homepage Content Management grid.
  * Split header + 4 parallelogram image cards (Music, Entertainment, Kids & Family, Micro Drama).
  */
 function ContentProductionSection() {

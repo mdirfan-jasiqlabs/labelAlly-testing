@@ -1,6 +1,6 @@
 import { homeHeroStyles } from './homeHeroStyles';
 
-/** Tailwind class maps for the homepage Content Production section. */
+/** Tailwind class maps for the homepage Content Management section. */
 export const homeContentProductionStyles = {
   section: [
     'relative w-full overflow-hidden',

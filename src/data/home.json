@@ -81,39 +81,39 @@
   "contentProduction": {
     "heading": {
       "prefix": "CONTENT",
-      "accent": "PRODUCTION"
+      "accent": "MANAGEMENT"
     },
-    "tagline": "Creating Engaging Content. Connecting Global Audiences.",
-    "description": "We produce original, high-quality content across diverse genres and formats. From creative development to final delivery, we craft content that entertains, informs, and inspires audiences worldwide.",
+    "tagline": "Managing Digital Content. Maximizing Global Reach.",
+    "description": "We professionally manage digital content across multiple categories, ensuring efficient distribution, rights protection, platform optimization, and long-term revenue growth for creators, artists, labels, and media partners worldwide.",
     "items": [
       {
         "id": "music",
         "title": "Music",
-        "description": "Original music production, artist releases, and soundtrack-ready content built for global platforms.",
+        "description": "Managing music catalogues with digital distribution, Content ID, rights management, metadata optimization, and royalty administration.",
         "icon": "Music2",
         "image": "/images/home/content-production/music.webp",
-        "alt": "Recording studio microphone and mixing console for music production"
+        "alt": "Music distribution and rights management with headphones, microphone, and streaming platforms"
       },
       {
         "id": "entertainment",
         "title": "Entertainment",
-        "description": "Diverse entertainment formats including variety, talk shows, challenge series, and more.",
+        "description": "Managing movies, web series, vlogs, comedy, gaming, podcasts, lifestyle, and other entertainment channels through YouTube CMS, rights management, distribution, and monetization.",
         "icon": "Clapperboard",
         "image": "/images/home/content-production/entertainment.webp",
-        "alt": "Film clapperboard on an entertainment production set"
+        "alt": "YouTube CMS content management hub for movies, series, gaming, podcasts, and entertainment channels"
       },
       {
         "id": "kids-family",
         "title": "Kids & Family",
-        "description": "Safe, educational, and entertaining content for children and families worldwide.",
+        "description": "Managing kids and family content with platform compliance, copyright protection, distribution, and revenue optimization.",
         "icon": "Baby",
         "image": "/images/home/content-production/kids-family.webp",
-        "alt": "Colorful kids and family content props with books and toys"
+        "alt": "Kids and family content management featuring children playing outdoors"
       },
       {
         "id": "micro-drama",
         "title": "Micro Drama",
-        "description": "Vertical short-form dramas designed for mobile audiences and global platforms.",
+        "description": "Managing vertical short-form drama content with professional publishing, rights administration, platform optimization, and monetization support.",
         "icon": "Smartphone",
         "image": "/images/home/content-production/micro-drama.webp",
         "alt": "Smartphone filming vertical micro drama content"
