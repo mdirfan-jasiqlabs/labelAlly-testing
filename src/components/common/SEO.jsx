@@ -5,7 +5,7 @@ import { company, seo as seoConfig } from '../../config/site';
  * SEO Component — Handles meta tags and optional JSON-LD via react-helmet-async.
  *
  * Defaults come from src/config/site.js (single source of truth for siteUrl / ogImage).
- * Production canonical host: https://labelally.in (www redirects to apex).
+ * Production canonical host: https://www.labelally.in (apex redirects to www).
  *
  * @param {string}  [title]       Full document title when provided (not auto-suffixed).
  * @param {string}  [description] Meta description

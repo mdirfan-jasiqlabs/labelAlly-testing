@@ -60,7 +60,9 @@ export const seo = {
   titleTemplate: '%s | LabelAlly Entertainment',
   defaultDescription:
     'LabelAlly Entertainment provides YouTube channel management, rights management, monetization support and music distribution management for artists and music labels.',
-  siteUrl: 'https://labelally.in',
+  // Production primary host is www (Vercel redirects apex → www).
+  // Do not add a www→apex redirect in vercel.json while that remains enabled.
+  siteUrl: 'https://www.labelally.in',
   ogImage: '/default-og.png',
   logoPath: '/brand/logo.png',
   ogSiteName: 'LabelAlly',
