@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.labelally.in/sitemap.xml
+Sitemap: https://labelally.in/sitemap.xml

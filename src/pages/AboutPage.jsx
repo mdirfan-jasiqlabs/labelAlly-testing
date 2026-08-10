@@ -14,8 +14,8 @@ function AboutPage() {
   return (
     <main aria-label="About LabelAlly Entertainment">
       <SEO
-        title="About | Music Industry Solutions"
-        description="Learn about LabelAlly Entertainment and our approach to supporting artists, labels, and content owners with digital distribution, rights management, and revenue growth."
+        title="About LabelAlly Entertainment | YouTube & Music Management"
+        description="LabelAlly Entertainment Private Limited is a digital music and YouTube management company helping artists, creators and music labels manage YouTube channels, digital rights, monetization and music distribution workflows."
         canonical="/about"
       />
       <AboutIntroSection />

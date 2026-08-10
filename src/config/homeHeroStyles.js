@@ -42,8 +42,18 @@ export const homeHeroStyles = {
     badgeInteractive:
       'transition-colors duration-300 hover:bg-accent-100 dark:hover:bg-accent-500/25',
     badgeIcon: 'text-accent-500 dark:text-accent-400 shrink-0',
+    /** Semantic H1 — crawlable brand name; visually secondary to marketing headline */
+    brandName: [
+      'mt-3 sm:mt-4',
+      'font-heading font-bold tracking-wide',
+      'text-[0.72rem] xs:text-[0.78rem] sm:text-sm',
+      'uppercase',
+      'text-accent-600 dark:text-accent-400',
+      'text-balance',
+    ].join(' '),
+    /** Visually primary marketing headline (not H1 — brand H1 is above) */
     heading: [
-      'mt-3 sm:mt-4 font-heading font-black tracking-tight',
+      'mt-2 sm:mt-2.5 font-heading font-black tracking-tight',
       'text-ink-primary dark:text-theme-heading',
       'text-[1.85rem] leading-[1.08]',
       'xs:text-[2.1rem]',

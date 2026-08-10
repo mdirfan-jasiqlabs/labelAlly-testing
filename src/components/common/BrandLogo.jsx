@@ -18,7 +18,7 @@ function BrandLogo({
    * dark  — always white+red on transparent (Footer / always-dark chrome)
    */
   variant = 'auto',
-  alt = 'LabelAlly Entertainment Logo',
+  alt = 'LabelAlly Entertainment',
 }) {
   const lightSrc = '/brand/logo.png';
   // Cache-bust after regenerating solid white ink for dark surfaces

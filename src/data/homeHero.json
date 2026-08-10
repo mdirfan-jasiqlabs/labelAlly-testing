@@ -7,17 +7,18 @@
   },
   "heading": {
     "id": "hero-heading",
+    "brandName": "LabelAlly Entertainment",
     "lineOne": "Your Music.",
     "lineTwoPrimary": "Global",
     "lineTwoAccent": "Impact."
   },
-  "description": "LabelAlly Entertainment helps artists, labels, and creators distribute their music, manage YouTube channels, protect content rights, and grow across leading global platforms.",
+  "description": "LabelAlly Entertainment helps artists and music labels manage YouTube channels, digital rights, monetization and music distribution workflows.",
   "buttons": [
     {
       "id": "primary-cta",
-      "label": "Distribute Your Music",
+      "label": "Get Started",
       "href": "/contact",
-      "ariaLabel": "Distribute your music — contact LabelAlly Entertainment",
+      "ariaLabel": "Get started — contact LabelAlly Entertainment",
       "variant": "primary",
       "icon": "arrowRight",
       "external": false

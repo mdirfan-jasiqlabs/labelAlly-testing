@@ -26,8 +26,8 @@
     "items": [
       {
         "id": "global-distribution",
-        "title": "Global Music Distribution",
-        "description": "Seamlessly deliver audio and video content to Spotify, Apple Music, YouTube Music, Amazon, and local streaming stores worldwide.",
+        "title": "Music Distribution Management",
+        "description": "Support managing delivery of audio and video content to Spotify, Apple Music, YouTube Music, Amazon, and local streaming stores worldwide.",
         "icon": "Globe"
       },
       {

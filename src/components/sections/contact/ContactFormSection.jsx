@@ -87,12 +87,12 @@ function ContactFormSection() {
               </span>
             )}
 
-            <h2
+            <h1
               id="contact-form-section-heading"
               className="text-[1.65rem] leading-tight xs:text-3xl sm:text-4xl lg:text-[2.65rem] font-bold font-heading text-ink-primary dark:text-theme-heading tracking-tight text-balance"
             >
               {heading.title}
-            </h2>
+            </h1>
 
             <div className="brand-underline mt-3.5 sm:mt-4" aria-hidden="true" />
 

@@ -21,7 +21,7 @@ function NotFoundPage() {
       className="min-h-[70svh] sm:min-h-[80vh] flex items-center justify-center text-center relative overflow-hidden w-full"
     >
       <SEO
-        title="Page Not Found"
+        title="Page Not Found | LabelAlly Entertainment"
         description="The page you are looking for could not be found. Return to the LabelAlly Entertainment website to explore our services."
         noindex={true}
       />

@@ -10,53 +10,61 @@
 // COMPANY
 // ─────────────────────────────────────────────
 export const company = {
-  name:       'LabelAlly Entertainment',
-  legalName:  'LabelAlly Entertainment',
-  tagline:    'Your Vision, Amplified.',
+  name: 'LabelAlly',
+  brandName: 'LabelAlly Entertainment',
+  legalName: 'LabelAlly Entertainment Private Limited',
+  tagline: 'Your Music. Global Impact.',
   description:
-    'LabelAlly Entertainment is a full-service music industry partner providing distribution, marketing, sync licensing, and artist development services.',
-  founded:    '',
-  location:   'Deoghar, Jharkhand',
-  country:    'India',
+    'LabelAlly Entertainment helps artists and music labels manage YouTube channels, digital rights, monetization and music distribution workflows.',
+  founded: '',
+  location: 'Deoghar, Jharkhand',
+  country: 'India',
 };
 
 // ─────────────────────────────────────────────
 // CONTACT
 // ─────────────────────────────────────────────
 export const contact = {
-  email:        'business@labelally.in',
-  phone:        '',
-  address:      'Thari Dulampur, Deoghar, Jharkhand, 814112',
-  city:         'Deoghar',
-  state:        'Jharkhand',
-  zip:          '814112',
-  country:      'India',
-  businessHours:'',
+  email: 'business@labelally.in',
+  phone: '+919334931823',
+  address: 'Thari Dulampur, Deoghar, Jharkhand, 814112',
+  city: 'Deoghar',
+  state: 'Jharkhand',
+  zip: '814112',
+  country: 'India',
+  businessHours: '',
 };
 
 // ─────────────────────────────────────────────
-// SOCIAL LINKS
+// SOCIAL LINKS (verified from footer.json — official LabelAlly profiles only)
 // ─────────────────────────────────────────────
 export const social = {
-  instagram: '',
-  twitter:   '',
-  linkedin:  '',
-  youtube:   '',
-  spotify:   '',
-  facebook:  '',
-  tiktok:    '',
+  facebook: 'https://www.facebook.com/profile.php?id=61592167809072',
+  instagram: 'https://www.instagram.com/labelallyentertainment',
+  youtube: 'https://www.youtube.com/channel/UCVYhRFVq8_r5svDNCzS8rWQ',
+  linkedin: 'https://www.linkedin.com/company/142890624',
+  twitter: '',
+  spotify: '',
+  tiktok: '',
 };
+
+/** Active profile URLs for Organization schema sameAs (exclude empty). */
+export const socialSameAs = Object.values(social).filter(Boolean);
 
 // ─────────────────────────────────────────────
 // SEO / META DEFAULTS
 // ─────────────────────────────────────────────
 export const seo = {
-  defaultTitle:       'LabelAlly Entertainment',
-  titleTemplate:      '%s | LabelAlly Entertainment',
-  defaultDescription: 'LabelAlly Entertainment — a full-service music industry partner for artists, labels, and brands.',
-  siteUrl:            'https://www.labelally.in',
-  ogImage:            '/default-og.png',
-  twitterHandle:      '',
+  defaultTitle:
+    'LabelAlly Entertainment | YouTube Channel Management & Music Rights',
+  titleTemplate: '%s | LabelAlly Entertainment',
+  defaultDescription:
+    'LabelAlly Entertainment provides YouTube channel management, rights management, monetization support and music distribution management for artists and music labels.',
+  siteUrl: 'https://labelally.in',
+  ogImage: '/default-og.png',
+  logoPath: '/brand/logo.png',
+  ogSiteName: 'LabelAlly',
+  twitterHandle: '',
 };
 
 // ─────────────────────────────────────────────
@@ -66,58 +74,56 @@ export const navigation = {
   // Primary header navigation
   primary: [
     {
-      id:    'home',
+      id: 'home',
       label: 'Home',
-      href:  '/',
+      href: '/',
     },
     {
-      id:    'about',
+      id: 'about',
       label: 'About',
-      href:  '/about',
+      href: '/about',
     },
     {
-      id:    'services',
+      id: 'services',
       label: 'Services',
-      href:  '/services',
+      href: '/services',
     },
     {
-      id:    'artists-labels-partners',
+      id: 'artists-labels-partners',
       label: 'Artists & Partners',
-      href:  '/artists-labels-partners',
+      href: '/artists-labels-partners',
     },
     {
-      id:    'contact',
+      id: 'contact',
       label: 'Contact',
-      href:  '/contact',
+      href: '/contact',
     },
   ],
 
   // Footer navigation columns
   footer: {
     company: [
-      { id: 'home',  label: 'Home',  href: '/' },
+      { id: 'home', label: 'Home', href: '/' },
       { id: 'about', label: 'About', href: '/about' },
     ],
-    services: [
-      { id: 'services', label: 'Services', href: '/services' },
-    ],
+    services: [{ id: 'services', label: 'Services', href: '/services' }],
     partners: [
       {
-        id:    'artists-labels-partners',
+        id: 'artists-labels-partners',
         label: 'Artists & Partners',
-        href:  '/artists-labels-partners',
+        href: '/artists-labels-partners',
       },
     ],
     legal: [
       {
-        id:    'privacy-policy',
+        id: 'privacy-policy',
         label: 'Privacy Policy',
-        href:  '/privacy-policy',
+        href: '/privacy-policy',
       },
       {
-        id:    'terms-and-conditions',
+        id: 'terms-and-conditions',
         label: 'Terms & Conditions',
-        href:  '/terms-and-conditions',
+        href: '/terms-and-conditions',
       },
     ],
   },
@@ -130,6 +136,7 @@ export const site = {
   company,
   contact,
   social,
+  socialSameAs,
   seo,
   navigation,
 };

@@ -15,8 +15,8 @@ function ServicesPage() {
   return (
     <main aria-label="LabelAlly Entertainment Services">
       <SEO
-        title="Music Distribution & Rights Management Services"
-        description="Explore LabelAlly Entertainment services, including music distribution, YouTube management, Content ID, rights management, OTT distribution, and revenue optimization."
+        title="YouTube Channel Management & Music Services | LabelAlly"
+        description="Explore LabelAlly Entertainment services including YouTube channel management, rights management, monetization support, and music distribution management for artists and labels."
         canonical="/services"
       />
       <ServicesHero />

@@ -8,17 +8,17 @@ export const aboutIntroData = {
   paragraphs: [
     {
       id: "about-para-1",
-      text: "LabelAlly Entertainment is a dedicated, full-service music industry partner. We support independent creators, record labels, and creative brands in optimizing their digital distribution, content rights, and marketing strategies.",
+      text: "LabelAlly Entertainment Private Limited is a digital music and YouTube management company helping artists, creators and music labels manage YouTube channels, digital rights, monetization and music distribution workflows.",
       enabled: true
     },
     {
       id: "about-para-2",
-      text: "We believe that creators should maintain control over their work while having access to the same distribution networks, channel optimization strategies, and rights protection technologies as major corporate entities.",
+      text: "As LabelAlly, we believe that creators should maintain control over their work while having access to the same channel optimization strategies, rights protection technologies, and distribution management support as major corporate entities.",
       enabled: true
     },
     {
       id: "about-para-3",
-      text: "Our team brings together years of collective experience in digital licensing, platform management, and marketing to serve as an extension of your own operations.",
+      text: "The LabelAlly Entertainment team brings together years of collective experience in digital licensing, platform management, and marketing to serve as an extension of your own operations.",
       enabled: true
     }
   ],
@@ -50,7 +50,7 @@ export const aboutIntroData = {
       },
       {
         id: "wwd-5",
-        text: "Global Music Distribution",
+        text: "Music Distribution Management",
         enabled: true
       },
       {
@@ -137,7 +137,7 @@ export const aboutIntroData = {
     {
       id: "about-img-4",
       src: "/images/about/about-4.webp",
-      alt: "Studio headphones representing LabelAlly music distribution and listening experience",
+      "alt": "Studio headphones representing LabelAlly music distribution management and listening experience",
       width: 900,
       height: 720,
       enabled: true

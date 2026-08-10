@@ -10,7 +10,7 @@ function TermsPage() {
   return (
     <>
       <SEO
-        title="Terms and Conditions"
+        title="Terms and Conditions | LabelAlly Entertainment"
         description="Review the terms and conditions governing the use of the LabelAlly Entertainment website and its services."
         canonical="/terms-and-conditions"
       />

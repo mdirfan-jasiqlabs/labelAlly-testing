@@ -10,7 +10,7 @@ function PrivacyPolicyPage() {
   return (
     <>
       <SEO
-        title="Privacy Policy"
+        title="Privacy Policy | LabelAlly Entertainment"
         description="Read the LabelAlly Entertainment Privacy Policy to understand how information submitted through our website is collected, used, and protected."
         canonical="/privacy-policy"
       />

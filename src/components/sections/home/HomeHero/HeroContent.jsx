@@ -42,14 +42,20 @@ function HeroContent({ badge, heading, description, buttons, features, image }) 
         </motion.div>
       ) : null}
 
+      {heading?.brandName ? (
+        <motion.h1 id={heading.id} className={content.brandName} variants={itemVariants}>
+          {heading.brandName}
+        </motion.h1>
+      ) : null}
+
       {heading ? (
-        <motion.h1 id={heading.id} className={content.heading} variants={itemVariants}>
+        <motion.p className={content.heading} variants={itemVariants}>
           <span className={content.headingLine}>{heading.lineOne}</span>
           <span className={content.headingLine}>
             {heading.lineTwoPrimary}{' '}
             <span className={content.accent}>{heading.lineTwoAccent}</span>
           </span>
-        </motion.h1>
+        </motion.p>
       ) : null}
 
       {heading ? (

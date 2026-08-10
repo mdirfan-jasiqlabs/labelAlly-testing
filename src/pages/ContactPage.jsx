@@ -13,8 +13,8 @@ function ContactPage() {
   return (
     <main aria-label="Contact LabelAlly Entertainment">
       <SEO
-        title="Contact | Start Your Enquiry"
-        description="Contact LabelAlly Entertainment to discuss music distribution, YouTube management, content rights, OTT distribution, and revenue optimization services."
+        title="Contact LabelAlly Entertainment"
+        description="Contact LabelAlly Entertainment to discuss YouTube channel management, rights management, monetization support, and music distribution management."
         canonical="/contact"
       />
       <ContactFormSection />

@@ -6,7 +6,7 @@
       "lineTwoPrimary": "Global",
       "lineTwoAccent": "Impact."
     },
-    "description": "LabelAlly Entertainment helps artists, labels, and creators distribute their music, manage YouTube channels, protect content rights, and grow across leading global platforms.",
+    "description": "LabelAlly Entertainment helps artists, labels, and creators manage YouTube channels, protect content rights, grow monetization, and manage music distribution workflows across leading platforms.",
     "primaryCta": {
       "label": "Distribute Your Music",
       "href": "/contact",
@@ -123,20 +123,13 @@
   "services": {
     "badge": "What We Offer",
     "heading": "Everything You Need to Grow",
-    "description": "From distribution to marketing, sync licensing to artist development — we provide the full spectrum of services that modern music professionals require.",
+    "description": "From YouTube channel management and rights management to monetization support and music distribution management — we provide the full spectrum of services that modern music professionals require.",
     "cta": {
       "label": "View All Services",
       "href": "/services",
       "ariaLabel": "View all LabelAlly Entertainment services"
     },
     "items": [
-      {
-        "id": "music-distribution",
-        "title": "Music Distribution",
-        "description": "Distribute your music to all major streaming platforms and digital stores worldwide — quickly and professionally.",
-        "icon": "Globe",
-        "href": "/services"
-      },
       {
         "id": "youtube-channel-management",
         "title": "YouTube Channel Management",
@@ -146,9 +139,23 @@
       },
       {
         "id": "content-rights-management",
-        "title": "Content Rights Management",
+        "title": "Rights Management",
         "description": "Protect and manage your intellectual property with comprehensive rights management across digital platforms.",
         "icon": "Shield",
+        "href": "/services"
+      },
+      {
+        "id": "revenue-optimization",
+        "title": "Monetization Support",
+        "description": "Maximize your earnings through strategic royalty collection, platform monetization, and revenue stream management.",
+        "icon": "TrendingUp",
+        "href": "/services"
+      },
+      {
+        "id": "music-distribution",
+        "title": "Music Distribution Management",
+        "description": "Music distribution management support to get your catalog onto major streaming platforms and digital stores worldwide.",
+        "icon": "Globe",
         "href": "/services"
       },
       {
@@ -163,13 +170,6 @@
         "title": "OTT Distribution",
         "description": "Reach audiences on over-the-top streaming platforms — expanding your content's reach beyond traditional channels.",
         "icon": "Tv",
-        "href": "/services"
-      },
-      {
-        "id": "revenue-optimization",
-        "title": "Revenue Optimization",
-        "description": "Maximize your earnings through strategic royalty collection, platform monetization, and revenue stream management.",
-        "icon": "TrendingUp",
         "href": "/services"
       }
     ]
@@ -724,7 +724,7 @@
       },
       {
         "id": "global-music-distribution",
-        "title": "Global Music Distribution"
+        "title": "Music Distribution Management"
       },
       {
         "id": "content-monetization",

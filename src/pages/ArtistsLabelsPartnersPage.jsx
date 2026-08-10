@@ -13,8 +13,8 @@ function ArtistsLabelsPartnersPage() {
   return (
     <main aria-label="Artists & Record Labels LabelAlly Entertainment">
       <SEO
-        title="Solutions for Artists & Record Labels"
-        description="Discover how LabelAlly Entertainment helps independent artists, record labels, and content owners distribute music, protect rights, and maximize revenue."
+        title="Artists & Labels | LabelAlly Entertainment"
+        description="Discover how LabelAlly helps independent artists, record labels, and content owners with YouTube channel management, rights protection, monetization, and music distribution management."
         canonical="/artists-labels-partners"
       />
       <ArtistsHero />

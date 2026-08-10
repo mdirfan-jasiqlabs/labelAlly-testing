@@ -4,7 +4,7 @@
     "eyebrow": "OUR SERVICES",
     "title": "Complete Digital Music Services for Artists and Labels",
     "highlightedText": "Artists and Labels",
-    "description": "From music distribution and rights management to YouTube CMS, Content ID, OTT distribution, and revenue optimization — everything your catalog needs, managed end to end.",
+    "description": "From YouTube channel management and rights management to monetization support, music distribution management, Content ID, and revenue optimization — everything your catalog needs, managed end to end.",
     "primaryCta": {
       "label": "Get Started",
       "href": "/contact",
@@ -25,14 +25,6 @@
     },
     "items": [
       {
-        "id": "music-distribution",
-        "title": "Music Distribution",
-        "description": "Deliver your tracks, albums, and music videos directly to all major streaming platforms worldwide. We handle digital supply chain management, store onboarding, and automated metadata delivery.",
-        "icon": "Globe",
-        "accent": "rose",
-        "enabled": true
-      },
-      {
         "id": "youtube-channel-management",
         "title": "YouTube Channel Management",
         "description": "Comprehensive channel administration including content upload schedules, metadata optimization, custom playlist creation, card/end-screen annotation, and direct fan engagement strategies.",
@@ -42,10 +34,26 @@
       },
       {
         "id": "content-rights-management",
-        "title": "Content Rights Management",
+        "title": "Rights Management",
         "description": "Protect your content on global platforms. We monitor, enforce, and manage digital licensing agreements to ensure your copyrights are protected from unauthorized use and monetization.",
         "icon": "Shield",
         "accent": "amber",
+        "enabled": true
+      },
+      {
+        "id": "content-monetization",
+        "title": "Monetization Support",
+        "description": "Maximize your revenue through multiple monetization channels. We optimize your content for maximum earnings across platforms with clear reporting and payout support.",
+        "icon": "DollarSign",
+        "accent": "rose",
+        "enabled": true
+      },
+      {
+        "id": "music-distribution",
+        "title": "Music Distribution Management",
+        "description": "Support for delivering your tracks, albums, and music videos to major streaming platforms worldwide. We help manage digital supply chain workflows, store onboarding, and metadata delivery.",
+        "icon": "Globe",
+        "accent": "rose",
         "enabled": true
       },
       {
@@ -87,14 +95,6 @@
         "icon": "Megaphone",
         "accent": "cyan",
         "enabled": true
-      },
-      {
-        "id": "content-monetization",
-        "title": "Content Monetization",
-        "description": "Maximize your revenue through multiple monetization channels. We optimize your content for maximum earnings across all platforms and distribution networks.",
-        "icon": "DollarSign",
-        "accent": "rose",
-        "enabled": true
       }
     ]
   },
@@ -115,7 +115,7 @@
         "id": "connect",
         "number": "01",
         "title": "Connect With Us",
-        "description": "Reach out to discuss your music distribution, rights management, or channel optimization needs.",
+        "description": "Reach out to discuss your YouTube channel management, rights management, monetization, or music distribution management needs.",
         "enabled": true
       },
       {
@@ -185,7 +185,7 @@
       "enabled": true
     },
     "heading": "Available Across Leading Digital Platforms",
-    "description": "LabelAlly helps distribute and manage content across leading digital and streaming platforms used by artists, labels, and creators."
+    "description": "LabelAlly helps manage and deliver content across leading digital and streaming platforms used by artists, labels, and creators."
   },
   "cta": {
     "enabled": true,

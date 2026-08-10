@@ -8,6 +8,7 @@ import ArtistsSection      from '../components/sections/home/ArtistsSection';
 import WhatWeDoSection     from '../components/sections/home/WhatWeDoSection';
 import TestimonialsSection from '../components/sections/home/TestimonialsSection';
 import SEO                 from '../components/common/SEO';
+import { buildHomepageStructuredData } from '../config/structuredData';
 
 /**
  * HomePage — Route: /
@@ -27,9 +28,13 @@ function HomePage() {
   return (
     <main aria-label="LabelAlly Entertainment homepage">
       <SEO
-        description="Grow your music business with professional music distribution, YouTube channel management, content rights management, Content ID, OTT distribution, and revenue optimization services."
+        title="LabelAlly Entertainment | YouTube Channel Management & Music Rights"
+        description="LabelAlly Entertainment provides YouTube channel management, rights management, monetization support and music distribution management for artists and music labels."
         canonical="/"
         type="website"
+        ogTitle="LabelAlly Entertainment"
+        ogDescription="YouTube Channel Management, Rights Management, Monetization and Music Distribution Management for artists and music labels."
+        jsonLd={buildHomepageStructuredData()}
       />
       <HeroSection />
       <PlatformStrip />
