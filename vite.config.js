@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
+import { pathToFileURL } from 'node:url';
 
 const DEV_SERVER_PORT = 5173;
 
@@ -8,7 +9,7 @@ const DEV_SERVER_PORT = 5173;
  * Runs the Vercel contact handler during local Vite development.
  * Production continues to use /api/contact as a Vercel Serverless Function.
  */
-function contactApiDevPlugin(env) {
+function contactApiDevPlugin(env, mode) {
   return {
     name: 'contact-api-dev',
     configureServer(server) {
@@ -17,16 +18,18 @@ function contactApiDevPlugin(env) {
         'CONTACT_EMAIL_FROM',
         'EMAIL_PROVIDER',
         'EMAIL_API_KEY',
+        'ALLOWED_ORIGINS',
       ];
 
+      // Synchronize contact API environment variables from Vite's loaded env (.env.local / .env)
       serverEnvKeys.forEach((key) => {
-        if (env[key] && !process.env[key]) {
+        if (env[key] !== undefined) {
           process.env[key] = env[key];
         }
       });
 
       // Local origins are allowed only inside the Vite development process.
-      const configuredOrigins = (env.ALLOWED_ORIGINS || '')
+      const configuredOrigins = (process.env.ALLOWED_ORIGINS || '')
         .split(',')
         .map((origin) => origin.trim())
         .filter(Boolean);
@@ -39,8 +42,17 @@ function contactApiDevPlugin(env) {
         ]),
       ].join(',');
 
+      console.log(
+        `[contact-api-dev] Effective local config (mode: ${mode}, source: .env.local): ` +
+        `provider=${process.env.EMAIL_PROVIDER || 'not set'}, ` +
+        `from=${process.env.CONTACT_EMAIL_FROM || 'not set'}, ` +
+        `to=${process.env.CONTACT_EMAIL_TO || 'not set'}, ` +
+        `hasApiKey=${Boolean(process.env.EMAIL_API_KEY)}`
+      );
+
       server.middlewares.use('/api/contact', async (req, res) => {
         try {
+
           const chunks = [];
 
           for await (const chunk of req) {
@@ -76,7 +88,8 @@ function contactApiDevPlugin(env) {
             return res;
           };
 
-          const { default: contactHandler } = await import('./api/contact.js');
+          const contactHandlerUrl = pathToFileURL(resolve(process.cwd(), 'api/contact.js')).href;
+          const { default: contactHandler } = await import(contactHandlerUrl);
           await contactHandler(req, res);
         } catch (error) {
           console.error('[contact-api-dev] Request failed:', error.message);
@@ -103,7 +116,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    plugins: [react(), contactApiDevPlugin(env)],
+    plugins: [react(), contactApiDevPlugin(env, mode)],
 
     resolve: {
       alias: {

@@ -1,17 +1,14 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import FeatureRow from './FeatureRow';
 import HeroButtons from './HeroButtons';
-import HeroImage from './HeroImage';
 import { getHomeHeroIcon } from './homeHeroIcons';
 import { homeHeroStyles as styles } from '../../../../config/homeHeroStyles';
 import { homeHeroMotion as motionConfig } from '../../../../config/homeHeroMotion';
 
 /**
- * Left-column hero stack — tight vertical rhythm matching the reference.
- * Mobile: image sits between description and CTAs.
- * Desktop: image renders in the sibling column via HomeHero.
+ * Left-column hero stack — tight vertical rhythm matching the approved wireframe.
+ * Renders badge, brand H1, headline, gradient divider, description, and CTA buttons.
  */
-function HeroContent({ badge, heading, description, buttons, features, image }) {
+function HeroContent({ badge, heading, description, buttons }) {
   const reduceMotion = useReducedMotion();
   const itemVariants = reduceMotion ? motionConfig.itemReduced : motionConfig.item;
   const BadgeIcon = badge ? getHomeHeroIcon(badge?.icon) : null;
@@ -38,7 +35,7 @@ function HeroContent({ badge, heading, description, buttons, features, image }) 
               aria-hidden="true"
             />
           ) : null}
-          <span className="min-w-0">{badge.label}</span>
+          <span className="min-w-0 uppercase">{badge.label}</span>
         </motion.div>
       ) : null}
 
@@ -72,17 +69,9 @@ function HeroContent({ badge, heading, description, buttons, features, image }) 
         </motion.p>
       ) : null}
 
-      {image ? (
-        <motion.div className={content.mobileImage} variants={itemVariants}>
-          <HeroImage image={image} />
-        </motion.div>
-      ) : null}
-
       <motion.div variants={itemVariants} className="w-full">
         <HeroButtons buttons={buttons} />
       </motion.div>
-
-      <FeatureRow features={features} itemVariants={itemVariants} />
     </motion.div>
   );
 }

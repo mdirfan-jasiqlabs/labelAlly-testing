@@ -4,11 +4,13 @@ import { homeHeroStyles as styles } from '../../../../config/homeHeroStyles';
 import { homeHeroMotion as motionConfig } from '../../../../config/homeHeroMotion';
 import BackgroundDecorations from './BackgroundDecorations';
 import HeroContent from './HeroContent';
-import HeroImage from './HeroImage';
+import ArtistCarousel from './ArtistCarousel';
+import FeatureRow from './FeatureRow';
 import PlatformSection from './PlatformSection';
 
 /**
- * Homepage Hero — compact two-column layout matching the reference spacing.
+ * Homepage Hero — desktop two-column with artist carousel on right;
+ * stacks naturally on mobile/tablet; four key benefits row cleanly arranged below.
  */
 function HomeHero() {
   const reduceMotion = useReducedMotion();
@@ -26,21 +28,24 @@ function HomeHero() {
       <BackgroundDecorations />
 
       <div className={styles.section.container}>
+        {/* Main Hero grid: left content, right artist photo carousel */}
         <div className={styles.section.layout}>
           <HeroContent
             badge={data.badge}
             heading={data.heading}
             description={data.description}
             buttons={data.buttons}
-            features={data.features}
-            image={data.image}
           />
 
-          <div className={styles.image.colDesktop}>
-            <HeroImage image={data.image} />
+          <div className="lg:col-span-6 w-full flex justify-center items-center relative z-10">
+            <ArtistCarousel slides={data.artistSlides} />
           </div>
         </div>
 
+        {/* Four benefits row below the hero section */}
+        <FeatureRow features={data.features} />
+
+        {/* Available On platform marquee */}
         <motion.div
           variants={platformVariants}
           initial="hidden"

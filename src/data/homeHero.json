@@ -39,6 +39,62 @@
     "width": 720,
     "height": 900
   },
+  "artistSlides": [
+    {
+      "id": "utkarsh-saxena",
+      "filename": "Utkarsh Saxena.png",
+      "src": "/Hero_artist/Utkarsh Saxena.png",
+      "name": "Utkarsh Saxena",
+      "role": "Bollywood Singer",
+      "objectPosition": "center 18%",
+      "alt": "Utkarsh Saxena performing with microphone on stage"
+    },
+    {
+      "id": "satish-das",
+      "filename": "Satish Das.png",
+      "src": "/Hero_artist/Satish Das.png",
+      "name": "Satish Das",
+      "role": "Khortha Artist",
+      "objectPosition": "center 18%",
+      "alt": "Satish Das singing live"
+    },
+    {
+      "id": "kanwar-singh-grewal",
+      "filename": "kanwar singh grewal.png",
+      "src": "/Hero_artist/kanwar singh grewal.png",
+      "name": "Kanwar Singh Grewal",
+      "role": "Punjabi Singer",
+      "objectPosition": "center center",
+      "alt": "Kanwar Singh Grewal performing live"
+    },
+    {
+      "id": "shivani",
+      "filename": "Shivani.png",
+      "src": "/Hero_artist/Shivani.png",
+      "name": "Shivani",
+      "role": "Bhojpuri Artist",
+      "objectPosition": "center 15%",
+      "alt": "Shivani performing with microphone"
+    },
+    {
+      "id": "featured-artist-abx",
+      "filename": "abx.jpeg",
+      "src": "/Hero_artist/abx.jpeg",
+      "name": null,
+      "role": null,
+      "objectPosition": "center 20%",
+      "alt": "Featured artist performing on stage"
+    },
+    {
+      "id": "featured-artist-live",
+      "filename": "830856997_18122027963585457_4863629328978351164_n.jpg.jpeg",
+      "src": "/Hero_artist/830856997_18122027963585457_4863629328978351164_n.jpg.jpeg",
+      "name": null,
+      "role": null,
+      "objectPosition": "center 20%",
+      "alt": "Featured artist live performance"
+    }
+  ],
   "features": [
     {
       "id": "global-platforms",

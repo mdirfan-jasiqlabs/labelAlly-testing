@@ -1,5 +1,6 @@
 import { contactSchema } from '../src/schemas/contactSchema.js';
 import { sendContactEmail } from './lib/sendContactEmail.js';
+import { logContactDiagnostic } from './lib/diagnosticLogger.js';
 
 // Ephemeral in-memory rate-limiter placeholder
 // (Documented: Serverless environments are stateless; replace this with Redis/Upstash for production safety)
@@ -125,7 +126,37 @@ export default async function handler(req, res) {
 
     // Catch email configuration missing/unsupported errors
     if (err.code === 'CONFIG_MISSING' || err.code === 'PROVIDER_UNSUPPORTED') {
-      console.error(`[${timestamp}] Email service error: ${err.message}`);
+      console.error(`[${timestamp}] Email service configuration error: ${err.message}`);
+      logContactDiagnostic('config_error', { code: err.code, message: err.message });
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now.',
+      });
+    }
+
+    if (err.code === 'INVALID_API_KEY') {
+      console.error(`[${timestamp}] Resend authentication error: ${err.message}`);
+      logContactDiagnostic('auth_error', { code: err.code, message: err.message });
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now.',
+      });
+    }
+
+    if (err.code === 'RESTRICTED_API_KEY') {
+      console.error(`[${timestamp}] Resend API key permission error: ${err.message}`);
+      logContactDiagnostic('restricted_key_error', { code: err.code, message: err.message });
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now.',
+      });
+    }
+
+    if (err.code === 'TESTING_RECIPIENT_RESTRICTION') {
+      console.error(
+        `[${timestamp}] Resend Sandbox restriction: onboarding@resend.dev can only send to the email address registered on the Resend account. Provider details: ${err.message}`
+      );
+      logContactDiagnostic('testing_recipient_restriction', { code: err.code, message: err.message });
       return res.status(503).json({
         success: false,
         message: 'Unable to send your enquiry right now.',
@@ -134,14 +165,34 @@ export default async function handler(req, res) {
 
     if (err.code === 'EMAIL_FROM_UNVERIFIED') {
       console.error(`[${timestamp}] Email FROM address not verified with provider: ${err.message}`);
+      logContactDiagnostic('sender_unverified_error', { code: err.code, message: err.message });
       return res.status(503).json({
         success: false,
-        message: 'Unable to send your enquiry right now. Email sender is not verified.',
+        message: 'Unable to send your enquiry right now.',
+      });
+    }
+
+    if (err.code === 'RATE_LIMIT_EXCEEDED') {
+      console.error(`[${timestamp}] Email provider rate limit or quota exceeded: ${err.message}`);
+      logContactDiagnostic('provider_rate_limit', { code: err.code, message: err.message });
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now.',
+      });
+    }
+
+    if (err.code === 'PROVIDER_VALIDATION_ERROR') {
+      console.error(`[${timestamp}] Email provider payload validation error: ${err.message}`);
+      logContactDiagnostic('provider_validation_error', { code: err.code, message: err.message });
+      return res.status(503).json({
+        success: false,
+        message: 'Unable to send your enquiry right now.',
       });
     }
 
     // Catch all other server/provider runtime failures
     console.error(`[${timestamp}] Submission error:`, err.message);
+    logContactDiagnostic('runtime_error', { message: err.message, stack: err.stack });
     return res.status(500).json({
       success: false,
       message: 'Unable to send your enquiry right now.',

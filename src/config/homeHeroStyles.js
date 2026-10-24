@@ -14,7 +14,7 @@ export const homeHeroStyles = {
       'relative z-10 w-full mx-auto max-w-container-2xl px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 sm:pt-8 lg:pt-6 pb-6 sm:pb-8',
     layout: [
       'grid grid-cols-1 lg:grid-cols-12',
-      'gap-4 sm:gap-5 lg:gap-x-4 lg:gap-y-0 xl:gap-x-5',
+      'gap-8 sm:gap-10 lg:gap-8 xl:gap-12',
       'items-center',
     ].join(' '),
   },
@@ -28,7 +28,7 @@ export const homeHeroStyles = {
       'gap-0',
     ].join(' '),
     mobileImage:
-      'relative z-0 w-full flex justify-center my-4 sm:my-5 lg:hidden pointer-events-none px-1',
+      'relative z-0 w-full flex justify-center my-4 sm:my-5 lg:hidden px-1',
     badge: [
       'inline-flex items-center justify-center gap-1.5 sm:gap-2',
       'max-w-full rounded-full',
@@ -72,7 +72,7 @@ export const homeHeroStyles = {
     ].join(' '),
     description: [
       'mt-3 sm:mt-4',
-      'max-w-[460px]',
+      'max-w-[480px]',
       'text-sm sm:text-[0.95rem] leading-relaxed',
       'text-ink-secondary dark:text-theme-body',
     ].join(' '),
@@ -95,21 +95,22 @@ export const homeHeroStyles = {
 
   features: {
     row: [
-      'mt-7 sm:mt-8',
+      'mt-8 sm:mt-10 lg:mt-12',
       'grid grid-cols-2 lg:grid-cols-4',
-      'gap-x-4 gap-y-5 sm:gap-y-6',
-      'w-full max-w-xl lg:max-w-none',
-      'justify-items-center lg:justify-items-start',
-      'text-center lg:text-left',
+      'gap-3 sm:gap-4 lg:gap-6',
+      'w-full',
     ].join(' '),
     item: [
-      'group flex flex-col gap-1 items-center lg:items-start',
-      'rounded-xl px-1 py-1',
-      'transition-colors duration-300',
-      'hover:bg-primary-50/40 dark:hover:bg-primary-500/10',
+      'group flex items-center gap-3 sm:gap-3.5',
+      'rounded-2xl p-3 sm:p-4',
+      'bg-slate-50/70 dark:bg-white/[0.03]',
+      'border border-slate-100 dark:border-white/[0.06]',
+      'transition-all duration-300',
+      'hover:bg-primary-50/40 dark:hover:bg-primary-950/20',
+      'hover:border-primary-200/60 dark:hover:border-primary-500/20',
     ].join(' '),
     iconWrap: [
-      'flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl',
+      'flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full',
       'bg-primary-50 text-primary-600',
       'dark:bg-primary-500/15 dark:text-primary-300',
       'border border-primary-100/80 dark:border-primary-400/20',
@@ -117,26 +118,25 @@ export const homeHeroStyles = {
       'motion-safe:group-hover:scale-105',
       'group-hover:scale-105 motion-reduce:group-hover:scale-100',
     ].join(' '),
-    title: 'text-[0.78rem] sm:text-[0.8rem] font-bold text-ink-primary dark:text-theme-heading leading-tight',
-    description: 'text-[0.7rem] text-ink-muted dark:text-theme-muted leading-tight',
+    title: 'text-[0.82rem] sm:text-[0.88rem] font-bold text-ink-primary dark:text-theme-heading leading-tight truncate sm:whitespace-normal',
+    description: 'text-[0.7rem] sm:text-[0.76rem] text-ink-muted dark:text-theme-muted leading-tight mt-0.5 truncate sm:whitespace-normal',
   },
 
   image: {
     col: [
-      'relative z-0',
+      'relative z-10',
       'flex',
       'justify-center items-center',
       'w-full',
       'overflow-visible',
-      'pointer-events-none',
     ].join(' '),
     colDesktop: [
-      'relative z-0',
+      'relative z-10',
       'hidden lg:flex',
       'justify-center items-center',
       'lg:col-span-6',
+      'w-full',
       'overflow-visible',
-      'pointer-events-none',
     ].join(' '),
     stage: [
       'relative w-full mx-auto overflow-visible',
