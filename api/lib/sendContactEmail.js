@@ -15,9 +15,9 @@ export async function sendContactEmail({
   service,
   message,
 }) {
-  const provider = (process.env.EMAIL_PROVIDER || '').trim();
+  const provider = (process.env.EMAIL_PROVIDER || 'resend').trim();
   const apiKey = (process.env.EMAIL_API_KEY || '').trim();
-  const emailTo = (process.env.CONTACT_EMAIL_TO || '').trim();
+  const emailTo = (process.env.CONTACT_EMAIL_TO || 'business@labelally.in').trim();
   const emailFrom = (process.env.CONTACT_EMAIL_FROM || '').trim().replace(/^["']|["']$/g, '');
 
   const isPlaceholderKey =
@@ -214,7 +214,7 @@ This enquiry was submitted via the contact form on the LabelAlly Entertainment w
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        sender: { name: 'LabelAlly Contact', email: emailFrom },
+        sender: { name: 'LabelAlly Entertainment', email: emailFrom },
         to: [{ email: emailTo }],
         subject: `Partner Enquiry: ${name}`,
         textContent: textBody,
