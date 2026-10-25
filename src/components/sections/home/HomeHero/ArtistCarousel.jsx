@@ -4,8 +4,8 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 const DEFAULT_HERO_ARTISTS = [
   {
     id: 'utkarsh-saxena',
-    filename: 'Utkarsh Saxena.png',
-    src: '/Hero_artist/Utkarsh Saxena.png',
+    filename: 'a2403c49-caf4-47ec-a029-0c1a5d51d408.webp',
+    src: '/Hero_artist/a2403c49-caf4-47ec-a029-0c1a5d51d408.webp',
     name: 'Utkarsh Saxena',
     role: 'Bollywood Singer',
     objectPosition: 'center 18%',
@@ -13,8 +13,8 @@ const DEFAULT_HERO_ARTISTS = [
   },
   {
     id: 'satish-das',
-    filename: 'Satish Das.png',
-    src: '/Hero_artist/Satish Das.png',
+    filename: 'e402777b-93cc-4a87-9b87-30dec8f44a7e.webp',
+    src: '/Hero_artist/e402777b-93cc-4a87-9b87-30dec8f44a7e.webp',
     name: 'Satish Das',
     role: 'Khortha Artist',
     objectPosition: 'center 18%',
@@ -22,38 +22,29 @@ const DEFAULT_HERO_ARTISTS = [
   },
   {
     id: 'kanwar-singh-grewal',
-    filename: 'kanwar singh grewal.png',
-    src: '/Hero_artist/kanwar singh grewal.png',
+    filename: '61c49631-6601-4aae-a0ab-3332ee487d3c.webp',
+    src: '/Hero_artist/61c49631-6601-4aae-a0ab-3332ee487d3c.webp',
     name: 'Kanwar Singh Grewal',
     role: 'Punjabi Singer',
-    objectPosition: 'center center',
+    objectPosition: 'center 20%',
     alt: 'Kanwar Singh Grewal performing live',
   },
   {
     id: 'shivani',
-    filename: 'Shivani.png',
-    src: '/Hero_artist/Shivani.png',
+    filename: '610d2108-b11d-49ae-999b-8b2d7919006b.webp',
+    src: '/Hero_artist/610d2108-b11d-49ae-999b-8b2d7919006b.webp',
     name: 'Shivani',
     role: 'Bhojpuri Artist',
     objectPosition: 'center 15%',
     alt: 'Shivani performing live with wireless microphone',
   },
   {
-    id: 'featured-artist-abx',
-    filename: 'abx.jpeg',
-    src: '/Hero_artist/abx.jpeg',
-    name: null,
-    role: null,
-    objectPosition: 'center 20%',
-    alt: 'Featured artist performing on stage',
-  },
-  {
     id: 'featured-artist-live',
-    filename: '830856997_18122027963585457_4863629328978351164_n.jpg.jpeg',
-    src: '/Hero_artist/830856997_18122027963585457_4863629328978351164_n.jpg.jpeg',
+    filename: '4e12df42-d860-40f7-b4e9-418a887a9354.webp',
+    src: '/Hero_artist/4e12df42-d860-40f7-b4e9-418a887a9354.webp',
     name: null,
     role: null,
-    objectPosition: 'center 20%',
+    objectPosition: 'center 15%',
     alt: 'Featured artist live performance',
   },
 ];
@@ -132,7 +123,7 @@ function ArtistCarousel({ slides = DEFAULT_HERO_ARTISTS }) {
   const currentSlide = slideList[currentIndex] || slideList[0];
   const isCurrentFailed = failedImages[currentSlide.id];
   const displaySrc = isCurrentFailed
-    ? slideList[0]?.src || '/Hero_artist/Utkarsh Saxena.png'
+    ? slideList[0]?.src || '/Hero_artist/a2403c49-caf4-47ec-a029-0c1a5d51d408.webp'
     : currentSlide.src;
 
   return (
